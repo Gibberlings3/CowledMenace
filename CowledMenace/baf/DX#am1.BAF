@@ -1,0 +1,14 @@
+IF
+	Entered([PC])
+	Global("ZallaFlee","GLOBAL",1)
+	!Global("ZallaSpawned","GLOBAL",1)
+	OR(2)
+		Global("ACH_TWISTED_VICTORY","GLOBAL",1)
+		Global("ACH_TWISTED_VICTORY_2","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("ZallaSpawned","GLOBAL",1)
+		CreateCreatureDoor("mage18z",[134.2311],SE)  // Zallanora
+		SmallWait(90)
+		ActionOverride("mage18z",StartDialogueNoSet(LastSeenBy(Myself)))
+END

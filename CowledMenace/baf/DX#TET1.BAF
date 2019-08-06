@@ -1,0 +1,25 @@
+IF
+	Entered([PC])
+	PartyHasItem("MISC45")  // Rogue Stone
+THEN
+	RESPONSE #100
+		DisplayString(Myself,@91)  //  
+		StartCutSceneMode()
+		CreateVisualEffectObject("SPDIMNDR",Player1)
+		Wait(4)
+		FadeToColor([20.0],0)
+		Wait(1)
+		PlaySound("PORTAL2")
+		Wait(2)
+		ActionOverride(Player1,LeaveAreaLUAPanic("DX#001","",[670.651],NE))
+		TakePartyItemNum("MISC45",1)  // Rogue Stone
+		ActionOverride(Player1,LeaveAreaLUA("DX#001","",[670.651],NE))
+		ActionOverride(Player2,LeaveAreaLUA("DX#001","",[523.687],NE))
+		ActionOverride(Player3,LeaveAreaLUA("DX#001","",[559.713],NE))
+		ActionOverride(Player4,LeaveAreaLUA("DX#001","",[586.705],NE))
+		ActionOverride(Player5,LeaveAreaLUA("DX#001","",[589.737],NE))
+		ActionOverride(Player6,LeaveAreaLUA("DX#001","",[547.771],NE))
+		MultiPlayerSync()
+		EndCutSceneMode()
+		FadeFromColor([20.0],0)
+END

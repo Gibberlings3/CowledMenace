@@ -1,0 +1,21 @@
+IF
+	!Global("TwistedLetterFound","GLOBAL",1)
+	PartyHasItem("DX#TWISL")
+THEN
+	RESPONSE #100
+		SetGlobal("TwistedLetterFound","GLOBAL",1)
+		EraseJournalEntry(@105)
+		EraseJournalEntry(@106)
+		AddJournalEntry(@101,QUEST)
+END
+
+IF
+	Global("ACH_TWISTED_VICTORY","GLOBAL",1)
+	GlobalTimerExpired("WaitBeforeLaeral","GLOBAL")
+	Global("LaeralAthkatla","GLOBAL",0)
+THEN
+	RESPONSE #100
+		Wait(1)
+		CreateCreatureDoor("DX#LAERA",[724.594],SW)
+		SetGlobal("LaeralAthkatla","GLOBAL",1)
+END

@@ -1,0 +1,2098 @@
+
+/*
+common.tpa
+
+////////////////////////////////////////////////////////////////
+////														////
+////					CONTENT TABLE						////
+////														////
+////////////////////////////////////////////////////////////////
+												ARGUMENTS							RETURN VALUES		BRIEF DESCRIPTION
+	0	NOTES
+	1	MAINTAINANCE FUNCTIONS
+		f10		SANITIZE_ITM_OR_SPL				abilLen								ok					Sanitizes current ITM or SPL.
+		f11		SANITIZE_ITM					-									ok					Sanitizes current ITM.
+		f12		SANITIZE_ITM_IF_EXISTS			res									ok					Sanitizes ITM if it exists.
+		f13		SANITIZE_SPL					-									ok					Sanitizes current SPL.
+		f14		SANITIZE_SPL_IF_EXISTS			res									ok					Sanitizes SPL if it exists.
+		f15		SANITIZE_CRE					-									ok					Sanitizes current CRE.
+		f16		SANITIZE_CRE_IF_EXISTS			res									ok					Sanitizes CRE if it exists.
+	2	ABILITY AND EFFECT FUNCTIONS
+		2x	READ / WRITE
+			f2x0	READ_EFFECT					off									[...]				Reads V1 effect at offset.
+			f2x1	READ_EFFECT_CRE				off									[...]				Reads V2 effect at offset.
+			f2x2	WRITE_EFFECT				off, [...]							-					Writes V1 effect to offset.
+			f2x3	WRITE_EFFECT_CRE			off, [...]							-
+			f2x4	WRITE_DEFAULT_EFFECT_ITM	off, opcode, param1, param2, res	-
+			f2x5	WRITE_DEFAULT_EFFECT_CRE	off, opcode, param1, param2, res	-
+		2a	ADD
+			f2a0	ADD_EFFECT					abilLen								off
+			f2a1	ADD_EFFECT_ITM				-									off
+			f2a2	ADD_EFFECT_SPL				-									off
+			f2a3	ADD_EFFECT_CRE				-									off
+			f2a4	ADD_ABILITY_EFFECT			abilLen, abilIdx					off
+			f2a5	ADD_ABILITY_EFFECT_ITM		abilIdx								off
+			f2a6	ADD_ABILITY_EFFECT_SPL		abilIdx								off
+			f2a7	ADD_ABILITY					abilLen								off
+			f2a8	ADD_ABILITY_ITM				-									off
+			f2a9	ADD_ABILITY_SPL				-									off
+			f2aa	ADD_DEFAULT_EFFECT_ITM		opcode, param1, param2, res			off
+			f2ab	ADD_DEFAULT_EFFECT_CRE		opcode, param1, param2, res			off
+		2c	COPY
+			f2c0	COPY_EFFECT					abilLen, idx, toIdx					off					Copies indexed ITM or SPL global effect to other index.
+			f2c1	COPY_EFFECT_ITM				idx, toIdx							off					Copies indexed ITM global effect to other index.
+			f2c2	COPY_EFFECT_SPL				idx, toIdx							off					Copies indexed SPL global effect to other index.
+			f2c3	COPY_EFFECT_CRE				idx, toIdx							off					Copies indexed CRE effect to other index.
+			f2c4	COPY_ABILITY_EFFECT			abilLen, abilIdx, idx, toIdx		off					Copies indexed ITM or SPL ability effect to other index.
+			f2c5	COPY_ABILITY_EFFECT_ITM		abilIdx, idx, toIdx					off					Copies indexed ITM ability effect to other index.
+			f2c6	COPY_ABILITY_EFFECT_SPL		abilIdx, idx, toIdx					off					Copies indexed SPL ability effect to other index.
+			f2c7	COPY_ABILITY				abilLen, idx, toIdx					off					Copies indexed ITM or SPL ability to other index.
+			f2c8	COPY_ABILITY_ITM			idx, toIdx							off					Copies indexed ITM ability to other index.
+			f2c9	COPY_ABILITY_SPL			idx, toIdx							off					Copies indexed SPL ability to other index.
+		2i	INSERT
+			f2i0	INSERT_EFFECT				abilLen, idx						off					Inserts blank ITM or SPL global effect at index.
+			f2i1	INSERT_EFFECT_ITM			idx									off					Inserts blank ITM global effect at index.
+			f2i2	INSERT_EFFECT_SPL			idx									off					Inserts blank SPL global effect at index.
+			f2i3	INSERT_EFFECT_CRE			idx									off					Inserts blank CRE effect at index.
+			f2i4	INSERT_ABILITY_EFFECT		abilLen, abilIdx, idx				off					Inserts blank ITM or SPL ability effect at index.
+			f2i5	INSERT_ABILITY_EFFECT_ITM	abilIdx, idx						off					Inserts blank ITM ability effect at index.
+			f2i6	INSERT_ABILITY_EFFECT_SPL	abilIdx, idx						off					Inserts blank SPL ability effect at index.
+			f2i7	INSERT_ABILITY				abilLen, idx						off					Inserts blank ITM or SPL ability at index.
+			f2i8	INSERT_ABILITY_ITM			idx									off					Inserts blank ITM ability at index.
+			f2i9	INSERT_ABILITY_SPL			idx									off					Inserts blank SPL ability at index.
+		2r	REMOVE
+			f2r0	REMOVE_EFFECT				abilLen, idx						-					Removes indexed ITM or SPL global effect.
+			f2r1	REMOVE_EFFECT_ITM			idx									-					Removes indexed ITM global effect.
+			f2r2	REMOVE_EFFECT_SPL			idx									-					Removes indexed SPL global effect.
+			f2r3	REMOVE_EFFECT_CRE			idx									-					Removes indexed CRE effect.
+			f2r4	REMOVE_ABILITY_EFFECT		abilLen, abilIdx, idx				-					Removes indexed ITM or SPL ability effect.
+			f2r5	REMOVE_ABILITY_EFFECT_ITM	abilIdx, idx						-					Removes indexed ITM ability effect.
+			f2r6	REMOVE_ABILITY_EFFECT_SPL	abilIdx, idx						-					Removes indexed SPL ability effect.
+			f2r7	REMOVE_ABILITY				abilLen, idx						-					Removes indexed ITM or SPL ability.
+			f2r8	REMOVE_ABILITY_ITM			idx									-					Removes indexed ITM ability.
+			f2r9	REMOVE_ABILITY_SPL			idx									-					Removes indexed SPL ability.
+			f2ra	REMOVE_ALL_EFFECTS_ITM		opcode								-
+	3	CONVENIENCE FUNCTIONS
+		f30		GET_APR_NUM_FOR_KEY				key									value				Returns number of half attacks per round for key.
+		f31		GET_APR_KEY_FOR_NUM				num									value				Returns key for number of half attacks per round.
+		f32		GET_INVENTORY_SLOT_ITEM			slot								res					Returns resource in specified inventory equipment slot.
+		f33		APPLIES_EFFECT					abilLen, opcode						value				Checks whether the current SPL or ITM applies an opcode.
+		f34		APPLIES_EFFECT_ITM				opcode								value				Checks whether the current ITM applies an opcode.
+		f35		APPLIES_EFFECT_SPL				opcode								value				Checks whether the current SPL applies an opcode.
+		f36		SET_CASTING_SPEED				abilIdx, value
+		f37		SET_CASTING_SPEED_ALL			value
+	4	UTILITY FUNCTIONS
+		f40		COPY_BYTES						src, dst, len						-					Copies a number of bytes within current resource.
+		f41		GET_FILE_SIZE					file								value				Returns size of specified file.
+		f42		TRUNCATE_FILE					file								-					Sets size of specified file to 0 (zero).
+		f43		UPDATE_LOG						file, value							-					Appends 8-length string to specified file.
+		f44		UPDATE_LOG_UNIQUE				file, value							-
+		f45		READ_LOG						file, off							value				Reads 8-length string from specified file at offset.
+		f46		GENERATE_RES_NAME				digits, prefix, suffix, ext			ok, name			Generates an unused resource name.
+	5	CODE TEMPLATES
+*/
+	
+////////////////////////////////////////////////////////////////
+////														////
+////	0	NOTES											////
+////														////
+////////////////////////////////////////////////////////////////
+
+	/*
+		This document is a library of user functions for the WeiDU modding tool.
+		
+		These functions are designed for reusability and ease-of-use. They take care of
+		many low-level routines that would usually result in a lot of boilerplate code if
+		implemented traditionally.
+		
+		Not only does use of these functions make your code less error-prone it will also
+		increase readability and maintainability.
+		
+		Note that most of the functions in this library operate under the assumption
+		that an appropriate SANITIZE function has been invoked on the current resource.
+		This is important because they simplify their internal logic to take advantage
+		of the fact that all resources they are processing follow the same rules.
+		
+		The SANITIZE functions are intended to be used instead of bounds checks to
+		validate file integrity. Not that files that are already in a valid format
+		will not be altered by these functions. So it is perfectly safe, highly
+		recommended, and even mandatory within the scope of this library, to actually
+		use them.
+		
+		Note that none of these functions perform any kind of type or bounds checks of
+		their arguments. It is your responsibility to invoke them only on approriate
+		resources with appropriate arguments.
+		Please always consult the documentation for all functions before using them.
+		
+		Note: It is my opinion that the ACTION vs PATCH framework is nonsensical and unwieldy.
+		Therefore, only PATCH functions are provided because they allow for a wider set 
+		of instruction.
+		If ACTION specific instructions are necessary than an INNER_ACTION block can be 
+		employed, while PATCHes can be entered arbitrarily by copying dummy files.
+		
+		Happy modding!
+		
+		- klatu, 2015/6/1
+	*/
+	
+////////////////////////////////////////////////////////////////
+////														////
+////	1	MAINTAINANCE FUNCTIONS							////
+////														////
+////////////////////////////////////////////////////////////////
+
+	/*	f10
+		Sanitizes the current SPL or ITM resource. If the resource is corrupt, 
+		this function will attempt to repair it. This can entail resolving
+		overlapping ability effects and removal of junk data.
+		It ensures that abilities precede effects and that global effects 
+		precede ability effects. 
+		This function does not perform any type checks. The user must
+		take care to only run it on appropriate resources with appropriate
+		arguments.
+		Arguments: 
+			- abilLen	the length in bytes of the resource's abilities. 
+						ITM resources have an ability length of 0x38 (56)
+						SPL resources have an ability length of 0x28 (40)
+		Return values:
+			- ok		A value of 1 signifies that the resource can be 
+						safely edited. A value of 0 means that the resource
+						is not in a recoverable format and should not be
+						edited. 
+	*/
+	DEFINE_PATCH_FUNCTION SANITIZE_ITM_OR_SPL
+		INT_VAR abilLen = 0x28
+		RET 	ok
+	BEGIN
+		ok = 0
+		off = SOURCE_SIZE
+		PATCH_IF (off >= 0x72) BEGIN
+			READ_LONG 0x64 abilOff
+			READ_SHORT 0x68 abilNum
+			READ_LONG 0x6a fxOff
+			READ_SHORT 0x6e fxIdx
+			READ_SHORT 0x70 fxNum
+			PATCH_IF ((fxOff >= 0x72 AND fxOff <= off) AND (abilNum = 0 OR (abilOff >= 0x72 AND abilOff <= (off - abilNum * abilLen)))) BEGIN
+				abilSize = abilNum * abilLen
+				PATCH_IF (abilOff != 0x72) BEGIN
+					INSERT_BYTES 0x72 abilSize
+					LPF COPY_BYTES INT_VAR src = abilOff + abilSize dst = 0x72 len = abilSize END
+					DELETE_BYTES abilOff abilSize
+					fxOff += abilSize
+					WRITE_LONG 0x64 0x72
+				END
+				gapLen = fxOff - 0x72 - abilSize
+				fxOff = 0x72 + abilSize
+				DELETE_BYTES fxOff gapLen
+				WRITE_LONG 0x6a fxOff
+				off -= gapLen
+				afxCount = 0
+				proceed = 0
+				maxExtent = fxIdx + fxNum
+				FOR (ab = 0; ab < abilNum; ab = ab + 1) BEGIN
+					abOff = 0x72 + ab * abilLen
+					READ_SHORT (abOff + 0x1e) afxNum
+					READ_SHORT (abOff + 0x20) afxIdx
+					PATCH_IF (afxIdx != fxNum + afxCount) BEGIN
+						proceed = 1
+					END
+					abMaxExtent = afxIdx + afxNum
+					PATCH_IF (abMaxExtent > maxExtent) BEGIN
+						maxExtent = abMaxExtent
+					END
+					afxCount += afxNum
+				END
+				PATCH_IF (fxOff + (maxExtent * 0x30) <= off) BEGIN
+					ok = 1
+					PATCH_IF (proceed) BEGIN
+						INSERT_BYTES off (afxCount * 0x30)
+						abCopied = 0
+						FOR (ab = 0; ab < abilNum; ab = ab + 1) BEGIN
+							abOff = 0x72 + ab * abilLen
+							READ_SHORT (abOff + 0x1e) afxNum
+							READ_SHORT (abOff + 0x20) afxIdx
+							LPF COPY_BYTES INT_VAR src = fxOff + afxIdx * 0x30 dst = off + abCopied * 0x30 len = afxNum * 0x30 END
+							WRITE_SHORT (abOff + 0x20) (fxNum + abCopied)
+							abCopied = abCopied + afxNum
+						END
+						n = (fxOff + (fxIdx + fxNum) * 0x30) 
+						DELETE_BYTES n (off - n)
+						DELETE_BYTES fxOff (fxIdx * 0x30)
+						WRITE_SHORT 0x6e 0
+					END
+				END
+			END
+		END
+	END
+
+	/*	f11
+		Sanitizes the current ITM resource. If the resource is corrupt, 
+		this function will attempt to repair it. This can entail resolving
+		overlapping ability effects and removal of junk data.
+		It ensures that abilities precede effects and that global effects 
+		precede ability effects. 
+		This function does not perform any type checks. The user must
+		take care to only run it on ITM resources.
+		Return values:
+			- ok		A value of 1 signifies that the resource can be 
+						safely edited. A value of 0 means that the resource
+						is not in a recoverable format and should not be
+						edited. 
+	*/
+	DEFINE_PATCH_FUNCTION SANITIZE_ITM
+		RET 	ok
+	BEGIN
+		LPF SANITIZE_ITM_OR_SPL INT_VAR abilLen = 0x38 RET ok = ok END
+	END
+	
+	/*	f12
+		Sanitizes the specified ITM resource if it exists in the game. 
+		If the resource is corrupt, this function will attempt to repair it. 
+		This can entail resolving overlapping ability effects and removal of junk data.
+		It ensures that abilities precede effects and that global effects 
+		precede ability effects. 
+		This function does not perform any type checks. The user must
+		take care to only run it on ITM resources.
+		Arguments:
+			- res		The name of the resource to be sanitized. Should not include
+						the file extension.
+		Return values:
+			- ok		A value of 1 signifies that the resource exists and 
+						can be safely edited. A value of 0 means that the resource
+						either does not exist or that it is not in a recoverable
+						format and should not be edited. 
+	*/
+	DEFINE_PATCH_FUNCTION SANITIZE_ITM_IF_EXISTS
+		STR_VAR res = ~~
+		RET ok
+	BEGIN
+		ok = 0
+		PATCH_IF FILE_EXISTS_IN_GAME ~%res%.itm~ BEGIN
+			INNER_ACTION BEGIN
+				COPY_EXISTING ~%res%.itm~ ~override~
+					LPF SANITIZE_ITM RET ok = ok END
+				BUT_ONLY
+			END
+		END
+	END
+
+	/*	f13
+		Sanitizes the current SPL resource. If the resource is corrupt, 
+		this function will attempt to repair it. This can entail resolving
+		overlapping ability effects and removal of junk data.
+		It ensures that abilities precede effects and that global effects 
+		precede ability effects. 
+		This function does not perform any type checks. The user must
+		take care to only run it on SPL resources.
+		Return values:
+			- ok		A value of 1 signifies that the resource can be 
+						safely edited. A value of 0 means that the resource
+						is not in a recoverable format and should not be
+						edited. 
+	*/
+	DEFINE_PATCH_FUNCTION SANITIZE_SPL
+		RET 	ok
+	BEGIN
+		LPF SANITIZE_ITM_OR_SPL INT_VAR abilLen = 0x28 RET ok = ok END
+	END
+
+	/*	f14
+		Sanitizes the specified SPL resource if it exists in the game. 
+		If the resource is corrupt, this function will attempt to repair it. 
+		This can entail resolving overlapping ability effects and removal of junk data.
+		It ensures that abilities precede effects and that global effects 
+		precede ability effects. 
+		This function does not perform any type checks. The user must
+		take care to only run it on SPL resources.
+		Arguments:
+			- res		The name of the resource to be sanitized. Should not include
+						the file extension.
+		Return values:
+			- ok		A value of 1 signifies that the resource exists and 
+						can be safely edited. A value of 0 means that the resource
+						either does not exist or that it is not in a recoverable
+						format and should not be edited. 
+	*/
+	DEFINE_PATCH_FUNCTION SANITIZE_SPL_IF_EXISTS
+		STR_VAR res = ~~
+		RET ok
+	BEGIN
+		ok = 0
+		PATCH_IF FILE_EXISTS_IN_GAME ~%res%.spl~ BEGIN
+			INNER_ACTION BEGIN
+				COPY_EXISTING ~%res%.spl~ ~override~
+					LPF SANITIZE_SPL RET ok = ok END
+				BUT_ONLY
+			END
+		END
+	END
+
+	/*	f15
+		Sanitizes the current CRE resource. If the resource is corrupt, 
+		this function will attempt to repair it. This can entail re-ordering
+		the internal sectors of the resource in a canonical way and removal
+		of junk data. 
+		If the CRE has an effect flag value of 0, then all its effects will
+		be converted from V1 effects to V2 effects, and the effect flag 
+		value will be set to 1.
+		It ensures that spell memorization info, memorized spells, effects, 
+		items and equipments slots appear in that order. 
+		This function does not perform any type checks. The user must
+		take care to only run it on CRE resources.
+		Return values:
+			- ok		A value of 1 signifies that the resource can be 
+						safely edited. A value of 0 means that the resource
+						is not in a recoverable format and should not be
+						edited. 
+	*/
+	DEFINE_PATCH_FUNCTION SANITIZE_CRE
+		RET 	ok
+	BEGIN
+		ok = 0
+		off = SOURCE_SIZE
+		PATCH_IF (off >= 0x2d4) BEGIN
+			READ_BYTE 0x033 fxFlag
+			READ_LONG 0x2a0 splOff
+			READ_LONG 0x2a4 splNum
+			READ_LONG 0x2a8 memInfoOff
+			READ_LONG 0x2ac memInfoNum
+			READ_LONG 0x2b0 memSplOff
+			READ_LONG 0x2b4 memSplNum
+			READ_LONG 0x2b8 slotsOff
+			READ_LONG 0x2bc itmOff
+			READ_LONG 0x2c0 itmNum
+			READ_LONG 0x2c4 fxOff
+			READ_LONG 0x2c8 fxNum
+			splSize = splNum * 0x0c
+			memInfoSize = memInfoNum * 0x10
+			memSplSize = memSplNum * 0x0c
+			itmSize = itmNum * 0x14
+			fxSize = fxNum * 0x108
+			PATCH_IF (fxFlag = 0) BEGIN
+				fxSize = fxNum * 0x30
+			END
+			size = splSize + memInfoSize + memSplSize + itmSize + fxSize + 0x50
+			PATCH_IF (((off - 0x2d4) >= size)	// no overlap
+					AND (splNum = 0 OR (splOff >= 0x2d4 AND splOff <= (off - splSize)))
+					AND (memInfoNum = 0 OR (memInfoOff >= 0x2d4 AND memInfoOff <= (off - memInfoSize)))
+					AND (memSplNum = 0 OR (memSplOff >= 0x2d4 AND memSplOff <= (off - memSplSize)))
+					AND (itmNum = 0 OR (itmOff >= 0x2d4 AND itmOff <= (off - itmSize)))
+					AND (fxNum = 0 OR (fxOff >= 0x2d4 AND fxOff <= (off - fxSize)))
+					AND (slotsOff >= 0x2d4 AND slotsOff <= (off - 0x50))) BEGIN
+				// no overlapping sectors
+				ok = 1
+				WRITE_BYTE 0x033 1	// force 1
+				PATCH_IF (memInfoOff < splOff OR memSplOff < memInfoOff OR fxOff < memSplOff OR itmOff < fxOff OR slotsOff < itmOff) BEGIN
+					INSERT_BYTES off size
+					WRITE_LONG 0x2a0 0x2d4
+					FOR (i = 0; i < splSize; i = i + 4) BEGIN
+						READ_LONG (splOff + i) lTmp
+						WRITE_LONG (off + i) lTmp
+					END
+					len = splSize
+					
+					WRITE_LONG 0x2a8 (0x2d4 + len)
+					LPF COPY_BYTES INT_VAR src = memInfoOff dst = off + len len = memInfoSize END
+					len += memInfoSize
+					
+					WRITE_LONG 0x2b0 (0x2d4 + len)
+					LPF COPY_BYTES INT_VAR src = memSplOff dst = off + len len = memSplSize END
+					len += memSplSize
+					
+					WRITE_LONG 0x2c4 (0x2d4 + len)
+					LPF COPY_BYTES INT_VAR src = fxOff dst = off + len len = fxSize END
+					len += fxSize
+					
+					WRITE_LONG 0x2bc (0x2d4 + len)
+					LPF COPY_BYTES INT_VAR src = itmOff dst = off + len len = itmSize END
+					len += itmSize
+					
+					WRITE_LONG 0x2b8 (0x2d4 + len)
+					LPF COPY_BYTES INT_VAR src = slotsOff dst = off + len len = 0x50 END
+					DELETE_BYTES 0x2d4 (off - 0x2d4)
+				END
+				PATCH_IF (fxFlag = 0 AND fxNum != 0) BEGIN
+					oldFxSize = fxNum * 0x30
+					newFxSize = fxNum * 0x108
+					fxDiff = newFxSize - oldFxSize
+					READ_LONG 0x2c4 fxOff
+					newFxOff = fxOff + oldFxSize
+					READ_LONG 0x2b8 slotsOff
+					READ_LONG 0x2bc itmOff
+					INSERT_BYTES newFxOff newFxSize
+					FOR (i = 0; i < fxNum; ++i) BEGIN
+						LPF READ_EFFECT
+							INT_VAR off = fxOff + i * 0x30
+							RET 	opcode = opcode		target = target
+									power = power		param1 = param1
+									param2 = param2		timing = timing
+									resist = resist		delay = delay
+									prob1 = prob1		prob2 = prob2
+									res = res			dNum = dNum
+									dSize = dSize		sType = sType
+									sBonus = sBonus		special = special	
+						END
+						off = newFxOff + i * 0x108
+						WRITE_LONG (off + 0x78) 0xffffffff	// casterX
+						WRITE_LONG (off + 0x7c) 0xffffffff	// casterY
+						WRITE_LONG (off + 0x80) 0xffffffff	// targetX
+						WRITE_LONG (off + 0x84) 0xffffffff	// targetY
+						WRITE_LONG (off + 0x9c) 0xffffffff	// itemSlot
+					//	WRITE_LONG (off + 0xc4) 1			// unknown
+						LPF WRITE_EFFECT_CRE
+							INT_VAR off = off
+									opcode = opcode		target = target
+									power = power		param1 = param1
+									param2 = param2		timing = timing
+									resist = resist		delay = delay
+									prob1 = prob1		prob2 = prob2
+									dNum = dNum			dSize = dSize
+									sType = sType		sBonus = sBonus
+									special = special
+							STR_VAR res = EVAL ~%res%~
+						END
+					END
+					DELETE_BYTES fxOff oldFxSize
+					WRITE_LONG 0x2b8 (slotsOff + fxDiff)
+					WRITE_LONG 0x2bc (itmOff + fxDiff)
+				END
+			END
+		END
+	END
+	
+	/*	f16
+		Sanitizes the specified CRE resource if it exists in the game.
+		If the resource is corrupt, this function will attempt to repair it. 
+		This can entail re-ordering the internal sectors of the resource in a 
+		canonical way and removal of junk data. 
+		If the CRE has an effect flag value of 0, then all its effects will
+		be converted from V1 effects to V2 effects, and the effect flag 
+		value will be set to 1.
+		It ensures that spell memorization info, memorized spells, effects, 
+		items and equipments slots appear in that order. 
+		This function does not perform any type checks. The user must
+		take care to only run it on CRE resources.
+		Arguments:
+			- res		The name of the resource to be sanitized. Should not include
+						the file extension.
+		Return values:
+			- ok		A value of 1 signifies that the resource can be 
+						safely edited. A value of 0 means that the resource
+						is not in a recoverable format and should not be
+						edited. 
+	*/
+	DEFINE_PATCH_FUNCTION SANITIZE_CRE_IF_EXISTS
+		STR_VAR res = ~~
+		RET 	ok
+	BEGIN
+		ok = 0
+		PATCH_IF FILE_EXISTS_IN_GAME ~%res%.cre~ BEGIN
+			INNER_ACTION BEGIN
+				COPY_EXISTING ~%res%.cre~ ~override~
+					LPF SANITIZE_CRE RET ok = ok END
+				BUT_ONLY
+			END
+		END
+	END
+
+////////////////////////////////////////////////////////////////
+////														////
+////	2	ABILITY AND EFFECT FUNCTIONS					////
+////														////
+////////////////////////////////////////////////////////////////
+
+	////////////////////////////////////////////////////////
+	////												////
+	////	2x	READ / WRITE							////
+	////												////
+	////////////////////////////////////////////////////////
+
+		/*	f2x0
+			Reads the bytes of the current ITM, SPL or CRE resource, 
+			starting at the specified offset, as a V1 effect.
+			to only run this function on appropriate resources. 
+			Arguments:
+				- off		The offset at which to start reading the effect.
+			Return values:
+				- opcode	Opcode				Unsigned SHORT
+				- target	Target				Unsigned BYTE
+				- power		Spell power			Unsigned BYTE
+				- param1	Parameter 1			Signed LONG
+				- param2	Parameter 2			Signed LONG
+				- timing	Timing mode			Unsigned BYTE
+				- resist	Resistance type		Unsigned BYTE
+				- delay		Delay				Unsigned LONG
+				- prob1		Probability 1		Unsigned BYTE
+				- prob2		Probability 2		Unsigned BYTE
+				- res		Resource key		STRING
+				- dNum		# of dice thrown	Unsigned LONG
+				- dSize		# of dice sides		Unsigned LONG
+				- sType		Saving throw type 	Unsigned LONG
+				- sBonus	Saving throw bonus	Signed LONG
+				- special	Unknown				Unsigned LONG
+		*/
+		DEFINE_PATCH_FUNCTION READ_EFFECT
+			INT_VAR	off = 0
+			RET		opcode	target	power	param1	param2	timing	resist	delay
+					prob1	prob2	res		dNum	dSize	sType	sBonus	special
+		BEGIN
+			READ_SHORT off opcode
+			READ_BYTE (off + 0x02) target
+			READ_BYTE (off + 0x03) power
+			READ_SLONG (off + 0x04) param1
+			READ_SLONG (off + 0x08) param2
+			READ_BYTE (off + 0x0c) timing
+			READ_BYTE (off + 0x0d) resist
+			READ_LONG (off + 0x0e) delay
+			READ_BYTE (off + 0x12) prob1
+			READ_BYTE (off + 0x13) prob2
+			READ_ASCII (off + 0x14) res (8) NULL
+			READ_LONG (off + 0x1c) dNum
+			READ_LONG (off + 0x20) dSize
+			READ_LONG (off + 0x24) sType
+			READ_SLONG (off + 0x28) sBonus
+			READ_LONG (off + 0x2c) special
+		END
+
+		/*	f2x1
+			Reads the bytes of the current CRE resource, 
+			starting at the specified offset, as a V1 effect.
+			It is the users responsibility to specify a legal offset and 
+			to only run this function on appropriate resources. 
+			Arguments:
+				- off		The offset at which to start reading the effect.
+			Return values:
+				- opcode	Opcode				Unsigned SHORT
+				- target	Target				Unsigned BYTE
+				- power		Spell power			Unsigned BYTE
+				- param1	Parameter 1			Signed LONG
+				- param2	Parameter 2			Signed LONG
+				- timing	Timing mode			Unsigned BYTE
+				- resist	Resistance type		Unsigned BYTE
+				- delay		Delay.			Unsigned LONG
+				- prob1		Probability 1		Unsigned BYTE
+				- prob2		Probability 2		Unsigned BYTE
+				- res		Resource key		STRING
+				- dNum		# of dice thrown	Unsigned LONG
+				- dSize		# of dice sides		Unsigned LONG
+				- sType		Saving throw type 	Unsigned LONG
+				- sBonus	Saving throw bonus	Signed LONG
+				- special	Unknown				Unsigned LONG
+		*/
+		DEFINE_PATCH_FUNCTION READ_EFFECT_CRE
+			INT_VAR	off = 0
+			RET		opcode	target	power	param1	param2	timing	resist	delay
+					prob1	prob2	res		dNum	dSize	sType	sBonus	special
+		BEGIN
+			READ_LONG (off + 0x08) opcode
+			READ_LONG (off + 0x0c) target
+			READ_LONG (off + 0x10) power
+			READ_SLONG (off + 0x14) param1
+			READ_SLONG (off + 0x18) param2
+			READ_LONG (off + 0x1c) timing
+			READ_LONG (off + 0x20) delay
+			READ_SHORT (off + 0x24) prob1
+			READ_SHORT (off + 0x26) prob2
+			READ_ASCII (off + 0x28) res (8) NULL
+			READ_LONG (off + 0x30) dNum
+			READ_LONG (off + 0x34) dSize
+			READ_LONG (off + 0x38) sType
+			READ_SLONG (off + 0x3c) sBonus
+			READ_LONG (off + 0x40) special
+			READ_LONG (off + 0x54) resist
+		END
+
+		/*	f2x2
+			Write the specified arguments, starting at the specified offset, 
+			to the current resource as a V1 effect.
+			It is the users responsibility to specify a legal offset and 
+			to only run this function on appropriate resources. 
+			Arguments:
+				- off		The offset at which to start reading the effect.
+				- opcode	Opcode				SHORT
+				- target	Target				BYTE
+				- power		Spell power			BYTE
+				- param1	Parameter 1			LONG
+				- param2	Parameter 2			LONG
+				- timing	Timing mode			BYTE
+				- resist	Resistance type		BYTE
+				- delay		Delay				LONG
+				- prob1		Probability 1		BYTE
+				- prob2		Probability 2		BYTE
+				- res		Resource key		STRING
+				- dNum		# of dice thrown	LONG
+				- dSize		# of dice sides		LONG
+				- sType		Saving throw type	LONG
+				- sBonus	Saving throw bonus	LONG
+				- special	Unknown				LONG
+		*/
+		DEFINE_PATCH_FUNCTION WRITE_EFFECT
+			INT_VAR	off = 0
+					opcode = 0	target = 0	power = 0	param1 = 0	param2 = 0	timing = 0	resist = 0	delay = 0
+					prob1 = 0	prob2 = 0	dNum = 0	dSize = 0	sType = 0	sBonus = 0	special = 0
+			STR_VAR	res = ~~
+		BEGIN
+			WRITE_SHORT off opcode
+			WRITE_BYTE (off + 0x02) target
+			WRITE_BYTE (off + 0x03) power
+			WRITE_LONG (off + 0x04) param1
+			WRITE_LONG (off + 0x08) param2
+			WRITE_BYTE (off + 0x0c) timing
+			WRITE_BYTE (off + 0x0d) resist
+			WRITE_LONG (off + 0x0e) delay
+			WRITE_BYTE (off + 0x12) prob1
+			WRITE_BYTE (off + 0x13) prob2
+			WRITE_ASCIIE (off + 0x14) ~%res%~ #8
+			WRITE_LONG (off + 0x1c) dNum
+			WRITE_LONG (off + 0x20) dSize
+			WRITE_LONG (off + 0x24) sType
+			WRITE_LONG (off + 0x28) sBonus
+			WRITE_LONG (off + 0x2c) special
+		END
+		
+		/*	f2x3
+			TODO doc
+		*/
+		DEFINE_PATCH_FUNCTION WRITE_EFFECT_CRE
+			INT_VAR	off = 0
+					opcode = 0	target = 0	power = 0	param1 = 0	param2 = 0	timing = 0	resist = 0	delay = 0
+					prob1 = 0	prob2 = 0	dNum = 0	dSize = 0	sType = 0	sBonus = 0	special = 0
+			STR_VAR	res = ~~
+		BEGIN
+			WRITE_LONG (off + 0x08) opcode
+			WRITE_LONG (off + 0x0c) target
+			WRITE_LONG (off + 0x10) power
+			WRITE_LONG (off + 0x14) param1
+			WRITE_LONG (off + 0x18) param2
+			WRITE_LONG (off + 0x1c) timing
+			WRITE_LONG (off + 0x20) delay
+			WRITE_SHORT (off + 0x24) prob1
+			WRITE_SHORT (off + 0x26) prob2
+			WRITE_ASCIIE (off + 0x28) ~%res%~ #8
+			WRITE_LONG (off + 0x30) dNum
+			WRITE_LONG (off + 0x34) dSize
+			WRITE_LONG (off + 0x38) sType
+			WRITE_LONG (off + 0x3c) sBonus
+			WRITE_LONG (off + 0x40) special
+			WRITE_LONG (off + 0x54) resist
+		END
+		
+		/*	f2x4
+			TODO doc
+		*/
+		DEFINE_PATCH_FUNCTION WRITE_DEFAULT_EFFECT_ITM
+			INT_VAR	off = 0
+					opcode = 0
+					param1 = 0
+					param2 = 0
+			STR_VAR	res = ~~
+		BEGIN
+			FOR (i = 0; i < 0x30; i = i + 4) BEGIN
+				WRITE_LONG (off + i) 0			// init to blank
+			END
+			WRITE_SHORT off opcode
+			WRITE_BYTE (off + 0x02) 1			// target lef
+			WRITE_LONG (off + 0x04) param1
+			WRITE_LONG (off + 0x08) param2
+			WRITE_BYTE (off + 0x0c) 2			// while equipped
+			WRITE_BYTE (off + 0x12) 100			// probability
+			WRITE_ASCIIE (off + 0x14) ~%res%~ #8
+		END
+		
+		/*	f2x5
+			TODO doc
+		*/
+		DEFINE_PATCH_FUNCTION WRITE_DEFAULT_EFFECT_CRE
+			INT_VAR	off = 0
+					opcode = 0
+					param1 = 0
+					param2 = 0
+			STR_VAR	res = ~~
+		BEGIN
+			FOR (i = 0; i < 0x108; i = i + 4) BEGIN
+				WRITE_LONG (off + i) 0			// init to blank
+			END
+			WRITE_LONG (off + 0x08) opcode
+			WRITE_LONG (off + 0x14) param1
+			WRITE_LONG (off + 0x18) param2
+			WRITE_LONG (off + 0x0c) 1			// target self
+			WRITE_LONG (off + 0x1c) 9			// permament
+			WRITE_SHORT (off + 0x24) 100		// probability
+			WRITE_ASCIIE (off + 0x28) ~%res%~ #8
+			WRITE_LONG (off + 0x78) 0xffffffff	// casterX
+			WRITE_LONG (off + 0x7c) 0xffffffff	// casterY
+			WRITE_LONG (off + 0x80) 0xffffffff	// targetX
+			WRITE_LONG (off + 0x84) 0xffffffff	// targetY
+			WRITE_LONG (off + 0x9c) 0xffffffff	// itemSlot
+		//	WRITE_LONG (off + 0xc4) 1			// unknown
+		END
+	
+	////////////////////////////////////////////////////////
+	////												////
+	////	2a	ADD										////
+	////												////
+	////////////////////////////////////////////////////////
+		
+		/*	f2a0
+			TODO doc
+		*/
+		DEFINE_PATCH_FUNCTION ADD_EFFECT
+			INT_VAR	abilLen = 0x28
+			RET		off
+		BEGIN
+			READ_SHORT 0x70 fxNum
+			LPF INSERT_EFFECT INT_VAR abilLen = abilLen idx = fxNum RET off = off END
+		END
+		
+		/*	f2a1
+			TODO doc
+		*/
+		DEFINE_PATCH_FUNCTION ADD_EFFECT_ITM
+			RET		off
+		BEGIN
+			LPF ADD_EFFECT INT_VAR abilLen = 0x38 RET off = off END
+		END
+		
+		/*	f2a2
+			TODO doc
+		*/
+		DEFINE_PATCH_FUNCTION ADD_EFFECT_SPL
+			RET		off
+		BEGIN
+			LPF ADD_EFFECT INT_VAR abilLen = 0x28 RET off = off END
+		END
+		
+		/*	f2a3
+			TODO doc
+		*/
+		DEFINE_PATCH_FUNCTION ADD_EFFECT_CRE
+			RET		off
+		BEGIN
+			READ_LONG 0x2c8 fxNum
+			LPF INSERT_EFFECT_CRE INT_VAR idx = fxNum RET off = off END
+		END
+		
+		/*	f2a4
+			TODO doc
+		*/
+		DEFINE_PATCH_FUNCTION ADD_ABILITY_EFFECT
+			INT_VAR	abilLen = 0x28
+					abilIdx = 0
+			RET		off
+		BEGIN
+			READ_LONG 0x64 abilOff
+			READ_SHORT (abilOff + abilIdx * abilLen + 0x1e) afxNum
+			LPF INSERT_ABILITY_EFFECT INT_VAR abilLen = abilLen abilIdx = abilIdx idx = afxNum RET off = off END
+		END
+		
+		/*	f2a5
+			TODO doc
+		*/
+		DEFINE_PATCH_FUNCTION ADD_ABILITY_EFFECT_ITM
+			INT_VAR	abilIdx = 0
+			RET		off
+		BEGIN
+			LPF ADD_ABILITY_EFFECT INT_VAR abilLen = 0x38 abilIdx = abilIdx RET off = off END 
+		END
+		
+		/*	f2a6
+			TODO doc
+		*/
+		DEFINE_PATCH_FUNCTION ADD_ABILITY_EFFECT_SPL
+			INT_VAR	abilIdx = 0
+			RET		off
+		BEGIN
+			LPF ADD_ABILITY_EFFECT INT_VAR abilLen = 0x28 abilIdx = abilIdx RET off = off END 
+		END
+		
+		/*	f2a7
+			TODO doc
+		*/
+		DEFINE_PATCH_FUNCTION ADD_ABILITY
+			INT_VAR	abilLen = 0x28
+			RET		off
+		BEGIN
+			READ_SHORT 0x68 abilNum
+			LPF INSERT_ABILITY INT_VAR abilLen = abilLen idx = abilNum RET off = off END
+		END
+		
+		/*	f2a8
+			TODO doc
+		*/
+		DEFINE_PATCH_FUNCTION ADD_ABILITY_ITM
+			RET		off
+		BEGIN
+			LPF ADD_ABILITY INT_VAR abilLen = 0x38 RET off = off END
+		END
+		
+		/*	f2a9
+			TODO doc
+		*/
+		DEFINE_PATCH_FUNCTION ADD_ABILITY_SPL
+			RET		off
+		BEGIN
+			LPF ADD_ABILITY INT_VAR abilLen = 0x28 RET off = off END
+		END
+		
+		/*	f2aa
+			TODO doc
+		*/
+		DEFINE_PATCH_FUNCTION ADD_DEFAULT_EFFECT_ITM
+			INT_VAR	opcode = 0
+					param1 = 0
+					param2 = 0
+			STR_VAR	res = ~~	
+			RET		off
+		BEGIN
+			READ_SHORT 0x70 fxNum
+			LPF INSERT_EFFECT INT_VAR abilLen = 0x38 idx = fxNum RET off = off END
+			LPF WRITE_DEFAULT_EFFECT_ITM INT_VAR off = off opcode = opcode param1 = param1 param2 = param2 STR_VAR res = EVAL ~%res%~ END
+		END
+		
+		/*	f2ab
+			TODO doc
+		*/
+		DEFINE_PATCH_FUNCTION ADD_DEFAULT_EFFECT_CRE
+			INT_VAR	opcode = 0
+					param1 = 0
+					param2 = 0
+			STR_VAR	res = ~~	
+			RET		off
+		BEGIN
+			READ_LONG 0x2c8 fxNum
+			LPF INSERT_EFFECT_CRE INT_VAR idx = fxNum RET off = off END
+			LPF WRITE_DEFAULT_EFFECT_CRE INT_VAR off = off opcode = opcode param1 = param1 param2 = param2 STR_VAR res = EVAL ~%res%~ END
+		END
+		
+	////////////////////////////////////////////////////////
+	////												////
+	////	2c	COPY									////
+	////												////
+	////////////////////////////////////////////////////////
+		
+		/*	f2c0
+			Copies the specifed ITM or SPL global effect from one index to another.
+			It is the users responsibility to specify legal indices and 
+			to only run this function on appropriate resources. 
+			Arguments: 
+				- abilLen	the length in bytes of the resource's abilities. 
+							ITM resources have an ability length of 0x38 (56)
+							SPL resources have an ability length of 0x28 (40)
+				- idx		the index of the global effect to be copied.
+				- toIdx		the index of the newly created effect.
+			Return values:
+				- off		the absolute offset of the newly created effect
+							within the current resource
+		*/
+		DEFINE_PATCH_FUNCTION COPY_EFFECT
+			INT_VAR	abilLen = 0x28
+					idx = 0
+					toIdx = 0
+			RET		off
+		BEGIN
+			LPF INSERT_EFFECT INT_VAR abilLen = abilLen idx = toIdx RET off = off END
+			old = off + (idx - toIdx) * 0x30
+			PATCH_IF (idx >= toIdx) BEGIN
+				old += 0x30
+			END
+			LPF COPY_BYTES INT_VAR src = old dst = off len = 0x30 END
+		END
+
+		/*	f2c1
+			Copies the specifed ITM global effect from one index to another.
+			It is the users responsibility to specify legal indices and 
+			to only run this function on appropriate resources. 
+			Arguments: 
+				- idx		the index of the global effect to be copied.
+				- toIdx		the index of the newly created effect.
+			Return values:
+				- off		the absolute offset of the newly created effect
+							within the current resource
+		*/
+		DEFINE_PATCH_FUNCTION COPY_EFFECT_ITM
+			INT_VAR	idx = 0
+					toIdx = 0
+			RET		off
+		BEGIN
+			LPF COPY_EFFECT INT_VAR abilLen = 0x38 idx = idx toIdx = toIdx RET off = off END
+		END
+
+		/*	f2c2
+			Copies the specifed SPL global effect from one index to another.
+			It is the users responsibility to specify legal indices and 
+			to only run this function on appropriate resources. 
+			Arguments: 
+				- idx		the index of the global effect to be copied.
+				- toIdx		the index of the newly created effect.
+			Return values:
+				- off		the absolute offset of the newly created effect
+							within the current resource
+		*/
+		DEFINE_PATCH_FUNCTION COPY_EFFECT_SPL
+			INT_VAR	idx = 0
+					toIdx = 0
+			RET		off
+		BEGIN
+			LPF COPY_EFFECT INT_VAR abilLen = 0x28 idx = idx toIdx = toIdx RET off = off END
+		END
+
+		/*	f2c3
+			Copies the specifed CRE effect from one index to another.
+			It is the users responsibility to specify legal indices and 
+			to only run this function on appropriate resources. 
+			Arguments: 
+				- idx		the index of the effect to be copied.
+				- toIdx		the index of the newly created effect.
+			Return values:
+				- off		the absolute offset of the newly created effect
+							within the current resource
+		*/
+		DEFINE_PATCH_FUNCTION COPY_EFFECT_CRE
+			INT_VAR	idx = 0
+					toIdx = 0
+			RET		off
+		BEGIN
+			LPF INSERT_EFFECT_CRE INT_VAR idx = toIdx RET off = off END
+			old = off + (idx - toIdx) * 0x108
+			PATCH_IF (idx >= toIdx) BEGIN
+				old += 0x108
+			END
+			LPF COPY_BYTES INT_VAR src = old dst = off len = 0x108 END
+		END
+
+		/*	f2c4
+			Copies the specifed ITM or SPL ability effect from one index to another index 
+			within the same ability.
+			It is the users responsibility to specify legal indices and 
+			to only run this function on appropriate resources. 
+			Arguments: 
+				- abilLen	the length in bytes of the resource's abilities. 
+							ITM resources have an ability length of 0x38 (56)
+							SPL resources have an ability length of 0x28 (40)
+				- abilIdx	the index of the ability whose effect to copy.
+				- idx		the index of the ability effect to be copied.
+				- toIdx		the index of the newly created effect.
+			Return values:
+				- off		the absolute offset of the newly created effect
+							within the current resource
+		*/
+		DEFINE_PATCH_FUNCTION COPY_ABILITY_EFFECT
+			INT_VAR	abilLen = 0x28
+					abilIdx = 0
+					idx = 0
+					toIdx = 0
+			RET		off
+		BEGIN
+			LPF INSERT_ABILITY_EFFECT INT_VAR abilLen = abilLen abilIdx = abilIdx idx = toIdx RET off = off END
+			old = off + (idx - toIdx) * 0x30
+			PATCH_IF (idx >= toIdx) BEGIN
+				old += 0x30
+			END
+			LPF COPY_BYTES INT_VAR src = old dst = off len = 0x30 END
+		END
+
+		/*	f2c5
+			Copies the specifed ITM ability effect from one index to another index 
+			within the same ability.
+			It is the users responsibility to specify legal indices and 
+			to only run this function on appropriate resources. 
+			Arguments: 
+				- abilIdx	the index of the ability whose effect to copy.
+				- idx		the index of the ability effect to be copied.
+				- toIdx		the index of the newly created effect.
+			Return values:
+				- off		the absolute offset of the newly created effect
+							within the current resource
+		*/
+		DEFINE_PATCH_FUNCTION COPY_ABILITY_EFFECT_ITM
+			INT_VAR	abilIdx = 0
+					idx = 0
+					toIdx = 0
+			RET		off
+		BEGIN
+			LPF COPY_ABILITY_EFFECT INT_VAR	abilLen = 0x38 abilIdx = abilIdx idx = idx toIdx = toIdx RET off = off END
+		END
+
+		/*	f2c6
+			Copies the specifed SPL ability effect from one index to another index 
+			within the same ability.
+			It is the users responsibility to specify legal indices and 
+			to only run this function on appropriate resources. 
+			Arguments: 
+				- abilIdx	the index of the ability whose effect to copy.
+				- idx		the index of the ability effect to be copied.
+				- toIdx		the index of the newly created effect.
+			Return values:
+				- off		the absolute offset of the newly created effect
+							within the current resource
+		*/
+		DEFINE_PATCH_FUNCTION COPY_ABILITY_EFFECT_SPL
+			INT_VAR	abilIdx = 0
+					idx = 0
+					toIdx = 0
+			RET		off
+		BEGIN
+			LPF COPY_ABILITY_EFFECT INT_VAR	abilLen = 0x28 abilIdx = abilIdx idx = idx toIdx = toIdx RET off = off END
+		END
+
+		/*	f2c7
+			Copies the specifed ITM or SPL ability from one index to another.
+			It is the users responsibility to specify legal indices and 
+			to only run this function on appropriate resources. 
+			Arguments: 
+				- abilLen	the length in bytes of the resource's abilities. 
+							ITM resources have an ability length of 0x38 (56)
+							SPL resources have an ability length of 0x28 (40)
+				- idx		the index of the ability to be copied.
+				- toIdx		the index of the newly created ability.
+			Return values:
+				- off		the absolute offset of the newly created ability
+							within the current resource
+		*/
+		DEFINE_PATCH_FUNCTION COPY_ABILITY
+			INT_VAR abilLen = 0x28
+					idx = 0	
+					toIdx = 0
+			RET		off
+		BEGIN
+			LPF INSERT_ABILITY INT_VAR abilLen = abilLen idx = toIdx RET off = off END
+			old = off + (idx - toIdx) * abilLen
+			PATCH_IF (idx >= toIdx) BEGIN
+				old += abilLen
+			END
+			READ_SHORT (old + 0x1e) oldFxNum
+			READ_SHORT (old + 0x20) oldFxIdx
+			READ_SHORT (off + 0x20) newFxIdx	// will be overridden		
+			LPF COPY_BYTES INT_VAR src = old dst = off len = abilLen END
+			WRITE_SHORT (off + 0x1e) 0			// was overriden, init to 0
+			WRITE_SHORT (off + 0x20) newFxIdx	// was overridden, restore
+			FOR (i = 0; i < oldFxNum; ++i) BEGIN
+				LPF INSERT_ABILITY_EFFECT INT_VAR abilLen = abilLen abilIdx = toIdx idx = i END
+			END
+			READ_LONG 0x6a fxOff
+			LPF COPY_BYTES INT_VAR src = fxOff + oldFxIdx * 0x30 dst = fxOff + newFxIdx * 0x30 len = oldFxNum * 0x30 END
+		END
+
+		/*	f2c8
+			Copies the specifed ITM ability from one index to another.
+			It is the users responsibility to specify legal indices and 
+			to only run this function on appropriate resources. 
+			Arguments: 
+				- idx		the index of the ability to be copied.
+				- toIdx		the index of the newly created ability.
+			Return values:
+				- off		the absolute offset of the newly created ability
+							within the current resource
+		*/
+		DEFINE_PATCH_FUNCTION COPY_ABILITY_ITM
+			INT_VAR idx = 0	
+					toIdx = 0
+			RET		off
+		BEGIN
+			LPF COPY_ABILITY INT_VAR abilLen = 0x38 idx = idx toIdx = toIdx RET off = off END
+		END
+
+		/*	f2c9
+			Copies the specifed SPL ability from one index to another.
+			It is the users responsibility to specify legal indices and 
+			to only run this function on appropriate resources. 
+			Arguments: 
+				- idx		the index of the ability to be copied.
+				- toIdx		the index of the newly created ability.
+			Return values:
+				- off		the absolute offset of the newly created ability
+							within the current resource
+		*/
+		DEFINE_PATCH_FUNCTION COPY_ABILITY_SPL
+			INT_VAR idx = 0	
+					toIdx = 0
+			RET		off
+		BEGIN
+			LPF COPY_ABILITY INT_VAR abilLen = 0x28 idx = idx toIdx = toIdx RET off = off END
+		END
+
+	////////////////////////////////////////////////////////
+	////												////
+	////	2i	INSERT									////
+	////												////
+	////////////////////////////////////////////////////////
+
+		/*	f2i0
+			Inserts a blank ITM or SPL global effect at the specified index.
+			It is the users responsibility to specify legal indices and 
+			to only run this function on appropriate resources. 
+			Arguments: 
+				- abilLen	the length in bytes of the resource's abilities. 
+							ITM resources have an ability length of 0x38 (56)
+							SPL resources have an ability length of 0x28 (40)
+				- idx		the index of the newly created effect.
+			Return values:
+				- off		the absolute offset of the newly created effect
+							within the current resource
+		*/
+		DEFINE_PATCH_FUNCTION INSERT_EFFECT
+			INT_VAR abilLen = 0x28
+					idx = 0
+			RET 	off
+		BEGIN
+			READ_LONG 0x64 abilOff
+			READ_SHORT 0x68 abilNum
+			READ_LONG 0x6a fxOff
+			READ_SHORT 0x70 fxNum
+			off = fxOff + idx * 0x30
+			INSERT_BYTES off 0x30
+			FOR (i = 0; i < abilNum; ++i) BEGIN
+				abOff = abilOff + (i * abilLen) + 0x20
+				READ_SHORT abOff n
+				WRITE_SHORT abOff (n + 1)
+			END
+			WRITE_SHORT 0x70 (fxNum + 1)
+		END
+
+		/*	f2i1
+			Inserts a blank ITM global effect at the specified index.
+			It is the users responsibility to specify legal indices and 
+			to only run this function on appropriate resources. 
+			Arguments: 
+				- idx		the index of the newly created effect.
+			Return values:
+				- off		the absolute offset of the newly created effect
+							within the current resource
+		*/
+		DEFINE_PATCH_FUNCTION INSERT_EFFECT_ITM
+			INT_VAR idx = 0
+			RET 	off
+		BEGIN
+			LPF INSERT_EFFECT INT_VAR abilLen = 0x38 idx = idx RET 	off = off END
+		END
+
+		/*	f2i2
+			Inserts a blank SPL global effect at the specified index.
+			It is the users responsibility to specify legal indices and 
+			to only run this function on appropriate resources. 
+			Arguments: 
+				- idx		the index of the newly created effect.
+			Return values:
+				- off		the absolute offset of the newly created effect
+							within the current resource
+		*/
+		DEFINE_PATCH_FUNCTION INSERT_EFFECT_SPL
+			INT_VAR idx = 0
+			RET 	off
+		BEGIN
+			LPF INSERT_EFFECT INT_VAR abilLen = 0x28 idx = idx RET 	off = off END
+		END
+
+		/*	f2i3
+			Inserts a blank CRE effect at the specified index.
+			It is the users responsibility to specify legal indices and 
+			to only run this function on appropriate resources. 
+			Arguments: 
+				- idx		the index of the newly created effect.
+			Return values:
+				- off		the absolute offset of the newly created effect
+							within the current resource
+		*/
+		DEFINE_PATCH_FUNCTION INSERT_EFFECT_CRE
+			INT_VAR	idx = 0
+			RET		off
+		BEGIN
+			READ_LONG 0x2b8 slotsOff
+			READ_LONG 0x2bc itemsOff
+			READ_LONG 0x2c4 fxOff
+			READ_LONG 0x2c8 fxNum
+			off = fxOff + idx * 0x108
+			INSERT_BYTES off 0x108
+			WRITE_LONG 0x2b8 (slotsOff + 0x108)
+			WRITE_LONG 0x2bc (itemsOff + 0x108)
+			WRITE_LONG 0x2c8 (fxNum + 1)
+		END
+
+		/*	f2i4
+			Inserts a blank ITM or SPL ability effect at the specified index within the specified ability.
+			It is the users responsibility to specify legal indices and 
+			to only run this function on appropriate resources. 
+			Arguments: 
+				- abilLen	the length in bytes of the resource's abilities. 
+							ITM resources have an ability length of 0x38 (56)
+							SPL resources have an ability length of 0x28 (40)
+				- abilIdx	the index of the ability whose effect to copy.
+				- idx		the index of the newly created effect.
+			Return values:
+				- off		the absolute offset of the newly created effect
+							within the current resource
+		*/
+		DEFINE_PATCH_FUNCTION INSERT_ABILITY_EFFECT
+			INT_VAR abilLen = 0x28
+					abilIdx = 0
+					idx = 0
+			RET 	off
+		BEGIN
+			READ_LONG 0x64 abilOff
+			READ_SHORT 0x68 abilNum
+			READ_LONG 0x6a fxOff
+			abOff = abilOff + abilIdx * abilLen
+			READ_SHORT (abOff + 0x1e) afxNum
+			READ_SHORT (abOff + 0x20) afxIdx
+			off = fxOff + (afxIdx + idx) * 0x30
+			INSERT_BYTES off 0x30
+			WRITE_SHORT (abOff + 0x1e) (afxNum + 1)
+			FOR (i = abilIdx + 1; i < abilNum; ++i) BEGIN
+				abOff = abilOff + (i * abilLen) + 0x20
+				READ_SHORT abOff afxIdx
+				WRITE_SHORT abOff (afxIdx + 1)
+			END
+		END
+
+		/*	f2i5
+			Inserts a blank ITM ability effect at the specified index within the specified ability.
+			It is the users responsibility to specify legal indices and 
+			to only run this function on appropriate resources. 
+			Arguments: 
+				- abilIdx	the index of the ability whose effect to copy.
+				- idx		the index of the newly created effect.
+			Return values:
+				- off		the absolute offset of the newly created effect
+							within the current resource
+		*/
+		DEFINE_PATCH_FUNCTION INSERT_ABILITY_EFFECT_ITM
+			INT_VAR abilIdx = 0
+					idx = 0
+			RET 	off
+		BEGIN
+			LPF INSERT_ABILITY_EFFECT INT_VAR abilLen = 0x38 abilIdx = abilIdx idx = idx RET off = off END
+		END
+
+		/*	f2i6
+			Inserts a blank SPL ability effect at the specified index within the specified ability.
+			It is the users responsibility to specify legal indices and 
+			to only run this function on appropriate resources. 
+			Arguments: 
+				- abilIdx	the index of the ability whose effect to copy.
+				- idx		the index of the newly created effect.
+			Return values:
+				- off		the absolute offset of the newly created effect
+							within the current resource
+		*/
+		DEFINE_PATCH_FUNCTION INSERT_ABILITY_EFFECT_SPL
+			INT_VAR abilIdx = 0
+					idx = 0
+			RET 	off
+		BEGIN
+			LPF INSERT_ABILITY_EFFECT INT_VAR abilLen = 0x28 abilIdx = abilIdx idx = idx RET off = off END
+		END
+
+		/*	f2i7
+			Inserts a blank ITM or SPL ability at the specified index.
+			It is the users responsibility to specify legal indices and 
+			to only run this function on appropriate resources. 
+			Arguments: 
+				- abilLen	the length in bytes of the resource's abilities. 
+							ITM resources have an ability length of 0x38 (56)
+							SPL resources have an ability length of 0x28 (40)
+				- idx		the index of the newly created ability.
+			Return values:
+				- off		the absolute offset of the newly created ability
+							within the current resource
+		*/
+		DEFINE_PATCH_FUNCTION INSERT_ABILITY 
+			INT_VAR	abilLen = 0x28
+					idx = 0
+			RET		off
+		BEGIN
+			READ_LONG 0x64 abilOff
+			READ_SHORT 0x68 abilNum
+			READ_LONG 0x6a fxOff
+			READ_SHORT 0x70 fxIdx
+			off = abilOff + idx * abilLen
+			INSERT_BYTES off abilLen
+			PATCH_IF (idx > 0) BEGIN
+				READ_SHORT (off - abilLen + 0x1e) afxNum
+				READ_SHORT (off - abilLen + 0x20) afxIdx	
+				fxIdx = afxIdx + afxNum
+			END
+			WRITE_SHORT (off + 0x20) fxIdx
+			WRITE_SHORT 0x68 (abilNum + 1)
+			WRITE_SHORT 0x6a (fxOff + abilLen)
+		END
+
+		/*	f2i8
+			Inserts a blank ITM ability at the specified index.
+			It is the users responsibility to specify legal indices and 
+			to only run this function on appropriate resources. 
+			Arguments: 
+				- idx		the index of the newly created ability.
+			Return values:
+				- off		the absolute offset of the newly created ability
+							within the current resource
+		*/
+		DEFINE_PATCH_FUNCTION INSERT_ABILITY_ITM
+			INT_VAR	idx = 0
+			RET		off
+		BEGIN
+			LPF INSERT_ABILITY INT_VAR abilLen = 0x38 idx = idx RET off = off END
+		END
+
+		/*	f2i9
+			Inserts a blank SPL ability at the specified index.
+			It is the users responsibility to specify legal indices and 
+			to only run this function on appropriate resources. 
+			Arguments: 
+				- idx		the index of the newly created ability.
+			Return values:
+				- off		the absolute offset of the newly created ability
+							within the current resource
+		*/
+		DEFINE_PATCH_FUNCTION INSERT_ABILITY_SPL
+			INT_VAR	idx = 0
+			RET		off
+		BEGIN
+			LPF INSERT_ABILITY INT_VAR abilLen = 0x28 idx = idx RET off = off END
+		END
+
+	////////////////////////////////////////////////////////
+	////												////
+	////	2r	REMOVE									////
+	////												////
+	////////////////////////////////////////////////////////
+
+		/*	f2r0
+			Removes the indexed ITM or SPL global effect.
+			It is the users responsibility to specify legal indices and 
+			to only run this function on appropriate resources. 
+			Arguments: 
+				- abilLen	the length in bytes of the resource's abilities. 
+							ITM resources have an ability length of 0x38 (56)
+							SPL resources have an ability length of 0x28 (40)
+				- idx		the index of effect to be removed.
+		*/
+		DEFINE_PATCH_FUNCTION REMOVE_EFFECT
+			INT_VAR	abilLen = 0x28
+					idx = 0
+		BEGIN
+			READ_LONG 0x64 abilOff
+			READ_SHORT 0x68 abilNum
+			READ_LONG 0x6a fxOff
+			READ_SHORT 0x70 fxNum
+			DELETE_BYTES (fxOff + idx * 0x30) 0x30
+			FOR (i = 0; i < abilNum; ++i) BEGIN
+				abOff = abilOff + i * abilLen + 0x20
+				READ_SHORT abOff n
+				WRITE_SHORT abOff (n - 1)
+			END
+			WRITE_SHORT 0x70 (fxNum - 1)
+		END
+
+		/*	f2r1
+			Removes the indexed ITM global effect.
+			It is the users responsibility to specify legal indices and 
+			to only run this function on appropriate resources. 
+			Arguments: 
+				- idx		the index of effect to be removed.
+		*/
+		DEFINE_PATCH_FUNCTION REMOVE_EFFECT_ITM
+			INT_VAR	idx = 0
+		BEGIN
+			LPF REMOVE_EFFECT INT_VAR abilLen = 0x38 idx = idx END
+		END
+
+		/*	f2r2
+			Removes the indexed SPL global effect.
+			It is the users responsibility to specify legal indices and 
+			to only run this function on appropriate resources. 
+			Arguments: 
+				- idx		the index of effect to be removed.
+		*/
+		DEFINE_PATCH_FUNCTION REMOVE_EFFECT_SPL
+			INT_VAR	idx = 0
+		BEGIN
+			LPF REMOVE_EFFECT INT_VAR abilLen = 0x28 idx = idx END
+		END
+
+		/*	f2r3
+			Removes the indexed CRE effect.
+			It is the users responsibility to specify legal indices and 
+			to only run this function on appropriate resources. 
+			Arguments: 
+				- idx		the index of effect to be removed.
+		*/
+		DEFINE_PATCH_FUNCTION REMOVE_EFFECT_CRE
+			INT_VAR	idx = 0
+		BEGIN
+			READ_LONG 0x2b8 slotsOff
+			READ_LONG 0x2bc itemsOff
+			READ_LONG 0x2c4 fxOff
+			READ_LONG 0x2c8 fxNum
+			off = fxOff + idx * 0x108
+			DELETE_BYTES off 0x108
+			WRITE_LONG 0x2b8 (slotsOff - 0x108)
+			WRITE_LONG 0x2bc (itemsOff - 0x108)
+			WRITE_LONG 0x2c8 (fxNum - 1)
+		END
+
+		/*	f2r4
+			Removes the indexed ITM or SPL ability effect from the indexed ability.
+			It is the users responsibility to specify legal indices and 
+			to only run this function on appropriate resources. 
+			Arguments: 
+				- abilLen	the length in bytes of the resource's abilities. 
+							ITM resources have an ability length of 0x38 (56)
+							SPL resources have an ability length of 0x28 (40)
+				- abilIdx	the index of the ability from which to remove the effect
+				- idx		the index of the effect to be removed
+		*/
+		DEFINE_PATCH_FUNCTION REMOVE_ABILITY_EFFECT
+			INT_VAR	abilLen = 0x28
+					abilIdx = 0
+					idx = 0
+		BEGIN
+			READ_LONG 0x64 abilOff
+			READ_SHORT 0x68 abilNum
+			READ_LONG 0x6a fxOff
+			abOff = abilOff + abilIdx * abilLen
+			READ_SHORT (abOff + 0x1e) afxNum
+			READ_SHORT (abOff + 0x20) afxIdx
+			off = fxOff + (afxIdx + idx) * 0x30
+			DELETE_BYTES off 0x30
+			WRITE_SHORT (abOff + 0x1e) (afxNum - 1)
+			FOR (i = abilIdx + 1; i < abilNum; ++i) BEGIN
+				abOff = abilOff + i * abilLen + 0x20
+				READ_SHORT abOff afxIdx
+				WRITE_SHORT abOff (afxIdx - 1)
+			END
+		END
+
+		/*	f2r5
+			Removes the indexed ITM ability effect from the indexed ability.
+			It is the users responsibility to specify legal indices and 
+			to only run this function on appropriate resources. 
+			Arguments: 
+				- abilIdx	the index of the ability from which to remove the effect
+				- idx		the index of the effect to be removed
+		*/
+		DEFINE_PATCH_FUNCTION REMOVE_ABILITY_EFFECT_ITM
+			INT_VAR	abilIdx = 0
+					idx = 0
+		BEGIN
+			LPF REMOVE_ABILITY_EFFECT INT_VAR abilLen = 0x38 abilIdx = abilIdx idx = idx END
+		END
+
+		/*	f2r6
+			Removes the indexed SPL ability effect from the indexed ability.
+			It is the users responsibility to specify legal indices and 
+			to only run this function on appropriate resources. 
+			Arguments: 
+				- abilIdx	the index of the ability from which to remove the effect
+				- idx		the index of the effect to be removed
+		*/
+		DEFINE_PATCH_FUNCTION REMOVE_ABILITY_EFFECT_SPL
+			INT_VAR	abilIdx = 0
+					idx = 0
+		BEGIN
+			LPF REMOVE_ABILITY_EFFECT INT_VAR abilLen = 0x28 abilIdx = abilIdx idx = idx END
+		END
+
+		/*	f2r7
+			Removes the indexed ITM or SPL ability.
+			It is the users responsibility to specify legal indices and 
+			to only run this function on appropriate resources. 
+			Arguments: 
+				- abilLen	the length in bytes of the resource's abilities. 
+							ITM resources have an ability length of 0x38 (56)
+							SPL resources have an ability length of 0x28 (40)
+				- idx		the index of the ability to be removed
+		*/
+		DEFINE_PATCH_FUNCTION REMOVE_ABILITY 
+			INT_VAR	abilLen = 0x28
+					idx = 0
+		BEGIN
+			READ_LONG 0x64 abilOff
+			READ_SHORT 0x68 abilNum
+			READ_LONG 0x6a fxOff
+			off = abilOff + idx * abilLen
+			READ_SHORT (off + 0x1e) afxNum
+			READ_SHORT (off + 0x20) afxIdx
+			DELETE_BYTES (fxOff + afxIdx * 0x30) (afxNum * 0x30)
+			FOR (i = idx + 1; i < abilNum; ++i) BEGIN
+				abOff = abilOff + (i * abilLen) + 0x20
+				READ_SHORT abOff afxIdx
+				WRITE_SHORT abOff (afxIdx - afxNum)
+			END
+			DELETE_BYTES off abilLen
+			WRITE_SHORT 0x68 (abilNum - 1)
+			WRITE_SHORT 0x6a (fxOff - abilLen)
+		END
+
+		/*	f2r8
+			Removes the indexed ITM ability.
+			It is the users responsibility to specify legal indices and 
+			to only run this function on appropriate resources. 
+			Arguments: 
+				- idx		the index of the ability to be removed
+		*/
+		DEFINE_PATCH_FUNCTION REMOVE_ABILITY_ITM
+			INT_VAR	idx = 0
+		BEGIN
+			LPF REMOVE_ABILITY INT_VAR abilLen = 0x38 idx = 0 END
+		END
+
+		/*	f2r9
+			Removes the indexed SPL ability.
+			It is the users responsibility to specify legal indices and 
+			to only run this function on appropriate resources. 
+			Arguments: 
+				- idx		the index of the ability to be removed
+		*/
+		DEFINE_PATCH_FUNCTION REMOVE_ABILITY_SPL
+			INT_VAR	idx = 0
+		BEGIN
+			LPF REMOVE_ABILITY INT_VAR abilLen = 0x28 idx = 0 END
+		END
+		
+		/*	f2ra
+			TODO doc
+		*/
+		DEFINE_PATCH_FUNCTION REMOVE_ALL_EFFECTS_ITM
+			INT_VAR	opcode = 0
+		BEGIN
+			READ_LONG 0x6a fxOff
+			READ_SHORT 0x70 fxNum
+			FOR (f = fxNum - 1; f >= 0; --f) BEGIN
+				READ_SHORT (fxOff + f * 0x30) op
+				PATCH_IF (op = opcode) BEGIN
+					LPF REMOVE_EFFECT_ITM INT_VAR idx = f END
+				END
+			END
+		END
+		
+////////////////////////////////////////////////////////////////
+////														////
+////	3	CONVENIENCE FUNCTIONS							////
+////														////
+////////////////////////////////////////////////////////////////
+
+	/*	f30
+		Calculates the number of half attacks per round for the specified attack-per-rounds key.
+		Arguments: 
+			- key		the APR key for which to calculate the number of half APR
+		Return values:
+			- value		the number of half APR calculated
+	*/
+	DEFINE_PATCH_FUNCTION GET_APR_NUM_FOR_KEY
+		INT_VAR	key = 0
+		RET		value
+	BEGIN
+		value = 0
+		PATCH_IF (key > 0) BEGIN
+			PATCH_IF (key > 10) BEGIN			// more than 4,5 apr
+				value = 10						// >= 5 apr = max 10 half attacks
+			END ELSE BEGIN
+				PATCH_IF (key > 5) BEGIN		// in the +1/2 attacks range
+					value = 1 + 2 * (key - 6)	// 1, 3, 5, 7, 9 half attacks
+				END ELSE BEGIN					// in the full attacks range
+					value = key * 2				// 2, 4, 6, 8, 10 half attacks
+				END
+			END
+		END
+	END
+
+	/*	f31
+		Calculates the attack-per-rounds key for the specified number of half attacks per round.
+		Arguments: 
+			- num		the number of half APR for which to calculate a key
+		Return values:
+			- value		the APR key calculated
+	*/
+	DEFINE_PATCH_FUNCTION GET_APR_KEY_FOR_NUM
+		INT_VAR	num = 0
+		RET		value
+	BEGIN
+		value = 0
+		PATCH_IF (num > 0) BEGIN
+			PATCH_IF (num >= 10) BEGIN
+				value = 5								// >= 10 half attacks = max 5 apr
+			END ELSE BEGIN
+				value = num / 2							// 2, 4, 6, 8 half attacks
+				PATCH_IF (num - value * 2 = 1) BEGIN	// odd number, shift to upper range
+					value = value + 6					// 1, 3, 5, 7, 9 half attacks
+				END
+			END
+		END
+	END
+
+	/*	f32
+		Returns the item resource name in the specified equipment slot of the current CRE. 
+		Returns an empty string if the slot is not occupied.
+		Arguments: 
+			- slot		valid slot values are
+						0		Helmet
+						1		Armor
+						2		Shield
+						3		Gloves
+						4		Left Ring
+						5		Right Ring
+						6		Amulet
+						7		Belt
+						8		Boots
+						9		Weapon 1
+						10		Weapon 2
+						11		Weapon 3
+						12		Weapon 4
+						13		Quiver 1
+						14		Quiver 2
+						15		Quiver 3
+						16		Quiver 4
+						17		Cloak
+						18		Quick item 1
+						19		Quick item 2
+						20		Quick item 3
+						21		Inventory item 1
+						22		Inventory item 2
+						23		Inventory item 3
+						24		Inventory item 4
+						25		Inventory item 5
+						26		Inventory item 6
+						27		Inventory item 7
+						28		Inventory item 8
+						29		Inventory item 9
+						30		Inventory item 10
+						31		Inventory item 11
+						32		Inventory item 12
+						33		Inventory item 13
+						34		Inventory item 14
+						35		Inventory item 15
+						36		Inventory item 16
+						37		Magic weapon
+						38		Selected weapon
+						39		Selected weapon ability
+		Return values:
+			- value		the resource in the specified slot
+						or an empty string if there is the slot is empty.
+	*/
+	DEFINE_PATCH_FUNCTION GET_INVENTORY_SLOT_ITEM
+		INT_VAR slot = 0
+		RET		res
+	BEGIN
+		TEXT_SPRINT res ~~
+		READ_LONG 0x2b8 slotsOff
+		READ_LONG 0x2bc itmOff
+		READ_LONG 0x2c0 itmNum
+		off = slotsOff + (slot * 2)
+		READ_SHORT off slotVal
+		PATCH_IF (slotVal != 0xffff) AND (slotVal < itmNum) BEGIN
+			READ_ASCII (itmOff + slotVal * 0x14) res (8) NULL
+		END
+	END
+	
+	/*	f33
+		TODO doc
+	*/
+	DEFINE_PATCH_FUNCTION APPLIES_EFFECT
+		INT_VAR	abilLen = 0x28
+				opcode = 0
+		RET		value
+	BEGIN
+		value = 0
+		LPF SANITIZE_ITM_OR_SPL INT_VAR abilLen = abilLen RET ok = ok END
+		PATCH_IF ok BEGIN
+			READ_LONG 0x64 abilOff
+			READ_SHORT 0x68 abilNum
+			READ_LONG 0x6a fxOff
+			READ_SHORT 0x70 fxNum
+			FOR (a = 0; a < abilNum; ++a) BEGIN
+				abOff = abilOff + a * abilLen
+				READ_SHORT (abOff + 0x1e) afxNum
+				READ_SHORT (abOff + 0x20) afxIdx
+				FOR (f = 0; f < afxNum; ++f) BEGIN
+					fOff = fxOff + (afxIdx + f) * 0x30
+					READ_SHORT fOff op
+					PATCH_IF (op = opcode) BEGIN
+						value = 1
+						f = afxNum
+						a = abilNum
+						fxNum = 0
+					END
+				END
+			END
+			FOR (f = 0; f < fxNum; ++f) BEGIN
+				fOff = fxOff + f * 0x30
+				READ_SHORT fOff op
+				PATCH_IF (op = opcode) BEGIN
+					value = 1
+					f = fxNum
+				END
+			END
+		END
+	END
+	
+	/*	f34
+		TODO doc
+	*/
+	DEFINE_PATCH_FUNCTION APPLIES_EFFECT_ITM
+		INT_VAR	opcode = 0
+		RET		value
+	BEGIN
+		LPF APPLIES_EFFECT INT_VAR abilLen = 0x38 opcode = opcode RET value = value END
+	END
+	
+	/*	f35
+		TODO doc
+	*/
+	DEFINE_PATCH_FUNCTION APPLIES_EFFECT_SPL
+		INT_VAR	opcode = 0
+		RET		value
+	BEGIN
+		LPF APPLIES_EFFECT INT_VAR abilLen = 0x28 opcode = opcode RET value = value END
+	END
+	
+	/*	f36
+		TODO doc
+	*/
+	DEFINE_PATCH_FUNCTION SET_CASTING_SPEED
+		INT_VAR	abilIdx = 0
+				value = 0
+	BEGIN
+		LPF SANITIZE_SPL RET ok = ok END
+		PATCH_IF ok BEGIN
+			READ_LONG 0x64 abilOff
+			READ_SHORT 0x68 abilNum
+			off = abilOff + abilIdx * 0x28
+			WRITE_SHORT (off + 0x12) value
+		END
+	END
+	
+	/*	f37
+		TODO doc
+	*/
+	DEFINE_PATCH_FUNCTION SET_CASTING_SPEED_ALL
+		INT_VAR	value = 0
+	BEGIN
+		LPF SANITIZE_SPL RET ok = ok END
+		PATCH_IF ok BEGIN
+			READ_LONG 0x64 abilOff
+			READ_SHORT 0x68 abilNum
+			FOR (a = 0; a < abilNum; ++a) BEGIN
+				off = abilOff + a * 0x28
+				WRITE_SHORT (off + 0x12) value
+			END
+		END
+	END
+	
+////////////////////////////////////////////////////////////////
+////														////
+////	4	UTILITY FUNCTIONS								////
+////														////
+////////////////////////////////////////////////////////////////
+
+	/*	f40
+		Copies a number of bytes within the current resource.
+		Arguments: 
+			- src		the offset from which to copy
+			- dst		the offset to which to copy
+			- len		the number of bytes to copy
+	*/
+	DEFINE_PATCH_FUNCTION COPY_BYTES
+		INT_VAR src = 0	dst = 0	len = 0
+	BEGIN
+		FOR (i = 0; i < len; ++i) BEGIN
+			READ_BYTE (src + i) n
+			WRITE_BYTE (dst + i) n
+		END
+	END
+
+	/*	f41
+		Returns the size of the specified resource.
+		Arguments: 
+			- file		the file whose size to return. Must actually exist.
+		Return values:
+			- value		the size in bytes of the specified file. 
+	*/
+	DEFINE_PATCH_FUNCTION GET_FILE_SIZE
+		STR_VAR	file = ~~
+		RET		value
+	BEGIN
+		INNER_ACTION BEGIN
+			COPY ~%file%~ ~%file%~
+				value = SOURCE_SIZE
+			BUT_ONLY
+		END
+	END
+
+	/*	f42
+		Delets all the bytes of the specified resource.
+		Arguments: 
+			- file		the file whose contents to delete.
+	*/
+	DEFINE_ACTION_FUNCTION TRUNCATE_FILE
+		STR_VAR	file = ~~
+	BEGIN
+		COPY ~%file%~ ~%file%~
+			DELETE_BYTES 0 SOURCE_SIZE
+		BUT_ONLY
+	END
+
+	/*	f43
+		Appends the specified string to the speficied file. 
+		Note that only strings of length 8 and less are acceptable.
+		Arguments: 
+			- file		the file whose contents to update
+			- value		the string to be appended to the file
+	*/
+	DEFINE_PATCH_FUNCTION UPDATE_LOG
+		STR_VAR	file = ~~
+				value = ~~
+	BEGIN
+		INNER_ACTION BEGIN
+			COPY ~%file%~ ~%file%~
+				INSERT_BYTES SOURCE_SIZE 8
+				WRITE_ASCIIE SOURCE_SIZE ~%value%~ #8
+			//	
+		END
+	END
+	
+	/*	f44
+		TODO doc
+	*/
+	// only updates with value if value is not already present
+	DEFINE_PATCH_FUNCTION UPDATE_LOG_UNIQUE
+		STR_VAR	file = ~~
+				value = ~~
+	BEGIN
+		INNER_ACTION BEGIN
+			COPY ~%file%~ ~%file%~
+				isPresent = 0
+				logLen = SOURCE_SIZE
+				FOR (i = 0; i < logLen; i += 8) BEGIN
+					READ_ASCII i old (8) NULL
+					PATCH_IF (~%old%~ STRING_EQUAL_CASE ~%value%~) BEGIN
+						isPresent = 1
+						i = logLen
+					END
+				END
+				PATCH_IF NOT isPresent BEGIN
+					INSERT_BYTES logLen 8
+					WRITE_ASCIIE logLen ~%value%~ #8
+				END
+			//	
+		END
+	END
+	
+	/*	f45
+		Reads a string from the specified file at the specidied offset.
+		The string will have a maximum length of 8 (less if it was null-terminated).
+		Arguments: 
+			- off		the offset from which to start reading
+			- file		the file from which to read the string
+		Return values:
+			- value		the string that was read from the file
+	*/
+	DEFINE_PATCH_FUNCTION READ_LOG
+		INT_VAR	off = 0
+		STR_VAR	file = ~~
+		RET		value
+	BEGIN
+		INNER_PATCH_FILE ~%file%~ BEGIN
+			READ_ASCII off value (8) NULL
+		END
+		
+		/*
+		INNER_ACTION BEGIN
+			COPY ~%file%~ ~%file%~
+				READ_ASCII off value (8) NULL
+			//	
+		END
+		*/
+	END
+
+	ACTION_DEFINE_ARRAY idxToChar BEGIN
+		~0~ ~1~ ~2~ ~3~ ~4~ ~5~
+		~6~ ~7~ ~8~ ~9~ ~a~ ~b~
+		~c~ ~d~ ~e~ ~f~ ~g~ ~h~
+		~i~ ~j~ ~k~ ~l~ ~m~ ~n~
+		~o~ ~p~ ~q~ ~r~ ~s~ ~t~
+		~u~ ~v~ ~w~ ~x~ ~y~ ~z~
+	END
+
+	/*	f46
+		Will attempt to generate a resource name based on the specified arguments. 
+		Arguments should be chosen wisely. The sum of prefix length, suffix length and
+		digits should not exceed 8. Otherwise the infinity engine cannot address the 
+		resource.
+		Arguments: 
+			- digits	the number of digits to generate. 
+						A value of 0 would allow for 36^0 = 1 possible name.
+						A value of 1 would allow for 36^1 = 36 possible names.
+						A value of 2 would allow for 36^2 = 1.296 possible names.
+						A value of 3 would allow for 36^3 = 46.656 possible names.
+						A value of 4 would allow for 36^4 = 1.679.616 possible names.
+						A value of 5 would allow for 36^5 = 60.466.176 possible names.
+						A value of 6 would allow for 36^6 = 2.176.782.336 possible names.
+						A value of 7 would allow for 36^7 = 78.364.164.096 possible names.
+						A value of 8 would allow for 36^8 = 2.821.109.907.456 possible names.
+						Choosing a value above 3 or at most 4 should NEVER be necessary. Don't do it.
+						Choose a better prefix/suffix instead.
+			- prefix	the prefix of the generated resource name
+			- suffix	the suffix of the generated resource name
+		Return values:
+			- ok		Whether a new name could be succesfully generated. This usually only needs to be 
+						checked for a very low digits argument (below 3). 
+			- name		the newly generated resource name
+	*/
+	DEFINE_PATCH_FUNCTION GENERATE_RES_NAME
+		INT_VAR digits = 0
+		STR_VAR prefix = ~~
+				suffix = ~~
+				ext = ~~
+		RET		ok
+				name
+	BEGIN
+		LPF GENERATE_RES_NAME_BIN
+			INT_VAR digits = digits
+			STR_VAR	prefix = EVAL ~%prefix%~
+					suffix = EVAL ~%suffix%~
+					ext = EVAL ~%ext%~
+			RET		ok = ok
+					name = name
+		END
+		PATCH_IF NOT (ok) BEGIN
+			LPF GENERATE_RES_NAME_LIN
+				INT_VAR digits = digits
+				STR_VAR	prefix = EVAL ~%prefix%~
+						suffix = EVAL ~%suffix%~
+						ext = EVAL ~%ext%~
+				RET		ok = ok
+						name = name
+			END
+			PATCH_IF ok BEGIN
+				PATCH_PRINT ~generated new resource %name%.%ext%~
+			END
+		END
+	END
+
+	/* DO NOT USE. For internal use only. */
+	DEFINE_PATCH_FUNCTION GENERATE_RES_NAME_LIN
+		INT_VAR digits = 0
+		STR_VAR prefix = ~~
+				suffix = ~~
+				ext = ~~
+		RET		ok
+				name
+	BEGIN
+		PATCH_IF (digits < 1) BEGIN
+			ok = 0
+			TEXT_SPRINT name ~%prefix%%suffix%~
+			PATCH_IF NOT FILE_EXISTS_IN_GAME ~%name%.%ext%~ BEGIN
+				ok = 1
+			END
+		END ELSE BEGIN
+			FOR (i = 0; i < 35; i = i + 1) BEGIN
+				TEXT_SPRINT c $idxToChar(~%i%~)
+				LPF GENERATE_RES_NAME_LIN
+					INT_VAR digits = digits - 1
+					STR_VAR prefix = EVAL ~%prefix%%c%~
+							suffix = EVAL ~%suffix%~
+							ext = EVAL ~%ext%~
+					RET		ok = ok
+							name = name
+				END
+				PATCH_IF ok BEGIN
+					i = 36
+				END
+			END
+		END
+	END
+
+	/* DO NOT USE. For internal use only. */
+	DEFINE_PATCH_FUNCTION GENERATE_RES_NAME_BIN
+		INT_VAR digits = 0
+		STR_VAR prefix = ~~
+				suffix = ~~
+				ext = ~~
+		RET		ok
+				name
+	BEGIN
+		PATCH_IF (digits < 1) BEGIN
+			ok = 0
+			TEXT_SPRINT name ~%prefix%%suffix%~
+			PATCH_IF NOT FILE_EXISTS_IN_GAME ~%name%.%ext%~ BEGIN
+				ok = 1
+			END
+		END ELSE BEGIN
+			lo = 0
+			hi = 36
+			WHILE (hi > lo) BEGIN
+				i = lo + (hi - lo) / 2
+				TEXT_SPRINT c $idxToChar(~%i%~)
+				LPF GENERATE_RES_NAME_BIN 
+					INT_VAR digits = digits - 1
+					STR_VAR	prefix = EVAL ~%prefix%%c%~
+							suffix = EVAL ~%suffix%~
+							ext = EVAL ~%ext%~
+					RET		ok = ok
+							name = name
+				END
+				PATCH_IF ok BEGIN
+					hi = i
+				END ELSE BEGIN
+					lo = i + 1
+				END
+			END
+			ok = 0
+			PATCH_IF NOT (hi = 36) BEGIN
+				TEXT_SPRINT c $idxToChar(~%hi%~)
+				LPF GENERATE_RES_NAME_BIN 
+					INT_VAR digits = digits - 1
+					STR_VAR	prefix = EVAL ~%prefix%%c%~
+							suffix = EVAL ~%suffix%~
+							ext = EVAL ~%ext%~
+					RET		ok = ok
+							name = name
+				END
+			END
+		END
+	END
+
+////////////////////////////////////////////////////////////////
+////														////
+////	5	CODE TEMPLATES									////
+////														////
+////////////////////////////////////////////////////////////////
+
+// for every effect in itm or spl
+/*
+	LPF SANITIZE_ITM_OR_SPL INT_VAR abilLen = abilLen RET ok = ok END
+	PATCH_IF ok BEGIN
+		READ_LONG 0x64 abilOff
+		READ_SHORT 0x68 abilNum
+		READ_LONG 0x6a fxOff
+		FOR (a = 0; a < abilNum; ++a) BEGIN
+			off = abilOff + a * abilLen
+			READ_SHORT (off + 0x1e) afxNum
+			READ_SHORT (off + 0x20) afxIdx
+			FOR (f = afxNum - 1; f >= 0; --f) BEGIN
+				off = fxOff + (afxIdx + f) * 0x30
+				// process effect
+			END
+		END
+		READ_SHORT 0x70 fxNum
+		FOR (f = fxNum - 1; f >= 0; --f) BEGIN
+			off = fxOff + f * 0x30
+			// process effect
+		END
+	END
+*/	
+
+// for every effect in cre
+/*	
+	LPF SANITIZE_CRE RET ok = ok END
+	PATCH_IF ok BEGIN
+		READ_LONG 0x2c4 fxOff
+		READ_LONG 0x2c8 fxNum
+		FOR (f = fxNum - 1; f >= 0; --f) BEGIN
+			off = fxOff + f * 0x108
+			// process effect
+		END
+	END
+*/
+
+// END OF DOCUMENT

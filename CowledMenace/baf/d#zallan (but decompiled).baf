@@ -1,0 +1,20 @@
+IF
+	GlobalTimerExpired("zalladlg","LOCALS")
+	!Global("zallaout1", "LOCALS",1)
+THEN
+	RESPONSE #100
+	SetGlobal("zallaout1", "LOCALS",1)
+		StartDialogueNoSet(LastSeenBy(Myself))
+END
+
+
+IF
+	HPLT(Myself,15)
+	!Global("TSFired","LOCALS",1)
+THEN
+	RESPONSE #100
+		SetGlobal("TSFired","LOCALS",1)
+		ReallyForceSpell(Myself,WIZARD_TIME_STOP)  // SPWI909.SPL (Time Stop)
+		SetGlobalTimer("zalladlg","LOCALS",2)
+		Wait(2)
+END
