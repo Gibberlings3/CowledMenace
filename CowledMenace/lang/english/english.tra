@@ -102,19 +102,28 @@ Even when discharged of its wish-granting capabilities, this short sword remains
 
 STATISTICS:
 
-Equipped Abilities:
- - Luck: +1 bonus (+5% for skills)
+Equipped abilities:
+– Saving Throws: +1
+– Find Traps: +5%
+– Pick Pockets: +5%
+– Move Silently: +5%
+– Hide In Shadows: +5%
+– Detect Illusion: +5%
+– Set Traps: +5%
+– Luck: +1
 
 Charge abilities (2 charges):
- - Wish
+– Wish
 
-THAC0: +3 bonus
-Damage: 1D6 + 3
-Damage type: slashing
-Weight: 3
+THAC0: +3
+Damage: 1d6+3 (slashing)
 Speed Factor: 1
 Proficiency Type: Short Sword
-Type: 1-handed~
+Type: One-handed
+Requires:
+ 4 Strength
+
+Weight: 3~
 
 @205 = ~Zallanora's Wardstone~
 @206 = ~You push the heavy lid aside, and the foul stench of rot nearly overcomes. A small chest rests within.~
