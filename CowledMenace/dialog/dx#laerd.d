@@ -217,8 +217,25 @@ CHAIN dx#laerd part2
 CHAIN dx#laerd 840
 	@840
 	== dx#laerd @841
-	== dx#laerd @842
+	END
+	+ ~AreaCheck("AR1008") GlobalLT("SanSoDSkie","Global",7) GlobalGT("BD_Plot","Global",649)~ + @845 EXTERN dx#laerd 850
+	+ ~AreaCheck("AR1008") GlobalLT("SanSoDSkie","Global",7) GlobalGT("BD_Plot","Global",649)~ + @846 EXTERN dx#laerd 850
+	++ @847 EXTERN dx#laerd 855
+
+CHAIN dx#laerd 850
+	@850
+	== dx#laerd @860
 	DO ~SetGlobal("LaeralSpawned","GLOBAL",1)
+		SetGlobal("DxOpenBGBridge","GLOBAL",1)
+		SpellNoDec(Myself,DRYAD_TELEPORT)
+		Wait(2)
+		AddJournalEntry(@104,QUEST)~
+	EXIT
+
+CHAIN dx#laerd 855
+	@855
+	DO ~SetGlobal("LaeralSpawned","GLOBAL",1)
+		SetGlobal("DxOpenBGBridge","GLOBAL",1)
 		SpellNoDec(Myself,DRYAD_TELEPORT)
 		Wait(2)
 		AddJournalEntry(@104,QUEST)~

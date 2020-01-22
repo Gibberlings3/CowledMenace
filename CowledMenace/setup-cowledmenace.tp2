@@ -19,7 +19,7 @@ LANGUAGE ~English~ ~english~ ~CowledMenace/lang/english/english.tra~
 // Main Component - The Cowled Menace
 //////////////////////////////////////////////////////////////////////////
 
-/* - */
+/* — */
 
  BEGIN @0 DESIGNATED 1000
 
@@ -138,7 +138,7 @@ LANGUAGE ~English~ ~english~ ~CowledMenace/lang/english/english.tra~
 
 // Custom CRE files
 
-	COPY ~CowledMenace/bmp/DX#LICH1.bmp~ ~override~ 
+//	COPY ~CowledMenace/bmp/DX#LICH1.bmp~ ~override~ 
 	COPY ~CowledMenace/cre/DX#LICH1.cre~ ~override~													// Twisted Rune - Kartak Spellseer
 	SAY NAME1 @1000		SAY NAME2 @1000
 	WRITE_ASCII DIALOG ~dx#lichd~ #8
@@ -496,6 +496,12 @@ LANGUAGE ~English~ ~english~ ~CowledMenace/lang/english/english.tra~
 		EXTEND_BOTTOM ~actflam.bcs~ ~CowledMenace/baf/dx#trbg.baf~								// Add Rune Encounters in Baldur's Gate
 	END 
 
+// Re-open gate in Baldur's Gate if it's closed (95% chance it is)
+
+	ACTION_IF FILE_EXISTS_IN_GAME ~bg0900.bcs~ BEGIN
+		EXTEND_TOP ~bg0900.bcs~ ~CowledMenace/baf/OpenBGDoor.baf~								// Append Wyrm's Crossing script -- open gate if met with Laeral
+	END
+
 // Laeral in Twisted Rune #1
 
 ACTION_IF FILE_EXISTS_IN_GAME ~CAULDRON.bcs~ BEGIN
@@ -594,7 +600,7 @@ ACTION_IF FILE_EXISTS_IN_GAME ~CAULDRON.bcs~ BEGIN
 
 // Zallanora Editing - Wizard level 30
 
- 	COPY ~CowledMenace/bmp/dx#zport.bmp~ ~override~ 												// Zallanora portrait
+// 	COPY ~CowledMenace/bmp/dx#zport.bmp~ ~override~ 												// Zallanora portrait
  	COPY ~CowledMenace/baf/dx#zallo.bcs~ ~override~													// New Override script
  	COPY ~CowledMenace/baf/mage18z.bcs~ ~override~													// New Class script
  	COPY ~CowledMenace/baf/dx#zallr.bcs~ ~override~													// Dialog racial script
@@ -686,7 +692,7 @@ ACTION_IF FILE_EXISTS_IN_GAME ~CAULDRON.bcs~ BEGIN
 	BUT_ONLY
 
 
-// Give "Khollynnus Paac" her name back from before EE :D
+// Minor: Give "Khollynnus Paac" her name back from before EE :D
 
 	COPY_EXISTING ~mage16c.cre~ ~override~
   		READ_LONG 0x08 name

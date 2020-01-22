@@ -32,12 +32,10 @@ The way I understand it, the door to the waterfront requires some sort of key to
 @101=~Twisted Rune - Athkatla
 
 I found a note that seems to link the Cowled Wizards with the dealings of the Twisted Rune. It will be worth investigating, but asking around if anyone has heard about the 'Twisted Rune' doesn't seem like a good idea at the moment. If these two powerful groups are working together though, things are looking grim as I doubt their intentions are charitable. For now, I think I should look for Twisted Rune influence around Baldur's Gate, as the note I found implies.~ // Erase 105 or 106
-// Also need to open Baldur's Gate again.
 
 @102=~Twisted Rune - Baldur's Gate
 
-I stumbled upon a Twisted Rune enclave in Baldur's Gate. Apparently, they are working in the shadows together with the Cowled Wizards of Athkatla for a sinister purpose. The next step is to find that contact. I guess I should find a way to confront their leaders, somehow.~
-// Generic version of this = @111
+I stumbled upon a Twisted Rune enclave in Baldur's Gate, and it is as I feared: they are working in the shadows together with the Cowled Wizards of Athkatla for a sinister purpose. The next step is to find that contact. I guess I should find a way to confront their leaders, somehow.~
 
 @103=~Twisted Rune - Baldur's Gate 
 
@@ -57,7 +55,7 @@ I have been ambushed by Twisted Rune agents, no doubt due to the Skinner Murders
 
 @107=~Laeral Silverhand - 2nd
 
-I met the Lady of Waterdeep again after paying a surprise visit to yet another Twisted Rune enclave. She has been looking into it on her side as well, and provided me with a name for the Rune's contact among the Cowled Wizards: Zallanora. She also warned me that there might be more to the story surrounding this woman, who is seemingly much more powerful than her background should indicate.~
+I met the Lady of Waterdeep again after paying a surprise visit to the Twisted Rune enclave in Baldur's Gate. She has been looking into it on her side as well, and provided me with a name for the Rune's contact among the Cowled Wizards: Zallanora. She also warned me that there might be more to the story surrounding this woman, who is seemingly much more powerful than her background should indicate.~
 
 @108=~Cowled Leaders - Zallanora
 
@@ -71,17 +69,13 @@ Not willing to submit myself to their ridiculous spellcasting limitations, I con
 
 I have been ambushed by Twisted Rune members in Amkethran, led by Zallanora, a high-ranking member of the Cowled Wizards who I have met and clashed with in the past. For now, I have managed to repeal this threat, but I have no idea what is going on behind the scenes. I have found a wardstone on Zallanora's remains, which in my years of adventuring experience should indicate that it opens a way to a place, probably a hidden one. Come to think of it, I do remember briefly meeting Zallanora for the first time in the Graveyard District of Athkatla, long ago, casting a spell next to a crypt entrance. Perhaps exploring the place again with the wardstone in my possession, I could find something?~
 
-@111=~Twisted Rune - Baldur's Gate
-
-I stumbled upon a strange enclave in Baldur's Gate. Apparently, a Rogue Stone I was carrying brought me there. Greeting me were members of a group calling themselves the 'Twisted Rune'. I don't know who they are or what they want, but their intentions hardly seemed friendly.~
-
 @120=~Cowled Menace - Split Second
 
-It turns out Zallanora wasn't the real one — she had her body switched with an old Lich emperor named Shoon VII during the Times of Troubles. It certainly explains a few things! At least it seems to confirm that "she" was responsible for most of the shady dealings regarding the Cowled Wizards and the Twisted Rune, which seem to have basically left the region now.~
+It turns out Zallanora wasn't the real one -- she had her body switched with an old Lich emperor named Shoon VII during the Times of Troubles. It certainly explains a few things! At least it seems to confirm that "she" was responsible for most of the shady dealings regarding the Cowled Wizards and the Twisted Rune, which seem to have basically left the region now.~
 
 @150=~Cowled Menace - Conclusion
 
-It turns out Zallanora wasn't the real one — she had her body switched with an old Lich emperor named Shoon VII during the Times of Troubles. It certainly explains a few things. At least it seems to confirm that "she" was responsible for most of the shady dealings regarding the Cowled Wizards and the Twisted Rune, the latter which have basically left the region now. Apparently Shoon's plan backfired as he hadn't planned I would have a Chosen of Mystra by my side, who could reverse his curse, the one which made him invulnerable. Result: Shoon VII seems to be gone for good, and Zallanora was saved, somehow.~
+It turns out Zallanora wasn't the real one -- she had her body switched with an old Lich emperor named Shoon VII during the Times of Troubles. It certainly explains a few things. At least it seems to confirm that "she" was responsible for most of the shady dealings regarding the Cowled Wizards and the Twisted Rune, the latter which have basically left the region now. Apparently Shoon's plan backfired as he hadn't planned I would have a Chosen of Mystra by my side, who could reverse his curse, the one which made him invulnerable. Result: Shoon VII seems to be gone for good, and Zallanora was saved, somehow.~
 
 @198=~- Message from the Rune -
 
@@ -137,7 +131,7 @@ Weight: 3~
 @208 = ~You open the chest, and collect its content.~
 @209 = ~The lid of the sarcophagus looks heavy, but you could remove it if you wish to.~
 
-@250 = ~Our contact from Athkatla should be arriving shortly, Runemaster. I assure you, the resources of the Cowled Wizards will be of great assistance to—~
+@250 = ~Our contact from Athkatla should be arriving shortly, Runemaster. I assure you, the resources of the Cowled Wizards will be of great assistance to--~
 @251 = ~At last, they seem to have come.~
 @252 = ~Runemaster, this... is not the contact we're waiting for.~
 @253 = ~Indeed?~
@@ -208,7 +202,7 @@ Weight: 3~
 @374 = ~You are disgusting, every bit as vile as the legends told. Why are you telling us this? What do you stand to gain?~
 @380 = ~Frankly, it is quite liberating to collapse the layers of lies and utter the truth... for once. Besides young Zallanora here who can't comprehend a word I tell her, you are the only beings in the realms who know of my story. I enjoyed that.~
 @381 = ~But more than that, none of this matters to me now. You cannot kill my spirit any more than you can save her. I am cursed to remain in this state until the Tome's magic finally becomes weak enough for me to overpower it. Or an event like the Times of Troubles happens again and wipes out the tome's power.~
-@382 = ~It could be centuries from now. Or millenia... I will then resume my project, carefully crafted from a near-eternity of planning. And neither of you will be able to stop it, for you will both be long dead by now. Yes, I will outlast even you, dear Laeral. I have outlived you and all of your sisters thus far.~
+@382 = ~It could be centuries from now. Or millenia... I will then resume my plans, carefully crafted from a near-eternity of planning. And neither of you will be able to stop it, for you will both be long dead by now. Yes, I will outlast even you, dear Laeral. I have outlived you and all of your sisters thus far.~
 @385 = ~What if I just killed you, right here, right now?~ // to 420
 @386 = ~Well then, good riddance if you ask me. I don't care what you do a thousand years from now to be honest.~ // to 430
 
@@ -246,7 +240,7 @@ Weight: 3~
 @440 = ~For all your cunning, there is something you haven't envisioned: I am a Chosen of Mystra, the goddess of magic herself, and among all her Chosen... I am the most proficient with magical items and artifacts.~
 @441 = ~This Tome of the Unicorn, I know of it, and I can feel its presence. It's right here, in your sarcophagus.~
 @442 = ~It is an object of gigantic power, its magic absolutely can't be reversed. But the Tome in itself, not its magic, is not impervious to harm. You said it yourself — your plan is to overpower it eventually.~
-@443 = ~As are all such artifacts, this Tome's magical power is imbued from the Weave, and I wield the Silver Fire of Mystra. If she lends me her will, I could perhaps destroy the tome, and thus, reverse its magic by virtue of it being destroyed.~
+@443 = ~All are all such artifacts, this Tome's magical power is imbued from the Weave, and I wield the Silver Fire of Mystra. If she lends me her will, I could perhaps destroy the tome, and thus, reverse its magic by virtue of it being destroyed.~
 @450 = ~What madness is this? You would destroy an object of such inestimable value? What do you stand to gain from this?~
 @451 = ~Nothing tangible. I actually stand to lose on this. But I think the world will be better off without you. Permanently, this time. ~
 @452 = ~Impossible! You will not, you don't have the power to—~ 
@@ -305,7 +299,7 @@ Weight: 3~
 @554 = ~Like I said, what's the last thing you remember? Let's go over this one step at a time.~ 
 
 @555 = ~All I can remember are... screams. And why do I feel so horrendously bad?~ // PC answers 560
-@560 = ~Okay, let me try... Instead of dying a gruesome death when a centuries-old Emperor tried to drain your soul after you stepped in his sanctuary uninvited, you instead switched bodies with him due to some ungodly luck that happens once in a thousand years. He then left you to rot while he planned on how exactly to overtake the Sword Coast with his newfound young body — yours!~
+@560 = ~Okay, let me try... Instead of dying a gruesome death when a centuries-old Emperor tried to drain your soul after you stepped in his sanctuary uninvited, you instead switched bodies with him due to some ungodly luck that happens once in a thousand years. He then left you to rot while he planned on how exactly to overtake the Sword Coast with his newfound young body -- yours!~
 
 @561 = ~This is... Someone stole my body? Now that you mention it, I do remember something like that. Getting sucked out of my own body. It felt awful.~
 @562 = ~It does. I know how that feels... it's horrible.~
@@ -341,8 +335,8 @@ Weight: 3~
 // Laeral Silverhand
 @700 = ~What in the name of the Goddess happened here? One minute, a meeting was taking place — which I was spying on, mind you — and yet, in the following minute, such was the magical energy unleashed here that I felt it through my spell!~
 @701 = ~Tell me, who are you? You don't look like a Twisted Rune agent.~ // PC answers below
-@702 = ~Well, you don't look like a Twisted Rune agent. I suspected someone would return, just not so soon. I put arcane alarms all over the place recently to warn me of anyone coming in.~ // SoA — if spawn in SoA, set a variable so that it doesn't happen in BG and vice versa
-@703 = ~Tell me, who are you, and what happened here?~ // PC answers below~ // SoA — if spawn in SoA, set a variable so that it doesn't happen in BG and vice versa
+@702 = ~Well, you don't look like a Twisted Rune agent. I suspected someone would return, just not so soon. I put arcane alarms all over the place recently to warn me of anyone coming in.~ // SoA -- if spawn in SoA, set a variable so that it doesn't happen in BG and vice versa
+@703 = ~Tell me, who are you, and what happened here?~ // PC answers below~ // SoA -- if spawn in SoA, set a variable so that it doesn't happen in BG and vice versa
 @704 = ~My name is <CHARNAME>. I got involved in this Twisted Rune mess, somehow. Then one thing led to another, and I found this place, their enclave, and dealt with them my way.~ // to 730
 @705 = ~How do you know I'm not a Twisted Rune agent?~ // to 770
 
@@ -384,18 +378,11 @@ Weight: 3~
 @801 = ~Afterwards I set on finding who was the cause for this. Then you appeared, which set off my alarms.~
 @802 = ~I have been watching their every move for a while now. Although I missed a part of it, this meeting going on confirmed what I feared: that the Twisted Rune are active, and expanding.~
 @803 = ~Then you appeared and just blasted them off to dust. While I can't approve of your methods, I suppose their deaths can hardly be seen as a negative in the long run.~
-@811 = ~Well, I'm afraid there's more to the story. They mentioned having a contact in the Cowled Wizards who is working with them. This is looking like quite the conspiracy.~ // to 840
+@811 = ~Well, I'm afraid there's more to the story. The Twisted Rune have a contact in the Cowled Wizards who is working with them. This is looking like quite the conspiracy.~ // to 840
 
 @840 = ~The Cowled Wizards? Hmm, this is beyond my worst expectations.~
-@841 = ~We can't let them act freely like this. The Rune took a big hit when you stormed their place. I'll be in touch, hopefully with more information, but in the meantime, I suggest you continue with your investigation.~ // PC answers below
-// Reply idea: "Going to Baldur's Gate is not an option for me right now."
-@845 = ~Yeah, about that... the letter I found mentioned Baldur's Gate, which I am now forbidden from entering. How about you investigate there and I investigate here?~ // to 850
-@846 = ~My investigation would take me to Baldur's Gate next, but I'm pretty sure I have been banished from the city due to crimes I didn't commit. Think you can help me with that?~ // to 850
-@847 = ~Yes, madam. Will do.~ // to 855
-@850 = ~This is a matter of utmost importance. I will arrange for you to be given special access to the city — but don't you dare commit any crimes there, my name is on the line!~ // to 860 and EXIT2
-// Open gate to Baldur's Gate
-@855 = ~It was great meeting you, <CHARNAME>. Elminster truly wasn't mistaken about you.~// EXIT1
-@860 = ~Good luck, <CHARNAME>.~ EXIT2
+@841 = ~We can't let them act freely like this. The Rune took a big hit when you stormed their place. I'll be in touch, hopefully with more information, but in the meantime, I suggest you continue with your investigation.~ 
+@842 = ~It was great meeting you, <CHARNAME>. Elminster truly wasn't mistaken about you.~// EXIT
 
 // Laeral 2nd time in Twisted Rune
 
@@ -460,7 +447,7 @@ Weight: 3~
 @2000 = ~So you are the one repeatedly meddling into the Rune's affairs. Your involvement with the tanner put me in quite the predicament.~
 @2001 = ~Today, either I kill you, or I die. So die you will!~
 @2005 = ~<CHARNAME>, the Twisted Rune have put up a golden skull on your name. Whoever kills you gets to receive it. Prepare to die!~
-@2010 = ~Fool, you think the Twisted Rune are not aware of your — wait, you're not Koshi. Who are you?~
+@2010 = ~Fool, you think the Twisted Rune are not aware of your -- wait, you're not Koshi. Who are you?~
 @2011 = ~I'm <CHARNAME>, and if it's Koshi you're looking for, his body is upstairs.~
 @2013 = ~I do thank you for getting rid of Koshi, but your name is also on the list. My apologies, <CHARNAME>, but we do not take kindly to those who meddle into our affairs.~    // Add Journal once dead
 
