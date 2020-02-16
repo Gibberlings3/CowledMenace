@@ -1,5 +1,4 @@
-![GitHub release (latest by date including pre-releases)]
-(https://img.shields.io/github/v/release/gibberlings3/CowledMenace?include_prereleases)
+![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/gibberlings3/CowledMenace?include_prereleases)
 
 # CowledMenace
 Unravel the mysteries of the Twisted Rune and investigate the Cowled Wizards in this Enhanced Edition Trilogy mod!
