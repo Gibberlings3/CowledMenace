@@ -7,7 +7,7 @@ Unravel the mysteries of the Twisted Rune and investigate the Cowled Wizards in 
 
 ## Copyright and Legal Information
 
-Cowled Menace is copyright (c) 2020 Maltodaxtrin/Daxtreme
+Cowled Menace is copyright © 2020 Maltodaxtrin/Daxtreme
 
 You are allowed to submit [maintenance updates](MAINTENANCE-NOTICE.md) for this mod. This mod is additionally licensed under [CC-BY-NC-4.0](https://creativecommons.org/licenses/by-nc/4.0/).
 
