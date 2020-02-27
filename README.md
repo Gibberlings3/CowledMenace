@@ -88,7 +88,7 @@ In construction.
 
 Special Thanks to demivrgvs, Roxanne, kreso, DavidW, CamDawg, Nythrun & Miloch (area patching) and every helpful fellow on gibberlings3 forums!
 
-Custom portraits: https://www.deviantart.com/aditya777, smeagolheart on github, and Wizards of the Coast LLC.
+Custom portrait by Wizards of the Coast LLC.
 
 Huge thanks to [klatu](http://www.shsforums.net/files/file/1109-klatu-tweaks-and-fixes/), I based many of my code on his tweaks. Because the Cowled Wizards are heavily implicated in my mod, the main component installs a modified version of his "Appropriate XP Rewards for Cowled Enforcers" tweak. Many thanks also to the creators of the Infinity Engine Structure Description Project; and to Jon Hauglid, for Near Infinity.
 
