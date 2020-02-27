@@ -11,7 +11,7 @@ ALWAYS
 	INCLUDE ~CowledMenace/common.tpa~
 END
 
-README ~CowledMenace/readme-cowledmenace.html~
+README ~CowledMenace/readme.html~
 ASK_EVERY_COMPONENT                                                                // Disallow installing all components at once
 LANGUAGE ~English~ ~english~ ~CowledMenace/lang/english/english.tra~
 
