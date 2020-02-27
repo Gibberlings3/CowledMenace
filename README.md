@@ -2,7 +2,7 @@
 ![Platform](https://img.shields.io/static/v1?label=platform&message=windows&color=informational)
 ![License](https://img.shields.io/static/v1?label=license&message=CC-BY-NC-4.0&color=green)
 
-# CowledMenace
+# Cowled Menace
 
 **[A Gibberlings Three Mod](http://www.gibberlings3.net/)**
 
