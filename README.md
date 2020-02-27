@@ -3,6 +3,9 @@
 ![License](https://img.shields.io/static/v1?label=license&message=CC-BY-NC-4.0&color=green)
 
 # CowledMenace
+
+**[A Gibberlings Three Mod](http://www.gibberlings3.net/)**
+
 Someone has been working in the shadows, manipulating events on the Sword Coast to their advantage.
 
 Unravel the mysteries of the Twisted Rune and investigate the Cowled Wizards in this Enhanced Edition Trilogy mod!
