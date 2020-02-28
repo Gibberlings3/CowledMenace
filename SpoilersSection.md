@@ -1,4 +1,4 @@
-## Spoilers Section
+## Cowled Menace Spoilers Section
 
 Don't read this if you don't want to get spoiled! One of the fun parts of this mod is having to investigate the Twisted Rune, which you won't have to do if you know exactly where to go, all the time. But if you're stuck, this is how to progress...
 
