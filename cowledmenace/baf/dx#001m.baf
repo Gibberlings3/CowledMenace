@@ -1,0 +1,28 @@
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,10)
+	Global("Cauldron2","DX#001",0)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,31851)  // The huge lever is held in place by magic and, as such, is immovable. Obviously, something else needs to be triggered before the machine will work.
+END
+
+IF
+	Clicked([ANYONE])
+	Range(LastTrigger,10)
+	Global("Cauldron2","DX#001",1)
+THEN
+	RESPONSE #100
+		ClearAllActions()
+		StartCutSceneMode()
+		StartCutScene("DX#CUT03")
+END
+
+IF
+	Clicked([ANYONE])
+	!Range(LastTrigger,10)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,14702)  // You are too far away to use that.
+END
+
