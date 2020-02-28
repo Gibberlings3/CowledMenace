@@ -82,7 +82,7 @@ Some of the encounters in this mod happen in different fashion depending on the 
 
 ## Spoilers Section
 
-[Detailed spoilers section (read if you're stuck)](SpoilersSection.md)
+[Detailed spoilers section](SpoilersSection.md) (read if you're stuck)
 
 ## Thanks and Acknowledgements 
 
