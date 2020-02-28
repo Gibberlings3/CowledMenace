@@ -1,0 +1,13 @@
+*.7z
+*.rar
+*.zip
+*.tar.gz
+*.exe
+!iconv.exe
+!oggdec.exe
+!tisunpack.exe
+!tile2ee.exe
+!TobExLoader.exe
+CowledMenace/temp/*
+setup-cowledmenace
+setup-cowledmenace.command

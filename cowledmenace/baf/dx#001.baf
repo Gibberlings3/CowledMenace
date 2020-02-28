@@ -1,0 +1,27 @@
+IF
+	!Global("TwistedLetterFound2","GLOBAL",1)
+	Global("BribedCowled","GLOBAL",1)
+	Dead("DX#LICH1")
+	Dead("DX#DALID")
+	Dead("DX#RUNEA")
+	Dead("DX#MUMMY")
+THEN
+	RESPONSE #100
+		SetGlobal("TwistedLetterFound2","GLOBAL",1)
+		EraseJournalEntry(@101)
+		AddJournalEntry(@103,QUEST)
+END
+
+IF
+	!Global("TwistedLetterFound2","GLOBAL",1)
+	!Global("BribedCowled","GLOBAL",1)
+	Dead("DX#LICH1")
+	Dead("DX#DALID")
+	Dead("DX#RUNEA")
+	Dead("DX#MUMMY")
+THEN
+	RESPONSE #100
+		SetGlobal("TwistedLetterFound2","GLOBAL",1)
+		EraseJournalEntry(@101)
+		AddJournalEntry(@102,QUEST)
+END

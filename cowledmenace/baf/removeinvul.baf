@@ -1,0 +1,16 @@
+IF
+	GlobalTimerExpired("layenesp","LOCALS")
+THEN
+	RESPONSE #100
+		DestroyItem("DX#INVUL")
+		Continue()
+END
+
+IF
+	Global("checkitem","LOCALS",0)
+	HasItem("DX#INVUL",Myself)
+THEN
+	RESPONSE #100
+		SetGlobal("checkitem", "LOCALS",1)
+		SetGlobalTimer("layenesp","LOCALS",4)
+END
