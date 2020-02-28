@@ -26,7 +26,8 @@ Regardless of the option you choose, you have to battle the contact and have the
 
 Now that you're in Throne of Bhaal, the next step of the quest will happen in **Amkethran**. Once you have entered from the South, go left, and you will be ambushed by the previously-mentioned contact, along with elite members of the Twisted Rune. This should be a dangerous fight even by ToB standards so come prepared, because they are. The contact will drop a special wardstone.
 
-Go to the Graveyard District back in Athkatla, enter the Lower Tombs, go in the Crypts below (the ones filled with Undead) and go completely at the bottom of the map, in the room that was ransacked by tomb pillagers. Your friend will appear, telling you to hug the wall on the right (near the urns). Do that, with the wardstone in your inventory, and you will be transported to the last area and will have reached the last part of the quest, which I am not going to spoil. Good luck ^^
+Go to the Graveyard District back in Athkatla, enter the Lower Tombs, go in the Crypts below (the ones filled with Undead) and go completely at the bottom of the map, in the room that was ransacked by tomb pillagers. Your friend will appear, telling you to hug the wall on the right (near the urns). Do that, with the wardstone in your inventory, and you will be transported to the last area and will have reached the last part of the quest, which I am not going to spoil. 
 
-#### *Note*
+Good luck ^^
+
 There are other small details scattered throughout, but this is the core of the quest. This quest can be completed even if you start a game in BG2, and thus, can't ever go back to BG1 (how: complete Athkatla Twisted Rune encounter, fight Cowled Wizards until the end, then get ambushed in Amkethran and go back to Graveyard District. That's the gist of fast-forwarding through it.)
