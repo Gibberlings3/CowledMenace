@@ -1,0 +1,7 @@
+IF
+	Global("ZallaFlee","GLOBAL",1)
+	Exists("mage18z")
+THEN
+	RESPONSE #100
+		ActionOverride("mage18z",DestroySelf())
+END
