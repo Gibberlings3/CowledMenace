@@ -6,8 +6,8 @@ call "%~dp0..\ModPackaging\utilities\ie_games.bat"
 
 REM /* MODIFY: set the values of the 3 variables below to reflect the current mod version */
 set "mod_name=Cowled Menace"
-set "mod_version=v0.2 BETA"
-set mod_folder=CowledMenace
+set "mod_version=v0.2.1 BETA"
+set mod_folder=cowledmenace
 
 REM /* MODIFY: list here which IE games the mod is compatible with, from this list of possibilities: */
 REM /* %bg1%, %bg2%, %bgt%, %tutu%, %bgee%, %bgiiee%, %iwd1%, %iwdee%, %iwd2%, %iwd2ee%, %iwd-in-bg2%, %pst%, %pstee%, %eet% */
