@@ -1,0 +1,17 @@
+If
+	Global("TwistedAmbush","GLOBAL",2)
+	PartyHasItem("DX#KOSHI")
+THEN
+	RESPONSE #100
+		SetGlobal("TwistedAmbush","GLOBAL",3)
+		AddJournalEntry(@105,QUEST)
+END
+
+If
+	Global("TwistedAmbush","GLOBAL",2)
+	!PartyHasItem("DX#KOSHI")
+THEN
+	RESPONSE #100
+		SetGlobal("TwistedAmbush","GLOBAL",3)
+		AddJournalEntry(@106,QUEST)
+END

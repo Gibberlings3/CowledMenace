@@ -1,0 +1,8 @@
+IF
+	Global("DxOpenBGBridge","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("DxOpenBGBridge","GLOBAL",2)
+		SetGlobal("K#Drawbridge","BG0900",2)
+		CloseDoor("DoorDraw")
+END
