@@ -5,7 +5,7 @@
 
 BACKUP ~cowledmenace/backup~
 AUTHOR ~Daxtreme at http://gibberlings3.net~
-VERSION ~0.2~
+VERSION ~0.2.1~
 
 ALWAYS
 	INCLUDE ~cowledmenace/common.tpa~

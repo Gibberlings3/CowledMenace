@@ -111,4 +111,6 @@ This Modification is unofficial Fan Content permitted under the Fan Content Poli
 
 ## Version History
 
+0.2.1 BETA -- Adapted for G3 compatibility, added Linux and MacOs support.
+
 0.2 BETA -- first official release.
