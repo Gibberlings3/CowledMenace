@@ -86,7 +86,7 @@ Some of the encounters in this mod happen in different fashion depending on the 
 
 ## Thanks and Acknowledgements 
 
-Special Thanks to demivrgvs, Roxanne, kreso, DavidW, CamDawg, Nythrun & Miloch (area patching) and every helpful fellow on gibberlings3 forums!
+Special Thanks to Mike1072, demivrgvs, Roxanne, kreso, DavidW, CamDawg, Nythrun & Miloch (area patching) and every helpful fellow on gibberlings3 forums!
 
 Custom portrait by Wizards of the Coast LLC.
 
