@@ -27,9 +27,9 @@ Unravel the mysteries of the Twisted Rune and investigate the Cowled Wizards in 
 
 The optional components only require BG2 to be installed.
 
-Although I am in need of testers for this, Cowled Menace should work with Sword Coast Stratagems (SCS). Install SCS before this mod.
+Although I am in need of testers for this, Cowled Menace should work with Sword Coast Stratagems (SCS). Install SCS after this mod.
 
-In general, this mod should be installed after NPC mods and EET, but before Tweaks and EET_end.
+In general, this mod should be installed after NPC mods and EET's main component, but before Tweaks and EET_end.
 
 ## Installation
 
@@ -86,7 +86,7 @@ Some of the encounters in this mod happen in different fashion depending on the 
 
 ## Thanks and Acknowledgements 
 
-Special Thanks to demivrgvs, Roxanne, kreso, DavidW, CamDawg, Nythrun & Miloch (area patching) and every helpful fellow on gibberlings3 forums!
+Special Thanks to Mike1072, demivrgvs, Roxanne, kreso, DavidW, CamDawg, Nythrun & Miloch (area patching) and every helpful fellow on gibberlings3 forums!
 
 Custom portrait by Wizards of the Coast LLC.
 
