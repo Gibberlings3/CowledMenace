@@ -1,5 +1,5 @@
 IF
-	Entered([PC])
+	IsOverMe([PC])
 	PartyHasItem("MISC45")  // Rogue Stone
 THEN
 	RESPONSE #100

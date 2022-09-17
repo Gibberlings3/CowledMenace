@@ -248,6 +248,7 @@ IF ~Global("KilledShoon","GLOBAL",1) AreaCheck("ar4500")~ goodbye
 	= @626
 	= @630
 	IF ~~ DO ~EraseJournalEntry(@120) 
+			  DestroyItem("dx#wards")
 			  AddJournalEntry(@150,QUEST_DONE)
 			  SpellNoDec(Myself,DRYAD_TELEPORT)~ EXIT
 END
@@ -352,14 +353,34 @@ CHAIN dx#shd 470
 	DO ~StartCutSceneMode()
 		StartCutScene("dx#cut04")~
 	EXIT
-
+	
 CHAIN dx#shd 490
 	@490
-	== dx#laerd @491
-	== dx#laerd @492
-	DO ~ActionOverride("dx#laera",SpellNoDec(Myself,DRYAD_TELEPORT))~ EXIT
+	END
+	++ @491 EXTERN dx#shd 492
+	
+CHAIN dx#shd 492
+	@492
+	== dx#laerd @496 //End of Evil path
+	== dx#laerd @497
+	DO ~EraseJournalEntry(@120)
+		AddJournalEntry(@121,QUEST_DONE)
+		AddXPObject(Player1,34500)
+		AddXPObject(Player2,34500)
+		AddXPObject(Player3,34500)
+		AddXPObject(Player4,34500)
+		AddXPObject(Player5,34500)
+		AddXPObject(Player6,34500)
+		SetGlobal("LaeralSpawned","GLOBAL",10)
+		ActionOverride("dx#laera",SpellNoDec(Myself,DRYAD_TELEPORT))~ 
+	EXIT
 
 APPEND dx#shd
+
+IF ~Global("LaeralSpawned","GLOBAL",10) Global("MetShoon","GLOBAL",1)~ greetevil 
+	SAY @397 /*Now that the wench is gone, you are of no concern to me. I care not about your mortal dealings. What I'm pondering over right now, is what I should do with an eternity to think.*/
+	IF ~~ EXIT
+END 
 
 IF ~Global("MetShoon","GLOBAL",1)~ greet2 
 	SAY @398 /*What would you do if you had an eternity to think? It is what I'm pondering over at this moment. You, however, should ponder over a much shorter timespan, like what you should do right now.*/

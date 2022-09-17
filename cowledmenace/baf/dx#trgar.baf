@@ -1,5 +1,5 @@
 IF
-	Entered([PC])
+	IsOverMe([PC])
 	Global("EnteredAR0907","GLOBAL",1)
 	!Global("ACH_TWISTED_VICTORY","GLOBAL",1)
 	Global("MurdersSolved","GLOBAL",1)
