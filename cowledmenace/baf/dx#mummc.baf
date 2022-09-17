@@ -1,4 +1,13 @@
 IF
+	HPLT("dx#dalid",10)
+	Allegiance(Myself,NEUTRAL)
+THEN
+	RESPONSE #100
+		Shout(89)
+		Enemy()
+END
+
+IF
 	See(NearestEnemyOf(Myself))
 	Global("Preparation","LOCALS",0)
 THEN
@@ -173,3 +182,11 @@ THEN
 		AttackReevaluate(NearestEnemyOf(Myself),45)
 END
 
+IF
+	Dead("DX#DALID")
+	Allegiance(Myself,NEUTRAL)
+THEN
+	RESPONSE #100
+		Shout(89)
+		Enemy()
+END

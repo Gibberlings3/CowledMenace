@@ -1,11 +1,11 @@
 // The Cowled Menace
 
-// Special Thanks to klatu, demivrgvs, Roxanne, kreso, DavidW, CamDawg, Nythrun & Miloch (area patching) and every helpful fellow on gibberlings3 forums!
-// Zallanora portrait credits: aditya777 from deviantart
+// Special Thanks to Mike1072, klatu, demivrgvs, Roxanne, kreso, DavidW, CamDawg, Nythrun & Miloch (area patching) and every helpful fellow on gibberlings3 forums!
+// Zallanora portrait credits: aditya777 from deviantart, Laeral Silverhand portrait credits: Wizards of the Coast
 
 BACKUP ~cowledmenace/backup~
-AUTHOR ~Daxtreme at http://gibberlings3.net~
-VERSION ~0.2.1~
+AUTHOR ~Daxtreme at http://gibberlings3.net~  
+VERSION ~1.0.0~
 
 ALWAYS
 	INCLUDE ~cowledmenace/common.tpa~
@@ -14,6 +14,7 @@ END
 README ~cowledmenace/readme.html~
 ASK_EVERY_COMPONENT                                                                // Disallow installing all components at once
 LANGUAGE ~English~ ~english~ ~cowledmenace/lang/english/english.tra~
+//LANGUAGE ~Russian~ ~Russian~ ~cowledmenace/lang/russian/russian.tra~
 
 //////////////////////////////////////////////////////////////////////////
 // Main Component - The Cowled Menace
@@ -90,7 +91,7 @@ LANGUAGE ~English~ ~english~ ~cowledmenace/lang/english/english.tra~
  	SAY DESC @198
 
  	ACTION_IF GAME_IS ~EET~ THEN BEGIN
- 		ADD_JOURNAL TITLE (@90) @101 @102 @103 @104 @105 @106 @107 @108 @109 @110 @120 @150 USING ~cowledmenace/lang/english/english.tra~		
+ 		ADD_JOURNAL TITLE (@90) @101 @102 @103 @104 @105 @106 @107 @108 @109 @110 @120 @121 @150 USING ~cowledmenace/lang/english/english.tra~		
  	END
 
  	ACTION_IF FILE_EXISTS_IN_GAME ~AR1008.bcs~ BEGIN   
@@ -174,6 +175,7 @@ LANGUAGE ~English~ ~english~ ~cowledmenace/lang/english/english.tra~
 
 	COPY ~cowledmenace/cre/dx#demi.cre~ ~override~													// Zallanora the Demilich
 	SAY NAME1 @1001		SAY NAME2 @1001
+	ADD_CRE_ITEM ~MINHP1~ #0 #0 #0 ~undroppable~ ~belt~
 	WRITE_ASCII DIALOG ~dx#demid~ #8
 	WRITE_ASCII 0x260 ~dx#fight~ #8
 
@@ -421,10 +423,10 @@ LANGUAGE ~English~ ~english~ ~cowledmenace/lang/english/english.tra~
     			fj_flags	   = 2 		// trap resets itself
 	    		fj_loc_x       = 1300 	//between smallest and biggest x
     			fj_loc_y       = 3200 	//between smallest and biggest y
-    			fj_vertex_0    = 1150 + (3132 << 16) 
-    			fj_vertex_1    = 1537 + (3302 << 16)
-	    		fj_vertex_2    = 1669 + (3207 << 16)
-    			fj_vertex_3    = 1310 + (2866 << 16)
+    			fj_vertex_0    = 1150 + (2866 << 16) 
+    			fj_vertex_1    = 1669 + (2866 << 16)
+	    		fj_vertex_2    = 1669 + (3302 << 16)
+    			fj_vertex_3    = 1150 + (3302 << 16)
     			STR_VAR
 	    		fj_structure_type   = region
     			fj_trap_detect      = 0
@@ -443,17 +445,17 @@ LANGUAGE ~English~ ~english~ ~cowledmenace/lang/english/english.tra~
   			LPF ~fj_are_structure~
     			INT_VAR
    				fj_type         = 0    	//trap
- 				fj_box_left    = 800 	 //smallest x
-	    		fj_box_top     = 649   //smallest y
+ 				fj_box_left    = 728 	 //smallest x
+	    		fj_box_top     = 629   //smallest y
     			fj_box_right   = 1339 	 //biggest x 
     			fj_box_bottom  = 1055 	//biggest y
     			fj_flags	   = 2 		// trap resets itself
 	    		fj_loc_x       = 1000 	//between smallest and biggest x
     			fj_loc_y       = 800 	//between smallest and biggest y
-    			fj_vertex_0    = 827 + (1055 << 16) 
-    			fj_vertex_1    = 800 + (1038 << 16)
-	    		fj_vertex_2    = 1291 + (649 << 16)
-    			fj_vertex_3    = 1339 + (691 << 16)
+    			fj_vertex_0    = 728 + (629 << 16) 
+    			fj_vertex_1    = 1339 + (629 << 16)
+	    		fj_vertex_2    = 1339 + (1055 << 16)
+    			fj_vertex_3    = 728 + (1055 << 16)
     			STR_VAR
 	    		fj_structure_type   = region
     			fj_trap_detect      = 0
@@ -600,7 +602,7 @@ ACTION_IF FILE_EXISTS_IN_GAME ~cauldron.bcs~ BEGIN
 
 // Zallanora Editing - Wizard level 30
 
-// 	COPY ~cowledmenace/bmp/dx#zport.bmp~ ~override~ 												// Zallanora portrait
+// 	COPY ~cowledmenace/bmp/dx#zport.bmp~ ~override~ 												// Zallanora portrait - removed for now
  	COPY ~cowledmenace/baf/dx#zallo.bcs~ ~override~													// New Override script
  	COPY ~cowledmenace/baf/mage18z.bcs~ ~override~													// New Class script
  	COPY ~cowledmenace/baf/dx#zallr.bcs~ ~override~													// Dialog racial script
@@ -718,6 +720,36 @@ ACTION_IF FILE_EXISTS_IN_GAME ~cauldron.bcs~ BEGIN
 			WRITE_LONG 0x14 20000
 		END
 	BUT_ONLY
+	
+// Give Layene and Shyressa slightly better AI that won't result in them doing nothing in the corner if they can't see the PCs
+	
+	COPY_EXISTING ~hllayen.cre~ ~override~ 
+		READ_ASCII SCRIPT_OVERRIDE name
+	BUT_ONLY
+	ACTION_IF (~%name%~ STRING_EQUAL_CASE ~None~ = 1) BEGIN
+		COPY ~cowledmenace/baf/hllayen.bcs~ ~override~												// Give new script if null
+		COPY_EXISTING ~hllayen.cre~ ~override~														
+			WRITE_ASCII SCRIPT_OVERRIDE ~hllayen~ #8
+		BUT_ONLY
+	END ELSE BEGIN
+		ACTION_IF FILE_EXISTS_IN_GAME ~%name%.bcs~ BEGIN											// Else, append new script
+			EXTEND_TOP ~%name%.bcs~ ~cowledmenace/baf/hllayen.baf~									// Twisted Rune: Layene | vanilla: None SCS: DW#RUHLP.bcs
+		END 
+	END
+	
+	COPY_EXISTING ~hlshyr.cre~ ~override~ 
+		READ_ASCII SCRIPT_OVERRIDE name
+	BUT_ONLY
+	ACTION_IF (~%name%~ STRING_EQUAL_CASE ~None~ = 1) BEGIN
+		COPY ~cowledmenace/baf/hllayen.bcs~ ~override~												// Give new script if null
+		COPY_EXISTING ~hlshyr.cre~ ~override~														
+			WRITE_ASCII SCRIPT_OVERRIDE ~hllayen~ #8
+		BUT_ONLY
+	END ELSE BEGIN
+		ACTION_IF FILE_EXISTS_IN_GAME ~%name%.bcs~ BEGIN											// Else, append new script
+			EXTEND_TOP ~%name%.bcs~ ~cowledmenace/baf/hllayen.baf~									// Twisted Rune: Shyressa | vanilla: None SCS: ???
+		END 
+	END
 
 ////////////////////////////////////////////////////////////////////////////////////////////
 // Appropriate Items for High-Level Spellcasters
@@ -1185,7 +1217,7 @@ BEGIN @6 DESIGNATED 3010 SUBCOMPONENT @5
 		END
 	END
 
-	// For all of them
+	// For all of them (recommended)
 
 BEGIN @7 DESIGNATED 3020 SUBCOMPONENT @5
 

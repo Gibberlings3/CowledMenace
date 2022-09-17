@@ -8,7 +8,7 @@
 
 Someone has been working in the shadows, manipulating events on the Sword Coast to their advantage.
 
-Unravel the mysteries of the Twisted Rune and investigate the Cowled Wizards in this Enhanced Edition Trilogy mod!
+Unravel the mysteries of the Twisted Rune and progress beyond fighting all the Cowled Wizards in Athkatla in this Enhanced Edition Trilogy mod!
 
 ## Content Index
 
@@ -78,7 +78,7 @@ There are a two different ways to start this quest. The first opportunity happen
 
 The second is the most obvious one: starting the Tanner quest in the Bridge district of Athkatla marks the first time you encounter the Twisted Rune and get involved in their business, even in the vanilla game. Following clues you receive from those engagements, as well as exploring around the Bridge and Temple Districts should help you progress.
 
-Some of the encounters in this mod happen in different fashion depending on the order in which you progress through the quest, and the actors you have encountered (and in which order). One encounter in particular varies greatly in difficulty depending on choices you've made in the game, outside of this quest. I have restored unused lines by Shangalar in the vanilla game, which I was quite surprised to find. A word of warning: the Twisted Rune are a powerful and ancient organisation... come prepared. The storyline gets completed in Throne of Bhaal, it is not possible to finish the quest while still being in Shadows of Amn. Also, if you wish to experience the full content, I recommend against bribing the Cowled Wizards.
+Some of the encounters in this mod happen in different fashion depending on the order in which you progress through the quest, and the actors you have encountered (and in which order). One encounter in particular varies greatly in difficulty depending on choices you've made in the game, outside of this quest. I have restored unused lines by Shangalar in the vanilla game, which I was quite surprised to find. A word of warning: the Twisted Rune are a powerful and ancient organisation... come prepared. The storyline gets completed in Throne of Bhaal, it is not possible to finish the quest while still being in Shadows of Amn. Also, if you wish to experience the full content, I recommend against bribing the Cowled Wizards. Fighting them to the last wave is the preferred option.
 
 ## Spoilers Section
 
@@ -110,6 +110,15 @@ You are allowed to submit [maintenance updates](MAINTENANCE-NOTICE.md) for this 
 This Modification is unofficial Fan Content permitted under the Fan Content Policy. Not approved/endorsed by Wizards. Portions of the materials used are property of Wizards of the Coast. ©Wizards of the Coast LLC. This mod is also not developed, supported, or endorsed by BioWare, Black Isle Studios, Interplay Entertainment Corp., Overhaul Games or Beamdog. All other trademarks and copyrights are property of their respective owners.
 
 ## Version History
+
+1.0.0 -- First official release out of Beta
+
+- Fixed Baldur's Gate Twisted Rune encounter not switching to enemy status in certain cheese situations where dialog couldn't happen. Fixed the same encounter not having any dialog in the beginning with SCS installed.
+- Fixed a bug where you could endlessly repeat the last part of the quest to get massive amounts of experience when certain conditions were met.
+- Evil players should have a proper (although still only partially satisfying) conclusion to the quest now.
+- Improved Twisted Rune AI slightly compared to vanilla (they won't wait around in corner)
+- Fixed a bug with the Twisted Rune ambush in the Guarded Compound not happening all the time. (If you have cleared the Twisted Rune enclave, they're still not gonna show though, that's intended)
+- Fixed various weird behaviors with map region triggers.
 
 0.2.1 BETA -- Adapted for G3 compatibility, added Linux and MacOs support.
 
