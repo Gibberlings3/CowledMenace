@@ -1,20 +1,20 @@
 // The Cowled Menace
 
 // Special Thanks to Mike1072, klatu, demivrgvs, Roxanne, kreso, DavidW, CamDawg, Nythrun & Miloch (area patching) and every helpful fellow on gibberlings3 forums!
+// Thanks to yota13 for the Russian translation.
 // Zallanora portrait credits: aditya777 from deviantart, Laeral Silverhand portrait credits: Wizards of the Coast
 
 BACKUP ~cowledmenace/backup~
 AUTHOR ~Daxtreme at http://gibberlings3.net~  
-VERSION ~1.0.0~
+VERSION ~1.0.1~
 
 ALWAYS
 	INCLUDE ~cowledmenace/common.tpa~
 END
 
-README ~cowledmenace/readme.html~
 ASK_EVERY_COMPONENT                                                                // Disallow installing all components at once
-LANGUAGE ~English~ ~english~ ~cowledmenace/lang/english/english.tra~
-//LANGUAGE ~Russian~ ~Russian~ ~cowledmenace/lang/russian/russian.tra~
+	LANGUAGE ~English~ ~english~ ~cowledmenace/lang/english/english.tra~
+	LANGUAGE ~Russian~ ~Russian~ ~cowledmenace/lang/russian/russian.tra~
 
 //////////////////////////////////////////////////////////////////////////
 // Main Component - The Cowled Menace
@@ -91,7 +91,7 @@ LANGUAGE ~English~ ~english~ ~cowledmenace/lang/english/english.tra~
  	SAY DESC @198
 
  	ACTION_IF GAME_IS ~EET~ THEN BEGIN
- 		ADD_JOURNAL TITLE (@90) @101 @102 @103 @104 @105 @106 @107 @108 @109 @110 @120 @121 @150 USING ~cowledmenace/lang/english/english.tra~		
+ 		ADD_JOURNAL TITLE (@90) @101 @102 @103 @104 @105 @106 @107 @108 @109 @110 @120 @121 @150		
  	END
 
  	ACTION_IF FILE_EXISTS_IN_GAME ~AR1008.bcs~ BEGIN   

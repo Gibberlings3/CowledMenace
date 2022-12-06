@@ -31,6 +31,8 @@ Although I am in need of testers for this, Cowled Menace should work with Sword 
 
 In general, this mod should be installed after NPC mods and EET's main component, but before Tweaks and EET_end.
 
+Lastly, this mod is incompatible with the 'Unofficial Item Pack' by Edvin (found on the Beamdog forums).
+
 ## Installation
 
 **Windows** </br> Cowled Menace is packaged and installed with WeiDU and is distributed as a self-extracting archive. To install, simply double-click the archive and follow the instructions on screen.
@@ -110,6 +112,11 @@ You are allowed to submit [maintenance updates](MAINTENANCE-NOTICE.md) for this 
 This Modification is unofficial Fan Content permitted under the Fan Content Policy. Not approved/endorsed by Wizards. Portions of the materials used are property of Wizards of the Coast. ©Wizards of the Coast LLC. This mod is also not developed, supported, or endorsed by BioWare, Black Isle Studios, Interplay Entertainment Corp., Overhaul Games or Beamdog. All other trademarks and copyrights are property of their respective owners.
 
 ## Version History
+
+1.0.1 -- Minor updates
+
+- Added Russian translation.
+- Fixed Servant of Kartak's level that made it vulnerable to low-level Turn Undead.
 
 1.0.0 -- First official release out of Beta
 
