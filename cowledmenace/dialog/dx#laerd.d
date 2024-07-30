@@ -248,9 +248,27 @@ IF ~Global("KilledShoon","GLOBAL",1) AreaCheck("ar4500")~ goodbye
 	= @626
 	= @630
 	IF ~~ DO ~EraseJournalEntry(@120) 
+			  TakePartyItem("dx#wards")
 			  DestroyItem("dx#wards")
 			  AddJournalEntry(@150,QUEST_DONE)
-			  SpellNoDec(Myself,DRYAD_TELEPORT)~ EXIT
+			  ClearAllActions()
+			  StartCutSceneMode()
+			  Wait(1)
+			  CreateVisualEffectObject("SPDIMNDR",Player1)
+			  FadeToColor([20.0],0)
+			  SpellNoDec(Myself,DRYAD_TELEPORT)
+			  PlaySound("PORTAL2")
+			  Wait(1) 
+			  ActionOverride(Player1,LeaveAreaLUAPanic("AR0802","",[980.2000],NE))
+			  ActionOverride(Player1,LeaveAreaLUA("AR0802","",[980.2000],NE))
+			  ActionOverride(Player2,LeaveAreaLUA("AR0802","",[980.2000],NE))
+			  ActionOverride(Player3,LeaveAreaLUA("AR0802","",[980.2000],NE))
+			  ActionOverride(Player4,LeaveAreaLUA("AR0802","",[980.2000],NE))
+			  ActionOverride(Player5,LeaveAreaLUA("AR0802","",[980.2000],NE))
+			  ActionOverride(Player6,LeaveAreaLUA("AR0802","",[980.2000],NE))
+			  MultiPlayerSync()
+			  EndCutSceneMode()
+			  FadeFromColor([20.0],0)~ EXIT
 END
 
 IF ~Global("KilledShoon","GLOBAL",1) AreaCheck("DX#002")~ greetcrypt 
