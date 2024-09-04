@@ -6,5 +6,5 @@ THEN
 	RESPONSE #100
 		SetGlobal("WardstoneWarn","GLOBAL",1)
 		DisplayString(Myself,@89)  
-		CreateCreatureDoor("DX#LAERA",[1000.2000],SW)
+		CreateCreatureDoor("DX#LAERA",[1000.2000],2)
 END

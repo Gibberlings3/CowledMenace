@@ -1,0 +1,48 @@
+IF
+	HasItem("MINHP1",Myself)  // Necklace
+	Global("ZallaFlee","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("test","GLOBAL",12)
+		DestroyItem("MINHP1")  // Necklace
+END
+
+IF
+	GlobalTimerExpired("zalladlg","LOCALS")
+	!Global("zallaout1","LOCALS",1)
+THEN
+	RESPONSE #100
+		SetGlobal("zallaout1","LOCALS",1)
+		StartDialogueNoSet(LastSeenBy(Myself))
+END
+
+IF
+	HPLT(Myself,40)
+	!Global("ZallaFlee","GLOBAL",1)
+	!Global("TSFired","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("TSFired","GLOBAL",1)
+		ReallyForceSpell(Myself,WIZARD_TIME_STOP)  // SPWI909.SPL (Time Stop)
+		SetGlobalTimer("zalladlg","LOCALS",2)
+		Wait(2)
+END
+
+IF
+	Global("ForceLeaveIfBug","LOCALS",1)
+THEN
+	RESPONSE #100
+		SetGlobal("ForceLeaveIfBug","LOCALS",2)
+		SpellNoDec(Myself,DRYAD_TELEPORT)  // SPWI995.SPL (Dimension Door)
+END
+
+IF
+	AttackedBy([GOODCUTOFF],DEFAULT)
+	OR(3)
+		Allegiance(Myself,GOODBUTBLUE)
+		Allegiance(Myself,NEUTRAL)
+		Allegiance(Myself,EVILBUTBLUE)
+THEN
+	RESPONSE #100
+		Enemy()
+END

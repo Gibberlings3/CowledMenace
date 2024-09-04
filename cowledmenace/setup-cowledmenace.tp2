@@ -6,11 +6,64 @@
 
 BACKUP ~cowledmenace/backup~
 AUTHOR ~Daxtreme at http://gibberlings3.net~  
-VERSION ~1.0.2~
+VERSION ~1.0.2_bgt~
 
 ALWAYS
 	INCLUDE ~cowledmenace/common.tpa~
+	
+	ACTION_IF GAME_IS ~eet~ THEN BEGIN
+		/* Tell the player it is using eet */
+		PRINT ~EET detected...~
+		INCLUDE ~cowledmenace/lib/eet_cpmvars.tpa~
+	END
+	ACTION_IF GAME_IS ~bgt~ THEN BEGIN
+		PRINT ~Baldur's Gate Trilogy detected~
+		INCLUDE ~cowledmenace/lib/g3_bgt_cpmvars.tpa~ 
+	END
+	
+	ACTION_IF NOT VARIABLE_IS_SET bg2_chapter BEGIN
+		ACTION_IF GAME_IS ~eet~ BEGIN
+			OUTER_SET bg2_chapter = 12
+		END ELSE BEGIN
+			OUTER_SET bg2_chapter = 0
+		END
+		OUTER_FOR (i=1; i<=10; i=i+1) BEGIN
+			OUTER_SET bg2_chapter = bg2_chapter + 1
+			OUTER_SPRINT name_source ~bg2_chapter_%i%~
+			OUTER_SET EVAL ~%name_source%~ = bg2_chapter
+		END
+	END
+	ACTION_IF (GAME_IS ~bgt~) BEGIN // only if BGT
+
+	ACTION_DEFINE_ARRAY TR#reload BEGIN english END
+		LAF HANDLE_CHARSETS
+		INT_VAR
+			infer_charsets = 1
+			from_utf8 = 1
+		STR_VAR
+			tra_path = ~cowledmenace/lang~
+			reload_array = TR#reload
+			default_language = ~english~
+		END
+
+		APPEND ~ACTION.IDS~ ~7 CreateCreature(S:NewObject*,P:Location*,I:Face*Dir)~
+			UNLESS ~7 CreateCreature(S:NewObject\*,P:Location\*,I:Face*Dir)~
+		APPEND ~ACTION.IDS~ ~110 LeaveAreaLUA(S:Area*,S:Parchment*,P:Point*,I:Face*Dir)~
+			UNLESS ~110 LeaveAreaLUA(S:Area\*,S:Parchment\*,P:Point\*,I:Face*Dir)~
+		APPEND ~ACTION.IDS~ ~231 CreateCreatureDoor(S:NewObject*,P:Location*,I:Face*Dir)~
+			UNLESS ~231 CreateCreatureDoor(S:NewObject\*,P:Location\*,I:Face*Dir)~
+		APPEND ~ACTION.IDS~ ~189 LeaveAreaLUAPanic(S:Area*,S:Parchment*,P:Point*,I:Face*Dir)~
+			UNLESS ~189 LeaveAreaLUAPanic(S:Area\*,S:Parchment\*,P:Point\*,I:Face*Dir)~
+		APPEND ~SHOUTIDS.IDS~ ~111 WARNALARM~
+			UNLESS ~^WARNALARM~
+		APPEND ~SPELL.IDS~ ~2302	WIZARD_REMOVE_MAGIC~
+			UNLESS ~^WIZARD_REMOVE_MAGIC~
+
+		COPY ~cowledmenace/ids/Dir.ids~ ~override/Dir.ids~
+	END
 END
+
+AUTO_TRA ~cowledmenace/lang/%s~
 
 ASK_EVERY_COMPONENT                                                                // Disallow installing all components at once
 	LANGUAGE ~English~ ~english~ ~cowledmenace/lang/english/english.tra~
@@ -24,7 +77,7 @@ ASK_EVERY_COMPONENT                                                             
 
  BEGIN @0 DESIGNATED 1000
 
- 	REQUIRE_PREDICATE GAME_IS ~eet~ @49 //Required file missing -- this mod requires EET
+ 	REQUIRE_PREDICATE GAME_IS ~eet bgt~ @49 //Required file missing -- this mod requires EET or BGT
 
 	COMPILE ~cowledmenace/dialog/dx#zalla.d~														// Compile dialog files
 		~cowledmenace/dialog/dx#laerd.d~
@@ -36,7 +89,6 @@ ASK_EVERY_COMPONENT                                                             
 	COMPILE ~cowledmenace/baf/dx#001.baf~															// Compile BAF-->BCS files
 		~cowledmenace/baf/dx#001s.baf~
 		~cowledmenace/baf/dx#001m.baf~
-		~cowledmenace/baf/dx#mummc.baf~
 		~cowledmenace/baf/dx#cet1.baf~
 		~cowledmenace/baf/dx#tet1.baf~
 		~cowledmenace/baf/dx#am1.baf~
@@ -50,19 +102,30 @@ ASK_EVERY_COMPONENT                                                             
 		~cowledmenace/baf/dx#trgar.baf~
 		~cowledmenace/baf/dx#runo.baf~
 
+		~cowledmenace/baf/dx#cut01.baf~																// Cutscene Twisted Rune 1
+		~cowledmenace/baf/dx#cut02.baf~																// Cutscene Twisted Rune 2
+		~cowledmenace/baf/mage20c.baf~																// Updated script for Shangalar
+		~cowledmenace/baf/dx#fight.baf~																// script for Zdemi
+		~cowledmenace/baf/dx#tanw.baf~																// Override script for tanwiz1
+		~cowledmenace/baf/dx#inid1.baf~
+		~cowledmenace/baf/dx#inid2.baf~
+		~cowledmenace/baf/dx#zallo.baf~																// New Override script
+		~cowledmenace/baf/dx#zallr.baf~																// Dialog racial script
+		~cowledmenace/baf/dx#002.baf~																// Add new Crypt area script
+		~cowledmenace/baf/mage18z.baf~																// New Class script
+		
+	ACTION_IF GAME_IS ~eet~ BEGIN
+		COMPILE ~cowledmenace/baf/dx#mummc.baf~
+	END ELSE BEGIN 
+		COMPILE ~cowledmenace/baf/bgt/dx#mummc.baf~
+	END
+	
+	COMPILE EVALUATE_BUFFER ~cowledmenace/baf/dx#cut03.baf~ 										// Cutscene Escape Twisted Rune
+
 	COPY ~cowledmenace/are/dx#001.are~ ~override~													// Add new Twisted Rune area
 	COPY ~cowledmenace/are/dx#002.are~ ~override~													// Add new Crypt area
-	COPY ~cowledmenace/baf/dx#002.bcs~ ~override~
 	COPY ~cowledmenace/itm/dx#tout.itm~ ~override~													// Add Mummy Heart to escape new area
 	SAY NAME2 @95		SAY DESC @96
-	COPY ~cowledmenace/baf/dx#cut01.bcs~ ~override~													// Cutscene Twisted Rune 1
-	COPY ~cowledmenace/baf/dx#cut02.bcs~ ~override~													// Cutscene Twisted Rune 2
-	COPY ~cowledmenace/baf/dx#cut03.bcs~ ~override~													// Cutscene Escape Twisted Rune
-	COPY ~cowledmenace/baf/mage20c.bcs~ ~override~													// Updated script for Shangalar
-	COPY ~cowledmenace/baf/dx#fight.bcs~ ~override~													// script for Zdemi
-	COPY ~cowledmenace/baf/dx#tanw.bcs~ ~override~													// Override script for tanwiz1
-	COPY ~cowledmenace/baf/dx#inid1.bcs~ ~override~
-	COPY ~cowledmenace/baf/dx#inid2.bcs~ ~override~
 
 // Add new items in the game
 
@@ -118,7 +181,10 @@ ASK_EVERY_COMPONENT                                                             
 		COPY_EXISTING ~hlshang.cre~ ~override~
 			LPF SANITIZE_CRE RET ok = ok END
 			PATCH_IF ok BEGIN
-				WRITE_ASCII 0x250 ~mage20c~ #8														// New Class Script, keeps same name because of SCS replacement
+				PATCH_IF GAME_IS ~eet~ BEGIN	
+					WRITE_ASCII 0x250 ~mage20c~ #8														// New Class Script, keeps same name because of SCS replacement
+
+				END
 				ADD_CRE_ITEM ~dx#twisl~ #0 #0 #0 ~identified~ ~inv~
 			END
 		BUT_ONLY
@@ -127,6 +193,7 @@ ASK_EVERY_COMPONENT                                                             
 		COPY_EXISTING ~tanwiz1.cre~ ~override~
 			LPF SANITIZE_CRE RET ok = ok END
 			PATCH_IF ok BEGIN
+				WRITE_BYTE 0x273 1																	// Set Class to Mage
 				WRITE_ASCII 0x248 ~dx#tanw~ #8 														// New Override script (combine his old 2 scripts)
 				WRITE_ASCII 0x250 ~mage16b~ #8														// New Race mage Script, SCS-friendly
 				ADD_CRE_ITEM ~staf02~ #0 #0 #0 ~none~ ~weapon~ EQUIP								// Quarterstaff +1
@@ -143,6 +210,9 @@ ASK_EVERY_COMPONENT                                                             
 	COPY ~cowledmenace/cre/dx#lich1.cre~ ~override~													// Twisted Rune - Kartak Spellseer
 	SAY NAME1 @1000		SAY NAME2 @1000
 	WRITE_ASCII DIALOG ~dx#lichd~ #8
+	PATCH_IF GAME_IS ~eet~ BEGIN
+		ADD_CRE_ITEM ~rndwand~ #0 #0 #0 ~none~ ~qitem~												// Random Wand
+	END
 	ADD_CRE_ITEM ~rndtre05~ #0 #0 #0 ~none~ ~inv~													// Random Treasure5
 	ADD_CRE_ITEM ~RNDSCR03~ #0 #0 #0 ~none~ ~inv~
 	// missing bmp vampire 
@@ -164,6 +234,48 @@ ASK_EVERY_COMPONENT                                                             
 	SAY NAME1 @1006		SAY NAME2 @1006
 	WRITE_ASCII 0x250 ~dx#mummc~ #8
 	ADD_CRE_ITEM ~dx#tout~ #0 #0 #0 ~identified~ ~inv~
+	PATCH_IF FILE_EXISTS_IN_GAME ~FL#GMUM.BCS~ BEGIN												// Compatibility with aTweak
+		REMOVE_KNOWN_SPELLS                          												// Remove all known spells from the current creature
+		REMOVE_MEMORIZED_SPELLS                   													// Remove all memorized spells from the current creature
+	    ADD_MEMORIZED_SPELL sppr101 #0 priest (1)													//Bless
+        ADD_MEMORIZED_SPELL sppr102 #0 priest (2)													//Command
+        ADD_MEMORIZED_SPELL sppr107 #0 priest (1)													//Protection from Evil
+        ADD_MEMORIZED_SPELL sppr109 #0 priest (1)													//Sanctuary
+        ADD_MEMORIZED_SPELL sppr111 #0 priest (2)													//Armor of Faith
+        ADD_MEMORIZED_SPELL sppr113 #0 priest (5)													//Doom
+        ADD_MEMORIZED_SPELL sppr203 #1 priest (1)													//Chant
+        ADD_MEMORIZED_SPELL sppr208 #1 priest (5)													//Hold Person
+        ADD_MEMORIZED_SPELL sppr211 #1 priest (3)													//Silence 15' Radius
+        ADD_MEMORIZED_SPELL sppr214 #1 priest (3)													//DUHM
+        ADD_MEMORIZED_SPELL sppr301 #2 priest (4)													//Animate Dead
+        ADD_MEMORIZED_SPELL sppr303 #2 priest (2)													//Dispel Magic
+        ADD_MEMORIZED_SPELL sppr304 #2 priest (1)													//Glyph of Warding
+        ADD_MEMORIZED_SPELL sppr314 #2 priest (4)													//Unholy Blight
+        ADD_MEMORIZED_SPELL sppr405 #3 priest (2)													//Mental Domination
+        ADD_MEMORIZED_SPELL sppr407 #3 priest (1)													//Protection from Lightning
+        ADD_MEMORIZED_SPELL sppr408 #3 priest (1)													//Protection from Evil 10' Radius
+        ADD_MEMORIZED_SPELL sppr411 #3 priest (2)													//Poison
+        ADD_MEMORIZED_SPELL sppr412 #3 priest (2)													//Holy Power
+        ADD_MEMORIZED_SPELL sppr414 #3 priest (2)													//Cause Serious Wounds
+        ADD_MEMORIZED_SPELL sppr505 #4 priest (2)													//True Seeing
+        ADD_MEMORIZED_SPELL sppr509 #4 priest (1)													//Magic Resistance
+        PATCH_IF RANDOM (1 2) BEGIN
+          ADD_MEMORIZED_SPELL sppr511 #4 priest (2) 												//Slay Living
+        END ELSE BEGIN
+          ADD_MEMORIZED_SPELL sppr512 #4 priest (2) 												//Greater Command
+        END
+        ADD_MEMORIZED_SPELL sppr513 #4 priest (2)													//Righteous Magic
+
+        ADD_MEMORIZED_SPELL sppr601 #5 priest (1)													//Aerial Servant
+        ADD_MEMORIZED_SPELL sppr608 #5 priest (1)													//Harm
+        ADD_MEMORIZED_SPELL sppr603 #5 priest (1)													//Blade Barrier
+        ADD_MEMORIZED_SPELL sppr612 #5 priest (1)													//Bolt of Glory
+
+        ADD_MEMORIZED_SPELL sppr719 #6 priest (1)													//Symbol, Death
+        ADD_MEMORIZED_SPELL sppr718 #6 priest (1)													//Symbol, Stun
+		WRITE_ASCII 0x250 ~fl#gmum~ #8
+        REPLACE_CRE_ITEM ~fl#gmum~ #0 #0 #0 ~none~ ~weapon1~ EQUIP
+	END																								// Compatibility with aTweak
 
 	COPY ~cowledmenace/cre/dx#lichj.cre~ ~override~													// Twisted Rune - Jymahna
 	SAY NAME1 @1007 	SAY NAME2@1007
@@ -171,7 +283,9 @@ ASK_EVERY_COMPONENT                                                             
 	ADD_CRE_ITEM ~rndtre05~ #0 #0 #0 ~none~ ~inv~													// Random Treasure5
 	ADD_CRE_ITEM ~rndtre05~ #0 #0 #0 ~none~ ~inv~													// Random Treasure5
 	ADD_CRE_ITEM ~helm18~ #0 #0 #0 ~none~ ~helmet~ 													// Pearly White Ioun Stone (Regen)
-	ADD_CRE_ITEM ~RNDWAND~ #10 #10 #0 ~none~ ~qitem~												// Random Wand
+	PATCH_IF GAME_IS ~eet~ BEGIN
+		ADD_CRE_ITEM ~RNDWAND~ #10 #10 #0 ~none~ ~qitem~												// Random Wand
+	END
 
 	COPY ~cowledmenace/cre/dx#demi.cre~ ~override~													// Zallanora the Demilich
 	SAY NAME1 @1001		SAY NAME2 @1001
@@ -201,6 +315,9 @@ ASK_EVERY_COMPONENT                                                             
 
 	COPY ~cowledmenace/itm/dx#lstaf.itm~ ~override~
  	COPY ~cowledmenace/bmp/dx#laera.bmp~ ~override~ 												// Laeral portrait
+	ACTION_IF GAME_IS ~bgt~ BEGIN
+		COPY ~cowledmenace/bmp/bgt/dx#laera.bmp~ ~override~						// Laeral small portrait for bgt
+	END
 	COPY ~cowledmenace/cre/dx#laera.cre~ ~override~													// Laeral Silverhand
 	SAY NAME1 @1005 	SAY NAME2 @1005
 	WRITE_ASCII DIALOG ~dx#laerd~ #8
@@ -235,7 +352,7 @@ ASK_EVERY_COMPONENT                                                             
 
 // Add a Twisted Rune enclave in Baldur's Gate East
 
-	COPY_EXISTING ~BG0800.are~ ~override~
+	COPY_EXISTING ~%EBaldursGate%.are~ ~override~
 		PATCH_IF SOURCE_SIZE > 0x28f BEGIN
   			LPF ~fj_are_structure~
     			INT_VAR
@@ -603,9 +720,6 @@ ACTION_IF FILE_EXISTS_IN_GAME ~cauldron.bcs~ BEGIN
 // Zallanora Editing - Wizard level 30
 
 // 	COPY ~cowledmenace/bmp/dx#zport.bmp~ ~override~ 												// Zallanora portrait - removed for now
- 	COPY ~cowledmenace/baf/dx#zallo.bcs~ ~override~													// New Override script
- 	COPY ~cowledmenace/baf/mage18z.bcs~ ~override~													// New Class script
- 	COPY ~cowledmenace/baf/dx#zallr.bcs~ ~override~													// Dialog racial script
 
 	COPY_EXISTING ~mage18z.cre~ ~override~
 		READ_LONG 0x270 allegiance
@@ -727,7 +841,7 @@ ACTION_IF FILE_EXISTS_IN_GAME ~cauldron.bcs~ BEGIN
 		READ_ASCII SCRIPT_OVERRIDE name
 	BUT_ONLY
 	ACTION_IF (~%name%~ STRING_EQUAL_CASE ~None~ = 1) BEGIN
-		COPY ~cowledmenace/baf/hllayen.bcs~ ~override~												// Give new script if null
+		COMPILE ~cowledmenace/baf/hllayen.baf~												// Give new script if null
 		COPY_EXISTING ~hllayen.cre~ ~override~														
 			WRITE_ASCII SCRIPT_OVERRIDE ~hllayen~ #8
 		BUT_ONLY
@@ -758,6 +872,7 @@ ACTION_IF FILE_EXISTS_IN_GAME ~cauldron.bcs~ BEGIN
 // Special Thanks to Roxanne on Gibberlings3
 
 BEGIN @2 DESIGNATED 2100
+	REQUIRE_PREDICATE (ENGINE_IS ~bg2ee~) @51
 
 	REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~mage18z.cre~ @50 //Required file missing -- install Baldur's Gate 2 EE
 	REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~blun31.itm~ @50 //Required file missing -- install Baldur's Gate 2 EE
@@ -1173,6 +1288,7 @@ BEGIN @3 DESIGNATED 2200
 ////////////////////////////////////////////////////////////////////////////////////////////
 
 BEGIN @4 DESIGNATED 3000
+	REQUIRE_PREDICATE (ENGINE_IS ~bg2ee~) @51
 
 	REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~mage18z.cre~ @50 //Required file missing -- install Baldur's Gate 2
 

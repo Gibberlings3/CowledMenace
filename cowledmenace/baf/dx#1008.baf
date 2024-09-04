@@ -22,6 +22,6 @@ THEN
 		SmallWait(7)
 		CreateVisualEffect("SPFLESHS",[962.554])
 		Wait(1)
-		CreateCreatureImpassable("HLSHANG",[962.554],SW)  // Shangalar
+		CreateCreatureImpassable("HLSHANG",[962.554],2)  // Shangalar
 END
 

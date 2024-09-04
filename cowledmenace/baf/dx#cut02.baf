@@ -1,0 +1,43 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("dx#dalid")  // Dalina
+		SmallWait(15)
+		Enemy()
+		MultiPlayerSync()
+		EndCutSceneMode()
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("dx#lich1")  // Kartak Spellseer
+		Enemy()
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("dx#runea")  // Rune Assassin
+		Enemy()
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("DX#MUMMY")  // Servant of Kartak
+		Enemy()
+END
+
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("mage18z")  // Zallanora
+		Enemy()
+END
+

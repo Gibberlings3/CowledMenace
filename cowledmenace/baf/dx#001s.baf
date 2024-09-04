@@ -21,7 +21,7 @@ THEN
 		PlaySound("EFF_M13")
 		Wait(1)
 		SmallWait(7)
-		CreateCreatureDoor("DX#LAERA",[1027.358],S)
+		CreateCreatureDoor("DX#LAERA",[1027.358],0)
 		PlaySound("EFF_M38")
 		CreateVisualEffect("SPDISPM2",[962.554])
 		SoundActivate("scriptam1008b1",TRUE)

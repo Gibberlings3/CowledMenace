@@ -1,0 +1,21 @@
+IF
+	NumTimesTalkedTo(0)
+	!AreaCheck("DX#002")
+	!AreaCheck("ar4500")
+	See([PC])
+THEN
+	RESPONSE #100
+		Wait(1)
+		StartDialogueNoSet([PC])
+END
+
+IF
+	NumTimesTalkedTo(0)
+	AreaCheck("DX#002")
+	See([PC])
+	Dead("DX#DEMI")  // Zallanora the Demilich
+THEN
+	RESPONSE #100
+		Wait(3)
+		StartDialogueNoSet([PC])
+END

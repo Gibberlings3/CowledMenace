@@ -1,0 +1,9 @@
+IF
+	True()
+THEN
+	RESPONSE #100
+		CutSceneId("dx#dalid")  // Dalina
+		CreateCreatureDoor("mage18z",[738.419],0)  // Zallanora
+		SmallWait(100)
+		StartDialogueNoSet(LastSeenBy(Myself))
+END

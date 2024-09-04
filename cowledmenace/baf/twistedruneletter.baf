@@ -16,6 +16,6 @@ IF
 THEN
 	RESPONSE #100
 		Wait(1)
-		CreateCreatureDoor("DX#LAERA",[724.594],SW)
+		CreateCreatureDoor("DX#LAERA",[724.594],2)
 		SetGlobal("LaeralAthkatla","GLOBAL",1)
 END

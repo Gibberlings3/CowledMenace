@@ -1,0 +1,9 @@
+IF
+	Global("LaeralSpawned","GLOBAL",10)
+	AreaCheck("ar4500")
+	See([PC])
+THEN
+	RESPONSE #100
+		Wait(3)
+		StartDialogueNoSet([PC])
+END

@@ -6,8 +6,8 @@ IF
 	Global("TwistedAmbush","GLOBAL",0)
 THEN
 	RESPONSE #100
-		CreateCreature("dx#taw01",[1633.1202],NW)  // Rune Mage
-		CreateCreature("TANTHF01",[1695.1190],NW)  // Rune Assassin
-		CreateCreature("TANTHF01",[1613.1289],NW)  // Rune Assassin
+		CreateCreature("dx#taw01",[1633.1202],6)  // Rune Mage
+		CreateCreature("TANTHF01",[1695.1190],6)  // Rune Assassin
+		CreateCreature("TANTHF01",[1613.1289],6)  // Rune Assassin
 		SetGlobal("TwistedAmbush","GLOBAL",1)
 END

@@ -1,0 +1,12 @@
+IF
+	GlobalLT("CowledWarning","GLOBAL",7)
+	GlobalLT("ZallaIntro","LOCALS",1)
+	Global("ZallaCastHerSpell","LOCALS",0)
+	Detect([PC])
+	AreaCheck("AR0800")  // Graveyard
+THEN
+	RESPONSE #100
+		ForceSpell(Myself,WIZARD_ORACLE)  // SPWI515.SPL (Oracle)
+		SetGlobal("ZallaCastHerSpell","LOCALS",1)
+		Continue()
+END

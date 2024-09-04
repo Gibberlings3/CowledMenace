@@ -3,7 +3,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("ZallPocket","GLOBAL",2)
-		CreateCreature("DX#RZALL",[1930.1234],SE)
-		CreateCreature("DX#LAERA",[1800.1280],NE)
+		CreateCreature("DX#RZALL",[1930.1234],14)
+		CreateCreature("DX#LAERA",[1800.1280],10)
 		ActionOverride("DX#RZALL",StartDialogueNoSet(Player1))
 END

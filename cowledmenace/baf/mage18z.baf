@@ -1,0 +1,257 @@
+IF
+	See(NearestEnemyOf(Myself))
+	Global("Prep","LOCALS",0)
+THEN
+	RESPONSE #100
+		ApplySpell(Myself,WIZARD_STONE_SKIN)  // SPWI408.SPL (Stoneskin)
+		ApplySpell(Myself,WIZARD_SPELL_TRAP)  // SPWI902.SPL (Spell Trap)
+		ApplySpell(Myself,WIZARD_PROTECTION_FROM_FIRE)  // SPWI319.SPL (Protection from Fire)
+		ApplySpell(Myself,WIZARD_SPELL_TURNING)  // SPWI701.SPL (Spell Turning)
+		ApplySpell(Myself,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // SPWI611.SPL (Protection from Magical Weapons)
+		SetGlobal("Prep","LOCALS",1)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	StateCheck(Myself,STATE_SILENCED)
+	HaveSpell(WIZARD_VOCALIZE)  // SPWI219.SPL (Vocalize)
+THEN
+	RESPONSE #100
+		Spell(Myself,WIZARD_VOCALIZE)  // SPWI219.SPL (Vocalize)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	CheckStatLT(Myself,1,STONESKINS)
+	TookDamage()
+	Global("Prep2","LOCALS",0)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,3302)  // Chain Contingency—Spell Turning
+		ApplySpell(Myself,WIZARD_SPELL_TURNING)  // SPWI701.SPL (Spell Turning)
+		DisplayString(Myself,40240)  // Chain Contingency—Mislead
+		ApplySpell(Myself,WIZARD_MISLEAD)  // SPWI607.SPL (Mislead)
+		DisplayString(Myself,29736)  // Contingency—Stoneskin
+		ApplySpell(Myself,WIZARD_STONE_SKIN)  // SPWI408.SPL (Stoneskin)
+		ApplySpell(Myself,WIZARD_PROTECTION_FROM_MAGIC_ENERGY)  // SPWI606.SPL (Protection from Magic Energy)
+		SetGlobal("Prep2","LOCALS",1)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	CheckStatLT(Myself,1,STONESKINS)
+	TookDamage()
+	Global("Prep2","LOCALS",1)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,40252)  // Contingency—Protection from Magical Weapons
+		ApplySpell(Myself,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // SPWI611.SPL (Protection from Magical Weapons)
+		SetGlobal("Prep2","LOCALS",2)
+END
+
+IF
+	!HasBounceEffects(Myself)
+	!HasImmunityEffects(Myself)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		ForceSpell(Myself,WIZARD_SPELL_TURNING)  // SPWI701.SPL (Spell Turning)
+END
+
+IF
+	Global("ZallaFlee","GLOBAL",1)
+	Global("Stop","LOCALS",0)
+	See(NearestEnemyOf(Myself))
+	HaveSpell(WIZARD_TIME_STOP)  // SPWI909.SPL (Time Stop)
+THEN
+	RESPONSE #100
+		Spell(Myself,WIZARD_TIME_STOP)  // SPWI909.SPL (Time Stop)
+		SetGlobal("Stop","LOCALS",1)
+END
+
+IF
+	Global("ZallaFlee","GLOBAL",1)
+	Global("Stop","LOCALS",1)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		SetGlobal("Stop","LOCALS",2)
+		Spell(NearestEnemyOf(Myself),WIZARD_ABI_DALZIMS_HORRID_WILTING)  // SPWI812.SPL (Abi-Dalzim's Horrid Wilting)
+END
+
+IF
+	Global("ZallaFlee","GLOBAL",1)
+	Global("Stop","LOCALS",2)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		SpellNoDec(Myself,WIZARD_TIME_STOP)  // SPWI909.SPL (Time Stop)
+		SetGlobal("Stop","LOCALS",3)
+END
+
+IF
+	Global("ZallaFlee","GLOBAL",1)
+	Global("Stop","LOCALS",3)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		SetGlobal("Stop","LOCALS",4)
+		ReallyForceSpell(Myself,WIZARD_IMPROVED_ALUCRITY)  // SPWI921.SPL (Improved Alacrity)
+		SpellNoDec(NearestEnemyOf(Myself),WIZARD_NPC_SYMBOL_DEATH)  // SPWI897.SPL (Symbol: Death)
+END
+
+IF
+	Global("ZallaFlee","GLOBAL",1)
+	Global("Stop","LOCALS",4)
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		SetGlobal("Stop","LOCALS",5)
+		SpellNoDec(NearestEnemyOf(Myself),WIZARD_NPC_SYMBOL_STUN)  // SPWI898.SPL (Symbol: Stun)
+		SpellNoDec(Myself,WIZARD_ABSOLUTE_IMMUNITY)  // SPWI907.SPL (Absolute Immunity)
+END
+
+IF
+	GlobalLT("ZallaFlee","GLOBAL",1)
+	See(NearestEnemyOf(Myself))
+	HaveSpell(WIZARD_TIME_STOP)  // SPWI909.SPL (Time Stop)
+THEN
+	RESPONSE #100
+		Spell(Myself,WIZARD_TIME_STOP)  // SPWI909.SPL (Time Stop)
+		Spell(NearestEnemyOf(Myself),WIZARD_ABI_DALZIMS_HORRID_WILTING)  // SPWI812.SPL (Abi-Dalzim's Horrid Wilting)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	Global("EnergyDrain","LOCALS",0)
+	GlobalLT("ZallaFlee","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SpellNoDec(NearestEnemyOf(Myself),WIZARD_ENERGY_DRAIN)  // SPWI914.SPL (Energy Drain)
+		SetGlobal("EnergyDrain","LOCALS",1)
+END
+
+IF
+	Allegiance(Myself,ENEMY)
+	Detect([PC])
+	!See(LastSeenBy(Myself))
+	HaveSpell(WIZARD_TRUE_SIGHT)  // SPWI609.SPL (True Sight)
+	Delay(10)
+THEN
+	RESPONSE #100
+		Spell(Myself,WIZARD_TRUE_SIGHT)  // SPWI609.SPL (True Sight)
+END
+
+IF
+	Allegiance(Myself,ENEMY)
+	See([PC])
+	HPLT([PC],60)
+	GlobalLT("KILL","LOCALS",5)
+THEN
+	RESPONSE #100
+		SpellNoDec([PC],WIZARD_POWER_WORD_KILL)  // SPWI912.SPL (Power Word: Kill)
+		IncrementGlobal("KILL","LOCALS",1)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	Global("SpellTrigger","LOCALS",0)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,39968)  // Spell Trigger—Fired
+		DisplayString(Myself,40248)  // Spell Trigger—True Sight
+		ReallyForceSpell(NearestEnemyOf(Myself),WIZARD_TRUE_SIGHT)  // SPWI609.SPL (True Sight)
+		DisplayString(Myself,40249)  // Spell Trigger—Dispel Magic
+		ReallyForceSpell(NearestEnemyOf(Myself),WIZARD_REMOVE_MAGIC)  // SPWI302.SPL (Remove Magic)
+		DisplayString(Myself,40251)  // Spell Trigger—Disintegrate
+		ReallyForceSpell(NearestEnemyOf(Myself),WIZARD_DISINTEGRATE)  // SPWI616.SPL (Disintegrate)
+		SetGlobal("SpellTrigger","LOCALS",1)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	Range(NearestEnemyOf(Myself),20)
+	Global("Waill","LOCALS",0)
+THEN
+	RESPONSE #100
+		SpellNoDec(NearestEnemyOf(Myself),WIZARD_WAIL_OF_THE_BANSHEE)  // SPWI913.SPL (Wail of the Banshee)
+		SetGlobal("Waill","LOCALS",1)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	Global("ZallaFlee","GLOBAL",1)
+THEN
+	RESPONSE #15
+		SpellNoDec(NearestEnemyOf(Myself),WIZARD_NPC_SYMBOL_STUN)  // SPWI898.SPL (Symbol: Stun)
+	RESPONSE #50
+		SpellNoDec(NearestEnemyOf(Myself),WIZARD_FINGER_OF_DEATH)  // SPWI713.SPL (Finger of Death)
+	RESPONSE #50
+		SpellNoDec(Myself,WIZARD_ANIMATE_DEAD)  // SPWI501.SPL (Animate Dead)
+	RESPONSE #40
+		SpellNoDec(Myself,WIZARD_SUMMON_EFREET)  // SPWI717.SPL (Summon Efreeti)
+	RESPONSE #20
+		SpellNoDec(Myself,WIZARD_MONSTER_SUMMONING_3)  // SPWI504.SPL (Monster Summoning III)
+	RESPONSE #5
+		SpellNoDec(NearestEnemyOf(Myself),WIZARD_MAZE)  // SPWI813.SPL (Maze)
+	RESPONSE #5
+		SpellNoDec(NearestEnemyOf(Myself),WIZARD_SHADOW_DOOR)  // SPWI505.SPL (Shadow Door)
+END
+
+IF
+	See(SixthNearestEnemyOf(Myself))
+THEN
+	RESPONSE #20
+		SpellNoDec(NearestEnemyOf(Myself),WIZARD_FINGER_OF_DEATH)  // SPWI713.SPL (Finger of Death)
+	RESPONSE #50
+		SpellNoDec(Myself,WIZARD_SUMMON_EFREET)  // SPWI717.SPL (Summon Efreeti)
+END
+
+IF
+	See(FifthNearestEnemyOf(Myself))
+THEN
+	RESPONSE #20
+		SpellNoDec(FifthNearestEnemyOf(Myself),WIZARD_FINGER_OF_DEATH)  // SPWI713.SPL (Finger of Death)
+	RESPONSE #50
+		SpellNoDec(FifthNearestEnemyOf(Myself),WIZARD_NPC_SYMBOL_STUN)  // SPWI898.SPL (Symbol: Stun)
+	RESPONSE #100
+		SpellNoDec(Myself,WIZARD_MONSTER_SUMMONING_3)  // SPWI504.SPL (Monster Summoning III)
+END
+
+IF
+	See(FourthNearestEnemyOf(Myself))
+THEN
+	RESPONSE #30
+		SpellNoDec(NearestEnemyOf(Myself),WIZARD_FINGER_OF_DEATH)  // SPWI713.SPL (Finger of Death)
+	RESPONSE #70
+		SpellNoDec(Myself,WIZARD_MONSTER_SUMMONING_3)  // SPWI504.SPL (Monster Summoning III)
+END
+
+IF
+	See(ThirdNearestEnemyOf(Myself))
+THEN
+	RESPONSE #30
+		SpellNoDec(NearestEnemyOf(Myself),WIZARD_FINGER_OF_DEATH)  // SPWI713.SPL (Finger of Death)
+	RESPONSE #70
+		SpellNoDec(Myself,WIZARD_MONSTER_SUMMONING_3)  // SPWI504.SPL (Monster Summoning III)
+END
+
+IF
+	See(SecondNearestEnemyOf(Myself))
+THEN
+	RESPONSE #40
+		SpellNoDec(NearestEnemyOf(Myself),WIZARD_FINGER_OF_DEATH)  // SPWI713.SPL (Finger of Death)
+	RESPONSE #60
+		SpellNoDec(Myself,WIZARD_MONSTER_SUMMONING_3)  // SPWI504.SPL (Monster Summoning III)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #30
+		SpellNoDec(NearestEnemyOf(Myself),WIZARD_FINGER_OF_DEATH)  // SPWI713.SPL (Finger of Death)
+	RESPONSE #70
+		SpellNoDec(Myself,WIZARD_MONSTER_SUMMONING_3)  // SPWI504.SPL (Monster Summoning III)
+	RESPONSE #30
+		SpellNoDec(Myself,WIZARD_SUMMON_EFREET)  // SPWI717.SPL (Summon Efreeti)
+END
