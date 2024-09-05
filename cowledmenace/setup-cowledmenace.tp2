@@ -723,15 +723,13 @@ ACTION_IF FILE_EXISTS_IN_GAME ~cauldron.bcs~ BEGIN
 
 	COPY_EXISTING ~mage18z.cre~ ~override~
 		READ_LONG 0x270 allegiance
-		READ_ASCII SCRIPT_DEFAULT name
   		PATCH_IF (SOURCE_SIZE > 0x2d3) BEGIN
+  			WRITE_LONG 0x14 41000																	// 6,000 XP --> 41,000 XP
 			WRITE_ASCIIT 0x34 ~dx#zport~				  		 									// Assign portrait
 			WRITE_ASCIIT 0x3c ~dx#zport~		
-			WRITE_ASCII 0x250 ~dx#zallo~ #8															// New Racial script
-			PATCH_IF (~%name%~ STRING_EQUAL_CASE ~None~ = 1) BEGIN
-				WRITE_ASCII 0x268 ~mage18z~ #8														// New default Script, keeps same name because of SCS replacement
-			END
-			WRITE_ASCII 0x260 ~dx#zallr~ #8															// New General script for dialog
+			WRITE_ASCII 0x248 ~dx#zallo~ #8															// New override script
+			WRITE_ASCII 0x250 ~mage18z~ #8															// New Class Script, keeps same name because of SCS replacement
+			WRITE_ASCII 0x258 ~dx#zallr~ #8															// New Racial script for dialog
 			WRITE_ASCII DIALOG ~dx#zalla~ #8		 		  										// Add dialog to cre
 			WRITE_BYTE 0x27b 0x23 																	// Lawful Neutral --> Neutral Evil
   		END
@@ -780,6 +778,36 @@ ACTION_IF FILE_EXISTS_IN_GAME ~cauldron.bcs~ BEGIN
 		END
 	END
 
+// Appropriate XP Rewards for Cowled Enforcers (klatu)
+
+	// Normal Cowled Wizards (level 14-16)
+	// XP change | 120 --> 6,000
+
+	ACTION_FOR_EACH cre IN ~cowenf02.cre~ ~cucow1.cre~ ~cucow2.cre~ ~cucow3.cre~ 
+		~cuwiz1.cre~ ~cuwiz2.cre~ ~cuwiz3.cre~ ~cuwiz4.cre~ ~cuwiz5.cre~ ~cuwiz6.cre~ ~cuwizc.cre~
+		~cuwizsu.cre~ ~L-MAGE01.cre~ ~L-MAGE02.cre~ ~O#CRENF1.cre~ ~O#CRENF2.cre~
+	BEGIN
+		ACTION_IF FILE_EXISTS_IN_GAME ~%cre%~ BEGIN
+			COPY_EXISTING ~%cre%~ ~override~
+				LPF SANITIZE_CRE RET ok = ok END
+				PATCH_IF ok BEGIN
+					WRITE_LONG 0x14 6000
+				END
+			BUT_ONLY
+		END
+	END
+
+	// Elite Cowled Wizards
+	// XP change | 120 --> 20,000
+
+	COPY_EXISTING ~cowenf2.cre~ ~override~
+		LPF SANITIZE_CRE RET ok = ok END
+		PATCH_IF ok BEGIN
+			WRITE_LONG 0x14 20000
+		END
+	BUT_ONLY
+
+
 // Minor: Give "Khollynnus Paac" her name back from before EE :D
 
 	COPY_EXISTING ~mage16c.cre~ ~override~
@@ -796,13 +824,14 @@ ACTION_IF FILE_EXISTS_IN_GAME ~cauldron.bcs~ BEGIN
     	BUT_ONLY
 	END
 
-// Give Layene 25 more HP
+// Give Layene 25 more HP and set her XP reward to 20,000, more appropriate for her level 
 
 	COPY_EXISTING ~hllayen.cre~ ~override~
 		LPF SANITIZE_CRE RET ok = ok END
 		PATCH_IF ok BEGIN
 			WRITE_SHORT 0x24 67
 			WRITE_SHORT 0x26 67
+			WRITE_LONG 0x14 20000
 		END
 	BUT_ONLY
 	
@@ -837,7 +866,7 @@ ACTION_IF FILE_EXISTS_IN_GAME ~cauldron.bcs~ BEGIN
 	END
 
 ////////////////////////////////////////////////////////////////////////////////////////////
-// Appropriate XP and Items for High-Level Spellcasters
+// Appropriate Items for High-Level Spellcasters
 ////////////////////////////////////////////////////////////////////////////////////////////
 
 // Special Thanks to Roxanne on Gibberlings3
@@ -847,52 +876,6 @@ BEGIN @2 DESIGNATED 2100
 
 	REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~mage18z.cre~ @50 //Required file missing -- install Baldur's Gate 2 EE
 	REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~blun31.itm~ @50 //Required file missing -- install Baldur's Gate 2 EE
-
-// Appropriate XP Rewards for Cowled Enforcers (klatu)
-
-	// Normal Cowled Wizards (level 14-16)
-	// XP change | 120 --> 6,000
-
-	ACTION_FOR_EACH cre IN ~cowenf02.cre~ ~cucow1.cre~ ~cucow2.cre~ ~cucow3.cre~ 
-		~cuwiz1.cre~ ~cuwiz2.cre~ ~cuwiz3.cre~ ~cuwiz4.cre~ ~cuwiz5.cre~ ~cuwiz6.cre~ ~cuwizc.cre~
-		~cuwizsu.cre~ ~L-MAGE01.cre~ ~L-MAGE02.cre~ ~O#CRENF1.cre~ ~O#CRENF2.cre~
-	BEGIN
-		ACTION_IF FILE_EXISTS_IN_GAME ~%cre%~ BEGIN
-			COPY_EXISTING ~%cre%~ ~override~
-				LPF SANITIZE_CRE RET ok = ok END
-				PATCH_IF ok BEGIN
-					WRITE_LONG 0x14 6000
-				END
-			BUT_ONLY
-		END
-	END
-
-	// Elite Cowled Wizards
-	// XP change | 120 --> 20,000
-
-	COPY_EXISTING ~cowenf2.cre~ ~override~
-		LPF SANITIZE_CRE RET ok = ok END
-		PATCH_IF ok BEGIN
-			WRITE_LONG 0x14 20000
-		END
-	BUT_ONLY
-
-// set Layene XP reward to 20,000, more appropriate for her level 
-
-	COPY_EXISTING ~hllayen.cre~ ~override~
-		LPF SANITIZE_CRE RET ok = ok END
-		PATCH_IF ok BEGIN
-			WRITE_LONG 0x14 20000
-		END
-	BUT_ONLY
-
-// set Zallanora XP reward to 41,000, more appropriate for her level 
-	COPY_EXISTING ~mage18z.cre~ ~override~
-		LPF SANITIZE_CRE RET ok = ok END
-		PATCH_IF ok BEGIN
-			WRITE_LONG 0x14 41000																	// 6,000 XP --> 41,000 XP
-		END
-	BUT_ONLY
 
 	// Append Loot tables
 
