@@ -1,0 +1,17 @@
+IF
+	Dead("DX#DEMI")  // Zallanora the Demilich
+	Global("DemiDead","DX#002",0)
+THEN
+	RESPONSE #100
+		Kill("DX#SHOON")  // Shoon VII
+		CreateVisualEffectObject("SPFLSRIN","DX#SHOON")  // Shoon VII
+		SetGlobal("DemiDead","DX#002",1)
+		CreateVisualEffect("SPROTECT",[417.697])
+		CreateVisualEffect("SPROTECT",[290.657])
+		Wait(1)
+		CreateVisualEffect("SPDISPMA",[417.697])
+		CreateVisualEffect("SPDISPMA",[290.657])
+		SmallWait(20)
+		CreateCreature("DX#SHOOL",[417.697],10)  // Shoon VII
+		CreateCreature("DX#RZALL",[290.657],14)  // Zallanora Argentresses
+END

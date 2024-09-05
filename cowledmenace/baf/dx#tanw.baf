@@ -1,0 +1,18 @@
+IF
+	NumTimesTalkedTo(0)
+	Detect([PC])
+THEN
+	RESPONSE #100
+		StartDialogueNoSet(LastSeenBy(Myself))
+END
+
+IF
+	Allegiance(Myself,ENEMY)
+	Detect([PC])
+	!AreaCheck("ar0500")  // Bridge
+	Exists("tanwiz1")  // Vellin Dahn
+THEN
+	RESPONSE #100
+		ForceSpell(Myself,POOF_GONE)  // SPIN660.SPL (Teleport)
+END
+

@@ -6,5 +6,5 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("RuneEncounter1","GLOBAL",1)
-		CreateCreatureDoor("tanwiz1",[1414.3070],SE)
+		CreateCreatureDoor("tanwiz1",[1414.3070],14)
 END

@@ -8,7 +8,7 @@ IF
 THEN
 	RESPONSE #100
 		SetGlobal("ZallaSpawned","GLOBAL",1)
-		CreateCreatureDoor("mage18z",[134.2311],SE)  // Zallanora
+		CreateCreatureDoor("mage18z",[134.2311],14)  // Zallanora
 		SmallWait(90)
 		ActionOverride("mage18z",StartDialogueNoSet(LastSeenBy(Myself)))
 END

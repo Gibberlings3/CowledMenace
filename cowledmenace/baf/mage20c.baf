@@ -1,0 +1,292 @@
+IF
+	See(NearestEnemyOf(Myself))
+	Global("Prep","LOCALS",0)
+	!StateCheck(Myself,STATE_REALLY_DEAD)
+THEN
+	RESPONSE #100
+		ApplySpell(Myself,WIZARD_SPELL_SHIELD)  // SPWI519.SPL (Spell Shield)
+		ApplySpell(Myself,WIZARD_STONE_SKIN)  // SPWI408.SPL (Stoneskin)
+		ApplySpell(Myself,WIZARD_PROTECTION_FROM_MAGIC_ENERGY)  // SPWI606.SPL (Protection from Magic Energy)
+		SetGlobal("Prep","LOCALS",1)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	Global("SpellTrigger","LOCALS",0)
+	!StateCheck(Myself,STATE_REALLY_DEAD)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,39968)  // Spell Trigger—Fired
+		DisplayString(Myself,43046)  // Spell Trigger—Mislead
+		ReallyForceSpell(Myself,WIZARD_MISLEAD)  // SPWI607.SPL (Mislead)
+		DisplayString(Myself,43047)  // Spell Trigger—Fireshield (Red)
+		ReallyForceSpell(Myself,WIZARD_FIRE_SHIELD_RED)  // SPWI418.SPL (Fireshield (Red))
+		DisplayString(Myself,40245)  // Spell Trigger—Globe of Invulnerability
+		ReallyForceSpell(Myself,WIZARD_GLOBE_OF_INVULNERABILITY)  // SPWI602.SPL (Globe of Invulnerability)
+		SetGlobal("SpellTrigger","LOCALS",1)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	StateCheck(Myself,STATE_SILENCED)
+	HaveSpell(WIZARD_VOCALIZE)  // SPWI219.SPL (Vocalize)
+THEN
+	RESPONSE #100
+		Spell(Myself,WIZARD_VOCALIZE)  // SPWI219.SPL (Vocalize)
+END
+
+IF
+	Allegiance(Myself,ENEMY)
+	Detect([PC])
+	!See(LastSeenBy(Myself))
+	HaveSpell(WIZARD_TRUE_SIGHT)  // SPWI609.SPL (True Sight)
+THEN
+	RESPONSE #100
+		Spell(Myself,WIZARD_TRUE_SIGHT)  // SPWI609.SPL (True Sight)
+END
+
+IF
+	Allegiance(Myself,ENEMY)
+	Detect([PC])
+	!See(LastSeenBy(Myself))
+	!HaveSpell(WIZARD_TRUE_SIGHT)  // SPWI609.SPL (True Sight)
+	Delay(10)
+THEN
+	RESPONSE #100
+		ReallyForceSpell(Myself,WIZARD_TRUE_SIGHT)  // SPWI609.SPL (True Sight)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	Global("Prep","LOCALS",1)
+	!StateCheck(Myself,STATE_REALLY_DEAD)
+THEN
+	RESPONSE #100
+		Spell(Myself,WIZARD_SPELL_TURNING)  // SPWI701.SPL (Spell Turning)
+		SetGlobal("Prep","LOCALS",2)
+END
+
+IF
+	!HasBounceEffects(Myself)
+	!HasImmunityEffects(Myself)
+	HaveSpell(WIZARD_SPELL_TURNING)  // SPWI701.SPL (Spell Turning)
+	Allegiance(Myself,ENEMY)
+THEN
+	RESPONSE #100
+		Spell(Myself,WIZARD_SPELL_TURNING)  // SPWI701.SPL (Spell Turning)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	TookDamage()
+	Global("Prep2","LOCALS",0)
+	!StateCheck(Myself,STATE_REALLY_DEAD)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,43050)  // Chain Contingency—Improved Mantle
+		ApplySpell(Myself,WIZARD_IMPROVED_MANTLE)  // SPWI808.SPL (Improved Mantle)
+		DisplayString(Myself,3302)  // Chain Contingency—Spell Turning
+		ApplySpell(Myself,WIZARD_SPELL_TURNING)  // SPWI701.SPL (Spell Turning)
+		DisplayString(Myself,40240)  // Chain Contingency—Mislead
+		ApplySpell(Myself,WIZARD_MISLEAD)  // SPWI607.SPL (Mislead)
+		SetGlobal("Prep2","LOCALS",1)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	TookDamage()
+	Global("Prep2","LOCALS",1)
+	!StateCheck(Myself,STATE_REALLY_DEAD)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,40252)  // Contingency—Protection from Magical Weapons
+		ApplySpell(Myself,WIZARD_PROTECTION_FROM_MAGIC_WEAPONS)  // SPWI611.SPL (Protection from Magical Weapons)
+		SetGlobal("Prep2","LOCALS",2)
+END
+
+IF
+	See([GOODCUTOFF.0.0.0.0.SUMMONED])
+	Global("summon","LOCALS",0)
+THEN
+	RESPONSE #100
+		FaceObject(LastSeenBy(Myself))
+		ReallyForceSpell(LastSeenBy(Myself),WIZARD_DEATH_SPELL)  // SPWI605.SPL (Death Spell)
+		SetGlobal("summon","LOCALS",1)
+END
+
+IF
+	Allegiance(Myself,ENEMY)
+	!HasBounceEffects(Myself)
+	!HasImmunityEffects(Myself)
+	HaveSpell(WIZARD_SPELL_TURNING)  // SPWI701.SPL (Spell Turning)
+THEN
+	RESPONSE #100
+		Spell(Myself,WIZARD_SPELL_TURNING)  // SPWI701.SPL (Spell Turning)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(WIZARD_TIME_STOP)  // SPWI909.SPL (Time Stop)
+THEN
+	RESPONSE #100
+		Spell(Myself,WIZARD_TIME_STOP)  // SPWI909.SPL (Time Stop)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(WIZARD_NPC_SYMBOL_STUN)  // SPWI898.SPL (Symbol: Stun)
+THEN
+	RESPONSE #100
+		Spell(NearestEnemyOf(Myself),WIZARD_NPC_SYMBOL_STUN)  // SPWI898.SPL (Symbol: Stun)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(WIZARD_NPC_SYMBOL_FEAR)  // SPWI899.SPL (Symbol: Fear)
+THEN
+	RESPONSE #100
+		Spell(NearestEnemyOf(Myself),WIZARD_NPC_SYMBOL_FEAR)  // SPWI899.SPL (Symbol: Fear)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(WIZARD_WAIL_OF_THE_BANSHEE)  // SPWI913.SPL (Wail of the Banshee)
+THEN
+	RESPONSE #100
+		Spell(NearestEnemyOf(Myself),WIZARD_WAIL_OF_THE_BANSHEE)  // SPWI913.SPL (Wail of the Banshee)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(WIZARD_SUN_FIRE)  // SPWI523.SPL (Sunfire)
+THEN
+	RESPONSE #100
+		Spell(Myself,WIZARD_SUN_FIRE)  // SPWI523.SPL (Sunfire)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(WIZARD_MAZE)  // SPWI813.SPL (Maze)
+THEN
+	RESPONSE #100
+		Spell(NearestEnemyOf(Myself),WIZARD_MAZE)  // SPWI813.SPL (Maze)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(WIZARD_ABI_DALZIMS_HORRID_WILTING)  // SPWI812.SPL (Abi-Dalzim's Horrid Wilting)
+THEN
+	RESPONSE #100
+		Spell(NearestEnemyOf(Myself),WIZARD_ABI_DALZIMS_HORRID_WILTING)  // SPWI812.SPL (Abi-Dalzim's Horrid Wilting)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(WIZARD_MAZE)  // SPWI813.SPL (Maze)
+THEN
+	RESPONSE #100
+		Spell(NearestEnemyOf(Myself),WIZARD_MAZE)  // SPWI813.SPL (Maze)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(WIZARD_FINGER_OF_DEATH)  // SPWI713.SPL (Finger of Death)
+THEN
+	RESPONSE #100
+		Spell(NearestEnemyOf(Myself),WIZARD_FINGER_OF_DEATH)  // SPWI713.SPL (Finger of Death)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(WIZARD_PRISMATIC_SPRAY)  // SPWI714.SPL (Prismatic Spray)
+THEN
+	RESPONSE #100
+		Spell(NearestEnemyOf(Myself),WIZARD_PRISMATIC_SPRAY)  // SPWI714.SPL (Prismatic Spray)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(WIZARD_SUMMON_EFREET)  // SPWI717.SPL (Summon Efreeti)
+THEN
+	RESPONSE #100
+		Spell(Myself,WIZARD_SUMMON_EFREET)  // SPWI717.SPL (Summon Efreeti)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(WIZARD_NPC_SYMBOL_STUN)  // SPWI898.SPL (Symbol: Stun)
+THEN
+	RESPONSE #100
+		Spell(NearestEnemyOf(Myself),WIZARD_NPC_SYMBOL_STUN)  // SPWI898.SPL (Symbol: Stun)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(WIZARD_MAZE)  // SPWI813.SPL (Maze)
+THEN
+	RESPONSE #100
+		Spell(NearestEnemyOf(Myself),WIZARD_MAZE)  // SPWI813.SPL (Maze)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(WIZARD_FLESH_TO_STONE)  // SPWI604.SPL (Flesh to Stone)
+THEN
+	RESPONSE #100
+		Spell(NearestEnemyOf(Myself),WIZARD_FLESH_TO_STONE)  // SPWI604.SPL (Flesh to Stone)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(WIZARD_DISINTEGRATE)  // SPWI616.SPL (Disintegrate)
+THEN
+	RESPONSE #100
+		Spell(NearestEnemyOf(Myself),WIZARD_DISINTEGRATE)  // SPWI616.SPL (Disintegrate)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(WIZARD_DOMINATION)  // SPWI506.SPL (Domination)
+THEN
+	RESPONSE #100
+		Spell(NearestEnemyOf(Myself),WIZARD_DOMINATION)  // SPWI506.SPL (Domination)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	HaveSpell(WIZARD_SUMMON_EFREET)  // SPWI717.SPL (Summon Efreeti)
+THEN
+	RESPONSE #100
+		Spell(Myself,WIZARD_SUMMON_EFREET)  // SPWI717.SPL (Summon Efreeti)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #15
+		SpellNoDec(FifthNearestEnemyOf(Myself),WIZARD_NPC_SYMBOL_STUN)  // SPWI898.SPL (Symbol: Stun)
+	RESPONSE #10
+		SpellNoDec(NearestEnemyOf(Myself),WIZARD_FINGER_OF_DEATH)  // SPWI713.SPL (Finger of Death)
+	RESPONSE #10
+		SpellNoDec(Myself,WIZARD_ANIMATE_DEAD)  // SPWI501.SPL (Animate Dead)
+	RESPONSE #10
+		SpellNoDec(Myself,WIZARD_SUMMON_EFREET)  // SPWI717.SPL (Summon Efreeti)
+	RESPONSE #10
+		SpellNoDec(Myself,WIZARD_MONSTER_SUMMONING_3)  // SPWI504.SPL (Monster Summoning III)
+	RESPONSE #10
+		SpellNoDec(NearestEnemyOf(Myself),WIZARD_MAZE)  // SPWI813.SPL (Maze)
+	RESPONSE #5
+		SpellNoDec(NearestEnemyOf(Myself),WIZARD_SHADOW_DOOR)  // SPWI505.SPL (Shadow Door)
+	RESPONSE #40
+		SpellNoDec(NearestEnemyOf(Myself),WIZARD_SUN_FIRE)  // SPWI523.SPL (Sunfire)
+	RESPONSE #40
+		SpellNoDec(NearestEnemyOf(Myself),WIZARD_SKULL_TRAP)  // SPWI313.SPL (Skull Trap)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+THEN
+	RESPONSE #100
+		AttackReevaluate(NearestEnemyOf(Myself),15)
+END
+
