@@ -113,6 +113,10 @@ This Modification is unofficial Fan Content permitted under the Fan Content Poli
 
 ## Version History
 
+1.0.3 -- Minor updates
+
+- Added Simplified Chinese translation (thanks to Lewis Liu)
+
 1.0.2 -- Minor updates
 
 - Fixed the player being stuck in the Pocket Plane at the end of the quest by automatically leaving the plane and going back to where you were. (if you want to go back to the Pocket Plane, feel free to do so) + added Russian translation for that part
