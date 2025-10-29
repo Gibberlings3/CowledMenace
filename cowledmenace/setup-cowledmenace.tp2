@@ -16,6 +16,7 @@ ASK_EVERY_COMPONENT                                                             
 	LANGUAGE ~English~ ~english~ ~cowledmenace/lang/english/english.tra~
 	LANGUAGE ~Russian~ ~Russian~ ~cowledmenace/lang/russian/russian.tra~
 	LANGUAGE ~Simplified Chinese (translation: Lewis Liu)~ ~schinese~ ~cowledmenace/lang/schinese/schinese.tra~
+	LANGUAGE ~Italian (translation: threetimesdavey)~ ~Italian~ ~cowledmenace/lang/italian/italian.tra~
 
 //////////////////////////////////////////////////////////////////////////
 // Main Component - The Cowled Menace
