@@ -1,0 +1,584 @@
+@0 = ~Cowled Menace mod do EET: Komponent glowny~
+@1 = ~Cowled Menace: Adekwatna ilosc PD za Zakapturzonych egzekutorow (klatu)~
+@2 = ~Cowled Menace: Odpowiednie przedmioty dla wysokopoziomowych czarodziejow~
+@3 = ~Cowled Menace: Wteleportujacych sie czarodziejow nie mozna unieszkodliwic przed aktywacja ich wzmocnien (SCS)~
+@4 = ~Cowled Menace: Magowie rzucaja Brame z dala od siebie~
+@5 = ~Cowled Menace: Uzyj kuli Odchylenia czaru sprzed EE (tylko EE)~
+@6 = ~Tylko w przypadku Pulapki na czary~
+@7 = ~W przypadku wszystkich czarow uzywajacych tej animacji (zalecane)~
+
+@49 = ~Brak wymaganej modyfikacji: ten komponent do instalacji wymaga Enhanced Edition Trilogy~
+@50 = ~Brak wymaganego pliku: ten komponent do instalacji wymaga Baldur's Gate II~
+@51 = ~Ten komponent do instalacji wymaga Baldur's Gate II: Enhanced Edition~
+
+@88 = ~Kamień łotrzyków w twoim plecaku zaczyna cicho brzęczeć. Najwyraźniej reaguje na coś, co znajduje się niedaleko.~
+@89 = ~Gdy wchodzisz do pomieszczenia, kamień strażniczy Zallonory w twoim plecaku zaczyna wibrować. Coś, gdzieś w tym pomieszczeniu, go pobudziło.~
+@90 = ~Zakapturzona groźba~
+@91 = ~Gdy zbliżasz się do nędznie wyglądających drzwi, kamień łotrzyków w twoim plecaku jaśnieje i znika. Czarna otchłań pochłania cię bez ostrzeżenia.~
+@92 = ~Gdy podchodzisz do ściany, kamień strażniczy Zallonory w twoim plecaku gwałtownie się nagrzewa i rozbłyska. W tej samej chwili ogarnia cię czarna pustka.~
+@93 = ~Nie widząc innego wyjścia, wrzucasz kamień duszy do wrzącego kotła. Natychmiast ciecz się uspokaja, a maszyna przy ścianie zaczyna jednostajnie buczeć.~
+@94 = ~Ciecz w kotle burzy się i kłębi, gdy podchodzisz bliżej. Na kotle widnieje symbol Spaczonej Runy, a pod nim napis: Kamień jest śmiercią. Śmierć jest drogą. Ścieżka wciąż istnieje...~
+@95 = ~Kamień duszy~
+@96 = ~To kamień duszy pozyskany z ciała sługi Mistrza Run Kartaka. Jego przeznaczenie pozostaje na razie nieznane.~
+@97 = ~Notatka Koshiego~
+@98 = ~Raport dotyczący budynku obok Gospody Delosara:
+
+Z tego, co ustaliliśmy, drzwi prowadzące na nabrzeże wymagają pewnego rodzaju klucza. Nikomu z nas nie udało się ustalić, jaki to klucz. Sugerowany plan działania: urządzić zasadzkę na każdego, kto wyjdzie przez te drzwi, i odebrać mu klucz siłą...~
+@100 = ~Na tym pergaminie widnieje niepodrabialny emblemat Zakapturzonych Czarodziejów z Amn. Pod nim widnieje tekst:
+
+„Moje wpływy w Athkatli są już wystarczające, by przejść do kolejnego etapu naszego planu: Wrót Baldura, zaczynając od wschodnich dzielnic miasta. Bądź pewien, że z moją organizacją u twego boku nasza dominacja nad regionem Amn stanie się absolutna.”~
+
+@200 = ~Perła Mocy (9. poziom)~
+@201 = ~Potężne zaklęcia nałożone na ten kamień ioun czynią go skarbem gorliwie pożądanym przez czarodziejów.
+
+PARAMETRY:
+
+Specjalne:
+– Pozwala zapamiętać jeden dodatkowy czar maga 9. poziomu
+
+Waga: 0~
+
+@202 = ~Krótki miecz~
+@203 = ~Klinga Szczęścia~
+@204 = ~Klinga Szczęścia, przedmiot o legendarnej mocy, potrafi spełnić 3 życzenia swojego właściciela. Oczywiście dar ten wiąże się z licznymi zagrożeniami – życzenia są nieprzewidywalne, a jedynie niezwykle precyzyjnie sformułowane przynoszą pozytywne skutki. Dlaczego ta konkretna klinga ma już tylko 2 użycia i to, czego wcześniej dzięki niej dokonano, pozostaje tajemnicą.
+
+Nawet pozbawiona mocy spełniania życzeń ta klinga wciąż stanowi wyjątkowo potężną broń.
+
+PARAMETRY:
+
+Specjalne:
+– Rzuty obronne: +1
+– Szczęście: +1
+– Wykrywanie pułapek: +5%
+– Kradzież kieszonkowa: +5%
+– Skradanie się: +5%
+– Krycie się w cieniu: +5%
+– Wykrywanie iluzji: +5%
+– Zakładanie pułapek: +5%
+
+Właściwości ładunków:
+– Życzenie (2 ładunki)
+
+Obrażenia: 1k6+3
+TraK0: +3
+Typ obrażeń: sieczne
+Opóźnienie: 1
+Rodzaj biegłości: miecz krótki
+Typ broni: 1-ręczna
+
+Wymagania:
+– Siła 4
+
+Waga: 3~
+
+@205 = ~Kamień strażniczy Zallonory~
+
+@206 = ~Odsuwasz ciężkie wieko, a odór rozkładu niemal zwala cię z nóg. Wewnątrz spoczywa niewielka skrzynka.~
+@207 = ~Skrzynka nie ustępuje, choć szarpiesz za wieko. Wygląda na to, że na razie nie możesz jej otworzyć.~
+@208 = ~Otwierasz skrzynkę i zabierasz to, co w niej znalazłeś.~ ~Otwierasz skrzynkę i zabierasz to, co w niej znalazłaś.~
+@209 = ~Wydaje się, że wieko sarkofagu jest ciężkie, ale jeśli tylko zechcesz, możesz je odsunąć.~
+
+@250 = ~Nasz kontakt z Athkatli powinien tu wkrótce dotrzeć, Mistrzu Run. Zapewniam, że zasoby Zakapturzonych Czarodziejów okażą się nieocenione w...~
+@251 = ~Wreszcie. Wygląda na to, że przybyli.~
+@252 = ~Mistrzu Run... to nie jest kontakt, którego oczekiwaliśmy.~
+@253 = ~Doprawdy?~
+@254 = ~Ty! Śmiertelniku. Znalazłeś klucz i wiedziałeś, jak go użyć. Skąd to wiedziałeś?~ ~Ty! Śmiertelniczko. Znalazłaś klucz i wiedziałaś, jak go użyć. Skąd to wiedziałaś?~
+@255 = ~Nie wiem. W jednej chwili byłem we Wrotach Baldura, a w następnej znalazłem się tutaj.~ ~Nie wiem. W jednej chwili byłam we Wrotach Baldura, a w następnej znalazłam się tutaj.~
+@256 = ~Kimkolwiek jesteś, to twój zły dzień. Przygotuj się na gniew Spaczonej Runy.~
+@257 = ~Chwila... nadchodzi ktoś jeszcze.~
+@258 = ~Nie mam pojęcia. Ten kamień bez przerwy mnie teleportuje. Ostatnim razem ludzie tacy jak wy stanęli mi na drodze... i źle na tym wyszli.~
+@259 = ~A więc to ty odpowiadasz za upadek naszej enklawy w Athkatli. Runa nie puści ci tego płazem.~
+
+@267 = ~Witaj, Zallonoro. Spodziewaliśmy się ciebie.~
+@268 = ~Mów szybko – mam sprawy do załatwienia.~
+@269 = ~Naturalnie. Wygląda na to, że intruzi znaleźli drogę do środka. Dołączysz do zabawy, zanim przejdziemy do spraw ważnych?~
+@270 = ~Nie tak prędko. Intruzi przedostali się do środka... To ci, którzy zabili Shangalara Czarnego w Athkatli – tuż pod twoim nosem.~
+
+@280 = ~<CHARNAME>... Znów się spotykamy. Byłam całkiem zadowolona z naszego wzajemnego ignorowania się, ale nie mogę pozwolić, byś siał chaos w moich szeregach. Czas ponieść konsekwencje.~ ~<CHARNAME>... Znów się spotykamy. Byłam całkiem zadowolona z naszego wzajemnego ignorowania się, ale nie mogę pozwolić, byś siała chaos w moich szeregach. Czas ponieść konsekwencje.~
+
+@297 = ~Dziecię Bhaala... Wygląda na to, że cię nie doceniłam. To błąd, którego więcej nie popełnię.~
+@298 = ~Żegnam – i obyśmy już nigdy się nie spotkali, bo następnym razem będę gotowa cię unicestwić.~
+@300 = ~Wygląda na to, że Zakapturzeni Czarodzieje cię nie docenili, Dziecię Bhaala. Kosztowny błąd, którego nie popełnimy ponownie. Nasza organizacja nie będzie ci więcej zawadzać.~
+@301 = ~Korzystaj więc ze swojej swobody rzucania czarów... póki możesz.~
+
+@302 = ~O tak, znam ich. To Dziecię Bhaala – i to wyjątkowo przedsiębiorcze.~
+@303 = ~Wygląda na to, że wreszcie wtrąciłeś się w sprawy, w które nie powinieneś. Dziś zakończy się twoje życie.~ ~Wygląda na to, że wreszcie wtrąciłaś się w sprawy, w które nie powinnaś. Dziś zakończy się twoje życie.~
+@304 = ~Owszem, znam ich. Sama myśl, że to... Dziecię Bhaala mogło pokonać Shangalara... budzi odrazę.~
+
+@306 = ~Mistrzu Run, radziłbym ci użyć przeciwko nim całej swojej mocy. To nie jest przeciwnik, z którym można igrać.~ ~Mistrzu Run, radziłbym ci użyć przeciwko niej całej swojej mocy. To nie jest przeciwniczka, z którą można igrać.~
+
+@310 = ~Ach, zapewne zdążyli już poprosić cię, byś opowiedział się po którejś stronie w tej żałosnej „wojnie gildii”.~ ~Ach, zapewne zdążyli już poprosić cię, byś opowiedziała się po którejś stronie w tej żałosnej „wojnie gildii”.~
+@311 = ~Słucham?~
+@312 = ~Zaraz... możesz rzucać czary w mieście? Jak to możliwe?~
+
+@313 = ~Zanim zapytasz – nie, nie powiem ci, dokąd zabrano twoich towarzyszy. Wiem, kim jesteś, Dziecię Bhaala, i twoje sprawy mnie nie obchodzą.~
+@314 = ~Tutaj każdy może to robić, nawet ty. Dzielnica Cmentarna jest dostatecznie daleko od naszych oczu... zazwyczaj...~
+@315 = ~„Naszych”? Więc jesteś jedną z Zakapturzonych Czarodziejów?~
+@316 = ~Tak. I zanim zapytasz – nie, nie powiem ci, dokąd zabrano twoich towarzyszy.~
+@317 = ~Wiem, kim jesteś, Dziecię Bhaala. Twoje problemy mnie nie dotyczą.~
+
+@320 = ~Skąd o mnie wiesz?~
+
+@322 = ~Naprawdę sądzisz, że mag kalibru Jona Irenicusa pozostałby tu niezauważony? Doskonale znam jego zamiary.~
+
+@323 = ~Wiedz, że gdyby było trzeba, sama bym się z nim rozprawiła. I zrobię to samo z tobą, jeśli okaże się to konieczne. Zakapturzeni zawsze patrzą.~
+
+@330 = ~Spotykamy się ponownie, Dziecię Bhaala. Spaczona Runa i ja uznaliśmy, że twoja bezczelna ingerencja w nasze sprawy musi się zakończyć.~
+
+@331 = ~Ostatnio cię nie doceniłam, ale tym razem jestem przygotowana. Wyrwiemy twoją boską duszę z tego świata.~
+
+
+// Crypt 2.0
+
+@340 = ~Więc znalazłeś drogę nawet tutaj. Do mojego sanktuarium. Pomyśleć, że przetrwałem wbrew wszelkim przeciwnościom przez setki lat, tylko po to, by skończyć w takim stanie. Bogom nie brakuje poczucia humoru.~ ~Więc znalazłaś drogę nawet tutaj. Do mojego sanktuarium. Pomyśleć, że przetrwałem wbrew wszelkim przeciwnościom przez setki lat, tylko po to, by skończyć w takim stanie. Bogom nie brakuje poczucia humoru.~
+@341 = ~Więc JEDNAK masz setki lat, tak jak podejrzewałem!~ ~Więc JEDNAK masz setki lat, tak jak podejrzewałam!~
+@342 = ~Widzę, że znalazłeś potężnych przyjaciół do pomocy, Pomiocie Bhaala. Ty również potrafisz zaskoczyć.~ ~Widzę, że znalazłaś potężnych przyjaciół do pomocy, Pomiocie Bhaala. Ty również potrafisz zaskoczyć.~
+@343 = ~UuUwUuUieeelbiam śpiewać... ŚPIEWAĆ!!!~
+@344 = ~Niestety, to tutaj kończy się twoja pogoń za zemstą i sensem. Jestem teraz tylko nieszkodliwym, choć dość niezniszczalnym duchem.~
+@345 = ~Co to za miejsce? Co się tu, do diabła, wydarzyło?~ // to 350
+@350 = ~Nazywam się Shoon, siódmy tego imienia. Ta wyjąca czaszka to prawdziwa Zallonora. A właściwie jej odbicie. Być może żyją jeszcze dziś ci, którzy pamiętają moje imię, a dreszcz grozy przeszedłby ich, gdyby je usłyszeli.~
+@351 = ~Shoon... VII? Szalony cesarz? To nie może być prawda, Shoon VII nie żyje od stuleci.~
+
+@352 = ~Ach, czyli słyszałeś opowieści o moich dokonaniach! Byłem niegdyś wielkim imperatorem, ale mnie zdradzono. A przynajmniej wszyscy tak myślą. Upozorowałem własną śmierć i zgłębiłem tajniki bycia liszem... i ostatecznie odniosłem sukces.~ ~Ach, czyli słyszałaś opowieści o moich dokonaniach! Byłem niegdyś wielkim imperatorem, ale mnie zdradzono. A przynajmniej wszyscy tak myślą. Upozorowałem własną śmierć i zgłębiłem tajniki bycia liszem... i ostatecznie odniosłem sukces.~
+
+@353 = ~A co z tą elfką? Jaki ma z tym wszystkim związek?~
+
+@354 = ~Powód, dla którego pozostawałem w uśpieniu przez stulecia, jest również powodem, dla którego nie możecie skrzywdzić ani mnie, ani jej w obecnym stanie.~
+
+@355 = ~Pewnego brzemiennego w skutki dnia Zallonora i jej towarzysze trafili do mojej domeny. Zamierzałem pożreć ich dusze, by wydostać się z pewnego... kłopotu, w który się wpakowałem. Byłem uwięziony wewnątrz Księgi Jednorożca – skutek moich badań nad pradawnymi mocami. Poważny błąd.~
+
+@356 = ~Wyrżnąłem ich wszystkich na miejscu, pochłonąłem ich dusze, oczekując wybawienia... ale właśnie wtedy nadszedł Czas Niepokojów. Zallonora wciąż żyła – nie wiem, jakim cudem. Jedyne ocalałe stworzenie... i wtedy zamieniliśmy się ciałami.~
+
+@357 = ~Tak rozpoczęło się nasze przekleństwo. Ona – uwięziona w Księdze w mojej nadgniłej powłoce. Ja – na zawsze tkwiący w kruchym ciele młodej elfki.~
+
+@365 = ~Tak, to musiało być naprawdę straszne – utknąć w młodym elfim ciele.~ 
+
+@370 = ~Minęło dziesięć lat, zanim potrafiłem właściwie je kontrolować i kształtować energię magiczną z dawną biegłością. A byłem w tym niezwykle biegły, co zapewne zauważyliście podczas naszych starć.~
+
+@371 = ~Z nowym ciałem przyszła nowa siła. I ambicja. Wznowiłem więc plany sprzed stuleci... przejąć władzę nad Wybrzeżem Mieczy – z ukrycia.~
+
+@372 = ~Okazało się, że świat przez te wieki niewiele się zmienił. Zalotnicy zjeżdżali się z całych krain, by „uczyć” młodą i nadgorliwą uczennicę magii. Zdobywanie wśród nich wpływów było zadaniem śmiesznie łatwym.~
+
+@373 = ~Ustawiali się wręcz w kolejce. Nowe doświadczenie, jak pewnie podejrzewasz. Nim się obejrzałem, wspinałem się po szczeblach władzy, nie wzbudzając cienia podejrzeń. Prawie miałem zarówno Zakapturzonych Czarodziejów, jak i Spaczoną Runę pod moją kontrolą... A wtedy pojawiłeś się ty.~ ~Ustawiali się wręcz w kolejce. Nowe doświadczenie, jak pewnie podejrzewasz. Nim się obejrzałem, wspinałem się po szczeblach władzy, nie wzbudzając cienia podejrzeń. Prawie miałem zarówno Zakapturzonych Czarodziejów, jak i Spaczoną Runę pod moją kontrolą... A wtedy pojawiłaś się ty.~
+
+@374 = ~Jesteś obrzydliwy i równie plugawy jak głoszą legendy. Po co nam to mówisz? Co masz z tego?~
+
+@380 = ~Szczerze? Zrzucenie warstw kłamstw i wypowiedzenie prawdy... jest zadziwiająco wyzwalające. Poza młodą Zallonorą, która nie rozumie ani słowa, jesteście jedynymi istotami w całych krainach, które poznały moją historię. Sprawiło mi to przyjemność.~
+
+@381 = ~Ale co ważniejsze, nic z tego nie ma teraz dla mnie znaczenia. Nie możesz zabić mojego ducha bardziej, niż możesz ją uratować. Jestem skazany na ten stan, dopóki magia Księgi nie osłabnie na tyle, bym mógł ją pokonać. Albo dopóki nie wydarzy się znowu takie wydarzenie jak Czas Niepokojów, które zniweczy moc Księgi.~
+
+@382 = ~Może to potrwać kolejne stulecia. A może tysiąclecia... Wtedy wznowię mój projekt, dopracowywany przez niemal wieczność. I nie powstrzymacie mnie – bo będziecie dawno martwi. Tak, przetrwam nawet ciebie, Laeral. Przetrwałem ciebie i wszystkie twoje siostry.~
+
+@385 = ~A jeśli po prostu cię teraz zabiję?~
+
+@386 = ~To dobrze. Szczerze mówiąc, nie obchodzą mnie twoje tysiącletnie plany. Rób, co chcesz.~
+
+@397 = ~Teraz, gdy ta smarkula zniknęła, już mnie nie obchodzisz. Nie przejmuję się twoimi śmiertelnymi sprawami. To, nad czym teraz się zastanawiam, to co powinienem zrobić z wiecznością na myślenie.~
+
+@398 = ~A co ty byś zrobił, gdybyś miał wieczność na myślenie? Właśnie nad tym się w tej chwili zastanawiam. Ty jednak powinieneś zastanowić się nad znacznie krótszym okresem czasu, na przykład co powinieneś zrobić teraz.~ ~A co ty byś zrobiła, gdybyś miała wieczność na myślenie? Właśnie nad tym się w tej chwili zastanawiam. Ty jednak powinnaś zastanowić się nad znacznie krótszym okresem czasu, na przykład co powinnaś zrobić teraz.~
+
+@399 = ~Można tak na to patrzeć. Ja mam całą wieczność, by rozmyślać nad światem. Powiedziałbym, że to ogromna szansa. Żegnam cię, Dziecię Boga – i powodzenia w twojej prywatnej pogoni za znaczeniem.~
+@400 = ~Chroniony przez Osłonę przed śmiercią~
+@401 = ~Chroniony przez Barierę ostrzy~
+@402 = ~Wyzwalacz zaklęć – Odchylenie czaru~
+@403 = ~Łańcuch czarów – Plugawy uwiąd Abi-Dalzima~
+@404 = ~Łańcuch czarów – Zaklęcie śmierci~
+@405 = ~Łańcuch czarów – Wyładowanie łańcuchowe~
+@406 = ~Sekwencer zaklęć – Eksplodująca czaszka~
+@407 = ~Chroniony przez Żelazną skórę~
+@408 = ~Pułapka Zatrzymania czasu – Aktywna~
+@409 = ~Użycie dowolnego przedmiotu – Brama (zwój)~
+@410 = ~Użycie dowolnego przedmiotu – Niepodatność na czary: Poznanie (zwój)~
+@411 = ~Użycie dowolnego przedmiotu – Prawdziwe widzenie (zwój)~
+@412 = ~Użycie dowolnego przedmiotu – Całkowita niewrażliwość (zwój)~
+@420 = ~Proszę bardzo, spróbuj. Sam też próbowałem. Wynajmowałem nawet poszukiwaczy przygód, by próbowali. Oboje jesteśmy całkowicie odporni na wszelkie rany – skutek uboczny, jak sądzę, sytuacji, w jakiej znaleźliśmy się przez Księgę. Jej wiążąca klątwa pełni zarazem rolę ochronnego kokonu.~
+
+@421 = ~Moc Księgi jest absolutna i nieodwracalna. Uwierz mi – każdy, kto wie cokolwiek o Księdze, doskonale zdaje sobie z tego sprawę.~
+
+@423 = ~To jakim cudem byłem w stanie zabić cię w Amkethran?~ ~To jakim cudem byłam w stanie zabić cię w Amkethran?~
+
+
+@426 = ~Kiedy zamieniliśmy się ciałami, to ja zostałem uwięziony w Księdze, podczas gdy Zallonora była wolna. Później role się odwróciły – ja stałem się wolny, a ona uwięziona w Księdze. Ale nasze duchy są połączone z powodu ingerencji Czasu Niepokojów; żadne z nas nie może opuścić świata żywych bez drugiego. A ponieważ ona jest uwięziona w Księdze... ja nie mogę odejść, nawet teraz, gdy moja fizyczna forma jest martwa. I nie mogę stworzyć nowej.~
+
+@427 = ~Teraz mam całe tysiąclecie, by planować i dopracowywać strategię na dzień, w którym to przekleństwo wreszcie przeminie. Powiedziałbym, że to znakomita okazja. Żegnam cię, boskie dziecię , i powodzenia w twej pogoni za własną doniosłością. Twoje sprawy nie mają już dla mnie żadnego znaczenia.~
+
+@430 = ~I słusznie. Masz jeszcze przed sobą całe życie, życie, które mnie nie dotyczy. Dlaczego miałbyś się tym przejmować?~ ~I słusznie. Masz jeszcze przed sobą całe życie, życie, które mnie nie dotyczy. Dlaczego miałabyś się tym przejmować?~
+
+@435 = ~Nie tak prędko, wasza wysokość. Zdaje się, że w swoim rzekomo niezawodnym planie przeoczyłeś jeden drobny szczegół.~
+@440 = ~Przy całej twojej przebiegłości przeoczyłeś jeden drobny szczegół: jestem Wybranką Mystry, bogini magii – a spośród wszystkich jej Wybrańców to ja najbieglej władam magicznymi artefaktami i przedmiotami.~
+
+@441 = ~Ta Księga Jednorożca... znam ją. Czuję jej obecność. Jest tutaj, w twoim sarkofagu.~
+
+@442 = ~To artefakt o olbrzymiej mocy; jego magia jest absolutna i nieodwracalna. Ale sama Księga, jako przedmiot, nie jest odporna na zniszczenie. Sam powiedziałeś – twój plan polega na tym, by kiedyś ją przełamać.~
+
+@443 = ~Jak każdy taki artefakt, czerpie moc ze Splotu, a ja władam Srebrnym Płomieniem Mystry. Jeśli zechce mi użyczyć swej woli... być może zdołam zniszczyć Księgę, a wraz z jej zniszczeniem – odwrócić jej działanie.~
+
+@450 = ~Cóż to za szaleństwo? Zniszczyłabyś obiekt o tak nieoszacowanej wartości?! Co miałabyś z tego?~
+
+@451 = ~Nic namacalnego. Właściwie – sama mogę na tym stracić. Ale świat będzie lepszy bez ciebie. Tym razem na zawsze.~
+
+@452 = ~Niemożliwe! Nie zrobisz tego, nie masz takiej mocy...~
+
+@453 = ~Ależ myślę, że mam. I sam przyznałeś: jesteś teraz zupełnie nieszkodliwy... a więc nie możesz nas powstrzymać.~
+
+@455 = ~<CHARNAME>, posiadam potężne skarby, pradawne artefakty, których lokalizacje zna tylko jedna istota – ja sam. Stałeś się silny, może nawet silniejszy niż ona. Pomóż mi, a uczynię cię bogatszym i potężniejszym, niż zdołałbyś to sobie wyobrazić.~ ~<CHARNAME>, posiadam potężne skarby, pradawne artefakty, których lokalizacje zna tylko jedna istota – ja sam. Stałaś się silna, może nawet silniejsza niż ona. Pomóż mi, a uczynię cię bogatszą i potężniejszą, niż zdołałabyś to sobie wyobrazić.~
+
+@460 = ~Jasne. A przy okazji zwrócić się przeciw jednej z Siedmiu Sióstr? Nie, dzięki.~
+
+@461 = ~Daj pomyśleć... komu mam pomóc? Uroczej osobie, znanej od stuleci jako sprawiedliwa i rozsądna władczyni, która mi pomogła... czy tyrańskiemu szaleńcowi, który dwa razy próbował mnie zabić?~
+@462 = ~Nie uwierzę w kłamstwa szczura w potrzasku, który z własnej woli kłamał, oszukiwał i mordował przez stulecia. Jeśli jest sposób, by cię zniszczyć, jestem za.~
+@463 = ~Chwila, chwila... jakie dokładnie bogactwa masz na myśli?~
+@470 = ~Bezczelne ladacznice! Oczywiście, uczennica Mystry... Czemu sam na to nie wpadłem?! Powinienem był ujarzmić jedną z twoich sióstr, Laeral, i zmusić ją, by mnie uwolniła! Pożałowałybyście dnia, w którym się narodziłyście! Jej krzyki niosłyby się przez Splot każdego dnia!~
+@471 = ~Zapamiętajcie jedno: jeśli to przetrwam, czeka was wiekuista męka – i nic poza tym.~
+@472 = ~Odsuń się, <CHARNAME>. Muszę rozpocząć spotkanie z Boginią.~
+@473 = ~A tak na marginesie, wasza wysokość, żadna z moich sióstr nie potrafi tego zrobić. Ale czuję ulgę, że to tylko puste groźby, bo wiem, że nie byłyby puste, gdybyś przechadzał się po Krainach.~
+
+// PLEASE NO – gałąź chciwa
+
+@480 = ~Znam lokalizację Żywego klejnotu, a także klingi spełniającej życzenia, oraz...~
+@481 = ~<CHARNAME>, Shoon VII to jeden z najplugawszych tyranów, jacy kiedykolwiek żyli w Krainach. Uosobienie zła. Nie możesz wierzyć jego słowom. Nie zamierza dotrzymać żadnej obietnicy – i dobrze o tym wiesz.~
+@485 = ~Tylko sobie z niego żartowałem. Działaj.~ ~Tylko sobie z niego żartowałam. Działaj.~
+@486 = ~Ale mnie przekonał. Chcę dostać to, co mi oferuje. Nie pozwolę ci go zniszczyć.~
+@490 = ~Tak, mówi jak prawdziwe dziecko mordu! Zabij ją, a dotrzymam swoich obietnic.~
+@491 = ~Źle mnie zrozumiałeś. Spełnij obietnicę tu i teraz.~
+@492 = ~Ja... nie pozwolę na coś takiego! Jak śmiesz wysuwać takie żądania?!~
+@496 = ~Cóż, w takim razie to wszystko na nic. Bogactwa, które nigdy się nie zmaterializują. Twoja chciwość mnie brzydzi, ale wiem, że nie warto stawać do walki z najsłynniejszym z Pomiotów Bhaala.~
+@497 = ~Wiedz, że twoja dzisiejsza decyzja może spowodować śmierć milionów. A Shoon cię zdradzi, to jest pewne. Rozważ to, pływając w swoich wyimaginowanych bogactwach...~
+@498 = ~Stało się.~
+@499 = ~Klątwa... została zdjęta!~
+@500 = ~Eee... dlaczego oboje żyją?~
+@501 = ~Nie jestem pewna.~
+@502 = ~Wciąż żyję! Złożyłem wam obietnicę – i zamierzam jej dotrzymać... Przygotujcie się na pełnię mego gniewu!~
+@503 = ~Chwila. Coś tu nie gra.~
+@504 = ~Ja... odchodzę?~
+@505 = ~Nie, to niemożliwe!~
+@506 = ~Nie! NIEEEEEE!~
+@507 = ~AAAAHHHH! Pomocy! Moi przyjaciele... oni wszyscy...~
+@508 = ~Ooohh... Auu... moja głowa...~
+@509 = ~To było...~
+@510 = ~*Zallonora pada z wyczerpania*~
+@511 = ~Co się stało? Jak to możliwe, że ona żyje, a Shoon nie?~
+@512 = ~Jestem równie zaskoczona jak ty. Właściwie powinni... oboje nie żyć – i tego właśnie się obawiałam. Ale jest w tym pewna logika. Po zamianie ciał Shoon zginął walcząc z tobą, podczas gdy Zallonora, prawdziwa Zallonora uwięziona w ciele Shoona, nie.~ 
+@513 = ~Więc jedyną osobą, która faktycznie przeżyła po zamianie... jest ona. Być może dlatego, kiedy zamiana została cofnięta, została oszczędzona? W ironicznym przewrocie losu dla Shoona, śmierć w ciele Zallonory faktycznie uratowała jej duszę.~ 
+@514 = ~Tu nie jest jeszcze bezpieczna, ale w mojej domenie będzie. Przy okazji, jesteś zaproszony. Jestem pewna, że chciałbyś zobaczyć coś takiego raz w swoim, cóż, długim życiu.~ ~Tu nie jest jeszcze bezpieczna, ale w mojej domenie będzie. Przy okazji, jesteś zaproszona. Jestem pewna, że chciałabyś zobaczyć coś takiego raz w swoim, cóż, długim życiu.~
+@520 = ~Chętnie. Przenieś nas tam, gdy będziesz gotowa.~
+@521 = ~Nie mówiłaś, że zabierzesz nas do swojej domeny? Przy okazji powinnaś sprawdzić, co z Zallanorą – czy da sobie radę.~
+@531 = ~*Zallonora jest nieprzytomna*~
+@532 = ~*dla jej bezpieczeństwa zabierz ją ze sobą do sfery kieszeniowej*~
+@533 = ~*najpierw rozejrzyj się po tym pomieszczeniu*~ ~*najpierw rozejrzyj się po tym pomieszczeniu*~
+@534 = ~*na razie ją tutaj zostaw*~
+@535 = ~*teleportuj wszystkich w pomieszczeniu do swojej sfery kieszeniowej*~
+
+@550 = ~Gdzie... gdzie ja jestem?~
+@551 = ~Jesteś w mojej domenie. Nazywam się <CHARNAME> i to cud, że jeszcze żyjesz. Jaka jest ostatnia rzecz, którą pamiętasz?~
+
+@552 = ~Twoja... domena? Dlaczego tu jestem? Co się stało?~
+@553 = ~To... ekhem... długa historia.~
+@554 = ~Tak jak mówiłem – powiedz, co pamiętasz. Przejdziemy przez to krok po kroku.~ ~Tak jak mówiłam – powiedz, co pamiętasz. Przejdziemy przez to krok po kroku.~
+
+@555 = ~Jedyne, co pamiętam, to... krzyki. I dlaczego czuję się tak strasznie źle?~
+
+@560 = ~Dobrze, spróbuję to jakoś wyjaśnić... Zamiast umrzeć w straszliwy sposób, gdy wiekowy cesarz-lisz próbował wyssać twoją duszę po tym, jak nieproszona wtargnęłaś do jego sanktuarium, doszło do zamiany waszych ciał – raz na tysiąc lat zdarza się tak potworny zbieg okoliczności. On zostawił cię na pastwę losu, samemu planując, jak przejąć Wybrzeże Mieczy, korzystając z zalet młodego ciała – twojego ciała.~
+@561 = ~To... ktoś ukradł moje ciało? Teraz, kiedy o tym mówisz, chyba coś takiego pamiętam. Jakby mnie wyssano z własnego wnętrza. To było straszne.~
+@562 = ~Wiem, jak to jest... To okropne uczucie.~
+@563 = ~Czy to już koniec? Jak odzyskałam swoje ciało? Mam tyle pytań...~
+@565 = ~Tak, to koniec. Nie wiem dokładnie, jak odzyskałaś swoje ciało – ale najważniejsze, że tak się stało.~
+@566 = ~Odzyskałaś je, bo Laeral zniszczyła przedmiot, który łączył twoją duszę z duszą cesarza.~
+@567 = ~Po prostu ciesz się, że żyjesz. To cud, że to przeżyłaś. Powinnaś podziękować Laeral – to ona uratowała ci życie.~
+
+@570 = ~Zniszczyła co?~
+@571 = ~Nieważne. Liczy się tylko to, że wszystko dobrze się skończyło.~
+
+@580 = ~Co ja teraz zrobię? Jak wrócę do domu?~
+@581 = ~Radzę ci udać się jak najdalej od Wybrzeża Mieczy. Ci, którzy cię tu znali, nie są ludźmi, których chciałabyś kiedykolwiek spotkać. Idź na wschód, daleko stąd.~
+
+@582 = ~A co z moją rodziną? I przyjaciółmi?~
+@583 = ~Niestety... twoi przyjaciele nie żyją. On ich zabił. A jeśli chodzi o rodzinę... prawdopodobnie ich także zgładził, żeby zatrzeć wszelkie ślady.~
+
+@584 = ~Jesteś szczęściarą, że w ogóle żyjesz. Jeśli chcesz, żeby ten stan nadal trwał, musisz zachować ostrożność. Ten, który wcześniej był w twoim ciele, nie był... aniołem.~
+
+@590 = ~Nie żyją? Wszyscy? *szlocha* Nie... jak on mógł... dlaczego to wszystko mnie spotyka?~
+
+@600 = ~Dobrze... Jak mam stąd wyjść?~
+@601 = ~To ja kontroluję, kto wchodzi i wychodzi. Teleportuję cię w bezpieczne miejsce.~
+@602 = ~Wyprowadzę cię stąd – ja decyduję o wejściu i wyjściu. A tu masz 2000 sztuk złota, byś mogła zacząć od nowa. Choć tyle mogę dla ciebie zrobić.~
+@603 = ~Nie mam zamiaru pozwolić ci tu zgnić i psuć wystroju. Teleportuję cię stąd.~
+
+@610 = ~Dobrze, więc... to już wszystko. Dziękuję. Życz mi szczęścia.~
+@611 = ~Dziękuję – to na pewno pomoże. Jesteś prawdziwym wybawieniem! Życz mi szczęścia.~
+
+@625 = ~A więc tu się rozstajemy. Dziś cały świat odetchnął z ulgą. Choć nikt o tym nie wie, uniknęliśmy potencjalnej katastrofy.~
+@626 = ~Następnym razem, gdy spotkam Elminstera, opowiem mu o naszym wyczynie! Mawiał, że gdyby Shoon VII żył dziś, nie zaznalibyśmy pokoju. I teraz, gdy go poznałam, zgadzam się w pełni.~
+@630 = ~Domyślam się, że wracasz do Athkatli? W takim razie – żegnam. Dziękuję za pomoc i obyśmy spotkali się następnym razem w lepszych okolicznościach.~
+// Laeral Silverhand
+@700 = ~Co tu się, na imię Bogini, wydarzyło? Przed chwilą odbywało się tu jakieś spotkanie – które, nawiasem mówiąc, podsłuchiwałam – a dosłownie minutę później wyzwolono tu taką ilość energii magicznej, że wyczułam ją przez własne zaklęcie!~
+
+@701 = ~Powiedz mi, kim jesteś? Nie wyglądasz na agenta Spaczonej Runy.~
+
+@702 = ~Cóż, nie wyglądasz na ich agenta. Spodziewałam się, że ktoś wróci, ale nie tak prędko. Rozmieściłam tu ostatnio magiczne alarmy, żeby mnie ostrzegały, gdy tylko ktoś wejdzie do środka.~
+
+@703 = ~Powiedz mi, kim jesteś i co się tutaj wydarzyło?~
+
+@704 = ~Nazywam się <CHARNAME>. Wplątałem się w tę całą aferę ze Spaczoną Runą. Jedno doprowadziło do drugiego, trafiłem do ich enklawy... i rozprawiłem się z nimi w swoim stylu.~ ~Nazywam się <CHARNAME>. Wplątałam się w tę całą aferę ze Spaczoną Runą. Jedno doprowadziło do drugiego, trafiłam do ich enklawy... i rozprawiłam się z nimi w swoim stylu.~
+
+@705 = ~A skąd wiesz, że nie jestem agentem Spaczonej Runy?~ ~A skąd wiesz, że nie jestem agentką Spaczonej Runy?~
+
+@710 = ~Dobre pytanie.~
+@711 = ~Nazywam się Laeral Silverhand. Od jakiegoś czasu badam działalność Spaczonej Runy, ponieważ sądzę, że seria dziwnych, pozornie niepowiązanych wydarzeń z ostatnich – cóż – kilku stuleci może być z nimi powiązana.~
+@712 = ~Chwileczkę... Laeral? TA Laeral Silverhand? Z Waterdeep?~
+@713 = ~Stuleci? Jak daleko to wszystko sięga?~
+
+@720 = ~Tak, to ja.~
+@721 = ~Oczywiście, teraz, gdy o tym wspominasz, srebrne włosy trochę to zdradzają. Jak to się stało, że jedna z Siedmiu Sióstr zaangażowała się w Spaczoną Runę? Czy kiedykolwiek wystąpili przeciwko tobie?~
+
+@725 = ~Nie wiem. Przybyłam tu właśnie po to, żeby się tego dowiedzieć.~
+
+@730 = ~Ach, już sobie przypominam. <CHARNAME>... pomiot Bhaala. Elminster sporo o tobie mówił. Bardzo w ciebie wierzy.~
+@733 = ~Ech... chyba WIERZYŁ. Dawno go nie widziałem. Przez jakiś czas interesował się moimi sprawami, ale potem zniknął.~ ~Ech... chyba WIERZYŁ. Dawno go nie widziałam. Przez jakiś czas interesował się moimi sprawami, ale potem zniknął.~
+@734 = ~Tak właściwie... wiesz, czego on właściwie ode mnie chce?~
+@735 = ~Czekaj, czy ja cię znam?~
+
+@740 = ~Elminster działa w sposób zagadkowy, ale zawsze w imię większego dobra. Z jakiegoś powodu obserwował twój rozwój – i zapewne nadal to robi.~
+@741 = ~Najwyraźniej wiele osób mnie ostatnio obserwuje. Prawdę mówiąc, wolałbym mieć trochę spokoju, ale od śmierci Goriona nigdy nie było mi to dane.~ ~Najwyraźniej wiele osób mnie ostatnio obserwuje. Prawdę mówiąc, wolałabym mieć trochę spokoju, ale od śmierci Goriona nigdy nie było mi to dane.~
+@742 = ~Rozumiem... w takim razie, kim właściwie jesteś?~
+@743 = ~Skoro twierdzisz, że Elminster mi ufa, to jak mogę się z nim skontaktować?~
+
+@750 = ~Kto staje się graczem w grze bogów, skazuje się na życie, w którym nigdy nie zazna ani samotności, ani anonimowości.~
+@751 = ~Wygląda na to, że znasz to z doświadczenia.~
+
+@755 = ~Zgadza się. Inni bogowie, inne powody... ale jesteśmy do siebie podobni bardziej, niż myślisz.~ ~Zgadza się. Inni bogowie, inne powody... ale jesteśmy do siebie podobne bardziej, niż myślisz.~
+@756 = ~Podobni? Kim właściwie jesteś?~ ~Podobne? Kim właściwie jesteś?~
+
+@760 = ~Nie możesz. Musisz zaufać jego osądowi – robiłam to niezliczoną ilość razy. Zapewne uznał, że wystarczy ci delikatna pomoc w twoich najciemniejszych godzinach.~
+@761 = ~Efekt jest taki, że rozwinąłeś się... jako osoba, a twoja moc wzrosła. To, co widzę tutaj, jest tego dowodem.~ ~Efekt jest taki, że rozwinęłaś się... jako osoba, a twoja moc wzrosła. To, co widzę tutaj, jest tego dowodem.~
+@762 = ~Spaczona Runa dostała to, na co zasłużyła. Nadal jednak nie wiem, czego chcą, ani dlaczego tu działają. Przydałaby mi się pomoc, poprosiłbym cię o nią... ale właściwie kim jesteś?~ ~Spaczona Runa dostała to, na co zasłużyła. Nadal jednak nie wiem, czego chcą, ani dlaczego tu działają. Przydałaby mi się pomoc, poprosiłabym cię o nią... ale właściwie kim jesteś?~
+
+@770 = ~Bogini Mystra mnie prowadzi. A jej głos mówi mi, że wpływ Spaczonej Runy nie pochodzi od ciebie. Ale wyczuwam wokół ciebie boski ślad... Dlatego muszę zapytać ponownie: kim jesteś?~
+
+// Part 2
+
+@800 = ~Od jakiegoś czasu obserwowałam każdy ich ruch, aż pewnego dnia... cisza. Byłam przekonana, że rozwiązałam zagadkę tego miejsca, a znalazłam tylko pustą komnatę, ślady walki i potężne zaklęcia.~
+@801 = ~Potem zaczęłam szukać odpowiedzialnego za to wszystko. Kiedy się pojawiłeś, zareagowały moje alarmy.~ ~Potem zaczęłam szukać odpowiedzialnego za to wszystko. Kiedy się pojawiłaś, zareagowały moje alarmy.~
+@802 = ~Obserwowałam ich od dłuższego czasu. Choć przegapiłam część wydarzeń, to spotkanie, które tu miało miejsce, potwierdziło moje obawy: Spaczona Runa działa. I poszerza wpływy.~
+@803 = ~A potem pojawiłeś się ty i rozgromiłeś ich w pył. Nie pochwalam twoich metod... ale ich śmierć trudno uznać za stratę.~ ~A potem pojawiłaś się ty i rozgromiłaś ich w pył. Nie pochwalam twoich metod... ale ich śmierć trudno uznać za stratę.~
+
+@811 = ~Obawiam się, że to nie wszystko. Wspomnieli, że mają własnego człowieka wśród Zakapturzonych Czarodziejów. To zaczyna wyglądać na poważny spisek.~
+
+@840 = ~Wśród Zakapturzonych Czarodziejów? Hm. To zdecydowanie nie jest dobra wiadomość.~
+@841 = ~Nie możemy pozwolić im działać bezkarnie. Spaczona Runa otrzymała poważny cios po tym, jak oczyściłeś ich enklawę. Skontaktuję się z tobą, gdy zdobędę więcej informacji. Tymczasem sugeruję, byś kontynuował swoje śledztwo.~ ~Nie możemy pozwolić im działać bezkarnie. Spaczona Runa otrzymała poważny cios po tym, jak oczyściłaś ich enklawę. Skontaktuję się z tobą, gdy zdobędę więcej informacji. Tymczasem sugeruję, byś kontynuowała swoje śledztwo.~
+
+@845 = ~Tak, tylko... w liście, który znalazłem, wspomniano o Wrotach Baldura, a ja nie mogę wchodzić do miasta. Może ty zbadasz ich sprawę tam, a ja poszukam śladów tutaj?~ ~Tak, tylko... w liście, który znalazłam, wspomniano o Wrotach Baldura, a ja nie mogę wchodzić do miasta. Może ty zbadasz ich sprawę tam, a ja poszukam śladów tutaj?~
+@846 = ~Moje śledztwo i tak miało zaprowadzić mnie do Wrót Baldura, ale chyba zostałem wygnany z miasta za zbrodnie, których nie popełniłem. Pomożesz mi z tym?~ ~Moje śledztwo i tak miało zaprowadzić mnie do Wrót Baldura, ale chyba zostałam wygnana z miasta za zbrodnie, których nie popełniłam. Pomożesz mi z tym?~
+@847 = ~Oczywiście, pani. Zrobię, co trzeba.~
+
+@850 = ~To sprawa najwyższej wagi. Zorganizuję ci specjalne zezwolenie na wejście do miasta – ale nie waż się popełnić tam żadnego przestępstwa. Tu chodzi o mój autorytet!~
+
+@855 = ~<CHARNAME>, miło było cię poznać. Elminster naprawdę nie mylił się co do ciebie.~
+@860 = ~<CHARNAME>, powodzenia.~
+@900 = ~<CHARNAME>... Spotykamy się ponownie.~
+@901 = ~Gdy ty prowadziłeś swoje dochodzenie – i muszę przyznać, że z imponującym skutkiem – ja monitorowałam działania Spaczonej Runy i jej współpracowników.~ ~Gdy ty prowadziłaś swoje dochodzenie – i muszę przyznać, że z imponującym skutkiem – ja monitorowałam działania Spaczonej Runy i jej współpracowników.~
+@902 = ~Wygląda na to, że ich kontakt wśród Zakapturzonych Czarodziejów nosi imię „Zallonora”. Czy to imię coś ci mówi? Spędziłeś w Athkatli znacznie więcej czasu niż ja.~ ~Wygląda na to, że ich kontakt wśród Zakapturzonych Czarodziejów nosi imię „Zallonora”. Czy to imię coś ci mówi? Spędziłaś w Athkatli znacznie więcej czasu niż ja.~
+
+@905 = ~Tak, to jedna z ich przywódczyń. Spotkałem ją już wcześniej i spróbowałem się z nią skonfrontować, ale niestety uciekła. Nie zostawiła żadnych śladów.~ ~Tak, to jedna z ich przywódczyń. Spotkałam ją już wcześniej i spróbowałam się z nią skonfrontować, ale niestety uciekła. Nie zostawiła żadnych śladów.~
+@906 = ~Tak, mówi. Spotkałem ją raz, w Dzielnicy Cmentarnej Athkatli. Będę musiał znaleźć sposób, by się z nią skonfrontować.~ ~Tak, mówi. Spotkałam ją raz, w Dzielnicy Cmentarnej Athkatli. Będę musiała znaleźć sposób, by się z nią skonfrontować.~
+@907 = ~Może kiedyś już ją spotkałem, ale nie jestem pewien. Zakapturzeni mają jednak przedstawicieli w Athkatli – w końcu na nią trafię.~ ~Może kiedyś już ją spotkałam, ale nie jestem pewna. Zakapturzeni mają jednak przedstawicieli w Athkatli – w końcu na nią trafię.~
+@908 = ~Ja... wiedziałem o tym już wcześniej. Dopiero co z nią walczyłem. Niestety uciekła i nie zostawiła żadnych wskazówek.~ ~Ja...wiedziałam o tym już wcześniej. Dopiero co z nią walczyłam. Niestety uciekła i nie zostawiła żadnych wskazówek.~
+
+@920 = ~Więc ona wie, kim jesteś? W takim razie to tylko kwestia czasu, aż twoi wrogowie powiążą z tobą wszystkie straty.~
+@923 = ~Jakiż zatem mamy plan? Powoli kończą mi się tropy w tej sprawie.~
+@925 = ~Obawiam się, że nie mam dla ciebie łatwej odpowiedzi. Musisz wiedzieć jedno: Spaczona Runa to kabała liszy. Tyle wiem na pewno. A lisze są cierpliwe. Człowiek uczy się tego, żyjąc stulecia... mówię to z doświadczenia.~
+@926 = ~Spodziewaj się odwetu, jeśli naprawdę zgładziłeś co najmniej jednego z ich starszych członków. Nie wiem kiedy, nie wiem w jaki sposób, ale uderzą, a zrobią to, gdy będą mieli absolutną pewność, że tym razem cię dopadną.~ ~Spodziewaj się odwetu, jeśli naprawdę zgładziłaś co najmniej jednego z ich starszych członków. Nie wiem kiedy, nie wiem w jaki sposób, ale uderzą, a zrobią to, gdy będą mieli absolutną pewność, że tym razem cię dopadną.~
+@927 = ~Wiem, że to marna pociecha, ale namierzenie ich zajęło mi lata – a teraz wygląda na to, że natrafiłam na mur. Po prostu zniknęli. A ta cała Zallonora tylko przydaje temu tajemniczości.~
+@928 = ~To, czego nauczyłam się w moim długim życiu, to że czarodzieje tak biegli jak ona zazwyczaj mają reputację ich poprzedzającą. Albo nauczyciela o renomie i lata nauki. Albo błogosławieństwo boga. W jej przypadku? Nic takiego nie istnieje.~
+@929 = ~Nigdy nie natknęłam się na osobę tak potężną i wpływową, a jednocześnie kompletnie nieznaną. Na dodatek, w latach elfich, ledwie osiągnęła dorosłość. Tu kryje się o wiele więcej, boskie dziecię. Możliwe jest dosłownie wszystko.~
+@930 = ~Dam ci znać, jeśli znajdę coś więcej. <CHARNAME>, proszę, uważaj na siebie.~ // EXIT
+
+@940 = ~Naprawdę? To zaskakujące. Prowadziłam już dochodzenie w jej sprawie – i wyniki są, delikatnie mówiąc, niepokojące.~
+@945 = ~Z tego, czego nauczyłam się przez swoje długie życie, czarodzieje tak biegli jak ona mają zwykle poprzedzającą ich reputację, sławnych mistrzów, dziesięciolecia nauki... albo błogosławieństwo bóstwa. W jej przypadku? Nic takiego nie istnieje.~
+@946 = ~Nigdy nie spotkałam tak potężnej, tak wpływowej... i jednocześnie tak absolutnie anonimowej osoby. Tu musi kryć się coś więcej, boskie dziecię.~
+@947 = ~Dam ci znać, jeśli znajdę coś więcej, ale proszę, zachowaj ostrożność, jeśli zdecydujesz się na konfrontację z nią. Możliwe jest dosłownie wszystko.~ // EXIT
+
+@960 = ~Wiem, że ją odnajdziesz – ale proszę, postępuj bardzo ostrożnie. Ta Zallonora jedynie przydaje temu tajemniczości.~
+
+// NAMES
+
+@1000 = ~Kartak, Wieszcz Zaklęć~
+@1001 = ~Demilisz Zallonora~
+@1002 = ~Dalina~
+@1003 = ~Shoon VII~
+@1004 = ~Mag Runy~
+@1005 = ~Laeral Silverhand~
+@1006 = ~Sługa Kartaka~
+@1007 = ~Jymahna~
+@1008 = ~Zallonora Srebrzystokok~
+@1009 = ~Elitarny zabójca Runy~
+
+
+// Crypt
+@1100 = ~<CHARNAME>! Wreszcie cię znalazłam! Wiedziałam, że prędzej czy później tu trafisz. Ciężko za tobą nadążyć.~
+@1101 = ~Wybacz, że nie mogłam ci pomóc, kiedy zaatakowała cię Spaczona Runa. Amkethran leży daleko, a ja niestety nie mam oczu i uszu wszędzie. Wygląda na to, że od dawna cię obserwowali.~
+
+@1105 = ~Owszem. Tyle tylko, że nikt nie może mną bezkarnie pomiatać. Spaczona Runa przekonała się o tym na własnej skórze.~
+@1106 = ~Nic nie szkodzi. Jak widzisz, potrafię sobie radzić. Przyszedłem tu, kierując się przeczuciem. Coś mi mówi, że nasze spotkanie w tym miejscu nie jest przypadkiem.~ ~Nic nie szkodzi. Jak widzisz, potrafię sobie radzić. Przyszłam tu, kierując się przeczuciem. Coś mi mówi, że nasze spotkanie w tym miejscu nie jest przypadkiem.~
+@1107 = ~Ale jakim cudem znalazłaś mnie akurat na dnie tajnej krypty pod Dzielnicą Cmentarną Athkatli?~
+
+@1110 = ~To prawda, zadałeś im mocarny cios, ale organizacja złożona z istot żyjących od stuleci nie zakończy działalności ot tak.~ ~To prawda, zadałaś im mocarny cios, ale organizacja złożona z istot żyjących od stuleci nie zakończy działalności ot tak.~
+@1111 = ~Minął już niemal rok, odkąd razem wtrąciliśmy się w sprawy Spaczonej Runy. Miałam czas, by to przemyśleć.~ ~Minął już niemal rok, odkąd razem wtrąciłyśmy się w sprawy Spaczonej Runy. Miałam czas, by to przemyśleć.~
+
+@1120 = ~Och, tu nie ma nic przypadkowego. Minął już niemal rok, odkąd zaczęliśmy mieszać się w sprawy Runy... i miałam czas, by to wszystko przeanalizować.~ ~Och, tu nie ma nic przypadkowego. Minął już niemal rok, odkąd zaczęłyśmy mieszać się w sprawy Runy... i miałam czas, by to wszystko przeanalizować.~
+@1125 = ~Nic w tej całej Zallonorze nie trzyma się kupy. Wciąż zastanawiałam się, jak to możliwe, że tak młoda elfka posiadła taką moc? Zaczęłam więc kopać głębiej.~
+@1126 = ~Moje czary poznania nie przynosiły żadnych rezultatów... aż do momentu, gdy cię zaatakowała. Niestety, przybyłam za późno, ale znalazłam jej ciało. Wreszcie miałam coś namacalnego: pukle jej włosów. Dzięki temu mogłam zajrzeć w jej przeszłość.~
+@1127 = ~Okazało się, że zniknęła dekady temu, w drodze do Silverymoon, by po dziesięciu latach pojawić się w Amn jako uczennica. A niewiele później – jako arcymag o znaczącej potędze i wpływach. Wśród Zakapturzonych Czarodziejów jej imię wymawia się z ostrożnością.~
+@1128 = ~Popytałam wśród moich kontaktów i z pomocą kilku zaklęć ustaliłam, że wielokrotnie odwiedzała te właśnie krypty. Musiało być tu coś ważnego. Brakowało mi jednak jednego elementu układanki: kamienia, który obecnie masz przy sobie. Podejrzewałam, że trafi w twoje ręce, dlatego cię szukałam.~
+@1129 = ~I cóż powiesz? <CHARNAME>, czyżby nadszedł czas poznania odpowiedzi?~
+
+@1140 = ~Tak. Kamień Zallonory już reaguje. Nie powinno być trudno ustalić, do czego służy.~
+@1145 = ~Po tych wszystkich kłopotach i prawie trzykrotnej śmierci, na pewno teraz się nie wycofam. Jak myślisz, czego możemy się spodziewać?~
+
+@1150 = ~Zbadałam już tę komnatę. Wschodnia ściana aż pulsuje od misternie ukrytych zaklęć. Chodź, pokażę ci.~
+@1155 = ~Wszystkiego, co jest dość przerażające, ale ktokolwiek lub cokolwiek na nas czeka, będzie przyparty do ściany. Jesteś twardą istotą, boskie dziecię, a ja... cóż, też nie jestem taka najgorsza! Nie możemy zmarnować takiej okazji.~
+
+
+@1160 = ~Stań przy ścianie.~
+
+// Enemies, ambush, crypt inhabitants
+@2000 = ~A więc po raz kolejny mieszasz się w sprawy Runy. Twoje działania z garbarzem postawiły mnie w niezwykle trudnej sytuacji.~
+@2001 = ~Dziś albo ja zabiję ciebie, albo zginę. Więc zginiesz!~
+@2005 = ~<CHARNAME>, Spaczona Runa wyznaczyła za twoją głowę złotą czaszkę. Ktokolwiek cię zabije, otrzyma ją. Gotuj się na śmierć!~
+
+@2010 = ~Głupcze! Myślisz, że Spaczona Runa nie wie o twojej... chwila. Ty nie jesteś Koshim. Kim jesteś?~
+@2011 = ~Nazywam się <CHARNAME>. A jeśli szukasz Koshiego – jego ciało leży piętro wyżej.~
+@2013 = ~Dziękuję ci za pozbycie się Koshiego... ale twoje imię również widnieje na liście. Wybacz, <CHARNAME>, lecz nie tolerujemy wtrącania się w nasze sprawy.~
+
+// After death: add journal
+
+// City NPCs
+@3000 = ~Szukam pewnej Zakapturzonej Czarodziejki o imieniu „Zallonora”. Wiesz, gdzie mogę ją znaleźć?~
+@3001 = ~Musisz porozmawiać z Corneilem, ich przedstawicielem. Ja reprezentuję wyłącznie Radę.~
+@3002 = ~Szukam Zakapturzonej Czarodziejki imieniem „Zallonora”. Wiesz, gdzie mogę ją znaleźć?~
+@3003 = ~Obawiam się, że nie mogę pomóc, przyjacielu. Ci czarodzieje mogą tu robić praktycznie wszystko, na co mają ochotę. Może magistrat coś poradzi. Powodzenia.~ ~Obawiam się, że nie mogę pomóc, przyjaciółko. Ci czarodzieje mogą tu robić praktycznie wszystko, na co mają ochotę. Może magistrat coś poradzi. Powodzenia.~
+@3004 = ~Znalazłem list, który wskazuje na to, że członek waszej organizacji wplątał się w jakieś podejrzane interesy.~ ~Znalazłam list, który wskazuje na to, że członek waszej organizacji wplątał się w jakieś podejrzane interesy.~
+@3005 = ~Wiesz może, gdzie mógłbym znaleźć Zakapturzoną Czarodziejkę o imieniu „Zallonora”?~ ~Wiesz może, gdzie mogłabym znaleźć Zakapturzoną Czarodziejkę o imieniu „Zallonora”?~
+@3006 = ~Szukam Zakapturzonej Czarodziejki imieniem „Zallonora”. Wiesz, gdzie mogę ją znaleźć?~
+@3007 = ~Niosę złe wieści: wygląda na to, że ktoś z waszej organizacji macza palce w czymś wyjątkowo niepokojącym. Doszły cię może słuchy o Spaczonej Runie?~
+@3008 = ~Nie, pierwszy raz o nich słyszę. I nie interesują mnie twoje oskarżenia. Wiesz, ile osób przychodzi tu z podobnymi rewelacjami? Przestań marnować mój czas i zrób coś pożytecznego.~
+@3010 = ~Nie obchodzą mnie twoje niedorzeczne oskarżenia. Ten pergamin mógł być sfałszowany. Niech zgadnę – zaraz poprosisz mnie o zniżkę na licencję na czarowanie?~
+@3011 = ~I co z tego? Ten pergamin równie dobrze mógł zostać podrobiony. Dominacja nad Amn? Serio? Wynoś się stąd.~
+
+@3020 = ~Ojej, kogoś takiego jak Zallonora się nie „znajduje”. To ona znajduje ciebie.~
+@3021 = ~Mam wiarygodne informacje, że knuje coś bardzo złego.~
+@3022 = ~Próbowała mnie zabić i moim zdaniem bierze udział w spisku przeciwko całemu Amn.~
+
+@3030 = ~Doprawdy? A skąd masz takie informacje?~
+@3031 = ~Z moich... ekhm... własnych dochodzeń.~
+@3032 = ~Rozumiem. Wiedz więc, że Zallonora jest jedną z naszych najwyższych egzekutorek, moja rada brzmi zatem: trzymaj się od niej z daleka. Naprawdę nie chcesz ściągnąć na siebie jej gniewu. Żegnam.~
+
+@3035 = ~Próbowała cię zabić, mówisz? Patrząc na to, jaki potrafisz być upierdliwy, potrafię to zrozumieć. A teraz wybacz, mam ważne sprawy.~ ~Próbowała cię zabić, mówisz? Patrząc na to, jaka potrafisz być upierdliwa, potrafię to zrozumieć. A teraz wybacz, mam ważne sprawy.~
+
+
+@101 = ~Spaczona Runa – Athkatla
+
+Znalazłem notatkę, która zdaje się łączyć Zakapturzonych Czarodziejów z działalnością Spaczonej Runy. Warto to zbadać, choć wypytywanie kogokolwiek o „Spaczoną Runę” raczej nie jest dobrym pomysłem. Jeśli te dwie potężne grupy faktycznie współpracują, to źle wróży – wątpię, aby kierowały się dobrymi intencjami.
+
+Na razie powinienem poszukać śladów Spaczonej Runy we Wrotach Baldura, jak sugeruje znaleziona notatka. Być może ten sam Kamień łotrzyków, którego użyłem w Athkatli, pozwala dostać się do ich sekretnej enklawy?~ ~Spaczona Runa – Athkatla
+
+Znalazłam notatkę, która zdaje się łączyć Zakapturzonych Czarodziejów z działalnością Spaczonej Runy. Warto to zbadać, choć wypytywanie kogokolwiek o „Spaczoną Runę” raczej nie jest dobrym pomysłem. Jeśli te dwie potężne grupy faktycznie współpracują, to źle wróży – wątpię, aby kierowały się dobrymi intencjami.
+
+Na razie powinnam poszukać śladów Spaczonej Runy we Wrotach Baldura, jak sugeruje znaleziona notatka. Być może ten sam Kamień łotrzyków, którego użyłam w Athkatli, pozwala dostać się do ich sekretnej enklawy?~
+
+@102 = ~Spaczona Runa – Wrota Baldura
+
+Natrafiłem na enklawę Spaczonej Runy we Wrotach Baldura. Najwyraźniej działają w cieniu wspólnie z Zakapturzonymi Czarodziejami z Athkatli i przyświeca im jakiś niecny cel. Następnym krokiem jest odnalezienie ich kontaktu. Muszę też znaleźć sposób, by zmierzyć się z ich przywódcami.~ ~Spaczona Runa – Wrota Baldura
+
+Natrafiłam na enklawę Spaczonej Runy we Wrotach Baldura. Najwyraźniej działają w cieniu wspólnie z Zakapturzonymi Czarodziejami z Athkatli i przyświeca im jakiś niecny cel. Następnym krokiem jest odnalezienie ich kontaktu. Muszę też znaleźć sposób, by zmierzyć się z ich przywódcami.~
+
+@103 = ~Spaczona Runa – Wrota Baldura
+
+Natrafiłem na enklawę Spaczonej Runy we Wrotach Baldura – i stało się tak, jak się obawiałem: współpracują z Zakapturzonymi Czarodziejami z Athkatli. Ich kontakt nosi imię „Zallonora”. Skonfrontowałem się z nią, ale niestety udało jej się zbiec. Zadawanie bezpośrednich pytań Zakapturzonym może być niebezpieczne, zwłaszcza jeśli Zallonora zajmuje wśród nich wysokie stanowisko, na co wskazuje jej potęga.~ ~Spaczona Runa – Wrota Baldura
+
+Natrafiłam na enklawę Spaczonej Runy we Wrotach Baldura – i stało się tak, jak się obawiałam: współpracują z Zakapturzonymi Czarodziejami z Athkatli. Ich kontakt nosi imię „Zallonora”. Skonfrontowałam się z nią, ale niestety udało jej się zbiec. Zadawanie bezpośrednich pytań Zakapturzonym może być niebezpieczne, zwłaszcza jeśli Zallonora zajmuje wśród nich wysokie stanowisko, na co wskazuje jej potęga.~
+
+@104 = ~Laeral Silverhand
+
+Podczas prowadzenia śledztwa w sprawie Spaczonej Runy natknąłem się na słynną arcymag z Waterdeep, Laeral Silverhand. Nie mam wątpliwości, że sama bacznie obserwuje ich działania, by w razie czego nie dopuścić do rozprzestrzenienia się ich wpływów na północ, do jej miasta. Jeśli chodzi o konkretne tropy, niewiele mogła mi zaoferować, ale obiecała, że pozostanie ze mną w kontakcie. Biorąc pod uwagę całe to zamieszanie, fakt, że mam ją po swojej stronie, jest pierwszą naprawdę dobrą wiadomością od dłuższego czasu – z radością z tego skorzystam.~ ~Laeral Silverhand
+
+Podczas prowadzenia śledztwa w sprawie Spaczonej Runy natknęłam się na słynną arcymag z Waterdeep, Laeral Silverhand. Nie mam wątpliwości, że sama bacznie obserwuje ich działania, by w razie czego nie dopuścić do rozprzestrzenienia się ich wpływów na północ, do jej miasta. Jeśli chodzi o konkretne tropy, niewiele mogła mi zaoferować, ale obiecała, że pozostanie ze mną w kontakcie. Biorąc pod uwagę całe to zamieszanie, fakt, że mam ją po swojej stronie, jest pierwszą naprawdę dobrą wiadomością od dłuższego czasu – z radością z tego skorzystam.~
+
+@105 = ~Spaczona Runa – Athkatla
+
+Zostałem zaatakowany przez agentów Spaczonej Runy, bez wątpienia z powodu mojego udziału w śledztwie dotyczącym garbarza w Dzielnicy Mostów. Tym razem pojawiło się imię „Koshi” – członka dość osobliwej i niebezpiecznej grupy, na którą natknąłem się w Dzielnicy Świątyń. Miał przy sobie notatkę wspominającą o tajemniczym budynku obok gospody Delosara w Dzielnicy Mostów. Wejście do budynku wymaga jakiegoś klucza. Być może warto to zbadać.~ ~Spaczona Runa – Athkatla
+
+Zostałam zaatakowana przez agentów Spaczonej Runy, bez wątpienia z powodu mojego udziału w śledztwie dotyczącym garbarza w Dzielnicy Mostów. Tym razem pojawiło się imię „Koshi” – członka dość osobliwej i niebezpiecznej grupy, na którą natknęłam się w Dzielnicy Świątyń. Miał przy sobie notatkę wspominającą o tajemniczym budynku obok gospody Delosara w Dzielnicy Mostów. Wejście do budynku wymaga jakiegoś klucza. Być może warto to zbadać.~
+
+@106 = ~Spaczona Runa – Athkatla
+
+Zostałem zaatakowany przez agentów Spaczonej Runy, zapewne z powodu śledztwa w sprawie garbarza w Dzielnicy Mostów. Tym razem pojawiło się imię „Koshi”, członka dziwnej i groźnej grupy, którą spotkałem w Dzielnicy Świątyń. Nigdy z nim nie rozmawiałem, ale być może miał przy sobie coś, co pomoże w dalszym dochodzeniu?~ ~Spaczona Runa – Athkatla
+
+Zostałam zaatakowana przez agentów Spaczonej Runy, zapewne z powodu śledztwa w sprawie garbarza w Dzielnicy Mostów. Tym razem pojawiło się imię „Koshi”, członka dziwnej i groźnej grupy, którą spotkałam w Dzielnicy Świątyń. Nigdy z nim nie rozmawiałam, ale być może miał przy sobie coś, co pomoże w dalszym dochodzeniu?~
+
+@107 = ~Laeral Silverhand – ponowne spotkanie
+
+Ponownie spotkałem Panią Waterdeep po niespodziewanej wizycie w kolejnej enklawie Spaczonej Runy. Laeral prowadzi własne dochodzenie i podała mi imię kontaktu Runy wśród Zakapturzonych Czarodziejów: Zallonora. Ostrzegła mnie również, że wokół tej kobiety kryje się coś więcej, niż sugerowałaby jej pozornie skromna przeszłość – jest znacznie potężniejsza, niż powinna być.~ ~Laeral Silverhand – ponowne spotkanie
+
+Ponownie spotkałam Panią Waterdeep po niespodziewanej wizycie w kolejnej enklawie Spaczonej Runy. Laeral prowadzi własne dochodzenie i podała mi imię kontaktu Runy wśród Zakapturzonych Czarodziejów: Zallonora. Ostrzegła mnie również, że wokół tej kobiety kryje się coś więcej, niż sugerowałaby jej pozornie skromna przeszłość – jest znacznie potężniejsza, niż powinna być.~
+
+@108 = ~Przywódcy Zakapturzonych – Zallonora
+
+Nie zamierzając poddawać się ich absurdalnym ograniczeniom na rzucanie zaklęć, skonfrontowałem się z Zakapturzonymi Czarodziejami, aż w końcu pojawili się ich najwyżsi rangą członkowie. Wśród nich była tajemnicza Zallonora, którą spotkałem wcześniej na cmentarzu. Uciekła i wygląda na to, że mogę teraz swobodnie rzucać zaklęcia w mieście. Jestem niemal pewien, że była kontaktem Spaczonej Runy. Nadal jednak nie wiem, co właściwie się dzieje i jaki jest jej prawdziwy cel.~ ~Przywódcy Zakapturzonych – Zallonora
+
+Nie zamierzając poddawać się ich absurdalnym ograniczeniom na rzucanie zaklęć, skonfrontowałam się z Zakapturzonymi Czarodziejami, aż w końcu pojawili się ich najwyżsi rangą członkowie. Wśród nich była tajemnicza Zallonora, którą spotkałam wcześniej na cmentarzu. Uciekła i wygląda na to, że mogę teraz swobodnie rzucać zaklęcia w mieście. Jestem niemal pewna, że była kontaktem Spaczonej Runy. Nadal jednak nie wiem, co właściwie się dzieje i jaki jest jej prawdziwy cel.~
+
+@109 = ~Przywódcy Zakapturzonych – Zallonora
+
+Nie zamierzając poddawać się ich absurdalnym ograniczeniom na rzucanie zaklęć, skonfrontowałem Zakapturzonych Czarodziejów, aż ich przywódcy w końcu pojawili się, by „rozwiązać problem”. Wśród nich była Zallonora, znana mi już z Dzielnicy Cmentarnej, ale zaraz po spotkaniu uciekła. Mogę swobodnie rzucać zaklęcia, ale wciąż nie wiem, co się dzieje ani czego ona chce. Mam jednak nieodparte wrażenie, że ona jeszcze ze mną nie skończyła.~ ~Przywódcy Zakapturzonych – Zallonora
+
+Nie zamierzając poddawać się ich absurdalnym ograniczeniom na rzucanie zaklęć, skonfrontowałam Zakapturzonych Czarodziejów, aż ich przywódcy w końcu pojawili się, by „rozwiązać problem”. Wśród nich była Zallonora, znana mi już z Dzielnicy Cmentarnej, ale zaraz po spotkaniu uciekła. Mogę swobodnie rzucać zaklęcia, ale wciąż nie wiem, co się dzieje ani czego ona chce. Mam jednak nieodparte wrażenie, że ona jeszcze ze mną nie skończyła.~
+
+@110 = ~Zasadzka w Amkethran
+
+W Amkethran zostałem zaatakowany przez członków Spaczonej Runy, dowodzonych przez Zallonorę – wysoką rangą Zakapturzoną Czarodziejkę, z którą miałem już wcześniej do czynienia. Tymczasowo udało mi się odeprzeć zagrożenie, lecz wciąż nie mam pojęcia, co naprawdę rozgrywa się za kulisami.
+
+Przy jej ciele znalazłem kamień strażniczy, a moje doświadczenie podpowiada, że tego typu artefakty otwierają przejścia – zwykle do ukrytych miejsc. Przypominam sobie, że po raz pierwszy spotkałem Zallonorę w Dzielnicy Cmentarnej Athkatli, gdzie rzucała zaklęcie tuż obok wejścia do krypt. Może warto ponownie zbadać tamten obszar, mając kamień w swoim posiadaniu?~ ~Zasadzka w Amkethran
+
+W Amkethran zostałam zaatakowana przez członków Spaczonej Runy, dowodzonych przez Zallonorę – wysoką rangą Zakapturzoną Czarodziejkę, z którą miałam już wcześniej do czynienia. Tymczasowo udało mi się odeprzeć zagrożenie, lecz wciąż nie mam pojęcia, co naprawdę rozgrywa się za kulisami.
+
+Przy jej ciele znalazłam kamień strażniczy, a moje doświadczenie podpowiada, że tego typu artefakty otwierają przejścia – zwykle do ukrytych miejsc. Przypominam sobie, że po raz pierwszy spotkałam Zallonorę w Dzielnicy Cmentarnej Athkatli, gdzie rzucała zaklęcie tuż obok wejścia do krypt. Może warto ponownie zbadać tamten obszar, mając kamień w swoim posiadaniu?~
+
+@111 = ~Spaczona Runa – Wrota Baldura
+
+Natknąłem się na dziwną enklawę we Wrotach Baldura. Najwyraźniej przeniósł mnie tam kamień łotrzyków, który niosłem przy sobie. Przywitali mnie tam członkowie grupy zwanej „Spaczoną Runą”. Nie wiem, kim są ani czego chcą, ale ich zamiary z pewnością nie były przyjazne.~ ~Spaczona Runa – Wrota Baldura
+
+Natknęłam się na dziwną enklawę we Wrotach Baldura. Najwyraźniej przeniósł mnie tam kamień łotrzyków, który niosłam przy sobie. Przywitali mnie tam członkowie grupy zwanej „Spaczoną Runą”. Nie wiem, kim są ani czego chcą, ale ich zamiary z pewnością nie były przyjazne.~
+
+@120 = ~Zakapturzona groźba – ułamki sekund
+
+Okazało się, że Zallonora nie była sobą – podczas Czasu Niepokojów jej ciało zostało zamienione z ciałem starożytnego lisza Shoona VII. To wiele wyjaśnia. Przynajmniej wiadomo już, że to „ona” odpowiadała za wszelkie niecne działania Zakapturzonych Czarodziejów i Spaczonej Runy, której działalność w tym regionie dobiegła końca.~
+
+@121 = ~Zakapturzona groźba – finał
+
+Okazało się, że Zallonora nie była sobą – podczas Czasu Niepokojów jej ciało zostało zamienione z ciałem starożytnego lisza Shoona VII. To wiele wyjaśnia. Przynajmniej wiadomo już, że to „ona” odpowiadała za wszelkie niecne działania Zakapturzonych Czarodziejów i Spaczonej Runy, której działalność w tym regionie dobiegła końca.
+
+Zwabiony obietnicą bogactw opowiedziałem się po stronie Shoona. Laeral opuściła starcie, pozostawiając nas samych, a Shoon – cóż – ma teraz całą wieczność, by, jak to sam ujął, „rozmyślać”. Wie więcej i mógłby dać więcej, lecz nie mam żadnych kart przetargowych. Frustrujące jest, że nie mogę mu rozwalić czaszki! Jedyną pociechą jest to, że Spaczona Runa wreszcie zostawi mnie w spokoju.~ ~Zakapturzona groźba – finał
+
+Okazało się, że Zallonora nie była sobą – podczas Czasu Niepokojów jej ciało zostało zamienione z ciałem starożytnego lisza Shoona VII. To wiele wyjaśnia. Przynajmniej wiadomo już, że to „ona” odpowiadała za wszelkie niecne działania Zakapturzonych Czarodziejów i Spaczonej Runy, której działalność w tym regionie dobiegła końca.
+
+Zwabiona obietnicą bogactw opowiedziałam się po stronie Shoona. Laeral opuściła starcie, pozostawiając nas samych, a Shoon – cóż – ma teraz całą wieczność, by, jak to sam ujął, „rozmyślać”. Wie więcej i mógłby dać więcej, lecz nie mam żadnych kart przetargowych. Frustrujące jest, że nie mogę mu rozwalić czaszki! Jedyną pociechą jest to, że Spaczona Runa wreszcie zostawi mnie w spokoju.~
+
+@150 = ~Zakapturzona groźba – finał
+
+Okazało się, że Zallonora nie była sobą – podczas Czasu Niepokojów jej ciało zostało zamienione z ciałem starożytnego lisza Shoona VII. To wiele wyjaśnia. Przynajmniej wiadomo już, że to „ona” odpowiadała za wszelkie niecne działania Zakapturzonych Czarodziejów i Spaczonej Runy, której działalność w tym regionie dobiegła końca.
+
+Jak się okazało, plan Shoona spalił na panewce – nie przewidział, że u mojego boku stanie Wybranka Mystry, zdolna odwrócić jego klątwę nieśmiertelności. Rezultat: Shoon VII zniknął chyba na dobre, a Zallonora została ocalona. Jestem niemal pewien, że Spaczona Runa zostawi mnie od tej pory w spokoju.~ ~Zakapturzona groźba – finał
+
+Okazało się, że Zallonora nie była sobą – podczas Czasu Niepokojów jej ciało zostało zamienione z ciałem starożytnego lisza Shoona VII. To wiele wyjaśnia. Przynajmniej wiadomo już, że to „ona” odpowiadała za wszelkie niecne działania Zakapturzonych Czarodziejów i Spaczonej Runy, której działalność w tym regionie dobiegła końca.
+
+Jak się okazało, plan Shoona spalił na panewce – nie przewidział, że u mojego boku stanie Wybranka Mystry, zdolna odwrócić jego klątwę nieśmiertelności. Rezultat: Shoon VII zniknął chyba na dobre, a Zallonora została ocalona. Jestem niemal pewna, że Spaczona Runa zostawi mnie od tej pory w spokoju.~
+
+
+@198 = ~– Wiadomość od Runy –
+
+Złota Czaszka zostanie przyznana temu, z kogo rąk zginie <CHARNAME>. Cel według doniesień przebywa obecnie albo w Athkatli, albo we Wrotach Baldura. Wiecie, co robić. Enklawa Wschodnich Wrót czeka na wasze wyniki.~
+
+@199 = ~„Masz nadzorować nasze interesy w Athkatli. Pierwszych rezultatów oczekujemy za rok, a wraz z nimi nadejdzie odpowiednia nagroda. Naszym głównym celem jest obecnie garbarz Skórarz, więc to będzie twoje pierwsze zadanie. Nie oddalaj się zbytnio od punktu wejścia – strzeż go.”
+
+Pod tekstem widnieje odciśnięta pieczęć: koślawy znak przypominający dwie splecione ze sobą trójki, skierowane ostrymi zakończeniami ku dołowi niczym szpony.~
