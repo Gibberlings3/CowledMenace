@@ -15,8 +15,10 @@ END
 ASK_EVERY_COMPONENT                                                                // Disallow installing all components at once
 	LANGUAGE ~English~ ~english~ ~cowledmenace/lang/english/english.tra~
 	LANGUAGE ~Russian~ ~Russian~ ~cowledmenace/lang/russian/russian.tra~
+	LANGUAGE ~Polish (by my_summertime, SoM Member, part of CoB Clan)~
+           ~polish~ 
+            ~cowledmenace/lang/polish/polish.tra~
 	LANGUAGE ~Simplified Chinese (translation: Lewis Liu)~ ~schinese~ ~cowledmenace/lang/schinese/schinese.tra~
-	LANGUAGE ~Italian (translation: threetimesdavey)~ ~Italian~ ~cowledmenace/lang/italian/italian.tra~
 
 //////////////////////////////////////////////////////////////////////////
 // Main Component - The Cowled Menace
