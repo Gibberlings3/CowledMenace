@@ -1,0 +1,493 @@
+@0 = ~Componente principale~
+@1 = ~Riviste le ricompense in punti esperienza ottenute dai Sorveglianti Incappucciati (klatu)~
+@2 = ~Riviste le ricompense in oggetti magici ottenute dagli incantatori di alto livello~
+@3 = ~Gli incantatori che appaiono teletrasportandosi non possono essere attaccati prima che le loro contingenze scattino (SCS)~
+@4 = ~I maghi lanciano Portale lontano da essi~
+@5 = ~Usa l'effetto visivo di Globo d'Invulnerabilità di BG2 (EE only)~
+@6 = ~Solo per Trappola di Incantesimi~
+@7 = ~Per tutte le magie che utilizzano quell'animazione (raccomandato)~
+
+@49 = ~Mod mancante: questo componente richiede Baldur's Gate 2: Enhanced Edition Trilogy per essere installato.~
+@50 = ~File mancante: questo componente richiede Baldur's Gate 2 per essere installato.~
+@51 = ~Questo componente richiede Baldur's Gate 2: Enhanced Edition per essere installato.~
+
+@88=~La Pietra del Ladro nel tuo zaino inizia a ronzare. Sta chiaramente reagendo a qualcosa. Qualcosa di molto vicino.~
+@89=~Entri nella stanza, e la Pietra Guardiana di Zallanora nel tuo zaino inizia a ronzare. Qualcosa, da qualche parte in questa stanza, l'ha attivata.~
+@90=~La Minaccia Incappucciata~
+@91=~Mentre ti avvicini alla porta dall'aspetto squallido, la Pietra del Ladro nel tuo zaino inizia a brillare intensamente e scompare. Vieni trascinato nell'oscurità.~
+@92=~Mentre ti avvicini al muro, la Pietra Guardiana di Zallanora nel tuo zaino diventa rovente e inizia a brillare intensamente. Vieni trascinato nell'oscurità.~
+@93=~Non sapendo esattamente cos'altro fare, lasci cadere la Pietra dell'Anima nel calderone. Immediatamente, il liquido all'interno si calma e la macchina più avanti lungo la parete inizia a ronzare.~
+@94=~Il liquido nel calderone bolle e ribolle mentre ti avvicini. Il simbolo della Runa Contorta lo decora, e queste parole sono scritte al di sotto di esso: La pietra è morte. La morte è la via. Il percorso rimane...~
+@95=~Pietra dell'Anima~
+@96=~Questa è la pietra dell'anima ottenuta dal corpo del servo del Mastro Runico Kartak. Il suo utilizzo al momento ti è ignoto.~
+@97=~Nota di Koshi~
+@98=~Rapporto sull'edificio accanto alla Locanda di Delosar:
+
+Da quello che ho intuito, la porta rivolta al lato del fiume richiede qualche sorta di chiave per poter essere aperta. Nessuno di noi è stato in grado di trovare quella che necessita. Linea d'azione suggerita: tendere un'imboscata a chiunque esca da lì e prenderla da noi...~
+
+@100=~Su questa pergamena appare l'inconfondibile emblema degli Stregoni Incappucciati dell'Amn. Al di sotto, un testo recita:
+
+'La mia influenza ad Athkatla è ora abbastanza per attuare il prossimo passo del nostro piano: Baldur's Gate, iniziando dalle zone orientali della città. State pur certi che con la mia organizzazione dalla vostra parte, il nostro dominio sulla regione dell'Amn sarà assoluto.'~
+
+@101=~Runa Contorta - Athkatla
+
+Ho trovato una nota che sembra collegare gli Stregoni Incappucciati con i traffici della Runa Contorta. Vale la pena investigare, ma chiedere in giro se qualcuno ha mai sentito parlare della 'Runa Contorta' non sembra una buona idea al momento. Se questi due potenti gruppi stanno lavorando insieme, le cose si mettono male perchè dubito che le loro intenzioni siano caritatevoli. Per adesso, penso che dovrei cercare l'influenza della Runa Contorta attorno a Baldur's Gate, come la nota che ho trovato suggerisce. Forse la stessa Pietra del Ladro che ho usato qui in Athkatla serve anche per accedere alla loro enclave segreta qui?~ // Erase 105 or 106
+// Also need to open Baldur's Gate again.
+
+@102=~Runa Contorta - Baldur's Gate
+
+Mi sono imbattuto in un'enclave della Runa Contorta a Baldur's Gate. Apparentemente, stanno lavorando nelle ombre assieme agli Stregoni Incappucciati di Athkatla per qualche scopo sinistro. Il prossimo passo è trovare quel contatto. Immagino che dovrei trovare una strategia per confrontarmi con i loro leader, in qualche modo.~
+// Generic version of this = @111
+
+@103=~Runa Contorta - Baldur's Gate 
+
+Mi sono imbattuto in un'enclave della Runa Contorta a Baldur's Gate, e le mie paure sono state confermate: stanno lavorando assieme agli Stregoni Incappucciati di Athkatla per qualche scopo sinistro. Il loro contatto sembra essere qualcuno che risponde al nome di 'Zallanora', fuggita subito dopo il mio confronto con lei. Fare domande dirette agli Stregoni Incappucciati potrebbe essere pericoloso in questa fase, specialmente se lei fa parte dei loro ranghi, come la sua abilità nel lanciare incantesimi suggerisce.~
+
+@104=~Laeral Silverhand
+
+Investigando tra gli affari della Runa Contorta, Ho incontrato la famosa Signora Svelata di Waterdeep, Laeral Silverhand. Non ho dubbi che anche lei stia tenendo un occhio di riguardo su di loro in caso la loro influenza si diffonda ulteriormente a Nord, fino alla sua città. Per quanto riguarda la pista da investigare, non mi ha offerto molto, ma ha detto che rimarremo in contatto: avere lei come alleato è la prima buona notizia su questa faccenda che ricevo da molto tempo, quindi la prenderò molto volentieri.~
+
+@105=~Runa Contorta - Athkatla
+
+Gli agenti della Runa Contorta mi hanno teso un'imboscata, senza dubbio a causa dei miei coinvolgimenti con la storia degli Omicidi dello Scuoiatore nel Quartiere del Ponte. Questa volta, sembra che 'Koshi' fosse implicato con loro, come membro di un gruppo piuttosto strano e pericoloso in cui mi sono imbattuto nel Quartiere del Tempio. Aveva una nota che si riferiva ad un edificio proprio accanto alla Locanda di Delosar nel Quartiere del Ponte che richiedeva una qualche sorta di chiave per entrarvi. Penso che questa pista sia da investigare ulteriormente.~
+
+@106=~Runa Contorta - Athkatla
+
+Gli agenti della Runa Contorta mi hanno teso un'imboscata, senza dubbio a causa dei miei coinvolgimenti con la storia degli Omicidi dello Scuoiatore nel Quartiere del Ponte. Questa volta, sembra che 'Koshi' fosse implicato con loro, come membro di un gruppo piuttosto strano e pericoloso in cui mi sono imbattuto nel Quartiere del Tempio. Non ho mai parlato con questo tizio, ma forse aveva qualcosa in suo possesso che poteva aiutare a indagare ulteriormente?~
+
+@107=~Laeral Silverhand - 2nd
+
+Ho incontrato la Signora di Waterdeep di nuovo dopo aver fatto una visita a sorpresa ad un'altra enclave della Runa Contorta. Anche lei ha indagato sulla questione e mi ha fornito un nome per il contatto della Runa tra gli Stregoni Incappucciati: Zallanora. Mi ha anche avvisato che potrebbe esserci dell'altro dietro la storia che circonda questa donna, che apparentemente è molto più potente di quanto il suo background lasci suggerire.~
+
+@108=~Elite degli Incappucciati - Zallanora
+
+Non volendo sottomettermi alle loro ridicole limitazioni nel lancio di incantesimi, ho affrontato gli Stregoni Incappucciati finché i loro membri di rango più alto non sono venuti a sistemare la situazione una volta per tutte. Tra loro c'era la misteriosa Zallanora, che ho incontrato tempo fa nel Quartiere del Cimitero. Dopo essere fuggita dalla battaglia, sembra che non ci siano più problemi per noi nel lanciare magie nella città. Ho molta ragione di credere che lei fosse per tutto questo tempo il contatto della Runa Contorta, altrimenti...chi potrebbe essere? Ad ogni modo, non ho idea di cosa stia succedendo oltre a questo, e qualcosa mi dice che la storia con lei non è finita.~
+
+@109=~Elite degli Incappucciati - Zallanora
+
+Non volendo sottomettermi alle loro ridicole limitazioni nel lancio di incantesimi, ho affrontato gli Stregoni Incappucciati finché i loro membri di rango più alto non sono venuti a sistemare la situazione una volta per tutte. Tra loro c'era la misteriosa Zallanora, che ho incontrato tempo fa nel Quartiere del Cimitero. Dopo essere fuggita dalla battaglia, sembra che non ci siano più problemi per noi nel lanciare magie nella città. Ma tutto questo ha avuto un costo: Non ho ancora idea di cosa stiano realmente architettando lei o gli Stregoni Incappucciati. Inoltre, qualcosa mi dice che la storia con lei non è finita.~
+
+@110=~Imboscata in Amkethran
+
+Gli agenti della Runa Contorta mi hanno teso un'imboscata ad Amkethran, guidati da Zallanora, un membro di alto rango degli Stregoni Incappucciati che ho incontrato e avuto a che fare in passato. Per il momento il pericolo è passato, ma non ho idea di cosa stia succedendo dietro le quinte. Ho trovato una Pietra Guardiana sul cadavere di Zallanora, che grazie ai miei anni di esperienza all'avventura indicherebbe che apre l'accesso ad un luogo, probabilmente uno nascosto. A pensarci bene, ricordo di aver incontrato brevemente Zallanora per la prima volta nel Quartiere del Cimitero di Athkatla, molto tempo fa, mentre lanciava un incantesimo accanto all'ingresso di una cripta... Forse esplorando di nuovo il posto con la Pietra Guardiana in mio possesso, potrei trovare qualcosa?~
+
+@111=~Runa Contorta - Baldur's Gate
+
+Mi sono imbattuto in un'enclave della Runa Contorta a Baldur's Gate. Apparentemente, una Pietra del Ladro che portavo con me mi ha condotto lì. A darmi il benvenuto c'erano membri di un gruppo che si fa chiamare la 'Runa Contorta'. Non so chi siano o cosa vogliono, ma le loro intenzioni difficilmente appaiono amichevoli..~
+
+@120=~La Minaccia Incappucciata - Conclusione
+
+A quanto pare, Zallanora non era quella vera: il suo corpo era stato scambiato con quello di un vecchio imperatore Lich di nome Shoon VII durante il Periodo dei Disordini. Questo spiega sicuramente un po' di cose! Almeno sembra confermare che 'lei' fosse responsabile della maggior parte dei loschi affari riguardanti gli Stregoni Incappucciati e la Runa Contorta, che sembra semplicemente aver lasciato la regione, ora.~
+
+@121=~La Minaccia Incappucciata - Conclusione
+
+A quanto pare, Zallanora non era quella vera: il suo corpo era stato scambiato con quello di un vecchio imperatore Lich di nome Shoon VII durante il Periodo dei Disordini. Questo spiega sicuramente un po' di cose! Almeno sembra confermare che 'lei' fosse responsabile della maggior parte dei loschi affari riguardanti gli Stregoni Incappucciati e la Runa Contorta, che sembra semplicemente aver lasciato la regione, ora. Mi sono alleato con Shoon perchè mi erano state promesse ricchezze, ma purtroppo è fuggito appena ci siamo confrontati con Laeral. Non posso fare a meno di pensare che ascoltare questo bugiardo sia stata una pessima idea. Ed ora, tutto quello a cui deve pensare è 'pensare all'eternità', citando le sue parole. Lui ne sa di più e potrebbe darmi di più, ma non ho merce di scambio. A lui letteralmente non importa. È esasperante che non possa spaccargli la testa! Il lato positivo è che la Runa Contorta finalmente mi lascerà in pace.~
+
+@150=~La Minaccia Incappucciata - Conclusione
+
+A quanto pare, Zallanora non era quella vera: il suo corpo era stato scambiato con quello di un vecchio imperatore Lich di nome Shoon VII durante il Periodo dei Disordini. Questo spiega sicuramente un po' di cose! Almeno sembra confermare che 'lei' fosse responsabile della maggior parte dei loschi affari riguardanti gli Stregoni Incappucciati e la Runa Contorta, che sembra semplicemente aver lasciato la regione, ora. Apparentemente, il piano di Shoon gli si è ritorto contro, poichè lui non aveva pianificato il fatto che io avrei avuto un Prescelto di Mystra al mio fianco e che quest'ultimo avrebbe potuto invertire la sua maledizione, quella che lo rendeva invulnerabile! Risultato: Shoon VII sembra essere sparito, per ora, e Zallanora salvata, in qualche modo. Sono abbastanza sicuro che la Runa Contorta mi lascerà in pace, ora.~
+
+@198=~- Messaggio dalla Runa -
+
+Chiunque riuscirà ad uccidere <CHARNAME> riceverà in cambio il Teschio D'Oro. Si pensa che <CHARNAME> sia o ad Athkatla oppure a Baldur's Gate al momento. Voi sapete cosa fare. L'Enclave di Baldur's Gate Orientale aspetta i vostri risultati.~
+@199=~'Dovrai supervisionare i nostri affari ad Athkatla. I primi risultati saranno attesi tra un anno e, naturalmente, seguirà una ricompensa adeguata. Attualmente, i nostri interessi principali sono rivolti al conciatore Hidesman, quindi questo sarà il tuo primo incarico. Non allontanarti troppo dalla sua abitazione, poiché ne sei il guardiano.'
+
+Sotto il testo, un sigillo stampato funge da firma. Si tratta di un sigillo nodoso, che ricorda due volte il numero '3', unito da punte rivolte verso il basso come artigli.~
+
+@200 = ~Perla del Potere (9° livello)~
+@201 = ~I potenti incantesimi su questa pietra di Ioun la rendono un tesoro ricercato con impazienza dai maghi.
+
+STATISTICHE:
+
+Abilità Equipaggiate:
+– Può memorizzare una magia arcana extra di 9° livello
+
+Peso: 0~
+
+@202 = ~Spada Corta~
+@203 = ~Lama della Fortuna~
+@204 = ~La Lama della Fortuna, un oggetto di potere leggendario, ha la capacità di fornire 3 desideri al suo possessore. Ovviamente, ciò comporta anche una buona dose di rischio, poiché i desideri sono imprevedibili e solo quelli formulati con cura hanno esiti positivi. Il perchè quella particolare Lama della Fortuna abbia solo 2 utilizzi rimasti, e per cosa sia stata usata in precedenza, rimane un mistero.
+
+Anche quando viene privata delle sue capacità di esaudire i desideri, questa Spada Corta rimane molto potente.
+
+STATISTICHE:
+
+Abilità equipaggiate:
+– Tiri Salvezza: +1
+– Trovare Trappole: +5%
+– Svuotare Tasche: +5%
+– Muoversi Silenziosamente: +5%
+– Nascondersi tra le Ombre: +5%
+– Individuare Illusioni: +5%
+– Piazzare Trappole: +5%
+– Fortuna: +1
+
+Abilità attivabili (2 cariche):
+– Desiderio
+
+THAC0: +3
+Danno: 1d6+3 (tagliente)
+Fattore velocità: 1
+Tipo di competenza: Spada Corta
+Tipo: A una mano
+Richiede:
+ 4 Forza
+
+Peso: 3~
+
+@205 = ~Pietra Guardiana di Zallanora~
+@206 = ~Spingi da parte il pesante coperchio e il fetore nauseabondo di putrefazione quasi ti sopraffà. Dentro c'è un piccolo forziere.~
+@207 = ~Il baule non si apre quando lo tiri. A quanto pare, per il momento non puoi aprirlo.~
+@208 = ~Apri il baule e ne raccogli il contenuto.~
+@209 = ~Il coperchio del sarcofago sembra pesante, ma se lo si desidera è possibile rimuoverlo.~
+
+@250 = ~Il nostro contatto di Athkatla dovrebbe arrivare a breve, Mastro Runico. Ti assicuro, le risorse degli Stregoni Incappucciati saranno di grande aiuto a—~
+@251 = ~Alla fine, sembra che siano arrivati.~
+@252 = ~Mastro Runico, questo... non è il contatto che stavamo aspettando.~
+@253 = ~Infatti?~
+@254 = ~Tu, mortale. Hai trovato una chiave e sapevi dove usarla. Perché?~
+@255 = ~Non lo so. Un secondo prima ero a Baldur's Gate e ora sono qui.~ 
+@256 = ~Chiunque tu sia, è il tuo giorno sfortunato. Preparati a subire l'ira della Runa Contorta.~
+@257 = ~Aspetta, sta arrivando qualcun'altro.~
+@258 = ~Non ne ho idea, questa pietra continua a teletrasportarmi in giro. L'ultima volta che è successo, persone come te mi hanno ostacolato. Diciamo solo che non è andata come volevano.~
+@259 = ~Quindi sei tu il responsabile della perdita della nostra Enclave di Athkatla. La Runa non lascerà che tutto ciò resti impunito.~
+
+@267 = ~Benvenuta, Zallanora, ti stavamo aspettando.~
+@268 = ~Parla, veloce, ho delle questioni da sbrigare.~
+@269 = ~Certo. Nel frattempo, però, sembra che degli intrusi siano riusciti a entrare. Vuoi unirti al divertimento prima di passare agli affari?~
+@270 = ~Non così in fretta. Degli intrusi sono entrati qui, intrusi che hanno ucciso Shangalar il Nero ad Athkatla... proprio sotto il tuo naso.~
+
+@280 = ~Così ci incontriamo ancora, <CHARNAME>. Ero abbastanza contento del fatto che ci ignorassimo a vicenda, ma non posso permetterti di creare scompiglio tra i miei ranghi in questo modo. È il momento di pagarne le conseguenze.~
+
+@297 = ~Sembra che io ti abbia sottovalutato, Progenie di Bhaal. Un errore pagato a caro prezzo che non ripeterò in futuro.~
+@298 = ~Ti saluto e prego che non ci incontreremo mai più, perché sarò pronto a distruggerti.~
+@300 = ~Sembrerebbe che gli Stregoni Incappucciati ti abbiano sottovalutato, Progenie di Bhaal. Un errore pagato a caro prezzo che non ripeterò in futuro. L'organizzazione non ti disturberà oltre.~
+@301 = ~Goditi la tua nuova libertà nel lancio degli incantesimi... finchè puoi farlo.~
+
+@302 = ~Oh ma li conosco. L'intruso è una Progenie di Bhaal, e una anche abbastanza intraprendente.~
+@303 = ~Sembrerebbe, <CHARNAME>, che finalmente ti sei intromesso in affari in cui non avresti dovuto. Oggi è il giorno in cui morirai.~
+@304 = ~Oh li conosco. Pensare che questa... Progenie di Bhaal sia riuscita a distruggere Shangalar è un pensiero ripugnante.~
+
+@306 = ~Mastro Runico, faresti bene a impegnarti al massimo contro <CHARNAME>. Non è un avversario con cui scherzare.~
+
+@310 = ~Ah, suppongo che ormai ti abbiano chiesto di schierarti in questa ridicola 'guerra tra gilde' in corso...~
+@311 = ~Scusami, cosa?~
+@312 = ~Aspetta, puoi lanciare magie nella città? Come?~
+
+@313 = ~Prima che tu lo chieda, no, Non ti dirò dove sono stati portati i tuoi amici. So chi sei, Progenie di Bhaal, e le tue questioni non mi riguardano.~
+@314 = ~Qui, chiunque può, anche tu. Il Quartiere del Cimitero è piuttosto lontano dai nostri occhi... Per la maggior parte.~
+@315 = ~Nostri? Sei con gli Stregoni Incappucciati?~
+@316 = ~Lo sono. Ma prima che tu lo chieda, no, non ti dirò dove sono stati portati i tuoi amici.~
+@317 = ~So chi sei, Progenie di Bhaal, e le tue questioni non mi riguardano.~
+
+@320 = ~Cosa sai su di me?~
+@322 = ~Pensi davvero che un mago del calibro di Jon Irenicus passerebbe inosservato qui? Sono ben consapevole delle sue operazioni.~
+@323 = ~Sappi questo, avrei affrontato io stesso questo Jon Irenicus se avesse insistito. E farò lo stesso con te, se necessario. Noi osserviamo sempre.~
+
+@330 = ~Ci incontriamo ancora, Figlio di Bhaal. La Runa Contorta ed io abbiamo decretato che questa insolenza riguardo i nostri interesti deve finire ora.~
+@331 = ~Ti ho sottovalutato l'ultima volta, <CHARNAME>, ma questa volta, sono arrivato preparato. Sradicheremo la tua anima divina da questa terra.~
+
+// Crypt 2.0
+
+@340 = ~Quindi sei arrivato fin qui. Nel mio santuario. Pensare che avrei resistito contro ogni previsione per centinaia di anni solo per finire in questa situazione. Gli dei non sono privi di senso dell'ironia.~
+@341 = ~Quindi tu HAI centinaia di anni! Come sospettavo!~
+@342 = ~Vedo che hai trovato potenti amici a cui affidarti, Progenie di Bhaal. Non sei privo di sorprese.~
+@343 = ~Io aaaaAAaAaaAamo cantare.... CANTARE!!!~
+@344 = ~Purtroppo, è qui che finisce la tua ricerca di vendetta e informazioni. Sono tutto tranne che un innocuo, oltremodo indistruttibile, spirito ora.~
+@345 = ~Che cos'è questo posto? Cosa diavolo è successo qui?~ // to 350
+@350 = ~Il mio nome è Shoon, settimo del mio nome. Il Teschio che Ulula è il vero Zallanora. Beh, un riflesso di lei. Forse ci sono ancora alcuni vivi oggi che ricorderebbero il mio nome e rabbrividirebbero di terrore se solo lo sentissero.~
+@351 = ~Shoon... Settimo? L'imperatore Pazzo? Questo non può essere vero, Shoon il Settimo è morto da secoli.~
+@352 = ~Ah, quindi hai sentito storie delle mie gesta! Una volta ero un grande imperatore, infatti! Tradito. O così tutti pensano. Ho finto la mia morte e ho fatto ricerche sul lichdom, e alla fine sono riuscito nel mio intento.~
+@353 = ~E allora cosa puoi dirmi dell'elfa? Cosa c'entra lei con tutto questo?~
+@354 = ~Il motivo per cui sono rimasto inattivo per secoli è anche il motivo per cui non puoi fare del male a me, e neanche a lei, in realtà.~ 
+@355 = ~Zallanora e i suoi amici si sono imbattuti nel mio dominio in un giorno disgraziato. Avevo pianificato di consumare le loro anime per sfuggire a una... situazione difficile in cui mi ero cacciato. Ero intrappolato nel Tomo dell'Unicorno, a causa della mia ricerca di antichi poteri arcani. Un grave errore.~
+@356 = ~Li massacrai tutti lì dove si trovavano, bevvi le loro anime, pregustando la mia salvezza, ma proprio in quel momento, il Periodo dei Disordini colpì. Zallanora era ancora viva, in qualche modo. L'unica sopravvissuta... e ci scambiammo i corpi.~
+@357 = ~Così iniziarono le nostre maledizioni. La sua, quella di essere intrappolata nel Libro, nella mia forma ormai decomposta. La mia, quella di abitare per sempre il fragile corpo di una giovane elfa.~
+@365 = ~Giusto, dev'essere stato davvero terribile essere intrappolato nel corpo di un giovane elfo.~ // PC
+
+@370 = ~Ci ho messo dieci anni per controllare quel corpo correttamente. Per plasmare l'energia magica con la stessa competenza a cui ero abituato. Ed ero incredibilmente abile, come avrete notato dalle nostre battaglie.~
+@371 = ~Con un nuovo corpo arrivò nuovo vigore. E ambizione. Ho ripreso i piani che avevo secoli fa... controllare tutta la Costa della Spada, dalle ombre.~
+@372 = ~A quanto pare non è cambiato molto nel mondo durante i miei secoli di assenza. I pretendenti accorrevano da ogni dove per 'insegnare' a una giovane e troppo ansiosa apprendista come me. Ottenere influenza tra loro è stato un compito incredibilmente facile.~
+@373 = ~Si mettevano letteralmente in fila. Un'esperienza nuova per me, come sicuramente sospetti. In poco tempo, stavo scalando le fila senza che la cosa sembrasse fuori posto. Stavo quasi per avere sotto controllo sia gli Stregoni Incappucciati che la Runa Contorta, finché non sei arrivato tu.~
+@374 = ~Sei disgustoso, tanto vile quanto le leggende raccontano. Perché ci racconti questo? Cosa ci guadagni?~
+@380 = ~Francamente, è piuttosto liberatorio smantellare gli strati di bugie e dire la verità... per una volta. A parte la giovane Zallanora qui presente che non riesce a comprendere una parola di ciò che le dico, voi siete gli unici esseri nei regni a conoscere la mia storia. Mi è piaciuto.~
+@381 = ~Ma più di questo, niente di tutto questo mi importa più. Non puoi uccidere il mio spirito più di quanto tu possa salvare lei. Sono condannato a rimanere in questo stato finché la magia del Tomo non diventerà abbastanza debole da permettermi di sopraffarlo. O finché un evento come il Periodo dei Disordini non si ripeterà e cancellerà il potere del tomo.~
+@382 = ~Potrebbero volerci secoli. O millenni... Allora riprenderò il mio progetto, accuratamente elaborato dopo una pianificazione quasi eterna. E nessuno di voi due sarà in grado di fermarlo, perché ormai sarete entrambi morti da tempo. Sì, sopravviverò persino a te, Laeral. Sono sopravvissuto a te e a tutte le tue sorelle finora.~
+@385 = ~E se ti uccidessi, proprio qui, proprio ora?~ // to 420
+@386 = ~Bene, allora, se me lo chiedete, buona liberazione. Onestamente, non mi interessa cosa farai tra mille anni.~ // to 430
+
+@397 = ~Ora che la ragazza se n'è andata, non mi importa più nulla di te. Non mi interessano i tuoi affari mortali. Ciò su cui sto riflettendo in questo momento è cosa dovrei fare con un'eternità a disposizione per pensare.~
+@398 = ~Cosa faresti se avessi un'eternità per pensare? È ciò su cui sto riflettendo in questo momento. Tu, invece, dovresti riflettere su un arco di tempo molto più breve, come ad esempio, che cosa dovresti fare adesso.~
+@399 = ~Questo è solo un modo di vederla. Ho un'eternità per pensare e riflettere sul mondo. Direi che è una grande opportunità. Ti saluto, figlioccio, e ti auguro buona fortuna nella tua ricerca di un significato personale.~
+
+@400 = ~Protetto da Protezione dalla Morte~
+@401 = ~Protetto da Barriera di Lame~
+@402 = ~Attivatore di Incantesimi—Defletti Incantesimo~
+@403 = ~Catena di Contingenze—Orribile Avvizzimento di Abi-Dalzim~
+@404 = ~Catena di Contingenze—Magia della Morte~
+@405 = ~Catena di Contingenze—Fulmine a Catena~
+@406 = ~Sequenziatore di Incantesimi—Trappola del Teschio~
+@407 = ~Protetto by Pelli di Pietra~
+@408 = ~Attivatore di Incantesimi—Fermare il Tempo~
+@409 = ~Utilizzare Qualsiasi Oggetto-Portale (Pergamena)~
+@410 = ~Utilizzare Qualsiasi Oggetto—Immunità agli Incantesimi: Divinazione (Pergamena)~
+@411 = ~Utilizzare Qualsiasi Oggetto—Visione del Vero (Pergamena)~
+@412 = ~Utilizzare Qualsiasi Oggetto—Immunità Assoluta (Pergamena)~
+
+// Suite Crypt 2.0
+
+@420 = ~Ti invito a provare. Ci ho provato io stesso. Ho assoldato degli avventurieri per farlo. Siamo entrambi immuni a ogni pericolo, un effetto collaterale, suppongo, della situazione difficile in cui ci troviamo a causa del Tomo. La sua maledizione vincolante funge anche da bozzolo protettivo.~
+@421 = ~Il potere del Tomo è assoluto e irreversibile. Credetemi, chiunque conosca il Tomo lo sa.~
+@423 = ~Allora perché sono riuscito a ucciderti ad Amkethran?~
+@426 = ~Quando ci siamo scambiati i corpi, io ero intrappolato nel libro, mentre Zallanora era libera. Così, io sono diventato libero, e lei, intrappolata nel libro. Ma i nostri spiriti sono connessi a causa dell'ingerenza del Tempo dei Disordini, nessuno di noi può lasciare il mondo dei vivi senza l'altro. E poiché lei è intrappolata nel libro... io non posso andarmene, nemmeno ora che la mia forma fisica è morta. E non posso crearne una nuova.~
+@427 = ~Ora ho un millennio per pensare e riflettere sulla mia strategia quando questa maledizione finirà. Direi che è una grande opportunità. Ti saluto, figlioccio, e ti auguro buona fortuna nella tua ricerca di un significato personale. Le tue questioni non mi riguardano più.~ 
+
+@430 = ~Come dovresti. Hai ancora una vita davanti a te, una vita che non mi riguarda. Perché dovrebbe importarti?~ // to 385
+
+@435 = ~Non così in fretta, vostra altezza. Sembra che abbiate trascurato un dettaglio in quello che sembrava un piano perfetto.~ // to part 2
+
+// PART 2 - Shoon
+
+@440 = ~Nonostante tutta la tua astuzia, c'è qualcosa che non hai previsto: sono una Prescelta di Mystra, la dea della magia in persona, e tra tutte le sue Prescelte... sono la più abile con oggetti e manufatti magici.~
+@441 = ~Questo Tomo dell'Unicorno, lo conosco, e ne avverto la presenza. È proprio qui, nel tuo sarcofago.~
+@442 = ~È un oggetto di un potere gigantesco, la sua magia è assolutamente irreversibile. Ma il Tomo in sé, non la sua magia, non è immune ai danni. L'hai detto tu stesso: il tuo piano è di sopraffarlo prima o poi.~
+@443 = ~Come tutti questi artefatti, il potere magico di questo Tomo è infuso dalla Trama, e io possiedo il Fuoco Argenteo di Mystra. Se lei mi prestasse la sua volontà, potrei forse distruggere il tomo e quindi invertirne la magia in virtù della sua distruzione.~
+@450 = ~Che follia è questa? Distruggeresti un oggetto di così inestimabile valore? Cosa ci guadagni?~
+@451 = ~Niente di tangibile. In realtà, ho tutto da perdere. Ma credo che il mondo starà meglio senza di te. Per sempre, questa volta.~
+@452 = ~Impossibile! Non lo farai! Non hai il potere per—~ 
+@453 = ~Oh, ma credo di sì. E l'hai detto tu stesso: ora sei del tutto innocuo, e quindi... non puoi fermarci.~
+@455 = ~<CHARNAME>, possiedo tesori potenti, antichi manufatti, di cui solo io conosco l'ubicazione. Ora sei diventato potente, forse anche più di lei. Aiutami ora e ti renderò più ricco e potente di quanto tu abbia mai immaginato.~
+@460 = ~Giusto. E tradire una delle Sette Sorelle? No, grazie.~
+@461 = ~Ehm, fammi pensare. Chi dovrei aiutare, una persona adorabile che è leggendaria per essere stata una governante giusta ed equa negli ultimi secoli, e che mi ha aiutato finora, o un maniaco tirannico che ha cercato di uccidermi due volte?~
+@462 = ~Non crederò alle bugie di un topo intrappolato che, di sua spontanea volontà, ha mentito, imbrogliato e ucciso per secoli. Se c'è un modo per distruggerti, sono assolutamente d'accordo.~
+@463 = ~Aspetta, di che tipo di ricchezza stiamo parlando?~ // to PLEASE NO
+
+@470 = ~Insolenti! Certo, l'allieva di Mystra... Perché non ci ho pensato?! Avrei dovuto schiavizzare una delle tue sorelle, Laeral, e costringerla a liberarmi! Vi sareste pentite del giorno in cui siete nate, tutte voi! Le sue urla avrebbero viaggiato attraverso la Trama, fino a te, ogni giorno.~
+@471 = ~Vi prometto una cosa, a entrambi: se dovessi superare tutto questo, vi aspetterebbe un'eternità di tormenti, e nient'altro.~
+@472 = ~Fatti da parte, <CHARNAME>. Inizierò la comunione con la mia Dea.~
+@473 = ~E per la cronaca, vostra altezza, nessuna delle mie sorelle può farlo. Ma sono piuttosto sollevata che queste siano solo minacce vuote, perché so che non lo sarebbero se vi trovaste nei Reami.~
+
+//PLEASE NO 
+@480 = ~Conosco la posizione della Gemma Vivente, così come di una lama che esaudisce i desideri, e...~
+@481 = ~<CHARNAME>, Shoon Settimo è uno dei sovrani più vili che abbiano mai vissuto nei Reami. Il Male incarnato. Di sicuro non crederesti alle sue bugie? Non ha alcuna intenzione di mantenere le sue promesse, e tu lo sai.~
+@485 = ~Stavo solo giocando con lui. È tutto tuo.~ // to 470
+@486 = ~Al contrario, voglio ciò che mi sta offrendo. Non ti permetterò di distruggerlo.~ // to 490
+
+@490 = ~Sì, hai parlato come un vero figlio del dio dell'omicidio! Uccidila, e io manterrò la mia promessa.~
+@491 = ~Hai capito male. Le voglio ora.~ //PC
+@492 = ~Io... io non sopporterò oltre! Come osi fare richieste così audaci?!~
+
+@496 = ~Bene, allora, tutto questo è stato inutile. Ricchezze per te che non si materializzeranno mai. La tua avidità mi disgusta, ma so che è meglio non affrontare in combattimento la più famosa delle Progenie di Bhaal.~
+@497 = ~Sappi che la tua decisione di oggi potrebbe causare la morte di milioni di persone. E Shoon ti tradirà, questo è certo. Rifletti su questo mentre nuoti nelle tue ricchezze immaginarie...~
+
+@498 = ~È fatta.~
+@499 = ~La maledizione... è sparita!~
+@500 = ~Uh... perché sono entrambi vivi?~
+@501 = ~Non ne sono... sicuro.~ 
+@502 = ~Sono ancora vivo! Ho fatto una promessa a entrambi, e ho piena intenzione di mantenerla... Preparatevi a provare tutta la portata della mia ira!~
+@503 = ~Aspetta, qualcosa non va.~
+@504 = ~Io... io... me ne vado?~
+@505 = ~No, non può essere!~
+@506 = ~No! NOOOOOOO!~
+@507 = ~AAAAHHHHH! Aiuto! I miei amici... sono tutti...~
+@508 = ~Ooohh... Ohh... La mia testa...~
+@509 = ~Quello era...~
+@510 = ~(Zallanora sviene per la stanchezza)~
+@511 = ~Cos'è successo? Come mai lei è viva e Shoon è morto?~
+@512 = ~Sono scioccata quanto te, in realtà dovrebbero essere... entrambi morti, cosa che temevo sarebbe successa. Ma c'è una certa logica in tutto questo. Dopo che si sono scambiati i corpi, Shoon è morto combattendo contro di te, mentre Zallanora, la vera Zallanora intrappolata nel corpo di Shoon, no.~
+@513 = ~Quindi l'unica che è effettivamente sopravvissuta dopo lo scambio... è lei. Forse è per questo che, quando lo scambio è stato annullato, è stata risparmiata? Per un ironico scherzo del destino di Shoon, morire nel corpo di Zallanora le ha in realtà salvato l'anima.~
+@514 = ~Non è ancora al sicuro. Sarebbe al sicuro nel mio dominio. A proposito, sei invitata. Sono sicuro che ti piacerebbe vedere qualcosa del genere almeno una volta nella tua, beh, lunga vita.~
+@520 = ~Certo che lo farei. Portaci lì appena puoi.~
+@521 = ~Non avevi detto che ci avresti portato nel tuo dominio? Già che ci sei, dovresti dare un'occhiata a Zallanora, per vedere se ce la farà.~
+@531 = ~(Zallanora è priva di sensi)~
+@532 = ~(La porterò con me nel Piano Extra-Dimensionale così potrà essere al sicuro.)~
+@533 = ~(Ci sono ancora delle cose che vorrei esplorare prima in questa stanza.)~
+@534 = ~(Nel frattempo la lasci lì.)~
+@535 = ~(Teletrasporti tutti nella stanza nel tuo Piano Extra-Dimensionale)~
+
+@550 = ~Do... Dove sono?~
+@551 = ~Sei nel mio dominio. Il mio nome è <CHARNAME>, ed è un miracolo che tu sia ancora viva. Qual è l'ultima cosa che ricordi?~
+
+@552 = ~Il tuo... dominio? Perché sono qui? Cosa è successo?~
+@553 = ~Questa è una, uh, lunga storia.~ 
+@554 = ~Come ho detto, qual è l'ultima cosa che ricordi? Procediamo un passo alla volta.~ 
+
+@555 = ~Tutto ciò che ricordo sono le... urla. E perché mi sento così terribilmente male?~ // PC answers 560
+@560 = ~Ok, lasciami provare... Invece di morire di una morte orribile quando un Imperatore secolare ha cercato di prosciugare la tua anima dopo che eri entrato nel suo santuario senza invito, hai scambiato il tuo corpo con lui per una sfortuna che capita una volta ogni mille anni. Poi ti ha lasciato marcire mentre pianificava come conquistare la Costa della Spada con il suo nuovo giovane corpo: il tuo!~
+
+@561 = ~Questo è... Qualcuno mi ha rubato il corpo? Ora che ci pensi, ricordo una cosa del genere. Essere risucchiato fuori dal mio corpo. È stato orribile.~
+@562 = ~Lo è. So cosa si prova... è orribile.~
+@563 = ~È finita adesso? Come ho recuperato il mio corpo? Ho così tante domande.~
+@565 = ~Sì, è finita. Non so esattamente come tu abbia recuperato il tuo corpo, ma ora non importa.~ //to 580
+@566 = ~Hai riavuto il tuo corpo perché Laeral ha distrutto l'oggetto che collegava la tua anima a quella dell'Imperatore.~ //to 570
+@567 = ~Sii felice di essere vivo. È stata una fortunata coincidenza che tu sia sopravvissuta a tutto questo. Dovresti ringraziare Laeral, ti ha salvato la vita.~ //to 580
+
+@570 = ~Distrutto cosa?~
+@571 = ~Non importa, l'importante è che tutto abbia funzionato, alla fine.~ //to 580
+
+@580 = ~Cosa dovrei fare ora? Come torno a casa?~
+@581 = ~Beh, ti consiglierei di andare il più lontano possibile dalla Costa della Spada. Quelli che ti conoscono da queste parti non sono persone che vorresti incontrare. Mai. Dovresti andare a Est, lontano da qui.~
+
+@582 = ~E cosa faccio con la mia famiglia e i miei amici?~
+@583 = ~Mi dispiace dirlo, ma i tuoi amici sono morti. Lui li ha uccisi tutti. Quanto alla tua famiglia... probabilmente ha fatto fuori anche loro per coprire le sue tracce. Senza lasciare nulla in sospeso e tutto il resto.~ //to 590
+@584 = ~Senti, sei fortunata ad essere viva, per cominciare. Se vuoi che rimanga così, devi prendere delle precauzioni. L'uomo che era nel tuo corpo prima non era esattamente un angelo.~ //to 600
+
+@590 = ~Spariti? Tutti quanti? *singhiozza* No... come ha potuto... pe-perché sta succedendo proprio a me?~ // PC replies 584
+
+@600 = ~Va bene. Io... Come faccio a lasciare questo posto?~
+@601 = ~Ho il controllo su chi entra e chi esce da qui. Ti teletrasporterò in un posto sicuro.~ // to 610
+@602 = ~Ti tirerò fuori, controllo chi entra e chi esce. Ecco 2000 monete d'oro per aiutarti a ricominciare la tua vita. È il minimo che possa fare.~ // to 611
+@603 = ~Dal momento che non ho alcuna intenzione di lasciarti marcire qui dentro e rovinare il tuo aspetto generale, ti teletrasporterò fuori.~ //to 610
+
+@610 = ~Molto bene. Io... credo sia tutto. Grazie di tutto allora. Auguratemi buona fortuna.~
+@611 = ~Grazie, mi sarà sicuramente d'aiuto. Sei davvero una manna dal cielo! Auguratemi buona fortuna.~
+
+@625 = ~Quindi, è qui che le nostre strade si dividono, <CHARNAME>. Oggi il mondo tira un enorme sospiro di sollievo. Nessuno lo sa, ma abbiamo evitato una possibile futura catastrofe.~
+@626 = ~La prossima volta che incontrerò Elminster, non mancherò di raccontargli le nostre imprese! Una volta disse che se Shoon Settimo fosse ancora vivo oggi, non ci sarebbe pace nella nostra epoca. E ora che l'ho incontrato, sono d'accordo.~
+@630 = ~Immagino che tornerai ad Athkatla? Questo è un arrivederci, allora. Grazie per il tuo aiuto in questa faccenda e speriamo di rivederci in circostanze migliori.~
+
+// Laeral Silverhand
+@700 = ~In nome della Dea, cosa è successo qui? Un minuto prima, si stava svolgendo una riunione – che io stavo spiando, badate bene – e tuttavia, il minuto successivo, l'energia magica che si è scatenata qui era tale che l'ho percepita attraverso il mio incantesimo!~
+@701 = ~Dimmi, chi sei? Non sembri un agente della Runa Contorta.~ // PC answers below
+@702 = ~Beh, non sembri un agente della Runa Contorta. Sospettavo che qualcuno sarebbe tornato, ma non così presto. Di recente ho piazzato allarmi arcani ovunque per avvisarmi dell'arrivo di chiunque.~ // SoA — if spawn in SoA, set a variable so that it doesn't happen in BG and vice versa
+@703 = ~Dimmi, chi sei e cosa è successo qui?~ // PC answers below~ // SoA — if spawn in SoA, set a variable so that it doesn't happen in BG and vice versa
+@704 = ~Mi chiamo <CHARNAME>. In qualche modo sono rimasto coinvolto in questo pasticcio con la Runa Contorta. Poi una cosa tira l'altra, e ho trovato questo posto, la loro Enclave, e ho affrontato la situazione a modo mio.~ // to 730
+@705 = ~Come fai a sapere che non sono un agente della Runa Contorta?~ // to 770
+
+@710 = ~Mi sembra giusto.~ 
+@711 = ~Mi chiamo Laeral Silverhand. Ho indagato sulla Runa Contorta perché ritengo che una serie di strani e apparentemente sconnessi eventi accaduti negli ultimi, beh, secoli, potrebbero essere in fondo collegati... a loro.~
+@712 = ~Aspetta, Laeral? QUELLA Laeral Silverhand? Di Waterdeep?~ // to 720
+@713 = ~Secoli? Quanto è ramificata questa tela di avvenimenti?~ // Avoided to translate 'rabbit hole' into 'tana del bianconiglio', because 'bianconiglio' seem a bit off with the D&D theme.
+
+@720 = ~Sì, sarei io.~ 
+@721 = ~Certo, ora che ci penso, i capelli argentati ti tradiscono un po'. Come mai una delle Sette Sorelle si è immischiata nella Runa Contorta? Hanno mai agito contro di te?~ // to Part 2
+
+@725 = ~Non ne sono sicura. È quello che sto cercando di scoprire.~ // to Part 2
+
+@730 = ~Oh, adesso ricordo. <CHARNAME>... La Progenie di Bhaal. Elminster mi ha parlato molto di te. Lui ha molta fiducia in te.~
+@733 = ~Uhh... Più che altro in passsato, suppongo. L'ultima volta che l'ho visto è stato parecchio tempo fa. Per un po' è sembrato che si interessasse ai miei affari, poi è scomparso.~ // to 740
+@734 = ~Sì, a proposito... sai cosa vuole da me?~ // to 740
+@735 = ~Aspetta, ti conosco?~ // to 711
+
+@740 = ~Elminster agisce in modo criptico, ma lavora per il bene comune. Ha scelto di seguire i tuoi progressi per un motivo, e probabilmente lo fa ancora.~
+@741 = ~A quanto pare, molte persone seguono i miei progressi. A dire il vero, preferirei essere lasciato in pace, ma da quando Gorion è stato assassinato, non è mai stata una possibilità per me.~ // to 750
+@742 = ~Capisco... quindi, chi sei?~ // to 710
+@743 = ~Quindi se Elminster si fida di me come sembrerebbe, come posso parlare con lui?~ // to 760
+
+@750 = ~Essere un giocatore importante nel gioco degli dei significa essere condannati a non essere mai veramente soli. O anonimi.~
+@751 = ~Sembra che tu parli per esperienza~ // to 755
+
+@755 = ~Lo faccio. Dei diversi, e per ragioni totalmente diverse, ma siamo abbastanza simili, tu ed io.~
+@756 = ~Siamo? E tu, chi sei?~ // to 711
+
+@760 = ~Non lo fai. Devo fidarmi del suo giudizio, come ho fatto tante volte in passato. Immagino che abbia capito che tutto ciò di cui avevi bisogno era un piccolo aiuto nei tuoi momenti più bui.~
+@761 = ~Il risultato è che ora sei cresciuto come persona... e in potere, e questa scena qui ne è la prova.~
+@762 = ~La Runa Contorta ha avuto ciò che si meritava, ma non capisco ancora cosa voglia o perché sia qui. Mi farebbe comodo un po' di aiuto, e te ne chiederei un po', ma non so nemmeno chi tu sia.~ // to 710
+
+@770 = ~La dea Mystra è la mia guida. E la mia guida mi sta dicendo che l'influenza della Runa non si trova dentro di te. Ma avverto anche una qualche forma di contatto divino con te, quindi devo chiedertelo di nuovo: chi sei?~ // PC answers 704
+
+// Part 2
+
+@800 = ~Ho osservato ogni loro mossa per un po', e poi un giorno... niente. Pensavo di aver chiarito il mistero di questo posto, solo per trovarlo vuoto, con tracce di lotta. E potenti incantesimi.~ 
+@801 = ~Poi ho iniziato a cercare chi ne fosse la causa. Poi sei apparso tu, e questo ha fatto scattare i miei allarmi.~
+@802 = ~Ho osservato ogni loro mossa per un po' di tempo. Anche se me ne sono perso un pezzetto, questo incontro ha confermato ciò che temevo: che la Runa Contorta è attiva e in espansione.~
+@803 = ~Poi sei arrivato tu e li hai semplicemente ridotti in polvere. Anche se non approvo i tuoi metodi, suppongo che la loro morte non possa essere vista come un fatto negativo a lungo termine.~
+@811 = ~Beh, temo che ci sia dell'altro sotto. Hanno detto di avere un contatto tra gli Stregoni Incappucciati che lavora con loro. Sembra proprio una bella cospirazione.~ // to 840
+
+@840 = ~Gli Stregoni Incappucciati? Mmh, questa è tutt'altro che la situazione ideale.~
+@841 = ~Non possiamo lasciarli agire liberamente in questo modo. La Runa ha subito un duro colpo quando hai fatto irruzione nella loro Enclave. Ti contatterò, spero con maggiori informazioni, ma nel frattempo ti suggerisco di continuare le tue indagini.~ // PC answers below
+// Reply idea: 'Going to Baldur's Gate is not an option for me right now.'
+@845 = ~Sì, a proposito... la lettera che ho trovato menzionava Baldur's Gate, dove ora mi è proibito entrare. Che ne dici se tu indaghi lì e io qui?~ // to 850
+@846 = ~La mia indagine mi porterebbe a Baldur's Gate, ma sono abbastanza sicuro di essere stato bandito dalla città per crimini che non ho commesso. Tu pensi di potermi aiutare?~ // to 850
+@847 = ~Sì, signora. Lo farò.~ // to 855
+@850 = ~Questa è una questione della massima importanza. Farò in modo che tu abbia accesso privilegiato alla città, ma non osare commettere alcun crimine lì, poichè c'è in gioco il mio nome!~ // to 860 and EXIT2
+// Open gate to Baldur's Gate
+@855 = ~È stato un piacere incontrarti, <CHARNAME>. Elminster non si sbagliava davvero sul tuo conto.~// EXIT1
+@860 = ~Buona fortuna, <CHARNAME>.~ EXIT2
+
+// Laeral 2nd time in Runa Contorta
+
+@900 = ~Ci incontriamo ancora, <CHARNAME>.~
+@901 = ~Mentre tu indagavi da solo (e, aggiungerei, hai avuto un grande successo nel tuo compito), io ho monitorato i movimenti della Runa Contorta e i loro associati.~
+@902 = ~A quanto pare, il loro contatto tra gli Stregoni Incappucciati si fa chiamare 'Zallanora'. Questo nome ti suona familiare? Hai trascorso molto più tempo di me ad Athkatla.~
+@905 = ~Sì, sarebbe uno dei loro leader. L'ho già incontrata e affrontata, ma purtroppo è fuggita dalla scena. Non ha lasciato alcun indizio.~ // to 920
+@906 = ~Quel nome mi dice qualcosa. L'ho incontrata una volta, nel Quartiere del Cimitero di Athkatla. Dovrò trovare un modo per affrontarla.~ // to 940
+@907 = ~Potrei averla incontrata in passato, ma non ne sono sicuro. Ma gli Stregoni Incappucciati hanno dei rappresentanti ad Athkatla, quindi non ho dubbi che prima o poi la troverò.~ // to 960
+@908 = ~Io... lo sapevo già. L'ho letteralmente affrontata. Purtroppo, è fuggita dalla scena e non ha lasciato alcun indizio.~ // to 920
+
+@920 = ~Quindi sa chi sei? Allora è solo questione di tempo prima che i tuoi nemici capiscano che sei tu il responsabile di tutti i loro fallimenti.~
+@923 = ~Quindi qual è il piano adesso? In questo momento sono terribilmente a corto di indizi su questa faccenda.~
+@925 = ~Temo di non poterti dare una risposta semplice. Ma sappi questo: La Runa Contorta è una cabala di lich. Ne sono sicuro. E i lich sono molto pazienti. Lo impari vivendo per secoli, e lo dico per esperienza.~
+@926 = ~Se hai davvero ucciso uno o più dei loro membri d'elite, dovresti aspettarti una reazione. Non so quando, non so come, ma quando colpiranno - e lo faranno - lo faranno con la massima certezza di poterti abbattere.~
+@927 = ~So che non è di grande aiuto, ma ci ho messo anni a rintracciarli, e ora sembra davvero che mi sia scontrata contro un muro. Sono praticamente scomparsi. E questa Zallanora non fa che aumentare ulteriormente il mistero.~
+@928 = ~Ciò che ho imparato nella mia lunga vita è che i maghi abili come lei di solito hanno una reputazione che li precede. O un insegnante rinomato, e anni di studi. O la benedizione di un dio. Nel suo caso? Niente di significativo: una mancanza di dettagli molto misteriosa.~
+@929 = ~Non mi sono mai imbattuta in una persona completamente sconosciuta, potente e influente come sembra essere lei. Eppure, anche con i suoi anni elfici, sembra essere appena adulta. C'è decisamente di più in questa storia, Progenie Divina. Tutto è possibile.~ 
+@930 = ~Ti farò sapere se trovo qualcosa. Stai attento, <CHARNAME>.~ // EXIT
+
+@940 = ~Davvero? Sembra sorprendente. Ho fatto delle indagini e ho indagato un po' su di lei. E i risultati sono a dir poco preoccupanti.~ 
+@945 = ~Ciò che ho imparato nella mia lunga vita è che i maghi abili come lei di solito hanno una reputazione che li precede. O un insegnante rinomato, e anni di studi. O la benedizione di un dio. Nel suo caso? Niente di significativo: una mancanza di dettagli molto misteriosa.~
+@946 = ~Non mi sono mai imbattuta in una persona completamente sconosciuta, potente e influente come sembra essere lei. Eppure, anche con i suoi anni elfici, sembra essere appena adulta. C'è decisamente di più in questa storia, Progenie Divina.~
+@947 = ~Ti farò sapere se trovo qualcosa. Stai in guardia se la affronti, <CHARNAME>. Tutto è possibile.~ // EXIT
+
+@960 = ~Lo so, ma fate attenzione a non commettere errori. Questa Zallanora non fa che aumentare ulteriormente il mistero.~ // to 945
+
+@1000 = ~Kartak Spellseer~
+@1001 = ~Zallanora la Demilich~
+@1002 = ~Dalina~
+@1003 = ~Shoon Settimo~
+@1004 = ~Mago della Runa~
+@1005 = ~Laeral Silverhand~
+@1006 = ~Servo di Kartak~
+@1007 = ~Jymahna~
+@1008 = ~Accolite di Zallanora~
+@1009 = ~Assassino della Runa Elite~
+
+// Crypt
+@1100 = ~Finalmente ti ho trovato! Sapevo che prima o poi saresti arrivato qui. Sei difficile da seguire, <CHARNAME>.~
+@1101 = ~Mi dispiace di non aver potuto aiutarti quando la Runa Contorta ti ha teso un'imboscata. Amkethran è piuttosto lontana e non ho occhi e orecchie ovunque. È chiaro che ti avevano nel mirino da un po'.~
+@1105 = ~L'hanno fatto. Solo che ora nessuno mi spinge più in giro. La Runa Contorta l'ha imparato a sue spese.~ // to 1110
+@1106 = ~Va tutto bene. Ora posso cavarmela da solo, come puoi vedere. Sono venuta qui per un presentimento. Qualcosa mi dice che il nostro incontro qui non è un caso.~ // to 1120
+@1107 = ~Come mai, tra tutti i posti possibili, mi hai trovato proprio in fondo a una cripta segreta sotto il Quartiere del Cimitero di Athkatla?~ // to 1120
+
+@1110 = ~Li hai colpiti duramente, ma un'organizzazione composta da membri secolari come questa non cesserà improvvisamente tutte le operazioni.~
+@1111 = ~È passato circa un anno da quando io e te abbiamo iniziato a intrometterci negli affari della Runa Contorta, e ho avuto tempo di pensare e di riflettere su questo.~ // to 1125
+
+@1120 = ~Oh, ma non c'è nulla di casuale riguardo questo. È passato circa un anno da quando io e te abbiamo iniziato a intrometterci negli affari della Runa Contorta, e ho avuto tempo di pensare e di riflettere su questo.~
+@1125 = ~Niente di questa misteriosa Zallanora aveva senso. Come ha fatto un elfa così giovane a diventare così potente? Così ho iniziato a scavare.~
+@1126 = ~I miei incantesimi divinatori non restituivano altro che aria... finché non ti ha teso un'imboscata. Purtroppo, sono arrivata tardi allo scontro, ma ho trovato il suo corpo. Finalmente avevo qualcosa: ciocche dei suoi capelli. Questo mi avrebbe permesso di accedere al suo passato.~
+@1127 = ~Si scopre che è scomparsa decenni fa, mentre era in viaggio verso Silverymoon, per poi riemergere dieci anni dopo nell' Amn come apprendista. Ora, a distanza di qualche anno, è un'arcimago di notevole potere e influenza, con un nome che non viene pronunciato alla leggera tra gli Stregoni Incappucciati.~
+@1128 = ~Ho fatto delle indagini con i miei contatti e, con l'aiuto di alcuni incantesimi, ho scoperto che lei aveva avuto accesso proprio a quelle cripte. Numerose volte. Chiaramente c'era qualcosa di importante qui. Ma mi mancava un pezzo del puzzle: la pietra che attualmente possiedi. Sospettavo che l'avresti avuta, ecco perché ti ho cercato.~
+@1129 = ~Allora, cosa ne pensi, <CHARNAME>? È finalmente giunto il momento delle risposte?~ 
+@1140 = ~Sì. La pietra di Zallanora si sta già attivando. Non dovrebbe essere troppo difficile scoprire a cosa serve qui attorno.~ // to 1150
+@1145 = ~Dopo tutti questi guai, e dopo aver rischiato di morire almeno tre volte, non ho certo intenzione di tirarmi indietro. Cosa pensi che possiamo aspettarci?~ // to 1155
+
+@1150 = ~Ho già perlustrato questa stanza, la parete orientale è piena di incantesimi accuratamente nascosti. Te li mostrerò.~ // EXIT
+@1155 = ~Qualsiasi cosa, il che è piuttosto spaventoso. Ma qualunque cosa, o chiunque troviamo, sarà con le spalle al muro. Tu sei una persona coraggiosa, Progenie Divina, e, beh, io non sono poi così male! Non possiamo lasciarci sfuggire un'occasione del genere.~ // to 1150
+@1160 = ~Resta vicino al muro.~
+
+@2000 = ~Quindi sei tu quello che si intromette ripetutamente negli affari della Runa Contorta. Il tuo coinvolgimento con il conciatore mi ha messo in una situazione davvero difficile.~
+@2001 = ~Oggi, o ti uccido o muoio. Quindi morirai!~
+@2005 = ~<CHARNAME>, la Runa Contorta ha inciso su di un Teschio d'Oro il tuo nome. Chiunque ti uccida lo riceverà. Preparati a morire!~
+@2010 = ~Sciocco, pensi che i Runa Contorta non siano a conoscenza del tuo... aspetta, tu non sei Koshi. Chi sei?~
+@2011 = ~Io sono <CHARNAME> e se stai cercando Koshi, il suo cadavere è di sopra.~
+@2013 = ~Ti ringrazio per esserti sbarazzato di Koshi, ma anche il tuo nome è sulla lista. Mi scuso, <CHARNAME>, ma non vediamo di buon occhio chi si intromette nei nostri affari.~    // Add Journal once dead
+
+@3000 = ~Sto cercando una certa Maga Incappucciata di nome "Zallanora". Forse sai dove posso trovarla?~
+@3001 = ~Dovrai parlare con Corneil, il loro rappresentante. Io rappresento semplicemente il Consiglio qui.~
+@3002 = ~Sto cercando una certa Maga Incappucciata di nome "Zallanora". Forse sai dove posso trovarla?~
+@3003 = ~Mi dispiace, ma non posso aiutarti, amico mio. Quei maghi possono fare praticamente tutto quello che vogliono qui intorno. Forse il magistrato potrebbe aiutarti. Buona fortuna.~
+@3004 = ~Ho trovato questa lettera che coinvolge un membro della vostra organizzazione in alcuni affari davvero loschi.~ 
+@3005 = ~Sai dove potrei trovare un Mago Incappucciato che si fa chiamare "Zallanora"?~ 
+@3006 = ~Sto cercando una Maga Incappucciata che si fa chiamare "Zallanora". Ne hai mai sentito parlare?~
+@3007 = ~Sono portatore di cattive notizie: a quanto pare qualcuno nella vostra organizzazione sta tramando qualcosa di poco buono. Avete mai sentito parlare della Runa Contorta?~
+@3008 = ~No, non ne ho mai sentito parlare e non mi interessano le tue accuse. Hai idea di quante persone si intromettono accusandoci di questo o quello? Ora smettila di farmi perdere tempo e renditi utile.~
+@3010 = ~Non mi interessano le tue accuse ridicole. Questa pergamena potrebbe essere stata falsificata. Fammi indovinare, poi chiederai uno sconto sulla licenza per lanciare magie?~ 
+@3011 = ~E allora? Questa pergamena potrebbe essere stata facilmente falsificata. Dominio su Amn? Dici sul serio? Vattene da qui.~ 
+@3020 = ~Oh cielo, non si "trova" una persona come Zallanora, è lei a trovare te.~
+@3021 = ~So da fonti attendibili che non sta tramando nulla di buono.~ // to 3030
+@3022 = ~Ha cercato di uccidermi e credo che sia coinvolta in un grave complotto contro il regno di Amn.~ // to 3035
+
+@3030 = ~È così? E come ti sei imbattuto in queste informazioni?~ // to 3031 (PC)
+@3031 = ~Le mie... ehm, indagini personali.~
+@3032 = ~Giusto. Giusto perché tu lo sappia, Zallanora è una delle nostre guardie di grado più alto, quindi ecco il mio consiglio in merito: stai lontano da lei. Non vorrai certo incorrere nella sua ira, credimi. Arrivederci.~
+@3035 = ~Ucciderti, eh? Sei così fastidioso, capisco perfettamente il perché. Ora, sono un uomo impegnato, quindi ti chiederei di lasciarmi in pace.~
