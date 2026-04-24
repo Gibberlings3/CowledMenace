@@ -113,7 +113,13 @@ This Modification is unofficial Fan Content permitted under the Fan Content Poli
 
 ## Version History
 
-1.0.3 -- Minor updates
+1.0.4 -- Translations
+
+- Fixed typos in simplified Chinese translation (credits to Lewis Liu)
+- Added Italian translation (threetimesdavey)
+- Added polish translation (by my_summertime, SoM Membress, part of CoB Clan)
+
+1.0.3 -- Translations
 
 - Added Simplified Chinese translation (thanks to Lewis Liu)
 
@@ -123,7 +129,7 @@ This Modification is unofficial Fan Content permitted under the Fan Content Poli
 
 1.0.1 -- Minor updates
 
-- Added Russian translation.
+- Added Russian translation (by Ulpian).
 - Fixed Servant of Kartak's level that made it vulnerable to low-level Turn Undead.
 
 1.0.0 -- First official release out of Beta
