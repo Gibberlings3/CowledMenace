@@ -1,0 +1,22 @@
+IF
+    True()
+THEN
+    RESPONSE #100
+        CutSceneId(Player1)
+        CreateVisualEffectObject("SPDIMNDR",Player1)
+        Wait(2)
+        FadeToColor([20.0],0)
+        Wait(1)
+        SetGlobal("ACH_TWISTED_VICTORY_2","GLOBAL",1)
+        LeaveAreaLUAPanic("AR1100","",[2996.3206],N)  // Umar Hills
+        LeaveAreaLUA("AR1100","",[2996.3206],N)  // Umar Hills
+        ActionOverride(Player2,LeaveAreaLUA("AR1100","",[2986.3248],SW))  // Umar Hills
+        ActionOverride(Player3,LeaveAreaLUA("AR1100","",[2966.3300],SW))  // Umar Hills
+        ActionOverride(Player4,LeaveAreaLUA("AR1100","",[2938.3357],SW))  // Umar Hills
+        ActionOverride(Player5,LeaveAreaLUA("AR1100","",[2932.3432],SW))  // Umar Hills
+        ActionOverride(Player6,LeaveAreaLUA("AR1100","",[2935.3477],SW))  // Umar Hills
+        MultiPlayerSync()
+        EndCutSceneMode()
+        FadeFromColor([20.0],0)
+END
+

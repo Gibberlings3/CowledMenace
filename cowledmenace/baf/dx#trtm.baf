@@ -1,0 +1,36 @@
+IF
+	Entered([PC])
+	AreaCheck("AR2000")
+	Global("RuneEncounterTM","GLOBAL",0)
+	Global("DxInsaneSpawn","GLOBAL",0)
+	!Global("ZallStoneFound","GLOBAL",1)
+	OR(4)
+		Global("MurdersSolved","GLOBAL",1)
+		Global("ACH_TWISTED_VICTORY","GLOBAL",1)
+		Global("ACH_TWISTED_VICTORY_2","GLOBAL",1)
+		Global("TalkedToTanally1","GLOBAL",3)
+THEN
+	RESPONSE #100
+		IncrementGlobal("RuneEncounter2","GLOBAL",1)
+		SetGlobal("RuneEncounterTM","GLOBAL",1)
+		SetGlobalTimer("RuneEncounter2Wait","GLOBAL",THREE_DAYS)
+		CreateCreatureObjectDoor("dx#taw01",LastTrigger,0,0,0)
+END
+
+IF
+	Entered([PC])
+	AreaCheck("AR1600")
+	Global("RuneEncounterBL","GLOBAL",0)
+	Global("DxInsaneSpawn","GLOBAL",0)
+	!Global("ZallStoneFound","GLOBAL",1)
+	OR(4)
+		Global("MurdersSolved","GLOBAL",1)
+		Global("ACH_TWISTED_VICTORY","GLOBAL",1)
+		Global("ACH_TWISTED_VICTORY_2","GLOBAL",1)
+		Global("TalkedToTanally1","GLOBAL",3)
+THEN
+	RESPONSE #100
+		IncrementGlobal("RuneEncounter2","GLOBAL",1)
+		SetGlobal("RuneEncounterBL","GLOBAL",1)
+		CreateCreatureObjectDoor("dx#taw01",LastTrigger,0,0,0)
+END

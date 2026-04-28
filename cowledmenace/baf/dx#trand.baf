@@ -1,0 +1,32 @@
+IF
+	OnCreation()
+	GlobalGT("RandomEncounters","GLOBAL",1)
+	!Global("ZallStoneFound","GLOBAL",1)
+	Global("DXFirstRandAmbush","GLOBAL",0)
+	Global("DxInsaneSpawn","GLOBAL",0)
+	OR(4)
+		Global("MurdersSolved","GLOBAL",1)
+		Global("ACH_TWISTED_VICTORY","GLOBAL",1)
+		Global("ACH_TWISTED_VICTORY_2","GLOBAL",1)
+		Global("TalkedToTanally1","GLOBAL",3)
+THEN
+	RESPONSE #100
+		SetGlobal("DXFirstRandAmbush","GLOBAL",1)
+		IncrementGlobal("RuneEncounter2","GLOBAL",1)
+		SetGlobalTimer("RuneEncounter2Wait","GLOBAL",THREE_DAYS)
+		CreateCreatureDoor("dx#taw01",[488.558],NE)
+END
+
+IF
+	OnCreation()
+	GlobalGT("RuneEncounter2","GLOBAL",0)
+	GlobalGT("RandomEncounters","GLOBAL",1)
+	Global("DxInsaneSpawn","GLOBAL",0)
+	!Global("ZallStoneFound","GLOBAL",1)
+	!GlobalTimerNotExpired("RuneEncounter2Wait","GLOBAL")
+THEN
+	RESPONSE #100
+		IncrementGlobal("RuneEncounter2","GLOBAL",1)
+		SetGlobalTimer("RuneEncounter2Wait","GLOBAL",THREE_DAYS)
+		CreateCreatureDoor("dx#taw01",[488.558],NE)
+END

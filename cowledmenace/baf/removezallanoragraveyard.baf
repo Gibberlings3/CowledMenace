@@ -1,7 +1,22 @@
 IF
-	Global("ZallaFlee","GLOBAL",1)
-	Exists("mage18z")
+	Exists("dx#zalla")
+	Global("DXNameChange","GLOBAL",0)
 THEN
 	RESPONSE #100
-		ActionOverride("mage18z",DestroySelf())
+		ActionOverride("dx#zalla",SetName(@999))
+		SetGlobal("DXNameChange","GLOBAL",1)
+		Continue()
+END
+
+IF
+	OR(4)
+		Global("ZallaFlee","GLOBAL",1)
+		PartyHasItem("DX#WARDS")
+		Global("ACH_TWISTED_VICTORY","GLOBAL",1)
+		Global("ACH_TWISTED_VICTORY_2","GLOBAL",1)
+	Exists("dx#zalla")
+THEN
+	RESPONSE #100
+		ActionOverride("dx#zalla",DestroySelf())
+		Continue()
 END

@@ -1,5 +1,6 @@
 IF
 	Entered([ANYONE])
+//	!ActuallyInCombat()
 	PartyHasItem("DX#WARDS")  // Wardstone
 THEN
 	RESPONSE #100

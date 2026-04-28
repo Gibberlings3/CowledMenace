@@ -1,27 +1,21 @@
 IF
-	Entered([ANYONE])
+	Global("LaeralSpawned","GLOBAL",0)
+	Global("LaeralUmarHills","GLOBAL",1)
+	Global("DXNameChange2","GLOBAL",0)
 THEN
 	RESPONSE #100
-		CreateVisualEffect("SPMETSWA",[710.631])
-		SmallWait(5)
-		CreateVisualEffect("SPMETSWA",[766.596])
-		SmallWait(5)
-		CreateVisualEffect("SPMETSWA",[860.570])
-		SmallWait(5)
-		CreateVisualEffect("SPMETSWA",[962.554])
-		SmallWait(5)
-		CreateVisualEffect("SPMETSW2",[833.616])
-		CreateVisualEffect("SPMETSW2",[840.703])
-		CreateVisualEffect("SPMETSW2",[940.752])
-		CreateVisualEffect("SPMETSW2",[1058.728])
-		CreateVisualEffect("SPMETSW2",[1105.648])
-		CreateVisualEffect("SPMETSW2",[1045.573])
-		CreateVisualEffect("SPMETSW2",[922.559])
-		CreateVisualEffect("SPFLSRIN",[962.554])
-		Wait(1)
-		SmallWait(7)
-		CreateVisualEffect("SPFLESHS",[962.554])
-		Wait(1)
-		CreateCreatureImpassable("HLSHANG",[962.554],SW)  // Shangalar
+		SetGlobal("DXNameChange2","GLOBAL",1)
+		ActionOverride("dx#laera",SetName(@998))
+		Continue()
 END
 
+IF
+	Global("Cauldron2","DX#001",1)
+	!Global("LaeralUmarHills","GLOBAL",1)
+	!Global("LaeralAttacked","GLOBAL",1)
+THEN
+	RESPONSE #100
+		CreateCreatureDoor("dx#laera",[1027.358],S)
+		SetGlobal("LaeralUmarHills","GLOBAL",1)
+		Continue()
+END

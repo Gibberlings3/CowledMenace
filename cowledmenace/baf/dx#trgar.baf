@@ -1,9 +1,12 @@
 IF
 	IsOverMe([PC])
 	Global("EnteredAR0907","GLOBAL",1)
-	!Global("ACH_TWISTED_VICTORY","GLOBAL",1)
-	Global("MurdersSolved","GLOBAL",1)
 	Global("TwistedAmbush","GLOBAL",0)
+	OR(4)
+		Global("MurdersSolved","GLOBAL",1)
+		Global("ACH_TWISTED_VICTORY","GLOBAL",1)
+		Global("ACH_TWISTED_VICTORY_2","GLOBAL",1)
+		Global("TalkedToTanally1","GLOBAL",3)
 THEN
 	RESPONSE #100
 		CreateCreature("dx#taw01",[1633.1202],NW)  // Rune Mage

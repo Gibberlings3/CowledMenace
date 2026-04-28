@@ -1,0 +1,34 @@
+IF
+	Global("DX002RevealArea","GLOBAL",0)
+THEN
+	RESPONSE #100
+		SetGlobal("DX002RevealArea","GLOBAL",1)
+		Explore()
+		Continue()
+END
+
+IF
+    Dead("DX#DEMI")  // Zallanora the Demilich
+    Global("DemiDead","DX#002",0)
+THEN
+    RESPONSE #100
+        Kill("DX#SHOON")  // Shoon VII
+        CreateVisualEffectObject("SPFLSRIN","DX#SHOON")  // Shoon VII
+        SetGlobal("DemiDead","DX#002",1)
+        CreateVisualEffect("SPROTECT",[417.697])
+        CreateVisualEffect("SPROTECT",[290.657])
+        Wait(1)
+        CreateVisualEffect("SPDISPMA",[417.697])
+        CreateVisualEffect("SPDISPMA",[290.657])
+        SmallWait(20)
+        CreateCreature("DX#SHOOL",[417.697],NE)  // Shoon VII
+        CreateCreature("DX#RZALL",[290.657],SE)  // Zallanora Argentresses
+END
+
+IF
+	!Exists("dx#laera")
+	!Global("DxEviLEnding","GLOBAL",1)
+THEN
+	RESPONSE #100
+		ActionOverride("dx#rzall",DestroySelf())
+END

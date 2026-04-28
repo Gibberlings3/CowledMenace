@@ -5,6 +5,7 @@ THEN
 	RESPONSE #100
 		SetGlobal("TwistedAmbush","GLOBAL",3)
 		AddJournalEntry(@105,QUEST)
+		Continue()
 END
 
 If
@@ -14,4 +15,5 @@ THEN
 	RESPONSE #100
 		SetGlobal("TwistedAmbush","GLOBAL",3)
 		AddJournalEntry(@106,QUEST)
+		Continue()
 END

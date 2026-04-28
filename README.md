@@ -2,13 +2,13 @@
 ![Platform](https://img.shields.io/static/v1?label=platform&message=windows%20%7C%20macos%20%7C%20linux&color=informational)
 ![License](https://img.shields.io/static/v1?label=license&message=CC-BY-NC-4.0&color=green)
 
-# The Cowled Menace
+# The Cowled Menace - A Quest Expansion Mod
 
 **[A Gibberlings Three Mod](http://www.gibberlings3.net/)**
 
 Someone has been working in the shadows, manipulating events on the Sword Coast to their advantage.
 
-Unravel the mysteries of the Twisted Rune and progress beyond fighting all the Cowled Wizards in Athkatla in this Enhanced Edition Trilogy mod!
+Unravel the mysteries of the Twisted Rune and progress beyond fighting the last wave of Cowled Wizards in Athkatla in this mod for Baldur's Gate II!
 
 ## Content Index
 
@@ -23,64 +23,65 @@ Unravel the mysteries of the Twisted Rune and progress beyond fighting all the C
 - [Version History](#version-history)
 
 ## Compatibility
-**IMPORTANT**: This mod requires the mod [Enhanced Edition Trilogy](https://www.gibberlings3.net/forums/forum/195-enhanced-edition-trilogy/) by k4thos to be installed, as its content spans from Baldur's Gate 1 to Throne of Bhaal.
 
-The optional components only require BG2 to be installed.
+Cowled Menace should be compatible with mostly everything, especially since in v2.0.0 I've changed the way the mod works. Very, very few vanilla assets are used or altered, and if they are, they were altered using maximum compatibility editing practices, as unobtrusive as possible.
 
-Although I am in need of testers for this, Cowled Menace should work with Sword Coast Stratagems (SCS). Install SCS after this mod.
+Although I am in need of more testers for this regarding balance, Cowled Menace works with Sword Coast Stratagems (SCS) in the sense that it doesn't break things. Not sure if the fights are too easy or too hard with it installed though.
 
-In general, this mod should be installed after NPC mods and EET's main component, but before Tweaks and EET_end.
+In general, Cowled Menace should be installed after NPC mods and EET's main component (if using EET), but before Tweaks mods and EET_end. Then SCS last. 
 
-Lastly, this mod is incompatible with the 'Unofficial Item Pack' by Edvin (found on the Beamdog forums).
+Since v2.0.0, this mod is compatible with the Unofficial Item Pack (v1.0.4 and below aren't)
 
 ## Installation
 
 **Windows** </br> Cowled Menace is packaged and installed with WeiDU and is distributed as a self-extracting archive. To install, simply double-click the archive and follow the instructions on screen.
 
-Alternatively the files can be extracted from the archive using WinRAR. If properly extracted, you should have a "**Cowled Menace**" folder and **setup-cowledmenace.exe** in your BG2 folder. To install, double-click **setup-cowledmenace.exe** and follow the instructions on screen.
+Alternatively the files can be extracted from the archive using WinRAR. If properly extracted, you should have a "**cowledmenace**" folder and **setup-cowledmenace.exe** in your BG2 folder. To install, double-click **setup-cowledmenace.exe** and follow the instructions on screen.
 
 Please run **setup-cowledmenace.exe** in your BG2 folder to reinstall, uninstall, or otherwise change components.
 
 ## Components
 
-**Main Component - The Cowled Menace** *(Requires EET)*
+**Main Component - The Cowled Menace**
 
-This is where everything about the Quest mod is installed, from custom NPCs to new areas, new scripts, dialogs, and items. Refer to the Starting the Quest Section below if you want to know more about that. For those of you who are stuck or wish to get spoiled, there is a spoilers section down below as well.
+This is where everything major about the mod is installed, from custom NPCs to new areas, new scripts, dialogs, and items. Refer to the Starting the Quest Section below if you want to know more about that. For those of you who are stuck or wish to get spoiled, there is a spoilers section as well.
 
-The quest aims to bring closure to the unfinished Twisted Rune content in the Vanilla game by adding lots of it, as well as tie up some loose ends concerning the Cowled Wizards.
+The quest aims to tie up some loose ends concerning the Cowled Wizards and bring closure to the unfinished Twisted Rune content in the Vanilla game by adding lots of it and a conclusion.
+
+Note: This component also modifies the XP provided by Cowled Wizards very much in the same way the "Appropriate XP Rewards for Cowled Enforcers" component from "klatu tweaks and Fixes" does it, as this mod deals with Cowled Wizards quite a bit. So it's unnecessary to install it separately as they do largely the same thing.
+
+The other components aren't technically part of the main quest line but I recommend installing them anyway if they feel appealing to you.
 
 
 *(Optional)* **Appropriate Items for High-Level Spellcasters**
 
-This component and all the next ones don't actually require EET. They will install on an unmodded game.
-
 A level 14+ wizard running around with a nonmagical quarterstaff and 28 gold pieces makes no sense at all, especially if they teleported in expecting a fight since they would come prepared. This component aims to drastically increase the items worn and dropped by high-level spellcasters in Baldur's Gate 2, specifically targeting the ones who currently drop nothing, or close to nothing. The challenge level of these fights will increase as worn items will provide these spellcasters with various bonuses, but the rewards will be greater to compensate (better loot). The goal is that those encounters make sense.
 
-For now this component only goes through the casters in Shadows of Amn. Throne of Bhaal will follow later. This component aims to give items to individual, distinct creatures, not those created by extraordinary circumstances (like clones). Killing the same enemy twice (Jon Irenicus, for example) will not yield double the rewards. Exception: Lich in the "Spawn Undead" script, as it's implied it's a separate lich each time, that was simply chilling there when you arrive.
+This component aims to give items to individual, distinct creatures, not those created by extraordinary circumstances (like clones). Killing the same enemy twice (Jon Irenicus, for example) will not yield double the rewards. Exception: Lich in the "Spawn Undead" script, as it's implied it's a separate lich each time, that was simply chilling there when you arrive.
 
-Compatibility: This component is intended and calibrated for those who have Item Revisions, Spell Revisions, and/or Sword Coast Stratagems (SCS) installed. However, the items added to the creatures are either vanilla items, or vanilla items modified by those mods so it will still work in a vanilla install. Any new items added in this component are additions made by myself, and should therefore work on any install and (theoritically) not overwrite anything. A compatibility problem could arise if you have a mod installed that alters random treasure tables, since mine also does so.
+Compatibility: This component is intended and calibrated for those who have Sword Coast Stratagems (SCS) installed. However, the items added to the creatures are either vanilla items, or vanilla items modified by those mods so it will still work in a vanilla install. Any new items added in this component are additions made by myself, and should therefore work on any install and (theoritically) not overwrite anything. A compatibility problem could arise if you have a mod installed that alters random treasure tables, since this component also does so.
 
-Special Thanks to Roxanne on Gibberlings3
+Special Thanks to Roxanne on Gibberlings3 for some pointers on this one.
 
 
 *(Optional)* **Mages cast Gate far from themselves.**
 
-This component is aimed at vanilla installs and is quite simple: most casters able to cast Gate will now do so far from themselves to reduce the chance that the demon will be their next target (brilliant AI).
+This component is aimed at vanilla (non-SCS) installs and is quite simple: casters able to cast Gate will now do so far from themselves to reduce the chance that the demon will be their next target (genius AI). Shouldn't have any compatibility issues as it's a very precise editing that I've done, compatibility-friendly to the max. Note: This component is completely and utterly useless if you have SCS installed as it will overwrite all of that.
 
 
 *(Optional)* **Use pre-EE Spell Deflection Globe** *(Requires EE)*
 
-This component has 2 options to choose from. Either the old globe is added only to Spell Trap and the Staff of the Magi (recommended, to help distinguish it since it's so powerful), or to the following spells as well: Minor Spell Deflection, Spell Deflection, Spell Trap, and their Item versions.
+This component has 2 options to choose from. Either the old pre-EE globe is added only to Spell Trap and the Staff of the Magi (recommended, to help distinguish it since it's so powerful), or to the following spells as well: Minor Spell Deflection, Spell Deflection, Spell Trap, and their Item versions. For variety's sake.
 
 ## Starting the Quest
 
 **Hooks**
 
-There are a two different ways to start this quest. The first opportunity happens in Baldur's Gate -- I'll let you discover that on your own, although at this point, I don't think it's actually possible for a party of that level to progress into the quest due to the sheer difficulty. Feel free to experiment.
+For most players, starting the Tanner quest in the Bridge district of Athkatla marks the first time you encounter the Twisted Rune and get involved in their business, even in the vanilla game. Following clues you receive from those engagements, as well as exploring around the Bridge and Temple Districts should help you progress. Do not hesitate to get out of Athkatla if a clue leads there. Even a vanilla letter you thought was useless might not be useless anymore.
 
-The second is the most obvious one: starting the Tanner quest in the Bridge district of Athkatla marks the first time you encounter the Twisted Rune and get involved in their business, even in the vanilla game. Following clues you receive from those engagements, as well as exploring around the Bridge and Temple Districts should help you progress.
+Some of the encounters in this mod happen in different fashion depending on the order in which you progress through the quest, and the actors you have encountered (and in which order). It's quite modular. The encounter in the new Enclave in particular varies greatly in difficulty depending on choices you've made in the game, outside of this quest. Another encounter depends on your difficulty slider. I have restored unused lines by Shangalar in the vanilla game too, which I was quite surprised to find. A word of warning: the Twisted Rune are a powerful and ancient organisation... come prepared.
 
-Some of the encounters in this mod happen in different fashion depending on the order in which you progress through the quest, and the actors you have encountered (and in which order). One encounter in particular varies greatly in difficulty depending on choices you've made in the game, outside of this quest. I have restored unused lines by Shangalar in the vanilla game, which I was quite surprised to find. A word of warning: the Twisted Rune are a powerful and ancient organisation... come prepared. The storyline gets completed in Throne of Bhaal, it is not possible to finish the quest while still being in Shadows of Amn. Also, if you wish to experience the full content, I recommend against bribing the Cowled Wizards. Fighting them to the last wave is the preferred option.
+In any case, don't forget to mess with and investigate the Cowled Wizards too, as this mod's name implies. 
 
 ## Spoilers Section
 
@@ -92,7 +93,7 @@ Special Thanks to Mike1072, demivrgvs, Roxanne, kreso, DavidW, CamDawg, Nythrun 
 
 Custom portrait by Wizards of the Coast LLC.
 
-Huge thanks to [klatu](http://www.shsforums.net/files/file/1109-klatu-tweaks-and-fixes/), I based many of my code on his tweaks. Because the Cowled Wizards are heavily implicated in my mod, the main component installs a modified version of his "Appropriate XP Rewards for Cowled Enforcers" tweak. Many thanks also to the creators of the Infinity Engine Structure Description Project; and to Jon Hauglid, for Near Infinity.
+Huge thanks to [klatu](http://www.shsforums.net/files/file/1109-klatu-tweaks-and-fixes/), I based many of my code on his tweaks and learned a lot of coding from his mods. Because the Cowled Wizards are heavily implicated in my mod, the main component installs a modified version of his "Appropriate XP Rewards for Cowled Enforcers" tweak. Many thanks also to the creators of the Infinity Engine Structure Description Project; and to Jon Hauglid, for Near Infinity.
 
 And of course, thanks to k4thos for making the [Enhanced Edition Trilogy](https://www.gibberlings3.net/forums/forum/195-enhanced-edition-trilogy/).
 
@@ -105,13 +106,30 @@ And of course, thanks to k4thos for making the [Enhanced Edition Trilogy](https:
 
 ## Copyright and Legal Information
 
-Cowled Menace is copyright © 2020 Maltodaxtrin/Daxtreme
+Cowled Menace is copyright © 2026 Maltodaxtrin/Daxtreme
 
 You are allowed to submit [maintenance updates](MAINTENANCE-NOTICE.md) for this mod. This mod is additionally licensed under [CC-BY-NC-4.0](https://creativecommons.org/licenses/by-nc/4.0/).
 
 This Modification is unofficial Fan Content permitted under the Fan Content Policy. Not approved/endorsed by Wizards. Portions of the materials used are property of Wizards of the Coast. ©Wizards of the Coast LLC. This mod is also not developed, supported, or endorsed by BioWare, Black Isle Studios, Interplay Entertainment Corp., Overhaul Games or Beamdog. All other trademarks and copyrights are property of their respective owners.
 
 ## Version History
+
+2.0.0 -- Major Update
+
+- **Ported the mod to BG2EE** (specifically Shadows of Amn). I have tested it and it is still compatible with the Enhanced Edition Trilogy (during the SoA portion), but it doesn't require EET anymore. As such, the content that was in Amkethran previously is now found in late Shadows of Amn. Same for the content that was in BG1, which has been transferred to locations in SoA. Follow in-game clues/letters/journal entries to find them! And lastly, obviously, the ending of the quest no longer happens in the Pocket Plane, as that's exclusive to Throne of Bhaal. The entirety of the questline is self-contained in SoA now.
+- All of the quest dialogue, journals, letters, scripts, locations, etc., have been adjusted to account for these changes.
+- **Added many more Twisted Rune encounters** and better integration with vanilla questlines to try and build further upon the dropped threads for the Twisted Rune left by the original BG2 developers. Completing vanilla quests regarding the Rune will wake them up. You'll feel it more if you piss them off now. You might even regret it.
+- Vastly upgraded the rewards of the evil ending (they were almost nonexistent, an oversight). 
+- Major edits to the dialogue and scripts to add more lines, give players more choices, and improve the writing. Fixed broken triggers in some dialogue as well as missing lines, opening up more options.
+- My mod is now finally compatible with mods such as Unofficial Item Pack due to a change in the way the mod operates. I no longer rely on MAGE18Z, which is a vanilla NPC, for anything, improving compatibility enormously. It is now highly, highly unlikely that another mod breaks mine, it would have to do some pretty crazy wide-ranging edits, like SCS does. SCS is unaffected by this change, however. Although it does edit my NPCs (and I want it to and properly arrange for it), SCS has never broken my mod, neither before, nor now, because my mod was made with SCS overwriting it after in mind.
+- Fixed a dead-end scenario where you could no longer progress the quest if certain conditions were met (it was linked with paying Corneil for the spellcasting licence in Athkatla at the wrong time). Now you can (normally) never get stuck. Hopefully.
+- I have accounted for as many fringe scenearios as possible.
+- It's not much but the difficulty slider now has a small impact on which spawns can happen at one point.
+- Made small revisions so the mod is as lore-accurate as possible.
+- Better reward in the new Enclave.
+- Cleaned up unused assets/scripts and fixed various minor bugs. 
+
+I consider this port to BG2EE to be the definitive version of the mod. Even if you are playing through the Enhanced Edition Trilogy, I would strongly recommend using this version instead. The content is better written, more streamlined and polished, there is more of it, and it has just superior implementation. The old EET version 1.0.4 was rough. The mod wasn't properly finished to be honest. It remains available for those who want to use it though, as it still works. More as a curiosity than anything else I guess, or if the translation hasn't been updated yet in your language. 
 
 1.0.4 -- Translations
 

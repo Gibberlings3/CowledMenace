@@ -27,6 +27,17 @@ IF ~~ guardedcompoundfight
 			  CreateCreature("MUMMY01",[1615.1110],W)~ EXIT
 END
 
+IF ~GlobalGT("RuneEncounter2","GLOBAL",4) 
+	Global("DxInsaneSpawn","GLOBAL",0)
+	Difficulty(HARDEST)~ ambushinsane
+	SAY @2005
+	IF ~~ DO ~CreateCreatureObjectEffect("TANTHF01","SPDISPMA",Myself)
+			  CreateCreatureObjectEffect("SKELWA01","SPDISPMA",Myself)
+			  CreateCreatureObjectEffect("vamver01","SPDISPMA",Myself)
+			  CreateCreatureObjectEffect("dx#licht","SPDISPMA",Myself)
+			  SetGlobal("DxInsaneSpawn","GLOBAL",1)~ EXIT
+END
+
 IF ~GlobalGT("RuneEncounter2","GLOBAL",2)~ ambush3plus
 	SAY @2005
 	IF ~~ DO ~CreateCreatureObjectEffect("TANTHF01","SPDISPMA",Myself)

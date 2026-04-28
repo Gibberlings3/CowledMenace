@@ -1,14 +1,53 @@
+// Failsafe for bribed cowled wizards (Small Teeth Pass only)
+
+IF
+	Entered([PC])
+	!Global("ZallaFlee","GLOBAL",1)
+	!Global("ZallaSpawned","GLOBAL",1)
+	AreaCheck("AR1700")  // Small Teeth Pass
+	Global("ACH_TWISTED_VICTORY","GLOBAL",1)
+	Global("ACH_TWISTED_VICTORY_2","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("ZallaSpawned","GLOBAL",1)
+		CreateCreatureDoor("dx#zalla",[3212.1065],SW)  // Zallanora  
+		SmallWait(80)
+		ActionOverride("dx#zalla",StartDialogueNoSet(LastSeenBy(Myself)))
+END
+
+// Default path
+
 IF
 	Entered([PC])
 	Global("ZallaFlee","GLOBAL",1)
 	!Global("ZallaSpawned","GLOBAL",1)
+	AreaCheck("AR1700")  // Small Teeth Pass
 	OR(2)
 		Global("ACH_TWISTED_VICTORY","GLOBAL",1)
 		Global("ACH_TWISTED_VICTORY_2","GLOBAL",1)
 THEN
 	RESPONSE #100
 		SetGlobal("ZallaSpawned","GLOBAL",1)
-		CreateCreatureDoor("mage18z",[134.2311],SE)  // Zallanora
-		SmallWait(90)
-		ActionOverride("mage18z",StartDialogueNoSet(LastSeenBy(Myself)))
+		CreateCreatureDoor("dx#zalla",[3212.1065],SW)  // Zallanora  
+		SmallWait(80)
+		ActionOverride("dx#zalla",StartDialogueNoSet(LastSeenBy(Myself)))
+END
+
+// Default path
+
+IF
+	IsOverMe([PC])
+	Global("ZallaFlee","GLOBAL",1)
+	!Global("ZallaSpawned","GLOBAL",1)
+	AreaCheck("AR0700")  // Waukeen's Promenade
+	GlobalGT("Chapter","GLOBAL",5)
+	OR(2)
+		Global("ACH_TWISTED_VICTORY","GLOBAL",1)
+		Global("ACH_TWISTED_VICTORY_2","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("ZallaSpawned","GLOBAL",1)
+		CreateCreatureDoor("dx#zalla",[1784.1550],S)  // Zallanora
+		SmallWait(80)
+		ActionOverride("dx#zalla",StartDialogueNoSet(LastSeenBy(Myself)))
 END

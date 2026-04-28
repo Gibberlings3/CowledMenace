@@ -1,0 +1,503 @@
+@0 = ~Composant principal~
+
+@2 = ~Objets appropriés pour les lanceurs de sorts de haut niveau~
+
+@4 = ~Les magiciens lancent Portail loin d'eux (Inutile avec SCS)~
+@5 = ~Utiliser le globe de Déviation de sorts pré-EE (EE uniquement)~
+@6 = ~Uniquement pour Piège à sorts~
+@7 = ~Pour tous les sorts utilisant cette animation~
+
+@50 = ~Fichier requis manquant : ce composant nécessite l'installation de Baldur's Gate 2.~
+@51 = ~Ce composant nécessite l'installation de Baldur's Gate 2 : Enhanced Edition.~
+
+@87=~L'esseulite dans votre sac à dos se met à vibrer légèrement. Elle réagit à quelque chose dans les environs.~
+@88=~L'esseulite dans votre sac à dos se met à vibrer fortement. Elle réagit clairement à quelque chose de très proche.~
+@89=~Vous entrez dans la pièce, et la pierre gardienne de Zallanora dans votre sac à dos se met à vibrer. Quelque chose, quelque part dans cette pièce, l'a déclenchée.~
+@90=~La Menace Cagoulée~
+@91=~Alors que vous approchez de la falaise, l'esseulite dans votre sac à dos se met à briller intensément et disparaît. Vous êtes aspiré dans les ténèbres.~
+@92=~Alors que vous approchez du mur, la pierre gardienne de Zallanora chauffe dans votre sac à dos et se met à briller intensément. Vous êtes aspiré dans les ténèbres.~
+@93=~Ne sachant plus quoi faire, vous laissez tomber la Pierre d'Âme dans le chaudron bouillant. Immédiatement, le liquide se calme et la machine plus loin sur le mur se met à bourdonner.~
+@94=~Le liquide dans le chaudron bout et bouillonne à votre approche. Le symbole de la Rune tordue orne le chaudron, et ces mots sont inscrits en dessous : La Pierre est la mort. La mort est la voie. Le chemin reste encore à parcourir…~
+@95=~Pierre d'Âme~
+@96=~Voici la Pierre d'Âme obtenue sur le corps du serviteur du Maître de la Rune Kartak Voisort. Son utilité est encore inconnue.~
+@97=~Note de Koshi~
+@98=~Rapport sur le bâtiment à côté de l'auberge de Delosar :
+
+D'après ce que nous avons compris, la porte donnant sur le front de mer nécessite une clé. Aucun de nous n'a réussi à la trouver. Plan d'action suggéré : tendre une embuscade à quiconque en sortira et s'en emparer…~
+@99=~La Menace Cagoulée - rencontre étrange
+
+Aujourd'hui, j'ai rencontré une elfe étrange et impolie dans le quartier du cimetière. Elle est manifestement membre des mages cagoulés. Elle a refusé de m'aider catégoriquement. Mais ce qui m'a le plus frappé, c'est qu'elle savait que j'étais un enfant de Bhaal, et même qu'elle était au courant des plans d'Irenicus à mon égard. Très peu de gens le savent. C'est pour le moins inquiétant.~
+
+@100=~Sur ce parchemin figure l'emblème indubitable des mages cagoulés d'Amn. En dessous, on peut lire :
+
+« Mon influence à Athkatla est désormais suffisante pour la prochaine étape de notre plan : la Porte de Baldur. Soyez assurés qu'avec mon organisation à vos côtés, notre domination sur la région sera totale. »"~
+
+@101=~La Menace Cagoulée - Rune tordue - Athkatla
+
+J'ai trouvé une note qui semble lier les Mages cagoulés aux agissements de la Rune tordue et à leur prochaine cible : la Porte de Baldur. Il vaudra la peine d'enquêter, mais demander autour de moi si quelqu'un a entendu parler de la « Rune tordue » ne me semble pas une bonne idée pour le moment. Si ces deux puissants groupes collaborent, la situation est préoccupante, car je doute que leurs intentions soient charitables. Pour l'instant, je pense qu'il vaut mieux que je recherche d'autres traces de l'influence de la Rune tordue aux alentours d'Athkatla, car je n'ai aucune intention de retourner à la Porte de Baldur. Peut-être que la même esseulite que j'ai utilisée ici à Athkatla peut servir à accéder à d'autres enclaves secrètes ?~ // Erase 105 or 106
+
+@102=~La Menace Cagoulée - Rune tordue - Collines d'Umar
+
+Je suis tombé par hasard sur une enclave des Runes Tordues dans les Collines d'Umar. Enfin, il s'agissait plutôt d'un point d'accès, car j'ai été transporté ailleurs. Apparemment, ils œuvrent dans l'ombre avec les Mages cagoulés d'Athkatla dans un but sinistre. La prochaine étape consiste à trouver leur contact. Je suppose que je devrais trouver un moyen de confronter leurs chefs.~
+// Generic version of this = @111
+
+@103=~La Menace Cagoulée - Rune tordue - Collines d'Umar
+
+Je suis tombé par hasard sur une enclave de la Rune tordue dans les Collines d'Umar. Enfin, il s'agissait plutôt d'un point d'accès, car j'ai été transporté ailleurs… Et c'est bien ce que je craignais : ils collaborent avec les Mages cagoulés d'Athkatla dans un but sinistre. Leur contact semble être une certaine « Zallanora », qui a pris la fuite après ma confrontation. Poser des questions directes aux Mages cagoulés pourrait s'avérer dangereux à ce stade, surtout si elle occupe un rang élevé parmi eux, comme semble le suggérer sa maîtrise de la magie.~
+
+@104=~La Menace Cagoulée - Laérale Maindargent
+
+En enquêtant sur l'affaire des Runes Tordues, j'ai rencontré la célèbre Archimage d'Eauprofonde, Laérale Maindargent. Nul doute qu'elle les surveille de près, au cas où leur influence s'étendrait plus au nord, jusqu'à sa cité. Quant aux pistes d'enquête, elle n'a pas été très fructueuse, se contentant de dire qu'elle mènerait l'enquête à la Porte de Baldur. Elle a toutefois promis de me recontacter, et l'avoir comme alliée est la première bonne nouvelle depuis longtemps dans ce chaos. Je l'accueille donc avec joie.~
+
+@105=~La Menace Cagoulée - Rune tordue - Athkatla
+
+I have been ambushed by Rune tordue agents, no doubt due to my involvement with them. This time, it seems like 'Koshi' was implicated with them, who was a member of a rather strange and dangerous party I stumbled upon in the Temple District. He had a note which referred to a strange building next to a place called "Delosar's Inn" in the Bridge District, requiring a key of some sort to enter. Perhaps I should investigate that further.~
+
+@106=~La Menace Cagoulée - Rune tordue - Athkatla
+
+I have been ambushed by Rune tordue agents, no doubt due to my involvement with them. This time, it seems like 'Koshi' was implicated with them, who was a member of a rather strange and dangerous party I stumbled upon in the Temple District. I never actually spoke with the guy, but perhaps he had something in his possession that could help investigate further?~ 
+
+@107=~La Menace Cagoulée - Laérale Maindargent (2e)
+
+J'ai revu Laérale après une visite surprise dans une autre enclave des Runes Tordues. Elle menait également son enquête et m'a donné le nom du contact des Runes parmi les Mages cagoulés : Zallanora. Elle m'a aussi averti que l'histoire de cette femme, qui semble bien plus puissante que son passé ne le laisse supposer, pourrait être plus complexe que prévu.~
+
+@108=~La Menace Cagoulée - Zallanora
+
+Refusant de me soumettre à leurs ridicules restrictions magiques, j'ai affronté les Mages cagoulés jusqu'à ce que leurs plus hauts exécuteurs viennent régler la situation une fois pour toutes. Parmi eux se trouvait l'énigmatique Zallanora, que je crois avoir rencontrée il y a quelque temps dans le quartier du cimetière. Elle a fui le combat et il semblerait que je puisse désormais lancer des sorts librement en ville. Je suis presque certain qu'elle était le contact de la Rune Tordue depuis le début, sinon… qui cela pourrait-il être ? Je n'ai toujours aucune idée de ce qui se trame ensuite, et elle ne semble pas en avoir fini avec moi.~
+
+@109=~La Menace Cagoulée - Zallanora
+
+Refusant de me soumettre à leurs ridicules restrictions magiques, j'ai affronté les Mages cagoulés jusqu'à ce que leurs plus hauts exécuteurs viennent régler la situation une fois pour toutes. Parmi eux se trouvait l'énigmatique Zallanora, que j'ai peut-être croisée il y a quelque temps dans le quartier du cimetière. Elle a fui le combat et il semblerait que je puisse désormais lancer des sorts librement en ville. Mais ce n'est qu'un mal : j'ignore toujours ce qui se passe avec elle et les Mages cagoulés. Et elle n'en a visiblement pas fini avec moi.~
+
+@110=~La Menace Cagoulée - Rune tordue - Nouvelle ambuscade
+
+J'ai de nouveau été pris en embuscade par des membres de la Rune tordue, menés par Zallanora, une haut gradée des Mages cagoulés que j'ai déjà croisée et affrontée par le passé. Pour l'instant, j'ai réussi à repousser cette menace, mais j'ignore tout de ce qui se trame. J'ai trouvé une pierre de protection sur la dépouille de Zallanora, ce qui, d'après mes années d'aventure, devrait indiquer qu'elle ouvre un passage vers un lieu, probablement caché. À bien y repenser, je me souviens avoir brièvement rencontré Zallanora pour la première fois dans le quartier du cimetière d'Athkatla, il y a bien longtemps, alors qu'elle lançait un sort près de l'entrée d'une crypte. Peut-être qu'en explorant à nouveau les lieux avec la pierre de protection en ma possession, je pourrais faire une découverte ?~
+
+@111=~La Menace Cagoulée - Rune tordue - Collines d'Umar
+
+Je suis tombé par hasard sur une enclave de la Rune tordue dans les collines d'Umar. Enfin, il s'agissait plutôt d'un point d'accès, car j'ai été transporté ailleurs. Apparemment, une esseulite que je portais m'y a conduit. J'ai été accueilli par des membres d'un groupe se faisant appeler la Rune tordue. J'ignore qui ils sont et ce qu'ils veulent, mais leurs intentions semblaient loin d'être amicales. Ils ont mentionné avoir un contact avec les Mages cagoulés.~
+
+@120=~La Menace Cagoulée - Fraction de seconde
+
+Il s'avère que Zallanora n'était pas la véritable Zallanora : son corps a été échangé avec celui d'un ancien empereur liche nommé Shoon VII durant les Temps des Troubles. Voilà qui explique bien des choses ! Cela semble en tout cas confirmer qu'elle était responsable de la plupart des agissements douteux concernant les Mages cagoulés et la Rune tordue, qui semblent avoir quitté la région à présent.~
+
+@121=~La Menace Cagoulée - Conclusion
+
+Il s'avère que Zallanora n'était pas la véritable Zallanora : son corps a été échangé avec celui d'un ancien empereur liche nommé Shoon VII durant les Temps des Troubles. Cela explique bien des choses ! Du moins, cela semble confirmer qu'elle était responsable de la plupart des agissements douteux concernant les Mages cagoulés et la Rune tordue, qui semblent avoir quitté la région à présent. J'ai pris le parti de Shoon car il m'avait promis des richesses, et Laérale a pris la fuite pendant notre dispute. Peut-être qu'écouter ce menteur n'était pas la meilleure idée ? Et maintenant, il n'a plus qu'à « méditer sur l'éternité », selon ses propres termes. Il en sait plus et pourrait m'en donner davantage, mais je n'ai aucun moyen de pression. Il s'en fiche complètement. C'est rageant de ne pas pouvoir lui fracasser le crâne ! Le seul point positif, c'est que la Rune tordue devrait enfin me laisser tranquille.~
+
+@122=~La Menace Cagoulée - Laérale Maindargent
+
+En enquêtant sur les Mages cagoulés et la Rune tordue, j'ai rencontré l'Archimage d'Eauprofonde et, par méfiance, j'ai décidé de l'attaquer. Elle les surveillait de près, elle aussi. Je ne sais pas encore comment mener mon enquête sans son aide, mais je vais essayer.~
+
+@150=~La Menace Cagoulée - Conclusion
+
+Il s'avère que Zallanora n'était pas la véritable Zallanora : son corps a été échangé avec celui d'un ancien empereur liche nommé Shoon VII durant les Temps des Troubles. Cela explique bien des choses. Du moins, cela semble confirmer qu'elle était responsable de la plupart des manœuvres douteuses concernant les Mages cagoulés et la Rune tordue, ces derniers ayant désormais quitté la région. Apparemment, le plan de Shoon s'est retourné contre lui, car il n'avait pas prévu que j'aurais à mes côtés une Élue de Mystra, capable d'annuler sa malédiction, celle qui le rendait invulnérable. Résultat : Shoon VII semble avoir disparu pour de bon, et Zallanora a été sauvée, on ne sait comment. Je suis presque certain que la Rune tordue me laisseront enfin tranquille.~
+
+@198=~- Message de la Rune tordue -
+
+Le Crâne d'Or sera attribué à quiconque tuera <CHARNAME>, se trouvant actuellement à Athkatla ou dans ses environs. Vous savez ce qu'il vous reste à faire. La Rune attend votre résultat.~
+@199=~« Vous êtes chargé de superviser nos opérations à Athkatla. Les premiers résultats sont attendus d'ici un an, et une récompense à la hauteur de vos efforts suivra. Actuellement, nos intérêts principaux se concentrent sur le tanneur Hidesman ; ce sera donc votre première mission. Ne vous éloignez pas trop du point d'entrée, car vous en êtes le gardien. »
+
+Sous le texte, un sceau imprimé fait office de signature. Il s'agit d'un sceau noueux, ressemblant deux fois au chiffre « 3 », relié entre eux par des pointes vers le bas comme des griffes.~
+
+@200 = ~Perle de Pouvoir (niveau 9)~
+@201 = ~Les puissants enchantements qui imprègnent cette pierre ionique en font un trésor très convoité par les magiciens.
+
+PARAMÈTRES :
+
+Capacités d’équipement :
+– Mémorisation de 1 sort supplémentaire du 9ème niveau
+
+Poids : 0~
+
+@202 = ~Épee courte~
+@203 = ~Lame porte-bonheur~
+@204 = ~Lame porte-bonheur, objet au pouvoir légendaire, a la capacité d'exaucer trois vœux à son propriétaire. Bien sûr, ce pouvoir comporte aussi son lot de risques, car les vœux sont imprévisibles et seuls ceux formulés avec soin peuvent se réaliser. Pourquoi cette lame n'a plus que deux utilisations, et à quoi elle servait auparavant, demeure un mystère.
+
+Même privée de son pouvoir d'exaucer les vœux, cette épée courte reste une arme redoutable.
+
+PARAMÈTRES :
+
+Capacités d’équipement :
+– +1 à tous les jets de sauvegarde
+– Détecter des pièges: +5%
+– Vol à la tire : +5 %
+– Bonus de furtivité : +5%
+– Bonus Se cacher dans l’ombre : +5%
+– Détecter les illusions : +5%
+– Poser des pièges : +5%
+– Chance: +1
+
+Capacités spéciales (deux charges):
+– Souhait
+
+TAC0: +3
+Dégâts: 1d6+3 (Tranchant)
+Facteur de vitesse: 1
+Type de compétence: épée courte
+Type: arme à 1 main
+Force nécessaire:
+ 4 Force
+
+Poids : 3~
+
+@205 = ~Pierre gardienne de Zallanora~
+@206 = ~Vous écartez le couvercle lourd et une odeur de putréfaction presque insoutenable vous envahit. Un petit coffre se trouve à l'intérieur.~
+@207 = ~Le coffre ne s'ouvre pas lorsque vous tirez dessus. Il semble que vous ne puissiez pas l'ouvrir pour le moment.~
+@208 = ~Vous ouvrez le coffre et en récupérez le contenu.~
+@209 = ~Le couvercle du sarcophage paraît lourd, mais vous pouvez le retirer si vous le souhaitez.~
+
+@250 = ~Notre contact à Athkatla devrait arriver sous peu, Maître des Runes. Je vous assure que les ressources des Mages cagoulés nous seront d'une grande aide…~
+@251 = ~Enfin, elle semble être arrivée.~
+@252 = ~Maître des Runes, ceci… n'est pas le contact que nous attendions.~
+@253 = ~Vraiment ?~
+@254 = ~Toi, mortel. Tu as trouvé une clé et tu savais où l'utiliser. Comment est-ce possible ?~
+@255 = ~Je ne sais pas. J'étais dans les Collines d'Umar il y a une seconde et maintenant je suis ici.~
+@256 = ~Qui que tu sois, c'est ton jour de malchance. Prépare-toi à subir la colère de la Rune tordue.~
+@257 = ~Attendez, quelqu'un d'autre arrive.~
+@258 = ~Aucune idée, cette pierre me téléporte sans cesse. La dernière fois que c'est arrivé, des gens comme toi m'ont barré la route. Disons simplement que ça ne s'est pas passé comme prévu pour eux.~
+@259 = ~C'est donc vous qui êtes responsable de la perte de notre enclave d'Athkatla. La Rune tordue ne laissera pas cela impuni.~
+
+@267 = ~Bienvenue, Zallanora, nous vous attendions.~
+@268 = ~Accélérons, j'ai des affaires à régler.~
+@269 = ~Bien sûr. En attendant, il semblerait que des intrus se soient introduits ici. Voulez-vous vous joindre à nous pour une partie de plaisir ?~
+@270 = ~Pas si vite. Des intrus se sont introduits ici, des intrus qui ont tué Shangalar le Noir à Athkatla… juste sous votre nez.~
+
+@280 = ~<CHARNAME>, j'étais tout à fait satisfaite de notre indifférence mutuelle, mais je ne peux pas te laisser semer le chaos dans mes rangs ainsi. C'est l'heure du châtiment.~
+
+@295 = ~Hmpf… Tu cherches la bagarre… Tu n'as vraiment aucune idée à qui tu as affaire, n'est-ce pas ?~
+@296 = ~Prépare-toi à subir la colère des plus grands des Mages cagoulés, insecte.~
+
+@297 = ~Il semblerait que je t'aie sous-estimé, enfant de Bhaal. Une erreur coûteuse que je ne commettrai plus.~
+@298 = ~Prie que nous ne nous revoyions jamais, car je serai prête à te détruire.~
+@300 = ~Il semblerait que les Mages cagoulés t'aient sous-estimé, enfant de Bhaal. Une erreur coûteuse que je ne commettrai plus. Cette organisation ne te dérangera plus.~
+@301 = ~Profite de ta nouvelle liberté de lancer des sorts… tant que tu le peux encore.~
+
+@302 = ~Ah, je les connais. L'intrus est un enfant de Bhaal, et un très entreprenant.~
+@303 = ~Il semblerait, <CHARNAME>, que vous vous soyez enfin mêlé de ce qui ne vous regardait pas. Aujourd'hui est le jour de votre mort.~
+@304 = ~Ah, je les connais. à penser que… un enfant de Bhaal a réussi à détruire Shangalar est une pensée répugnante.~
+
+@305 = ~<CHARNAME>, aujourd'hui est le jour de ta mort.~
+@306 = ~Et pourtant, Maître des Runes, vous feriez bien de tout donner contre <CHARNAME>. Il ne faut pas les sous-estimer.~
+
+@310 = ~Ah, j'imagine qu'on t'a déjà demandé de choisir un camp dans cette ridicule « guerre de guildes ».~
+@311 = ~Pardon ?~
+@312 = ~Attends, on peut lancer des sorts en ville ? Comment ?~
+
+@313 = ~Avant que tu ne poses la question, non, je ne te dirai pas où ton amie a été emmenée. Je sais qui tu es, enfant de Bhaal, et tes affaires ne me regardent pas.~
+@314 = ~Ici, n'importe qui peut le faire, même vous. Le quartier du cimetière est assez loin de nos regards… du moins en grande partie.~
+@315 = ~« Nos regards ? » Vous êtes avec les Mages cagoulés ?~
+@316 = ~Oui. Mais avant que tu ne poses la question, non, je ne te dirai pas où ton amie a été emmenée.~
+@317 = ~Je sais qui tu es, enfant de Bhaal, et tes affaires ne me regardent pas.~
+
+@320 = ~Vous êtes avec les Mages cagoulés ? Comment me connaissez-vous ?~
+@321 = ~Comment me connaissez-vous ?~
+@322 = ~Crois-tu vraiment qu'un mage du calibre de Jon Irenicus passerait inaperçu ici ? Je suis parfaitement consciente de l'intérêt qu'il te porte.~
+@323 = ~Sache-le, je me serais occupée moi-même de cet Irenicus s'il avait insisté. Ou de n'importe qui d'autre, en fait, s'ils devenaient une nuisance. Nous vous surveillons toujours.~
+
+@330 = ~Nous nous retrouvons, enfant de Bhaal. La Rune tordue et moi-même avons décidé que cette insolence envers nos intérêts doit cesser immédiatement.~
+@331 = ~Je t'ai sous-estimé la dernière fois, <CHARNAME>, mais cette fois, je suis prête. Nous éradiquerons ton âme divine des royaumes.~
+
+@332 = ~<CHARNAME>, la Rune tordue et moi, des Mages cagoulés d'Athkatla, avons décidé que cette insolence envers nos intérêts doit cesser immédiatement. Nous éradiquerons ton âme divine des royaumes.~
+
+// Crypt 2.0
+
+@340 = ~Vous avez réussi à trouver votre chemin jusqu'ici. Dans mon sanctuaire. Dire que j'ai perduré contre toute attente pendant des centaines d'années pour finir dans cet état. Les dieux ne sont pas sans ironie.~
+@341 = ~Vous êtes donc réellement âgé de centaines d'années, comme je le soupçonnais !~
+@342 = ~Je vois que vous avez trouvé de puissants alliés pour vous aider, enfant de Bhaal. Vous n'êtes pas sans surprises.~
+@343 = ~J'adoOOoOooOoore chanter... CHANTER !!!~
+@344 = ~Malheureusement, c'est ici que s'achève votre quête de vengeance et de sens. Je ne suis plus qu'un esprit inoffensif, mais assurément indestructible.~
+@345 = ~Quel est cet endroit ? Que diable s'est-il passé ici ?~ // à 350
+@350 = ~Je m'appelle Shoon, septième du nom. Le crâne hurlant là-bas est la véritable Zallanora. Enfin, son âme, je crois. Peut-être que certains encore en vie aujourd'hui se souviennent de mon nom, et ils trembleraient d'effroi en l'entendant.~
+@351 = ~Shoon... VII ? L'empereur fou ? Impossible ! Shoon VII est mort depuis des siècles.~
+@352 = ~Ah, vous avez donc entendu parler de mes exploits ! J'étais jadis un grand empereur, trahi. Du moins, c'est ce que tout le monde croit. J'ai simulé ma mort et mené des recherches sur l'immortalité, et j'ai finalement réussi en devenant une liche.~
+@353 = ~Et l'elfe ? Quel est son rôle dans tout ça ?~
+@354 = ~Si je suis resté en sommeil pendant des siècles, c'est aussi pour cela que vous ne pouvez ni me faire de mal, ni à elle d'ailleurs.~
+@355 = ~Zallanora et sa bande sont tombés sur mon domaine un jour fatidique. J'avais prévu de dévorer leurs âmes pour échapper à un... mauvais pas dans lequel je m'étais fourré. J'étais prisonnier du Tome de la Licorne, voyez-vous, conséquence de mes explorations des anciens pouvoirs arcaniques. Une grave erreur.~
+@356 = ~Je les ai tous massacrés sur place. Enfin presque. J'ai bu leurs âmes, espérant mon salut, mais à cet instant précis, le Temps de Troubles a frappé... Et Zallanora était encore en vie, miraculeusement. La seule survivante… et nous avons échangé nos corps et esprits.~
+@357 = ~Ainsi commencèrent nos malédictions. La sienne, être prisonnière du Livre, dans mon corps désormais décrépit. La mienne, habiter à jamais le fragile corps d'une jeune elfe.~
+@365 = ~C'est vrai, ça a dû être tellement terrible d'être coincé dans un corps de jeune elfe.~ // PC
+
+@370 = ~Il m'a fallu dix ans pour parvenir à la maîtriser pleinement. À modeler l'énergie magique avec la même aisance qu'auparavant. Et j'étais incroyablement doué, comme vous avez pu le constater lors de nos combats.~
+@371 = ~Un nouveau corps s'accompagna d'une nouvelle vigueur. Et d'une nouvelle ambition. J'ai repris mes plans d'il y a des siècles… contrôler toute la Côte des Épées, dans l'ombre.~
+@372 = ~Il s'avère que le monde n'avait guère changé durant mes siècles d'absence. Des prétendants accouraient de partout pour « former » une jeune apprentie trop zélée comme moi. Gagner de l'influence parmi eux était d'une facilité déconcertante.~
+@373 = ~L'un n'attendait pas l'autre. Une expérience inédite pour moi, comme vous vous en doutez sans doute. Très vite, je gravissais les échelons sans que cela paraisse déplacé. J'étais sur le point de contrôler à la fois les Mages cagoulés et la Rune Tordue, jusqu'à votre arrivée.~
+@374 = ~Vous êtes répugnant, aussi vil que le racontent les légendes. Pourquoi nous dites-vous cela ? Qu'avez-vous à y gagner ?~
+@380 = ~Franchement, c'est assez libérateur de faire tomber les couches de mensonges et de dire la vérité… pour une fois. À part la jeune Zallanora ici qui ne comprend pas un mot de ce que je lui dis, vous êtes les seuls êtres dans les royaumes à connaître mon histoire. J'ai apprécié cela.~
+@381 = ~Mais plus que tout, rien de tout cela n'a d'importance pour moi maintenant. Vous ne pouvez pas tuer mon esprit, pas plus que vous ne pouvez la sauver. Je suis condamné à rester dans cet état jusqu'à ce que la magie du Tome soit enfin suffisamment faible pour que je puisse la subjuguer. Ou qu'un événement comme le Temps des Troubles se reproduise et anéantisse le pouvoir du Tome.~
+@382 = ~Cela pourrait être dans des siècles. Ou des millénaires… Je reprendrai alors mes projets, soigneusement élaborés après une quasi-éternité de planification. Et aucun de vous deux ne pourra l'arrêter, car vous serez tous deux morts depuis longtemps. Oui, je te survivrai même toi, Laérale.~
+@385 = ~Et si je trouvais un moyen pour te tuer, ici et maintenant ?~ // à 420
+@386 = ~Eh bien, tant mieux si tu veux mon avis. Franchement, je me fiche de ce que tu feras dans mille ans.~ // à 430
+
+@397 = ~Maintenant que la garce est partie, tu ne m'intéresses plus. Tes affaires terrestres m'indiffèrent. Ce à quoi je pense en ce moment, c'est ce que je devrai faire puisque j'aurai l'éternité pour réfléchir.~
+@398 = ~Que ferais-tu si tu avais l'éternité pour réfléchir ? C'est ce à quoi je pense en ce moment. Toi, en revanche, tu devrais réfléchir à un laps de temps bien plus court, comme ce que tu devrais faire maintenant.~
+@399 = ~Ce n'est qu'une façon de voir les choses. J'ai l'éternité pour réfléchir et méditer sur le monde. Je dirais que c'est une formidable opportunité. Je te dis adieu, rejeton, et bonne chance dans ta quête de sens.~
+
+@400 = ~Protegé par Prévention de la mort~
+@401 = ~Protegé par Barrière acérée~
+@402 = ~Déclencheur de sorts—Déviation~
+@403 = ~Chaine de contingences—Flétrissure abominable d'Abi-Dalzim~ 
+@404 = ~Chaine de contingences—Sort de mort~
+@405 = ~Chaine de contingences—Chaîne d'éclairs~
+@406 = ~Séquence de sorts—Piège à crânes~
+@407 = ~Protegé par Peau de fer~
+@408 = ~Piège d'arrêt de temps—Déclenché~
+@409 = ~Utiliser n'importe quel objet—Portail (parchemin)~
+@410 = ~Utiliser n'importe quel objet—Immunité contre les sorts: Divination (parchemin)~
+@411 = ~Utiliser n'importe quel objet—Vision véritable (parchemin)~
+@412 = ~Utiliser n'importe quel objet—Immunité totale (parchemin)~
+@413 = ~Contingence—Réjuvénation sombre~
+
+@415 = ~Souhait—Disjonction totale~
+
+// Crypt Next 2.0
+
+@420 = ~Je vous invite à essayer. J'ai moi-même tenté l'expérience. J'ai même engagé des aventuriers. Nous sommes tous deux invulnérables, un effet secondaire, je suppose, de la situation délicate dans laquelle nous nous trouvons à cause du Tome. Sa malédiction nous sert aussi de cocon protecteur.~
+@421 = ~Le pouvoir du Tome est absolu et irréversible. Croyez-moi, tous ceux qui connaissent le Tome le savent.~
+@423 = ~Alors comment ai-je pu vous tuer ?~
+@426 = ~Lorsque nous avons échangé nos corps, c'est moi qui étais prisonnier du livre, tandis que Zallanora était libre. Ainsi, je suis devenu libre, et elle, prisonnière du livre. Mais nos esprits sont liés par l'ingérence du Temps des Troubles ; aucun de nous ne peut quitter le monde des vivants sans l'autre. Et comme elle est prisonnière du livre… je ne peux pas partir, même maintenant que mon corps physique est mort. Et je ne peux pas en former un nouveau.~
+@427 = ~J'ai maintenant un millénaire ou plus pour réfléchir et élaborer ma stratégie lorsque cette malédiction prendra fin. Je dirais que c'est une excellente opportunité. Je te dis adieu, rejeton, et bonne chance dans ta quête de sens. Tes affaires ne me concernent plus.~
+
+@430 = ~Comme il se doit. Tu as encore toute une vie devant toi, une vie qui ne me concerne pas. Pourquoi t'en soucierais-tu ?~ // à 385
+
+@435 = ~Pas si vite, votre altesse. Il semble que vous ayez négligé un détail dans ce qui paraît être un plan impeccable.~ // à la partie 2
+
+// PART 2 - Shoon
+
+@440 = ~Malgré toute votre ruse, il y a une chose que vous n'avez pas envisagée : je suis une Élue de Mystra, la déesse de la magie elle-même, et parmi tous ses Élus… je suis la plus versée dans le maniement des objets et artefacts magiques.~
+@441 = ~Ce Tome de la Licorne, je le connais, et je peux sentir sa présence. Il est ici, dans votre sarcophage.~
+@442 = ~C'est un objet d'une puissance gigantesque, sa magie est absolument irréversible. Mais le Tome en lui-même, et non sa magie, n'est pas invulnérable. Vous l'avez dit vous-même : votre plan est de le vaincre éventuellement.~
+@443 = ~Comme tous les artefacts de ce genre, le pouvoir magique de ce Tome est imprégné de la Toile, et je manie le Feu d'Argent de Mystra. Si elle me prête sa volonté, je pourrais peut-être détruire le grimoire et, ainsi, inverser sa magie du simple fait de sa destruction.~
+@450 = ~Quelle folie ! Détruire un objet d'une valeur inestimable ? Qu'y gagnez-vous ?~
+@451 = ~Rien de tangible. J'y perds même. Mais je pense que le monde se porterait mieux sans vous, votre altesse. Et définitivement, cette fois.~
+@452 = ~Impossible ! Vous ne le ferez pas, vous n'en avez pas le pouvoir…~
+@453 = ~Oh, mais je crois que si. Et vous l'avez dit vous-même : vous êtes inoffensif maintenant, et donc… vous ne pouvez pas nous arrêter.~
+@455 = ~<CHARNAME>, je possède de puissants trésors, d'anciens artefacts dont je suis le seul à connaître l'emplacement. Vous êtes devenu puissant, peut-être même plus qu'elle. Aidez-moi maintenant et je vous rendrai plus riche et plus puissant que vous ne l'avez jamais imaginé.~
+@460 = ~Et me retourner contre l'une des Sept Sœurs ? Non merci.~
+@461 = ~Euh, laissez-moi réfléchir. Qui devrais-je aider : une personne charmante, une archimage légendaire qui est juste et équitable ces derniers siècles, et qui m'a aidée jusqu'ici, ou un tyran maniaque qui a tenté de me tuer deux fois ?~
+@462 = ~Je ne croirai pas aux mensonges d'un rat acculé au pied du mur qui, de son propre aveu, a menti, triché et assassiné pendant des siècles. S'il existe un moyen de vous détruire, je suis tout à fait pour.~
+@463 = ~Attendez, de quel genre de richesses parle-t-on ?~ // à NON, S'IL VOUS PLAÎT
+
+@470 = ~Insolente garce ! Bien sûr, l'élue de Mystra… Pourquoi n'y ai-je pas pensé ?! J'aurais dû asservir l'une de tes sœurs, Laérale, et la forcer à me libérer ! Vous auriez tous regretté le jour de votre naissance ! Ses cris auraient voyagé à travers la Toile jusqu'à toi, chaque jour.~
+@471 = ~Je vous promets une chose, à vous deux : si je survis, une éternité de tourments vous attend, et rien d'autre.~
+@472 = ~Écartez-vous, <CHARNAME>. Je vais commencer la communion avec la Déesse.~
+@473 = ~Et pour que ce soit clair, Votre Altesse, aucune de mes sœurs ne peut faire cela. Mais je suis soulagée que ce ne soient que des menaces en l'air, car je sais qu'elles ne le seraient pas si vous parcouriez les Royaumes.~
+
+//S'IL VOUS PLAÎT NON
+
+@480 = ~Je connais l'emplacement de la Gemme Vivante, ainsi que d'une lame exauçant les vœux, et…~
+@481 = ~<CHARNAME>, Shoon VII est l'un des souverains les plus vils ayant jamais vécu dans les Royaumes. Le mal incarné. Vous ne croiriez tout de même pas à ses mensonges ? Il n'a aucune intention de tenir ses promesses, et vous le savez.~
+@485 = ~Je jouais juste avec lui. Il est tout à vous.~ // à 470
+@486 = ~Au contraire, je veux ce qu'il m'offre. Je ne vous laisserai pas le détruire.~ // à 490
+@487 = ~Par la Déesse. Vous êtes sérieux.~
+
+@488 = ~Vraiment, <CHARNAME> ? Les réponses que nous cherchons se trouvent juste derrière ce sceau magique. Je sais qu'il vaut mieux éviter de vous affronter. La Déesse ne le permettrait pas, elle en a assez des conflits entre divinités. Je vous attendrai à l'intérieur, quoi qu'il arrive, si vous décidez de vous montrer plus conciliant.~
+
+@490 = ~Oui, paroles d'un vrai rejeton du dieu des meurtres ! Tuez-la, et je tiendrai mes promesses.~
+@491 = ~Vous vous méprenez. Je veux les richesses maintenant.~ //PC
+@492 = ~Comment osez-vous formuler des exigences aussi audacieuses ?!~
+@493 = ~...~
+@494 = ~... Très bien. Vous ne me laissez guère le choix. Les objets dont j'ai parlé, les voilà.~
+
+@495 = ~Vraiment, <CHARNAME> ? Je sais qu'il vaut mieux éviter de vous affronter. La Déesse ne le permettrait pas, elle en a assez des conflits entre divinités. À mon grand regret, je vous laisse à vos affaires, quelles qu'elles soient. J'espère que nous nous reverrons dans des circonstances plus agréables un jour.~
+@496 = ~Eh bien, tout cela pour rien. De maigres richesses pour vous, et rien de plus. Votre avidité me dégoûte, mais je sais qu'il vaut mieux éviter de vous affronter en combat. La Déesse ne le permettrait pas, elle en a assez des conflits entre divinités.~
+@497 = ~Sache que ta décision d'aujourd'hui pourrait causer la mort de millions de personnes un jour. Mais j'imagine que cela t'est égal, puisque cela ne t'affectera probablement pas.~
+
+@498 = ~C'est fait.~
+@499 = ~La malédiction est levée !~
+@500 = ~Euh... pourquoi sont-ils tous les deux en vie ?~
+@501 = ~Je... ne sais pas.~
+@502 = ~Je suis encore en vie ! Je vous ai fait une promesse à tous les deux, et j'ai bien l'intention de la tenir... Préparez-vous à subir toute l'étendue de ma colère !~
+@503 = ~Attendez, il y a quelque chose qui cloche.~
+@504 = ~Je... je... pars ?~
+@505 = ~Non, c'est impossible !~
+@506 = ~Non ! NOOOOOOO !~
+@507 = ~AAAAAHHHHH ! Au secours ! Mes amis… ils sont tous…~
+@508 = ~Ooohh… Aïe… Ma tête…~
+@509 = ~C’était…~
+@510 = ~(Zallanora s’évanouit sous le choc et l'épuisement)~
+@511 = ~Que s’est-il passé ? Comment se fait-il qu’elle soit en vie et Shoon mort ?~
+@512 = ~Je suis aussi choquée que vous. Ils devraient… tous les deux être morts, comme je le craignais. Mais il y a une certaine logique qui s'applique ici. Après l’échange de corps, Shoon est mort en vous combattant, tandis que Zallanora, la véritable Zallanora piégée dans le corps de Shoon, a survécu.~
+@513 = ~Donc, la seule à avoir survécu à l’échange… c’est elle. C’est peut-être pour ça qu’elle a été épargnée quand l’échange a été renversé ? Ironie du sort pour Shoon, mourir dans le corps de Zallanora a paradoxalement sauvé son âme.~
+@514 = ~Elle n'est pas encore en sécurité, du moins pas dans ces cryptes.~
+@520 = ~En effet. Je suppose que je pourrais l'emmener avec moi. Après tout, votre vie d'aventurier trépidante est tout le contraire de ce dont elle a besoin en ce moment. Toute sa famille et ses amis ont disparu depuis longtemps. La pauvre.~
+@521 = ~J'ai de bonnes relations avec les Elfes de Lunargent, d'où elle vient. Et je suis bien installée à Eauprofonde. Elle sera en sécurité avec moi.~
+
+@525 = ~(Ne rien dire).~
+@526 = ~C'est... tout à fait logique.~
+@527 = ~Attendez. Voici 2000 pièces d'or. Pour l'aider avec son nouveau départ dans la vie.~
+
+@530 = ~C'est très généreux de votre part, <CHARNAME>. Je ne manquerai pas de l'informer, ainsi que beaucoup d'autres à Eauprofonde, de vos actes. Vous êtes vraiment à la hauteur de votre réputation.~
+@535 = ~C'est la moindre des choses.~
+@536 = ~D'une certaine manière, je l'ai… en quelque sorte assassinée ? Même si ce n'était pas vraiment elle ? C'était quand même son corps. Quoi qu'il en soit, je me sentais un peu coupable.~
+
+@625 = ~Voilà, c'est ici que nos chemins se séparent, <CHARNAME>. Aujourd'hui, le monde pousse un immense soupir de soulagement. Personne n'est au courant, mais nous avons évité une catastrophe.~
+@626 = ~Avant de partir, je tenais à vous dire que j'ai perçu une autre aura magique émanant du sarcophage. Je suis persuadée qu'un puissant artefact s'y trouve. Je pense que vous devriez le prendre. J'en ai assez vu pour aujourd'hui.~
+@627 = ~La prochaine fois que je verrai Elminster, je ne manquerai pas de lui raconter nos exploits ! Il a dit un jour que si Shoon VII était encore en vie, il n'y aurait pas de paix de notre temps. Et maintenant que je l'ai rencontré, je suis d'accord.~
+@630 = ~Je suppose que vous retournerez à Athkatla ? C'est donc un adieu. Merci pour votre aide, et puisse-t-on se revoir dans de meilleures circonstances.~
+
+// Laeral Silverhand - first meeting
+@700 = ~Que s'est-il passé ici, par la Déesse ? Il y a une minute, une réunion avait lieu — que j'espionnais, je le précise — et pourtant, la minute suivante, l'énergie magique libérée était si forte que je l'ai ressentie à travers mon sort !~
+@701 = ~Dites-moi, qui êtes-vous ? Vous n'avez pas l'air d'un agent de la Rune tordue.~ // Réponses du joueur ci-dessous
+@702 = ~La déesse Mystra ? Attendez, êtes-vous bien celle que je crois ?~
+@703 = ~Très bien. Je suis <CHARNAME>. J'ai découvert cette enclave par hasard et j'ai réglé le cas à ma façon.~  
+@704 = ~Je suis <CHARNAME>. J'ai découvert cette enclave par hasard et j'ai réglé le cas à ma façon.~ // à 730
+@705 = ~Comment savez-vous que je ne suis pas avec la Rune tordue ?~ // à 770
+@706 = ~Je m'appelle <CHARNAME>. Je me suis retrouvé mêlé à ce bazar de la Rune tordue et… je ne sais toujours pas exactement comment.~ // à 730
+@707 = ~Toi d'abord.~
+
+@709 = ~Oui. Je pensais que mes cheveux argentés me trahiraient, mais apparemment, ça ne vous dit rien.~
+@710 = ~Très bien.~
+@711 = ~Je m'appelle Laérale Maindargent.~
+@712 = ~Attendez, Laérale ? LA Laérale Maindargent ? D'Eauprofonde ?~ // à 720
+@713 = ~Des siècles ? Mais jusqu'où va cette conspiration ?~ // à 725
+@714 = ~Alors, ils ont réussi à vous énerver, vous aussi ?~
+@715 = ~J'enquête sur la Rune tordue, car je pense qu'une série d'événements étranges et apparemment sans lien survenus au cours des derniers siècles pourraient bien être liés après tout.~
+
+@719 = ~Oui, c'est bien moi. Je m'appelle Laérale Maindargent.~
+@720 = ~Oui, c'est bien moi.~
+@721 = ~Bien sûr, maintenant que vous le dites, les cheveux argentés sont un indice révélateur. Comment se fait-il qu'une des Sept Sœurs soit impliquée avec la Rune tordue ? Ont-ils déjà agi contre vous ?~ // Suite à la partie 2
+@722 = ~Les cheveux argentés sont un indice révélateur. Comment se fait-il qu'une des Sept Sœurs se soit impliquée avec la Rune tordue ? Ont-ils déjà agi contre vous ?~
+
+@725 = ~Je ne suis pas certaine. C'est ce que je voulais savoir.~ // à la partie 2
+
+@730 = ~Ah oui, je me souviens maintenant. <CHARNAME>... L'enfant de Bhaal. Elminster a beaucoup parlé de vous. Il a une grande confiance en vous.~
+@732 = ~Je me fiche de ce vieil homme fou. Tu ne m'as toujours pas dit qui tu es, et je commence à me méfier.~
+@733 = ~Euh... Il a parlé de moi ? La dernière fois que je l'ai vu, c'était il y a longtemps. Il semblait s'intéresser à mes affaires pendant un temps, puis il a disparu.~ // à 740
+@734 = ~Oui, à ce propos... savez-vous ce qu'il me veut ?~ // à 740
+@735 = ~Attendez, vous me dites quelque chose...~ // à 711
+
+@740 = ~Elminster agit de façon mystérieuse, mais il œuvre pour le bien commun. S'il a choisi de suivre vos progrès, c'est pour une raison.~
+@741 = ~Apparemment, beaucoup de gens suivent mes progrès. Honnêtement, je préférerais qu'on me laisse tranquille, mais depuis le meurtre de Gorion, ce n'est plus possible.~ // à 750
+@742 = ~Je vois… Alors, qui êtes-vous, au fait ?~ // à 710
+@743 = ~Si Elminster croit en moi, comme il semble, comment puis-je lui parler ?~ // à 760
+
+@750 = ~Être un acteur majeur dans le jeu des dieux, c'est être condamné à ne jamais être vraiment seul. Ni anonyme.~
+@751 = ~On dirait que vous parlez d'expérience.~ // à 755
+
+@755 = ~En effet. Mais ce sont des dieux différents, et pour des raisons totalement différentes.~
+@756 = ~Vous ne m'avez toujours pas dit qui vous êtes, mais je commence à me dire que ça ne vaut pas la peine de demander.~ // à 710
+@757 = ~Seriez-vous par hasard l'une des Sept Sœurs ?~ // à 719
+
+
+@760 = ~Non. Je dois faire confiance à son jugement, comme je l'ai fait tant de fois par le passé. Je suppose qu'il a probablement compris que vous aviez juste besoin d'un petit coup de pouce dans vos moments les plus sombres.~
+@761 = ~Le résultat est que vous avez mûri, tant personnellement que physiquement, comme en témoigne cette scène. J'espère toutefois que sa confiance n'était pas mal placée.~
+@762 = ~La Rune tordue ont eu ce qu'ils méritaient, mais j'ignore toujours ce qu'ils veulent et pourquoi ils sont là. J'aurais besoin d'aide à ce sujet et je vous en demanderais bien, mais je ne sais même pas qui vous êtes ?~ // à 710
+@763 = ~Assez parlé de lui. Tu ne m'as toujours pas dit qui tu es, et je commence à avoir des soupçons.~ // à 710
+@764 = ~Et si on passait directement à la partie où vous expliquez ce qui se passe ici ?~ // à 710
+@765 = ~Hmm, vous connaissez Elminster… Seriez-vous l'une des Sept Sœurs, par hasard ?~
+
+@770 = ~La déesse Mystra est mon guide. Elle m'indique que l'influence de la Rune tordue ne se trouve pas en vous. Cependant, je perçois également une forme de contact divin à votre sujet, c'est pourquoi je dois vous demander à nouveau : qui êtes-vous ?~ // Réponse du PC : 704
+
+// Laeral Silverhand - first meeting - Part 2
+
+@802 = ~Je les surveille de près depuis un certain temps. J'ai certes manqué une partie de la réunion, mais elle a confirmé mes craintes : la Rune tordue est une organisation active et en pleine expansion.~
+@803 = ~Puis vous êtes apparu et les avez réduits en poussière. Même si je ne peux approuver vos méthodes, je suppose que leur mort n'est pas si mal à long terme.~
+@811 = ~Je crains que l'histoire ne soit en fait plus complexe. Apparemment, ils ont un contact parmi les Mages cagoulés qui travaille avec eux. Cela ressemble fort à une conspiration.~ // à 840
+
+@820 = ~Les Mages cagoulés ? Hmm, c'est loin d'être idéal.~
+@821 = ~D'après ce que j'ai entendu, ils semblent aussi avoir des projets pour la Porte de Baldur.~
+@822 = ~Nous ne pouvons pas les laisser agir ainsi. Je vais enquêter sur leurs activités à la Porte de Baldur, car c'est plus près de chez moi.~
+@823 = ~En attendant, je vous suggère de poursuivre votre enquête dans la région. La Rune tordue a subi un coup dur lors de votre prise d'assaut. Ils réagiront sans doute. Soyez prudent.~ // Réponses du PJ ci-dessous
+@827 = ~Je m'en occupe.~ // à 840
+@828 = ~Auriez-vous une idée où je pourrais chercher ?~ // à 830
+
+@830 = ~Je crains que vous n'en sachiez plus que moi sur Athkatla et sa région. Ils accèdent à ces enclaves grâce à une gemme spéciale appelée « Pierre Rebelle », il serait donc judicieux d'en avoir une sur vous en permanence. De plus, il s'agit d'une organisation secrète, leur point d'accès pourrait donc se trouver n'importe où.~
+
+// à 855
+
+@840 = ~Ils accèdent à ces enclaves grâce à une gemme spéciale appelée « esseulite », il serait donc judicieux d'en avoir une sur vous en permanence. De plus, il s'agit d'une organisation secrète, leur point d'accès pourrait donc se trouver n'importe où.~
+@855 = ~Je vous recontacterai, j'espère avec plus d'informations. Ce fut un plaisir de vous rencontrer, <CHARNAME>. Elminster ne s'est pas trompé à votre sujet. Bonne chance.~
+
+// Laérale, deuxième rencontre à Rune tordue
+
+@900 = ~Nous nous retrouvons, <CHARNAME>.~
+@901 = ~Pendant que vous meniez votre enquête de votre côté — et avec brio, je dois dire —, je surveillais la Rune tordue et leurs associés.~
+@902 = ~Il semblerait que leur contact chez les Mages cagoulés soit une magicienne elfe du nom de « Zallanora ». Ce nom vous dit quelque chose ? Vous avez passé bien plus de temps à Athkatla que moi.~
+@904 = ~Je l'ai peut-être rencontrée, je n'en suis pas sûr. J'ai croisé pas mal de Mages cagoulés. Très peu étaient amicaux. Il faudrait peut-être une approche plus aggressive.~ // à 960
+@905 = ~Il s'agit de l'une de leurs exécutrices. Je l'ai déjà rencontrée et confrontée, mais malheureusement, elle a pris la fuite. Elle n'a laissé aucune trace.~ // à 920
+@906 = ~Ce nom ne me dit rien. Mais il se pourrait que je l'aie croisée une fois, dans le quartier du cimetière d'Athkatla. Une magicienne elfe impolie qui en savait beaucoup sur moi. Il va falloir que je trouve un moyen de la confronter.~ // à 940
+@907 = ~Je ne crois pas l'avoir déjà rencontrée. Mais les Mages cagoulés ont des représentants à Athkatla. Je pense pouvoir la retrouver.~ // à 960
+@908 = ~Je... savais déjà. Je viens tout juste de la croiser. Malheureusement, elle a pris la fuite sans laisser la moindre trace.~ // à 920
+
+@910 = ~Cela signifie donc que tous vos ennemis sont au courant de votre implication dans leurs échecs.~ // à 926
+
+@920 = ~Elle sait donc qui vous êtes ? Dans ce cas, ce n'est qu'une question de temps avant que vos ennemis ne comprennent que vous êtes responsable de tous leurs revers.~
+@923 = ~Quel est le plan maintenant ? Je suis à court de pistes dans cette affaire.~
+@925 = ~Je crains de ne pas pouvoir vous donner de réponse simple. Mais sachez ceci : les Runes tordue sont une cabale de liches. J'en suis certaine. Et les liches sont très patientes. On l'apprend en vivant des siècles, et je parle en connaissance de cause.~
+@926 = ~Après avoir éliminé leurs membres les plus importants, attendez-vous à des représailles. Je ne sais ni quand ni comment, mais lorsqu'ils frapperont, et ils frapperont… ils le feront avec la certitude absolue de pouvoir vous anéantir.~
+@927 = ~Je sais que cela ne vous aide pas beaucoup, mais il m'a fallu des années de travail pour les traquer, et maintenant, j'ai vraiment l'impression d'être dans une impasse. Et cette Zallanora ne fait qu'épaissir le mystère.~
+@928 = ~Ce que j'ai appris au cours de ma longue vie, c'est que les mages aussi compétents qu'elle ont généralement une réputation qui les précède. Ou un maître renommé ou des années d'études. Ou la bénédiction d'un dieu. Dans son cas ? Rien de significatif.~
+@929 = ~Je n'ai jamais rencontré une parfaite inconnue aussi puissante et influente. Et pourtant, en années elfiques, elle est à peine adulte. Il y a forcément plus à cette histoire. Tout est possible.~
+@930 = ~Je vous tiendrai au courant si je trouve quelque chose. Prenez soin de vous, <CHARNAME>.~ // SORTIE
+
+@940 = ~Vraiment ? C'est surprenant. J'ai mené mon enquête et fait quelques recherches à son sujet. Les résultats sont pour le moins inquiétants.~
+@945 = ~Ce que j'ai appris au cours de ma longue vie, c'est que les magiciens aussi compétents qu'elle ont généralement une réputation qui les précède. Ou un maître renommé ou des années d'études. Ou la bénédiction d'un dieu. Dans son cas ? Rien de significatif.~
+@946 = ~Je n'ai jamais rencontré une parfaite inconnue aussi puissante et influente. Et pourtant, en années elfiques, elle est à peine adulte. Il y a forcément plus à cette histoire.~
+@947 = ~Je vous tiendrai au courant si je trouve quelque chose. Soyez sur vos gardes si vous la confrontez, <CHARNAME>. Tout est possible.~ // SORTIE
+
+@960 = ~Peut-être, mais soyez vigilant. Cette Zallanora ne fait qu'épaissir le mystère.~ // à 945
+
+@998 = ~Archimage~
+@999 = ~Magicienne elfe~
+@1000 = ~Kartak Voisort~
+@1001 = ~Zallanora la Demi-liche~
+@1002 = ~Dalina~
+@1003 = ~Shoon VII~
+@1004 = ~Magicien de la Rune tordue~
+@1005 = ~Laérale Maindargent~
+@1006 = ~Serviteur de Kartak~
+@1007 = ~Jymahan~
+@1008 = ~Zallanora Argentresses~
+@1009 = ~Assassin elite de la Rune tordue~
+@1010 = ~Liche de la Rune tordue~
+
+// Crypt
+@1100 = ~Enfin, je vous ai trouvé ! Je savais que vous finiriez par venir. vous êtes difficile à retrouver, <CHARNAME>.~
+@1101 = ~Je suis désolé de ne pas avoir pu vous aider quand Zallanora et la Rune tordue vous ont tendu une embuscade. vous étiez parti depuis un moment, et je ne peux pas être partout. Il est clair qu'ils vous avaient à l'œil depuis un certain temps.~
+@1105 = ~C'est le cas. Mais plus personne ne me fait de mal. Ils l'ont appris à leurs dépens.~ // à 1110
+@1106 = ~Tout va bien. Je sais me débrouiller maintenant, comme vous pouvez le constater. Quelque chose me dit que notre rencontre ici n'est pas un hasard.~ // à 1120
+@1107 = ~Comment se fait-il que, de tous les endroits, vous m'ayez trouvé tout au fond d'une crypte secrète sous le quartier du cimetière d'Athkatla ?~ // à 1120
+
+@1110 = ~Vous les avez durement touchés, mais une organisation composée de membres séculaires comme celle-ci ne cessera pas subitement toutes ses activités.~
+@1111 = ~Depuis que nous nous sommes mêlés des affaires de la Rune tordue, j'ai eu le temps de réfléchir, de méditer sur tout cela.~ // à 1125
+
+@1120 = ~Oh, mais il n'y a rien de fortuit là-dedans. Cela fait un bon moment que nous nous mêlons des affaires de la Rune tordue, et j'ai eu le temps de réfléchir, de méditer là-dessus.~
+@1125 = ~Rien chez cette Zallanora n'avait de logique. Comment une si jeune elfe, sans relations ni études, avait pu devenir si puissante ? Alors j'ai commencé à enquêter.~
+@1126 = ~Mes sorts de divination n'ont rien donné… jusqu'à ce qu'elle vous tende une embuscade. Malheureusement, j'ai été en retard, mais j'ai retrouvé son corps. Enfin, j'avais quelque chose : des mèches de ses cheveux. Cela me permettrait d'accéder à son passé.~
+@1127 = ~Il s'avère qu'elle a disparu il y a des décennies, en route pour Lunargent, pour ensuite réapparaître dix ans plus tard dans la région en tant qu'apprentie. Quelques années plus tard, elle est devenue une archimage d'une puissance et d'une influence considérables, un nom qu'on ne prononce pas à la légère chez les Mages cagoulés.~
+@1128 = ~J'ai mené l'enquête auprès de mes contacts et, grâce à quelques sorts, j'ai fini par découvrir qu'elle avait accédé à ces cryptes ici présentes. À de nombreuses reprises, en fait. Il y avait manifestement quelque chose d'important ici. Mais il me manquait une pièce du puzzle : la pierre gardienne que vous possédez actuellement. Je me doutais que vous l'aviez, c'est pourquoi je vous ai cherché.~
+@1129 = ~Alors, <CHARNAME>, est-il enfin temps d'avoir des réponses ?~
+@1140 = ~Oui. La pierre de Zallanora s'active déjà. Je ne devrais pas avoir trop de mal à trouver à quoi elle sert dans les environs.~ // à 1150
+@1145 = ~Après tous ces efforts, et avoir frôlé la mort à trois reprises, je ne vais certainement pas abandonner maintenant. À votre avis, à quoi pouvons-nous nous attendre ?~ // à 1155
+
+@1150 = ~J'ai déjà fouillé cette pièce de fond en comble, le mur Est regorge de sorts soigneusement dissimulés. Je vais vous les montrer.~ // SORTIE
+@1155 = ~N'importe quoi, ce qui est assez effrayant. Mais qui que ce soit, ou quoi que ce soit, que nous trouvions à l'intérieur, il ou elle aura le dos au mur. Vous êtes quelqu'un de robuste, enfant de Bhaal, et puis, je ne suis pas si mal non plus ! Nous ne pouvons pas laisser passer une telle occasion.~ // à 1150
+@1160 = ~Tenez-vous près du mur.~
+
+@2000 = ~Alors c'est toi qui t'immisces sans cesse dans les affaires de la Rune tordue. Ton implication avec le tanneur m'a mis dans une situation très délicate.~
+@2001 = ~Aujourd'hui, soit je te tue, soit je meurs. Alors tu vas mourir !~
+@2005 = ~<CHARNAME>, les élites de la Rune tordue ont placé un crâne d'or sur ta tête. Celui qui te tuera le recevra. Prépare-toi à mourir !~
+@2010 = ~Imbécile, tu crois que la Rune tordue ignore tout de ton existence… Attendez, vous n'êtes pas Koshi. Qui êtes-vous ?~
+@2011 = ~Mon nom est <CHARNAME>, et si c'est Koshi que vous cherchez, son corps est à l'étage.~
+@2013 = ~Je te remercie d'avoir éliminé Koshi, mais ton nom figure aussi sur la liste. Toutes mes excuses, <CHARNAME>, mais nous n'apprécions guère que l'on se mêle de nos affaires.~ // Ajouter au journal une fois mort
+
+@3000 = ~Je recherche une certaine magicienne cagoulée nommée « Zallanora ». Sauriez-vous où je pourrais la trouver ?~
+@3001 = ~Vous devrez parler à Corneil, leur représentant. Je ne fais que représenter le Conseil ici.~
+@3002 = ~Je recherche une certaine magicienne cagoulée nommée « Zallanora ». Sauriez-vous où je pourrais la trouver ?~
+@3003 = ~Je suis désolé, mais je ne peux rien faire pour vous, mon ami. Ces magiciens peuvent faire à peu près tout ce qu'ils veulent ici. Peut-être que le magistrat pourrait vous aider. Bonne chance.~
+@3004 = ~J'ai trouvé cette lettre ici impliquant un membre de votre organisation dans des affaires plus que louches.~
+@3005 = ~Savez-vous où je pourrais trouver une magicienne cagoulée du nom de « Zallanora » ?~
+@3006 = ~Je recherche une magiciene cagoulée du nom de « Zallanora », en avez-vous entendu parler ?~
+@3007 = ~J'ai de mauvaises nouvelles : il semblerait que quelqu'un dans votre organisation soit impliqué dans une conspiration. Avez-vous déjà entendu parler de la Rune tordue ?~
+@3008 = ~Non, je n'en ai jamais entendu parler, et je me fiche de vos accusations. Savez-vous combien de personnes débarquent en nous accusant de tout et de rien ? Maintenant, arrêtez de me faire perdre mon temps et rendez-vous utile.~
+@3010 = ~Je me fiche de vos accusations ridicules. Ce parchemin pourrait être un faux. Laissez-moi deviner, vous allez me demander une réduction sur le permis magique ?~
+@3011 = ~Et alors ? Ce parchemin pourrait facilement être un faux. Domination de la région ? Vous plaisantez ? Fichez le camp !~
+@3020 = ~Oh là là, on ne « trouve » pas quelqu'un comme Zallanora, c'est elle qui vous trouve.~
+@3021 = ~J'ai de bonnes raisons de croire qu'elle manigance quelque chose de louche.~ // à 3030
+@3022 = ~Elle a essayé de me tuer, et je pense qu'elle est impliquée dans un complot sérieux contre le royaume.~ // à 3035
+
+@3030 = ~Ah bon ? Et comment avez-vous découvert ces informations ?~ // à 3031 (PC)
+@3031 = ~Mes… euh… propres investigations.~
+@3032 = ~Mais vous êtes comique ! Sachez que Zallanora est l'une de nos exécutrices les plus distinguées, alors voici mon conseil : tenez-vous à l'écart. Croyez-moi, vous ne voulez pas vous attirer ses foudres. Au revoir.~
+@3035 = ~Vous tuer, hein ? Vous êtes vraiment pénible, je comprends pourquoi. Maintenant, je suis occupé, alors je vous prie de me laisser tranquille.~

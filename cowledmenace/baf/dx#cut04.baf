@@ -30,6 +30,8 @@ THEN
 		Wait(1)
 		CreateVisualEffectObject("SPPLANAR","dx#shoon")
 		CreateVisualEffectObject("SPPLANAR","dx#demi")
+		CreateVisualEffectObject("SPPLANAR","dx#shoon")
+		CreateVisualEffectObject("SPPLANAR","dx#demi")
 		Wait(3)
 		Kill("DX#DEMI")
 		MultiPlayerSync()
