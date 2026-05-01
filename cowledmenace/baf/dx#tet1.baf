@@ -3,7 +3,7 @@ IF
 	PartyHasItem("MISC45")  // Rogue Stone
 THEN
 	RESPONSE #100
-		DisplayString(Myself,@91)  //  
+		DisplayString(Myself,@91)  //  @91=~As you approach the cliff, the rogue stone in your backpack starts glowing fiercely and disappears. You are pulled into the blackness.~
 		StartCutSceneMode()
 		CreateVisualEffectObject("SPDIMNDR",Player1)
 		Wait(4)

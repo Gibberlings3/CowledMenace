@@ -8,4 +8,5 @@ THEN
 		EraseJournalEntry(@102)
 		EraseJournalEntry(@103)
 		AddJournalEntry(@110,QUEST)
+		Continue()
 END

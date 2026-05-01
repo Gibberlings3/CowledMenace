@@ -1,0 +1,10 @@
+IF
+	IsOverMe([PC])
+	PartyHasItem("MISC45")  // Rogue Stone
+	GlobalLT("RoguestoneWarn","GLOBAL",2)
+THEN
+	RESPONSE #100
+		SaveGame(0)
+		SetGlobal("RoguestoneWarn","GLOBAL",2)
+		DisplayString(Myself,@88)  //  @88=~The Rogue Stone in your backpack starts humming strongly. Clearly it is reacting to something very close here.~
+END

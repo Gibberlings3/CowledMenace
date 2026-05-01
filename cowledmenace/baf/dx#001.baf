@@ -10,6 +10,7 @@ THEN
 		SetGlobal("TwistedLetterFound2","GLOBAL",1)
 		EraseJournalEntry(@101)
 		AddJournalEntry(@103,QUEST)
+		Continue()
 END
 
 IF
@@ -24,4 +25,5 @@ THEN
 		SetGlobal("TwistedLetterFound2","GLOBAL",1)
 		EraseJournalEntry(@101)
 		AddJournalEntry(@102,QUEST)
+		Continue()
 END

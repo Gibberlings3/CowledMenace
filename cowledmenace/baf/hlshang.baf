@@ -1,9 +1,0 @@
-IF
-Global("ShangalarMove","AR1008",2)
-HasItem("DX#INVUL",Myself)
-Delay(6)
-THEN
-RESPONSE #100
-DestroyItem("DX#INVUL")
-Continue()
-END

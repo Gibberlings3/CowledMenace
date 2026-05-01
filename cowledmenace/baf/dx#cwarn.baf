@@ -6,5 +6,16 @@ THEN
 	RESPONSE #100
 		SetGlobal("WardstoneWarn","GLOBAL",1)
 		DisplayString(Myself,@89)  
+		Continue()
+END
+
+IF
+	Entered([PC])
+	PartyHasItem("DX#WARDS")  // Wardstone
+	Global("LaeralCrypt","GLOBAL",0)
+	!Global("LaeralAttacked","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("LaeralCrypt","GLOBAL",1)  
 		CreateCreatureDoor("DX#LAERA",[1000.2000],SW)
 END

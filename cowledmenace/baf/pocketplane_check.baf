@@ -1,9 +1,0 @@
-IF
-	Global("ZallPocket","GLOBAL",1)
-THEN
-	RESPONSE #100
-		SetGlobal("ZallPocket","GLOBAL",2)
-		CreateCreature("DX#RZALL",[1930.1234],SE)
-		CreateCreature("DX#LAERA",[1800.1280],NE)
-		ActionOverride("DX#RZALL",StartDialogueNoSet(Player1))
-END
