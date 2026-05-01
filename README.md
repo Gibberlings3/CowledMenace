@@ -8,7 +8,7 @@
 
 Someone has been working in the shadows, manipulating events on the Sword Coast to their advantage.
 
-Unravel the mysteries of the Twisted Rune and progress beyond fighting the last wave of Cowled Wizards in Athkatla in this mod for Baldur's Gate II!
+Unravel the mysteries of the Twisted Rune and progress beyond fighting the last wave of Cowled Wizards in Athkatla in this mod for Baldur's Gate II
 
 ## Content Index
 
@@ -26,7 +26,7 @@ Unravel the mysteries of the Twisted Rune and progress beyond fighting the last 
 
 Cowled Menace should be compatible with mostly everything, especially since in v2.0.0 I've changed the way the mod works. Very, very few vanilla assets are used or altered, and if they are, they were altered using maximum compatibility editing practices, as unobtrusive as possible.
 
-Although I am in need of more testers for this regarding balance, Cowled Menace works with Sword Coast Stratagems (SCS) in the sense that it doesn't break things. Not sure if the fights are too easy or too hard with it installed though.
+Cowled Menace works with Sword Coast Stratagems (SCS) in the sense that it doesn't break things, but I am in need of more testers for this regarding balance. Not sure if the fights are too easy or too hard with it installed.
 
 In general, Cowled Menace should be installed after NPC mods and EET's main component (if using EET), but before Tweaks mods and EET_end. Then SCS last. 
 
@@ -66,7 +66,7 @@ Special Thanks to Roxanne on Gibberlings3 for some pointers on this one.
 
 *(Optional)* **Mages cast Gate far from themselves.**
 
-This component is aimed at vanilla (non-SCS) installs and is quite simple: casters able to cast Gate will now do so far from themselves to reduce the chance that the demon will be their next target (genius AI). Shouldn't have any compatibility issues as it's a very precise editing that I've done, compatibility-friendly to the max. Note: This component is completely and utterly useless if you have SCS installed as it will overwrite all of that.
+This component is aimed at vanilla (non-SCS) installs and is quite simple: casters able to cast Gate will now do so far from themselves to reduce the chance that the demon will be their next target (genius AI). Shouldn't have any compatibility issues as it's a very precise editing that I've done, compatibility-friendly to the max. Note: This component is completely and utterly useless if you have SCS installed.
 
 
 *(Optional)* **Use pre-EE Spell Deflection Globe** *(Requires EE)*
@@ -91,7 +91,7 @@ In any case, don't forget to mess with and investigate the Cowled Wizards too, a
 
 Special Thanks to Mike1072, demivrgvs, Roxanne, kreso, DavidW, CamDawg, Nythrun & Miloch (area patching) and every helpful fellow on gibberlings3 forums!
 
-Custom portrait by Wizards of the Coast LLC.
+Custom portrait of <redacted> by Wizards of the Coast LLC.
 
 Huge thanks to [klatu](http://www.shsforums.net/files/file/1109-klatu-tweaks-and-fixes/), I based many of my code on his tweaks and learned a lot of coding from his mods. Because the Cowled Wizards are heavily implicated in my mod, the main component installs a modified version of his "Appropriate XP Rewards for Cowled Enforcers" tweak. Many thanks also to the creators of the Infinity Engine Structure Description Project; and to Jon Hauglid, for Near Infinity.
 
@@ -123,15 +123,16 @@ This Modification is unofficial Fan Content permitted under the Fan Content Poli
 - Major edits to the dialogue and scripts to add more lines, give players more choices, and improve the writing. Fixed broken triggers in some dialogue as well as missing lines, opening up more options.
 - My mod is now finally compatible with mods such as Unofficial Item Pack due to a change in the way the mod operates. I no longer rely on MAGE18Z, which is a vanilla NPC, for anything, improving compatibility enormously. It is now highly, highly unlikely that another mod breaks mine, it would have to do some pretty crazy wide-ranging edits, like SCS does. SCS is unaffected by this change, however. Although it does edit my NPCs (and I want it to and properly arrange for it), SCS has never broken my mod, neither before, nor now, because my mod was made with SCS overwriting it after in mind.
 - Fixed a dead-end scenario where you could no longer progress the quest if certain conditions were met (it was linked with paying Corneil for the spellcasting licence in Athkatla at the wrong time). Now you can (normally) never get stuck. Hopefully.
-- I have accounted for as many fringe scenearios as possible.
+- I have tried to account for as many fringe scenarios as possible.
 - It's not much but the difficulty slider now has a small impact on which spawns can happen at one point.
 - Made small revisions so the mod is as lore-accurate as possible.
-- Better reward in the new Enclave.
+- Better reward in the new Enclave. 
 - Cleaned up unused assets/scripts and fixed various minor bugs. 
+- Added a French translation for 2.0.0. Removed Russian, schinese, polish, and italian translations while I wait for updates. Will update as/if they come in.
 
-I consider this port to BG2EE to be the definitive version of the mod. Even if you are playing through the Enhanced Edition Trilogy, I would strongly recommend using this version instead. The content is better written, more streamlined and polished, there is more of it, and it has just superior implementation. The old EET version 1.0.4 was rough. The mod wasn't properly finished to be honest. It remains available for those who want to use it though, as it still works. More as a curiosity than anything else I guess, or if the translation hasn't been updated yet in your language. 
+I consider this port to BG2EE to be the definitive version of the mod. Even if you are playing through the Enhanced Edition Trilogy, I would strongly recommend using this version instead. The content is better written, more streamlined and polished, there is more of it, and it has just superior implementation. The old EET version 1.0.4 was rough. The mod wasn't properly finished to be honest. It remains available for those who want to use it though, as it still works.
 
-1.0.4 -- Translations
+1.0.4 -- Translations (This is the last version that requires the Enhanced Edition Trilogy)
 
 - Fixed typos in simplified Chinese translation (credits to Lewis Liu)
 - Added Italian translation (threetimesdavey)

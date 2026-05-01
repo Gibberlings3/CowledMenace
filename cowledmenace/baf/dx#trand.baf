@@ -14,7 +14,7 @@ THEN
 		SetGlobal("DXFirstRandAmbush","GLOBAL",1)
 		IncrementGlobal("RuneEncounter2","GLOBAL",1)
 		SetGlobalTimer("RuneEncounter2Wait","GLOBAL",THREE_DAYS)
-		CreateCreatureDoor("dx#taw01",[488.558],NE)
+		CreateCreature("dx#taw01",[488.558],NE)
 END
 
 IF
@@ -28,5 +28,5 @@ THEN
 	RESPONSE #100
 		IncrementGlobal("RuneEncounter2","GLOBAL",1)
 		SetGlobalTimer("RuneEncounter2Wait","GLOBAL",THREE_DAYS)
-		CreateCreatureDoor("dx#taw01",[488.558],NE)
+		CreateCreature("dx#taw01",[488.558],NE)
 END

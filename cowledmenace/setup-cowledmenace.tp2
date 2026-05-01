@@ -253,6 +253,44 @@ ASK_EVERY_COMPONENT                                                             
 			END
 		END
 	BUT_ONLY
+	
+// Add actors to "Sent to Spellhold" Cutscene
+
+	COPY_EXISTING ~ar0069.are~ ~override~ // Cutscene Area
+		PATCH_IF SOURCE_SIZE > 0x28f BEGIN
+			LPF fj_are_structure
+  				INT_VAR
+ 				fj_loc_x      = 801
+ 				fj_loc_y      = 659
+ 				fj_dest_loc_x  = 801
+	 			fj_dest_loc_y  = 659
+   				fj_animation    = 0x6211 // mage female elf  
+				fj_orientation  = 2   // SW
+	 			STR_VAR
+				fj_structure_type = actor
+ 				fj_name      = Zallanora
+ 				fj_cre_resref  = dx#zalla
+			END
+		END
+	BUT_ONLY
+	
+	COPY_EXISTING ~ar0069.are~ ~override~ // Cutscene Area
+		PATCH_IF SOURCE_SIZE > 0x28f BEGIN
+			LPF fj_are_structure
+  				INT_VAR
+ 				fj_loc_x      = 920
+ 				fj_loc_y      = 747
+ 				fj_dest_loc_x  = 920
+	 			fj_dest_loc_y  = 747
+   				fj_animation    = 0x6210 // mage female elf 
+				fj_orientation  = 2   // SW
+	 			STR_VAR
+				fj_structure_type = actor
+ 				fj_name      = Khollynnus Paac
+ 				fj_cre_resref  = MGKHOL01
+			END
+		END
+	BUT_ONLY
 
 // Add a Twisted Rune enclave in Umar Hills
 
@@ -539,7 +577,7 @@ ASK_EVERY_COMPONENT                                                             
 	ACTION_FOR_EACH bcs IN ~ar0041.bcs~ ~ar0042.bcs~ ~ar0045.bcs~ ~ar0045.bcs~ ~ar0046.bcs~ 
 	BEGIN
 		ACTION_IF FILE_EXISTS_IN_GAME ~%bcs%~ BEGIN
-			EXTEND_TOP ~%bcs%~ ~cowledmenace/baf/dx#trand.baf~									// Script to spawn Twisted Rune Ambushes (they are not guaranteed)
+			EXTEND_TOP ~%bcs%~ ~cowledmenace/baf/dx#trand.baf~									// Script to spawn Twisted Rune Ambushes (when certain conditions are met)
 		END	
 	END
 
@@ -712,8 +750,6 @@ ASK_EVERY_COMPONENT                                                             
 	BUT_ONLY  	
 
 // Zallanora Editing - Wizard level 30
-
-// 	COPY ~cowledmenace/bmp/dx#zport.bmp~ ~override~ 												// Zallanora portrait - removed for now
 
 	COPY ~cowledmenace/cre/dx#zalla.cre~ ~override~
   		PATCH_IF (SOURCE_SIZE > 0x2d3) BEGIN
