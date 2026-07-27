@@ -25,6 +25,16 @@ END
 
 IF
 	See(NearestEnemyOf(Myself))
+	Global("TStimerlaunched","LOCALS",0)
+THEN
+	RESPONSE #100
+		StartTimer(2,1)
+		SetGlobal("TStimerlaunched","LOCALS",1)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	TimerExpired(2)
 	Global("timestop","LOCALS",0)
 THEN
 	RESPONSE #100
@@ -35,12 +45,22 @@ END
 
 IF
 	See(NearestEnemyOf(Myself))
-	Global("ragate","LOCALS",0)
+	Global("rabigby","LOCALS",0)
 THEN
 	RESPONSE #100
 		DisplayString(Myself,@409)
-		SpellNoDec(NearestEnemyOf(Myself),WIZARD_GATE)
-		SetGlobal("ragate","LOCALS",1)
+		SpellNoDec(FarthestEnemyOf(Myself),WIZARD_BIGBYS_CRUSHING_HAND)
+		SetGlobal("rabigby","LOCALS",1)
+END
+
+IF
+	See(NearestEnemyOf(Myself))
+	Global("rawail","LOCALS",0)
+THEN
+	RESPONSE #100
+		DisplayString(Myself,@414)
+		SpellNoDec(NearestEnemyOf(Myself),WIZARD_WAIL_OF_THE_BANSHEE)
+		SetGlobal("rawail","LOCALS",1)
 END
 
 IF

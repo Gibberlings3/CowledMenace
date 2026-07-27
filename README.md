@@ -10,47 +10,45 @@ Someone has been working in the shadows, manipulating events on the Sword Coast 
 
 Unravel the mysteries of the Twisted Rune and progress beyond fighting the last wave of Cowled Wizards in Athkatla in this mod for Baldur's Gate II
 
+![Banner](https://media.invisioncic.com/u284679/monthly_2026_05/bece916831d509c3facaade143a7ae67.jpg.2cbc7751fd871af4b3df079fd5da3b01.jpg)
+
 ## Content Index
 
+- [Starting the Quest](#starting-the-quest)
 - [Compatibility](#compatibility)
 - [Installation](#installation)
 - [Components](#components)
-- [Starting the Quest](#starting-the-quest)
 - [Spoilers Section](#spoilers-section)
 - [Thanks and Acknowledgements](#thanks-and-acknowledgements)
 - [Tools Used in Creation](#tools-used-in-creation)
 - [Copyright and Legal Information](#copyright-and-legal-information)
 - [Version History](#version-history)
 
+## Starting the Quest
+
+**Hooks**
+
+Starting the Tanner quest in the Bridge district of Athkatla usually marks the first time you encounter the Twisted Rune and get involved in their business, even in the vanilla game. Following clues you receive from those engagements, as well as exploring around the Bridge and Temple Districts should help you progress. Do not hesitate to get out of Athkatla if a clue leads there. Even a vanilla letter you thought was useless might not be useless anymore.
+
+Some of the encounters in this mod happen in different fashion depending on the order in which you progress through the quest, and the actors you have encountered (and in which order). It's quite modular. The encounter in the new Enclave in particular varies greatly in difficulty depending on choices you've made in the game, outside of this quest. Another encounter depends on your difficulty slider. I have restored unused lines by Shangalar in the vanilla game too, which I was quite surprised to find. A word of warning: the Twisted Rune are a powerful and ancient organisation... come prepared.
+
+In any case, don't forget to mess with and investigate the Cowled Wizards too, as this mod's name implies.
+
 ## Compatibility
 
 Cowled Menace should be compatible with mostly everything, especially since in v2.0.0 I've changed the way the mod works. Very, very few vanilla assets are used or altered, and if they are, they were altered using maximum compatibility editing practices, as unobtrusive as possible.
 
-In general, Cowled Menace should be installed after NPC mods and EET's main component (if using EET), but before Tweaks mods and EET_end. Then SCS last. 
+Please note that Cowled Menace makes use of the vanilla NPC named "Zallanora" (MAGE18Z) a lot, therefore if another mod wishes to use her extensively, there might be a conflict. I have tried to account for it as much as possible (looking at you Unofficial Item Pack - more on that below), but I can't account for everything. If you are a mod author who made a mod using her or are planning to, please contact me so we can work something out. 
 
-Since v2.0.0, this mod is compatible with the Unofficial Item Pack (v1.0.4 and below aren't)
+In general, Cowled Menace should be installed after NPC mods and EET's main component (if using EET), but before Tweaks mods, EET_end, and SCS. 
+
+One exception: Cowled Menace must be installed **after** Unofficial Item Pack because it replaces the 'MAGE18Z' resource entirely which breaks my mod. 
 
 ### SCS
 
-Cowled Menace is compatible with Sword Coast Stratagems (SCS) in the sense that it doesn't break things (I have tested it numerous times), but I am in need of more testers for this regarding balance. Not sure if the fights are too easy or too hard with it installed.
+Cowled Menace is compatible with Sword Coast Stratagems (SCS) in the sense that SCS doesn't break things (I have tested it numerous times), but I am not sure if the fights are too easy or too hard with it installed.
 
-There is one interaction that requires manual intervention and it's if you want the SCS Insane difficulty "HLA's for specific spellcasters in the game" setting to include those from Cowled Menace as well (I recommend it). On difficulties below Insane this isn't relevant, and on Legacy of Bhaal difficulty for that setting, all eligible spellcasters in the game will have HLA's including those from my mod, so no need to do anything. However, if you're indeed playing on SCS Insane or Insane+ difficulty and want the especially powerful spellcasters added by this mod to be able to use HLA's in SoA, you'll need to do a quick edit to a 2da file in SCS **before installing SCS.**
-
-After extracting SCS but before installing it (close the auto-launching exe), go to the SCS mod folder and find the following file in the path: 
-
-> stratagems\mage\hla.2da
-
-Then, once that file is opened in Notepad, add the 3 following lines at the bottom: 
-
-```
-dx#lich1
-dx#lichj
-dx#zalla
-```
-
-You can also remove specific CRE files here from having access to HLA's depending on your preferences.
-
-Then install SCS as normal and those 3 spellcasters from my mod will now have access to their HLA's. Remember to set difficulty in-game properly otherwise they won't use them.
+If you want select Cowled Menace spellcasters to use HLA's and hurl planetars at you with SCS (I recommend it since they are indeed worthy of them lore-wise), I made a tweak for it located [here - Dax Tweaks](https://github.com/Maltodaxtrin/Dax-Tweaks#components). (Insane difficulty only and above). It's in a tweaks mod instead of Cowled Menace because it has to be installed after SCS (Cowled Menace is installed way before SCS: after NPC mods)
 
 ## Installation
 
@@ -60,50 +58,75 @@ Alternatively the files can be extracted from the archive using WinRAR. If prope
 
 Please run **setup-cowledmenace.exe** in your BG2 folder to reinstall, uninstall, or otherwise change components.
 
-Cowled Menace is available in English, French, Simplified Chinese, and Polish
+Cowled Menace is currently available in English, French, and Simplified Chinese (latest version), as well as Polish (v2.0.3)
 
 ## Components
 
 **Main Component - The Cowled Menace**
 
-This is where everything major about the mod is installed, from custom NPCs to new areas, new scripts, dialogs, and items. Refer to the Starting the Quest Section below if you want to know more about that. For those of you who are stuck or wish to get spoiled, there is a spoilers section as well.
+This is where everything major about the mod is installed, from custom NPCs to new areas, new scripts, dialogs, and items. Refer to the Starting the Quest Section above if you want to know more about that. For those of you who are stuck or wish to get spoiled, there is a spoilers section as well.
 
-The quest aims to tie up some loose ends concerning the Cowled Wizards and bring closure to the unfinished Twisted Rune content in the Vanilla game by adding lots of it and a conclusion.
+The quest aims to tie up some loose ends concerning the Cowled Wizards and bring closure to the unfinished Twisted Rune content in the Vanilla game by adding lots of it, and a conclusion.
 
-Note: This component also modifies the XP provided by Cowled Wizards very much in the same way the "Appropriate XP Rewards for Cowled Enforcers" component from "klatu tweaks and Fixes" does it, as this mod deals with Cowled Wizards quite a bit. So it's unnecessary to install it separately as they do largely the same thing.
+Note: This component also increases the XP provided by Cowled Wizards very much in the same way the "Appropriate XP Rewards for Cowled Enforcers" component from "klatu tweaks and Fixes" does it, as this mod deals with Cowled Wizards quite a bit. So it's unnecessary to install it separately as they do largely the same thing. For those who are unaware why this is needed, most Cowled Wizards in the base game give 120 xp when killed, which makes no sense as they are level 14+ spellcasters. This fix increases their xp reward to 6000. Very compatibility-friendly as it doesn't do anything else to those files except change the XP value. 
 
-The other components aren't technically part of the main quest line but I recommend installing them anyway if they feel appealing to you.
+The other components below aren't technically required, but I recommend installing them anyway.
 
+*(Optional)* **Difficulty add-on - The mod's antagonist can summon a Dark Planetar** (requires Main Component)
 
-*(Optional)* **Appropriate Items for High-Level Spellcasters**
+With this component active, the mod's villain will summon a Dark Planetar when they feel the time is right (not necessarily right away). Without this component, an undisclosed level 9 spell is cast instead. 
 
-A level 14+ wizard running around with a nonmagical quarterstaff and 28 gold pieces makes no sense at all, especially if they teleported in expecting a fight since they would come prepared. This component aims to drastically increase the items worn and dropped by high-level spellcasters in Baldur's Gate 2, specifically targeting the ones who currently drop nothing, or close to nothing. The challenge level of these fights will increase as worn items will provide these spellcasters with various bonuses, but the rewards will be greater to compensate (better loot). The goal is that those encounters make sense.
+**Note for SCS**: this component doesn't actually do anything if you plan on installing SCS down the line, as SCS fully replaces the AI. To still have the mages of this mod hurl planetars at you with SCS, check out [my Tweaks mod](https://github.com/Maltodaxtrin/Dax-Tweaks) and install it after SCS.
+
+*(Optional)* **Appropriate Rewards for High-Level Spellcasters (recommended)**
+
+A level 14+ wizard awarding 120 xp and running around with a nonmagical quarterstaff and 28 gold pieces makes no sense at all, especially if they teleported in expecting a fight since they would come prepared. This component aims to increase the items worn and dropped by high-level spellcasters in Baldur's Gate 2, specifically targeting the ones who currently drop nothing, or close to nothing. The challenge level of these fights might increase as worn items will provide these spellcasters with various bonuses, but the rewards will be greater to compensate (better loot). The goal is that those encounters make sense.
 
 This component aims to give items to individual, distinct creatures, not those created by extraordinary circumstances (like clones). Killing the same enemy twice (Jon Irenicus, for example) will not yield double the rewards. Exception: Lich in the "Spawn Undead" script, as it's implied it's a separate lich each time, that was simply chilling there when you arrive.
 
-Compatibility: This component is intended and calibrated for those who have Sword Coast Stratagems (SCS) installed. However, the items added to the creatures are either vanilla items, or vanilla items modified by those mods so it will still work in a vanilla install. Any new items added in this component are additions made by myself, and should therefore work on any install and (theoritically) not overwrite anything. A compatibility problem could arise if you have a mod installed that alters random treasure tables, since this component also does so.
+Compatibility: The items added to the creatures are either vanilla items, or vanilla items modified by Item Revisions or SCS down the line so it will still work whether on a vanilla install or with those mods installed. This mod alters random treasure tables, but only by adding to them dynamically. It is compatible with the Tweaks Anthology, SCS, and Item Randomiser components that do the same thing (tested). I merely add items to those affected NPC's, very compatibility-friendly.
+
+**Full list of affected spellcasters**: 
+```
+COWENF1 - Male Mid-level Cowled Enforcer
+COWENF2 - Male High-level Cowled Enforcer
+COWENF3 - Female Mid-level Cowled Enforcer
+COWENF4 - Female Mid-level Cowled Enforcer
+MAGE18A - Female High-level Cowled Enforcer (Last wave)
+MAGE16C - Female High-level Cowled Enforcer (Last wave)
+MAGE18Z - Zallanora (Cowled Enforcer Boss, Last wave) - Different items if Cowled Menace is installed or not.
+HLLAYEN - Layene (Twisted Rune)
+HLSHANG - Shangalar (Twisted Rune)
+HLSION - Sion (Guarded Compound)
+FIRMAG01 - Conster (Firkraag Dungeon)
+OBSHAL05 - Kayardi (Planar Sphere)
+OBSHAL07 - Mogadish (Planar Sphere) (Cleric)
+OBSHAL03 - Necre (Planar Sphere)
+OBSHAL06 - Tabeila (Planar Sphere)
+TOLMAG02 - Mage (Planar Sphere Ice and Fire Room)
+TOLGER2 - Tolgerias
+PPCOWLED - Perth the Adept (Brynnlaw)
+HLLICH - Elemental Lich
+HLSHADE - Shade Lich
+GRVLCH01 - Crooked Crane Lich (City Gates)
+UDTRAP04 - Alchra Diagott (Underdark Trap)
+JARLICH - Deirex the Lich
+LICH01 - Generic Lich from "Spawn Undead" script
+AMLICH01 - Vongoethe (Amkethran - ToB)
+DX#ZALLA - Zallanora (Another Zallanora for Cowled Menace - only if Cowled Menace main component is installed) Why another? Play through the mod and find out!
+DX#RUNEW - Twisted Rune Mage (only if Cowled Menace main component is installed)
+DX#DALID - Twisted Rune - Dalina (only if Cowled Menace main component is installed)
+DX#LICH1 - Twisted Rune - Kartak Spellseer (only if Cowled Menace main component is installed)
+DX#LICHJ - Twisted Rune - Jymahna (only if Cowled Menace main component is installed)
+DX#LICHT - Twisted Rune Lich (only if Cowled Menace main component is installed)
+DX#GRVMU - Ancient Mummy (Cleric) (only if DaxTweaks component adding this new enemy to the game is installed or will be installed down the line)
+```
+
+A huge majority of the added items assigned to them are pulled from random loot tables. All but Vongoethe are spellcasters in Shadows of Amn, as Throne of Bhaal already gives them at least a little something, so I deemed editing their drops to be unnecessary. Ascension goes a lot further for those who have it installed. 
 
 Special Thanks to Roxanne on Gibberlings3 for some pointers on this one.
 
-
-*(Optional)* **Mages cast Gate far from themselves.**
-
-This component is aimed at vanilla (non-SCS) installs and is quite simple: casters able to cast Gate will now do so far from themselves to reduce the chance that the demon will be their next target (genius AI). Shouldn't have any compatibility issues as it's a very precise editing that I've done, compatibility-friendly to the max. Note: This component is completely and utterly useless if you have SCS installed.
-
-
-*(Optional)* **Use pre-EE Spell Deflection Globe** *(Requires EE)*
-
-This component has 2 options to choose from. Either the old pre-EE globe is added only to Spell Trap and the Staff of the Magi (recommended, to help distinguish it since it's so powerful), or to the following spells as well: Minor Spell Deflection, Spell Deflection, Spell Trap, and their Item versions. For variety's sake.
-
-## Starting the Quest
-
-**Hooks**
-
-For most players, starting the Tanner quest in the Bridge district of Athkatla marks the first time you encounter the Twisted Rune and get involved in their business, even in the vanilla game. Following clues you receive from those engagements, as well as exploring around the Bridge and Temple Districts should help you progress. Do not hesitate to get out of Athkatla if a clue leads there. Even a vanilla letter you thought was useless might not be useless anymore.
-
-Some of the encounters in this mod happen in different fashion depending on the order in which you progress through the quest, and the actors you have encountered (and in which order). It's quite modular. The encounter in the new Enclave in particular varies greatly in difficulty depending on choices you've made in the game, outside of this quest. Another encounter depends on your difficulty slider. I have restored unused lines by Shangalar in the vanilla game too, which I was quite surprised to find. A word of warning: the Twisted Rune are a powerful and ancient organisation... come prepared.
-
-In any case, don't forget to mess with and investigate the Cowled Wizards too, as this mod's name implies. 
+Note: This component also increases the XP provided by Cowled Wizards very much in the same way the main component above does, in case you don't want the core mod. Refer to the section just above for more info.
 
 ## Spoilers Section
 
@@ -113,7 +136,7 @@ In any case, don't forget to mess with and investigate the Cowled Wizards too, a
 
 Special Thanks to Mike1072, demivrgvs, Roxanne, kreso, DavidW, CamDawg, Nythrun & Miloch (area patching) and every helpful fellow on gibberlings3 forums!
 
-Custom portrait of (redacted) by Wizards of the Coast LLC.
+Portrait of Laeral Silverhand by Wizards of the Coast LLC.
 
 Huge thanks to [klatu](http://www.shsforums.net/files/file/1109-klatu-tweaks-and-fixes/), I based many of my code on his tweaks and learned a lot of coding from his mods. Because the Cowled Wizards are heavily implicated in my mod, the main component installs a modified version of his "Appropriate XP Rewards for Cowled Enforcers" tweak. Many thanks also to the creators of the Infinity Engine Structure Description Project; and to Jon Hauglid, for Near Infinity.
 
@@ -135,6 +158,23 @@ You are allowed to submit [maintenance updates](MAINTENANCE-NOTICE.md) for this 
 This Modification is unofficial Fan Content permitted under the Fan Content Policy. Not approved/endorsed by Wizards. Portions of the materials used are property of Wizards of the Coast. ©Wizards of the Coast LLC. This mod is also not developed, supported, or endorsed by BioWare, Black Isle Studios, Interplay Entertainment Corp., Overhaul Games or Beamdog. All other trademarks and copyrights are property of their respective owners.
 
 ## Version History
+
+2.1.0 -- Major Update (Needs translation update)
+
+- **Added around 150 lines of possible interjections for vanilla NPC's throughout the quest**. Every companion has at least 1 line (including Wilson!), although Korgan, Edwin, and Jaheira are the most represented.
+- Reworked some of the dialogue at the same time, added new options and replies.
+- Restored the original extended ending dialogue. Not sure why I cut it in the first place. ¯\\\_(ツ)_/¯
+- The real Zallanora now has a simulacrum in the last wave of the Cowled Wizards in the form of the vanilla CRE file, re-purposed. This was added for better compatibility with other mods since the changes in v2.0.0, and also because it's cool as hell (thanks to jastey for the idea). The fight will now be harder as a result. The same is true for the Umar Hills Twisted Rune enclave when certain conditions are met.
+- Further improved the rewards of the new Twisted Rune Enclave (added a powerful new helmet for divine spellcasters).
+- Buffed the items received in the final encounter. 
+- Encounters in general begin faster, to give you less time to cheese them. And they're harder. The final encounter is now instantaneous so it's harder to cheese. It is still possible. It is always possible to cheese in this game. But at least now you can't kill one actor before all others join in (thanks to rubyFeedback).
+- Fixed some continuity errors.
+- Minor script fixes.
+- Minor bug fixes.
+- Fixed various typos, thanks to visionok.
+- Cleaned the code.
+- Some minor modifications to the 2nd component, "Appropriate Items for High-Level Spellcasters". One spellcaster from ToB has been added to the list. The readme has been updated with a list of all affected spellcasters in the game. Additionally, the appropriate XP rewards for Cowled Wizard fix from the main component has also been added to that optional component, which has been renamed to "Appropriate Rewards for High-Level Spellcasters" since it now includes xp as well (cowled wizards only). That's in case you want only that upgrade and not the full Cowled Menace mod.
+- Transferred the last 2 optional components over to my Tweaks mod. They were a bit random and there was no link between Cowled Menace and these components, and they are best used in a separate tweaks mod encompassing all my optional tweaks to the game. Suffice to say, I invite you to check out [my Tweaks mod](https://github.com/Maltodaxtrin/Dax-Tweaks) as they could be of interest to you.
 
 2.0.3 -- Small fixes
 

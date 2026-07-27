@@ -4,7 +4,9 @@ IF
 	PartyHasItem("DX#WARDS")  // Wardstone
 THEN
 	RESPONSE #100
-		DisplayString(Myself,@92)  //  
+		DisplayString(Myself,@92)  
+		TakePartyItem("dx#wards")
+		DestroyItem("dx#wards")
 		StartCutSceneMode()
 		CreateVisualEffectObject("SPDIMNDR",Player1)
 		Wait(4)

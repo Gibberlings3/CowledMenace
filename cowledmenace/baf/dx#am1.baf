@@ -1,52 +1,36 @@
-// Failsafe for bribed cowled wizards (Small Teeth Pass only)
-
-IF
-	Entered([PC])
-	!Global("ZallaFlee","GLOBAL",1)
-	!Global("ZallaSpawned","GLOBAL",1)
-	Global("BribedCowled","GLOBAL",1)
-	AreaCheck("AR1700")  // Small Teeth Pass
-	Global("ACH_TWISTED_VICTORY","GLOBAL",1)
-	Global("ACH_TWISTED_VICTORY_2","GLOBAL",1)
-THEN
-	RESPONSE #100
-		SetGlobal("ZallaSpawned","GLOBAL",1)
-		CreateCreatureDoor("dx#zalla",[3212.1065],SW)  // Zallanora  
-		SmallWait(80)
-		ActionOverride("dx#zalla",StartDialogueNoSet(LastSeenBy(Myself)))
-END
-
-// Default path
-
-IF
-	Entered([PC])
-	Global("ZallaFlee","GLOBAL",1)
-	!Global("ZallaSpawned","GLOBAL",1)
-	AreaCheck("AR1700")  // Small Teeth Pass
-	Global("ACH_TWISTED_VICTORY","GLOBAL",1)
-	Global("ACH_TWISTED_VICTORY_2","GLOBAL",1)
-THEN
-	RESPONSE #100
-		SetGlobal("ZallaSpawned","GLOBAL",1)
-		CreateCreatureDoor("dx#zalla",[3212.1065],SW)  // Zallanora  
-		SmallWait(80)
-		ActionOverride("dx#zalla",StartDialogueNoSet(LastSeenBy(Myself)))
-END
-
 // Default path
 
 IF
 	IsOverMe([PC])
 	Global("ZallaFlee","GLOBAL",1)
 	!Global("ZallaSpawned","GLOBAL",1)
-	AreaCheck("AR0700")  // Waukeen's Promenade
 	GlobalGT("Chapter","GLOBAL",5)
 	Global("ACH_TWISTED_VICTORY","GLOBAL",1)
 	Global("ACH_TWISTED_VICTORY_2","GLOBAL",1)
 THEN
 	RESPONSE #100
 		SetGlobal("ZallaSpawned","GLOBAL",1)
-		CreateCreatureDoor("dx#zalla",[1784.1550],S)  // Zallanora
-		SmallWait(80)
+		MoveViewPoint([1796.1604],INSTANT)
+		CreateVisualEffect("SPROTECT",[1784.1550])
+		CreateVisualEffect("SPROTECT",[1938.1430])
+		CreateVisualEffect("SPROTECT",[1777.1740])
+		CreateVisualEffect("SPROTECT",[1954.1590])
+		CreateVisualEffect("SPROTECT",[1720.1452])
+		CreateVisualEffect("SPROTECT",[1541.1588])
+		Wait(1)
+		CreateVisualEffect("SPDISPMA",[1784.1550])
+		CreateVisualEffect("SPDISPMA",[1938.1430])
+		CreateVisualEffect("SPDISPMA",[1777.1740])
+		CreateVisualEffect("SPDISPMA",[1954.1590])
+		CreateVisualEffect("SPDISPMA",[1720.1452])
+		CreateVisualEffect("SPDISPMA",[1541.1588])
+		SmallWait(7)
+		CreateCreature("dx#zalla",[1784.1550],SE)
+		CreateCreature("DX#LICHJ",[1938.1430],S)
+		CreateCreature("DX#RUNEE",[1777.1740],N)
+		CreateCreature("GOLADA01",[1954.1590],S)
+		CreateCreature("DBONEF01",[1720.1452],SE)
+		CreateCreature("MINDVA01",[1541.1588],E) 
+		ActionOverride("dx#zalla",Enemy())
 		ActionOverride("dx#zalla",StartDialogueNoSet(LastSeenBy(Myself)))
 END

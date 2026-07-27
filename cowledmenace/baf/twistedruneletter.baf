@@ -1,5 +1,17 @@
 IF
 	!Global("TwistedLetterFound","GLOBAL",1)
+	Global("ACH_TWISTED_VICTORY_2","GLOBAL",1)
+	PartyHasItem("DX#TWISL")
+THEN
+	RESPONSE #100
+		SetGlobal("TwistedLetterFound","GLOBAL",1)
+		EraseJournalEntry(@105)
+		EraseJournalEntry(@106)
+		AddJournalEntry(@112,QUEST)
+END
+
+IF
+	!Global("TwistedLetterFound","GLOBAL",1)
 	PartyHasItem("DX#TWISL")
 THEN
 	RESPONSE #100
@@ -7,7 +19,6 @@ THEN
 		EraseJournalEntry(@105)
 		EraseJournalEntry(@106)
 		AddJournalEntry(@101,QUEST)
-		Continue()
 END
 
 IF
@@ -18,7 +29,6 @@ THEN
 	RESPONSE #100
 		SetGlobal("DXNameChange2","GLOBAL",1)
 		ActionOverride("dx#laera",SetName(@998))
-		Continue()
 END
 
 IF
@@ -29,5 +39,4 @@ THEN
 	RESPONSE #100
 		CreateCreatureDoor("dx#laera",[1027.358],S)
 		SetGlobal("LaeralAthkatla","GLOBAL",1)
-		Continue()
 END

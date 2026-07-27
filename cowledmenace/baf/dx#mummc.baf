@@ -18,8 +18,13 @@ THEN
 		ApplySpell(Myself,CLERIC_GLOBE_OF_BLADES)  // SPPR698.SPL (Blade Barrier)
 		DisplayString(Myself,@401)
 		ApplySpell(Myself,CLERIC_PROTECTION_FROM_EVIL_10_FOOT)
+		ApplySpell(Myself,CLERIC_SHIELD_OF_THE_ARCHONS)
 		ApplySpell(Myself,CLERIC_IRONSKIN)
 		DisplayString(Myself,@407)
+		DisplayString(Myself,@416)
+		DisplayString(Myself,@416)
+		CreateCreatureObject("SKELWA01",Myself,0,0,0)
+		CreateCreatureObject("SKELWA01",Myself,0,0,0)
 		SetGlobal("Preparation","LOCALS",1)
 END
 
@@ -30,6 +35,16 @@ IF
 THEN
 	RESPONSE #100
 		Spell(Myself,CLERIC_IRONSKIN)  // SPPR506.SPL (Iron Skins)
+END
+
+IF
+    Allegiance(Myself,ENEMY)
+    Detect([PC])
+    !See(LastSeenBy(Myself))
+    HaveSpell(CLERIC_TRUE_SIGHT)  
+THEN
+    RESPONSE #100
+        Spell(Myself,CLERIC_TRUE_SIGHT) 
 END
 
 IF
@@ -159,28 +174,20 @@ END
 
 IF
 	See(NearestEnemyOf(Myself))
+	GlobalLT("mummskellies","LOCALS",3)
 THEN
 	RESPONSE #100
 		SpellNoDec(Myself,CLERIC_ANIMATE_DEAD)  // SPPR301.SPL (Animate Dead)
+		IncrementGlobal("mummskellies","LOCALS",1)
 END
 
 IF
 	See(NearestEnemyOf(Myself))
-	!Range(NearestEnemyOf(Myself),7)
-THEN
-	RESPONSE #100
-		EquipRanged()
-		AttackReevaluate(NearestEnemyOf(Myself),45)
-END
-
-IF
-	See(NearestEnemyOf(Myself))
-	Range(NearestEnemyOf(Myself),7)
 THEN
 	RESPONSE #100
 		EquipMostDamagingMelee()
 		AttackReevaluate(NearestEnemyOf(Myself),45)
-END
+END 
 
 IF
 	Dead("DX#DALID")

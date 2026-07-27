@@ -1,0 +1,73 @@
+// Failsafe for bribed cowled wizards after clearing the enclaves (Small Teeth Pass only)
+
+IF
+	Entered([PC])
+	!Global("ZallaFlee","GLOBAL",1)
+	!Global("ZallaSpawned","GLOBAL",1)
+	Global("BribedCowled","GLOBAL",1)
+	Global("ACH_TWISTED_VICTORY","GLOBAL",1)
+	Global("ACH_TWISTED_VICTORY_2","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("ZallaSpawned","GLOBAL",1)
+		MoveViewPoint([3063.1086],INSTANT)
+		CreateVisualEffect("SPROTECT",[3212.1065])
+		CreateVisualEffect("SPROTECT",[3097.1333])
+		CreateVisualEffect("SPROTECT",[2872.1237])
+		CreateVisualEffect("SPROTECT",[3078.1190])
+		CreateVisualEffect("SPROTECT",[2950.1128])
+		CreateVisualEffect("SPROTECT",[3266.1170])
+		Wait(1)
+		CreateVisualEffect("SPDISPMA",[3212.1065])
+		CreateVisualEffect("SPDISPMA",[3097.1333])
+		CreateVisualEffect("SPDISPMA",[2872.1237])
+		CreateVisualEffect("SPDISPMA",[3078.1190])
+		CreateVisualEffect("SPDISPMA",[2950.1128])
+		CreateVisualEffect("SPDISPMA",[3266.1170])
+		SmallWait(7)
+		CreateCreature("dx#zalla",[3212.1065],SW)
+		CreateCreature("DX#LICHJ",[3097.1333],N)
+		CreateCreature("DX#RUNEE",[2872.1237],NE)
+		CreateCreature("GOLADA01",[3078.1190],N)  
+		CreateCreature("DBONEF01",[2950.1128],NE)
+		CreateCreature("MINDVA01",[3266.1170],NW)
+		ActionOverride("dx#zalla",Enemy())
+		ActionOverride("dx#zalla",StartDialogueNoSet(LastSeenBy(Myself)))
+END
+
+// Default path
+
+IF
+	Entered([PC])
+	Global("ZallaFlee","GLOBAL",1)
+	!Global("ZallaSpawned","GLOBAL",1)
+	Global("ACH_TWISTED_VICTORY","GLOBAL",1)
+	Global("ACH_TWISTED_VICTORY_2","GLOBAL",1)
+THEN
+	RESPONSE #100
+		SetGlobal("ZallaSpawned","GLOBAL",1)
+		MoveViewPoint([3063.1086],INSTANT)
+		CreateVisualEffect("SPROTECT",[3212.1065])
+		CreateVisualEffect("SPROTECT",[3097.1333])
+		CreateVisualEffect("SPROTECT",[2872.1237])
+		CreateVisualEffect("SPROTECT",[3078.1190])
+		CreateVisualEffect("SPROTECT",[2950.1128])
+		CreateVisualEffect("SPROTECT",[3266.1170])
+		Wait(1)
+		CreateVisualEffect("SPDISPMA",[3212.1065])
+		CreateVisualEffect("SPDISPMA",[3097.1333])
+		CreateVisualEffect("SPDISPMA",[2872.1237])
+		CreateVisualEffect("SPDISPMA",[3078.1190])
+		CreateVisualEffect("SPDISPMA",[2950.1128])
+		CreateVisualEffect("SPDISPMA",[3266.1170])
+		SmallWait(7)
+		CreateCreature("dx#zalla",[3212.1065],SW)
+		CreateCreature("DX#LICHJ",[3097.1333],N)
+		CreateCreature("DX#RUNEE",[2872.1237],NE)
+		CreateCreature("GOLADA01",[3078.1190],N)  
+		CreateCreature("DBONEF01",[2950.1128],NE)
+		CreateCreature("MINDVA01",[3266.1170],NW)
+		ActionOverride("dx#zalla",Enemy())
+		ActionOverride("dx#zalla",StartDialogueNoSet(LastSeenBy(Myself)))
+END
+

@@ -124,10 +124,10 @@ END
 IF
     See(NearestEnemyOf(Myself))
     Global("EnergyDrain","LOCALS",0)
-    GlobalLT("ZallaFlee","GLOBAL",1)
+    Global("ZallaFlee","GLOBAL",1)
 THEN
     RESPONSE #100
-        SpellNoDec(NearestEnemyOf(Myself),WIZARD_ENERGY_DRAIN)  // SPWI914.SPL (Energy Drain)
+        SpellNoDec(NearestEnemyOf(Myself),WIZARD_ENERGY_DRAIN)  
         SetGlobal("EnergyDrain","LOCALS",1)
 END
 

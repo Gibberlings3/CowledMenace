@@ -6,11 +6,7 @@
 
 BACKUP ~cowledmenace/backup~
 AUTHOR ~Daxtreme at http://gibberlings3.net~  
-VERSION ~2.0.3~
-
-ALWAYS
-	INCLUDE ~cowledmenace/common.tpa~
-END
+VERSION ~2.1.0~
 
 ASK_EVERY_COMPONENT                                                                // Disallow installing all components at once
 	LANGUAGE ~English~ ~english~ ~cowledmenace/lang/english/english.tra~
@@ -18,7 +14,7 @@ ASK_EVERY_COMPONENT                                                             
 //	LANGUAGE ~Russian (by Ulpian)~ ~Russian~ ~cowledmenace/lang/russian/russian.tra~															 
 	LANGUAGE ~Simplified Chinese~ ~schinese~ ~cowledmenace/lang/schinese/setup.tra~
 //	LANGUAGE ~Italian (translation: threetimesdavey)~ ~Italian~ ~cowledmenace/lang/italian/italian.tra~
-	LANGUAGE ~Polish (by my_summertime, SoM Membress, part of CoB Clan)~ ~polish~ ~cowledmenace/lang/polish/polish.tra~
+//	LANGUAGE ~Polish (by my_summertime, SoM Membress, part of CoB Clan)~ ~polish~ ~cowledmenace/lang/polish/polish.tra~
 
 //////////////////////////////////////////////////////////////////////////
 // Main Component - The Cowled Menace
@@ -28,51 +24,15 @@ ASK_EVERY_COMPONENT                                                             
 
  BEGIN @0 DESIGNATED 1000
 
-	REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~mage18z.cre~ @50 //Required file missing -- install Baldur's Gate 2 EE
+	REQUIRE_PREDICATE GAME_IS ~bg2ee eet~ @50 // Not compatible - Install Baldur's Gate 2 EE or EET
 
-	COMPILE ~cowledmenace/dialog/dx#zalla.d~														// Zallanora dialogue
-		~cowledmenace/dialog/dx#laerd.d~															// Laeral (+others) dialogue
-		~cowledmenace/dialog/dx#dalid.d~															// Twisted Rune - Dalina (+others) dialogue
-		~cowledmenace/dialog/dx#tand.d~																// Vellin Dahn dialogue
-		~cowledmenace/dialog/dx#taw01.d~															// Rune Mage dialogue
-		~cowledmenace/dialog/dx#cowl.d~																// Cowled Wizard interjections dialogue
-
-	COMPILE ~cowledmenace/baf/dx#001.baf~															// New Twisted Rune Enclave Trigger script
-		~cowledmenace/baf/dx#1008.baf~																// New Twisted Rune Enclave Area script
-		~cowledmenace/baf/dx#tet1.baf~																// New Twisted Rune Enclave access script
-		~cowledmenace/baf/dx#001s.baf~																// New Twisted Rune Enclave spawn script
-		~cowledmenace/baf/dx#001m.baf~																// New Twisted Rune Enclave activate script
-		~cowledmenace/baf/dx#layen.baf~																// Twisted Rune new default AI to help with idiotic behavior
-		~cowledmenace/baf/MAGE20C.baf~																// Slightly improved vanilla AI for Shangalar (can be overwritten by SCS no problem)
-		~cowledmenace/baf/dx#mummc.baf~																// AI Script for Servant of Kartak
-		~cowledmenace/baf/dx#jlc.baf~																// AI Script for Jymahna
-		~cowledmenace/baf/dx#runo.baf~																// AI Script for Elite Rune Assassin
-		~cowledmenace/baf/dx#laero.baf~																// Laeral Override script
-		~cowledmenace/baf/dx#inid1.baf~																// Laeral Dialog initiation script
-		~cowledmenace/baf/dx#002.BAF~																// Crypt Area script
-		~cowledmenace/baf/dx#cet1.baf~																// Crypt access script
-		~cowledmenace/baf/dx#cwarn.baf~																// Crypt Area Laeral Spawn
-		~cowledmenace/baf/dx#cut01.baf~																// Cutscene Twisted Rune 1
-		~cowledmenace/baf/dx#cut02.baf~																// Cutscene Twisted Rune 2
-		~cowledmenace/baf/dx#cut03.baf~																// Cutscene Escape Twisted Rune
-		~cowledmenace/baf/dx#cut04.baf~																// Cutscene flashy in Crypt
-		~cowledmenace/baf/dx#sarco.baf~																// Final Zone Sarcophagus script
-		~cowledmenace/baf/dx#tw1.baf~																// Rogue Stone warn Umar Hills 1
-		~cowledmenace/baf/dx#tw2.baf~																// Rogue Stone warn Umar Hills 2 (closer)
-		~cowledmenace/baf/dx#tanw.baf~																// Override script for tanwiz1
-		~cowledmenace/baf/dx#trbri.baf~																// Twisted Rune Bridge District Ambush script
-		~cowledmenace/baf/dx#trtm.baf~																// Generic Twisted Rune Ambush scripts
-		~cowledmenace/baf/dx#trgar.baf~																// Twisted Rune Guarded Compound Ambush script
-		~cowledmenace/baf/dx#am1.baf~																// Final Ambush trigger spawn script
-		~cowledmenace/baf/mage18z.baf~																// New Class script for Zallanora - default combat behavior (can be overwritten by SCS no problem)
-		~cowledmenace/baf/dx#zallo.baf~																// New Override script for Zallanora
-		~cowledmenace/baf/dx#zallr.baf~																// Dialog racial script for Graveyard District encounter
+	COMPILE ~cowledmenace/dialog~
+	COMPILE ~cowledmenace/baf~
 
 	COPY ~cowledmenace/are/dx#001.are~ ~override~													// Add new Twisted Rune Enclave Area
 	COPY ~cowledmenace/are/dx#002.are~ ~override~													// Add new Crypt area
 	COPY ~cowledmenace/itm/dx#tout.itm~ ~override~													// Add Mummy Soul Stone to escape new area
 	SAY NAME2 @95		SAY DESC @96
-	COPY ~cowledmenace/baf/dx#fight.bcs~ ~override~													// script for Zdemi
 	COPY ~cowledmenace/spl/DX#WISHB.SPL~ ~override~													// Wish:Nether Disjunction - Breach
 	SAY NAME1 @415
 	COPY ~cowledmenace/spl/DX#WISHD.SPL~ ~override~													// Wish:Nether Disjunction - Remove Magic
@@ -82,7 +42,7 @@ ASK_EVERY_COMPONENT                                                             
 // Add new items in the game
 
 	COPY ~cowledmenace/itm/dx#prl9.bam~     ~override~
-	COPY ~cowledmenace/itm/dx#prl9.itm~     ~override~                               				// Pearl of Power (9th level spell)
+	COPY ~cowledmenace/itm/dx#prl9.itm~     ~override~                               				// Pearl of Power (Universal)
   		SAY NAME2 @200 	SAY DESC @201
   		WRITE_ASCII 0x3a ~dx#prl9~ #8																// Write in New Icon (BAM)
 
@@ -91,6 +51,10 @@ ASK_EVERY_COMPONENT                                                             
 		SAY NAME1 @202
   		SAY NAME2 @203 	SAY DESC @204
   		WRITE_ASCII 0x3a ~dx#luckb~ #8																// Write in New Icon (BAM)
+	COPY ~cowledmenace/itm/dx#helmw.itm~     ~override~                               				// Helm of Inspiration
+  		SAY NAME2 @196 	SAY DESC @197	
+	COPY ~cowledmenace/itm/dx#robe1.ITM~	 ~override~												// Lost Robes of Alokkair
+		SAY NAME2 @194  SAY DESC @195
 
 // Journal Stuff
 
@@ -105,9 +69,8 @@ ASK_EVERY_COMPONENT                                                             
  	COPY ~cowledmenace/itm/dx#twibg.itm~ 	~override~												// Note on Ambush Rune Wizards
  	SAY DESC @198
 
- 	ACTION_IF GAME_IS ~BG2EE~ THEN BEGIN
- 		ADD_JOURNAL TITLE (@90) @99 @101 @102 @103 @104 @105 @106 @107 @108 @109 @110 @120 @121 @122 @150		
- 	END
+ 	ADD_JOURNAL TITLE (@90) @99 @101 @102 @103 @104 @105 @106 @107 @108 @109 @110 @111 @112 @113 @120 @121 @122 @150		
+
  	ACTION_IF FILE_EXISTS_IN_GAME ~AR1008.bcs~ BEGIN   
 		EXTEND_TOP ~AR1008.bcs~ ~cowledmenace/baf/twistedruneletter.baf~							// Append Twisted Rune area Script
 	END
@@ -118,52 +81,44 @@ ASK_EVERY_COMPONENT                                                             
 		EXTEND_TOP ~AR0700.bcs~ ~cowledmenace/baf/zallanora_stone.baf~								// Append Waukeen's Promenade area script.
 	END
 
-// Add Quest Items and Dialog to actors
+// Add Quest Items and Dialog to vanilla actors
 
 	ACTION_IF FILE_EXISTS_IN_GAME ~hlkoshi.cre~ BEGIN												// Koshi
 		COPY_EXISTING ~hlkoshi.cre~ ~override~
-			LPF SANITIZE_CRE RET ok = ok END
-			PATCH_IF ok BEGIN
-				ADD_CRE_ITEM ~dx#koshi~ #0 #0 #0 ~identified~ ~inv~									// Letter Koshi in Guarded Compound
-			END
+			ADD_CRE_ITEM ~dx#koshi~ #0 #0 #0 ~identified~ ~inv~										// Letter Koshi in Guarded Compound
 		BUT_ONLY
 	END
 	ACTION_IF FILE_EXISTS_IN_GAME ~hlshang.cre~ BEGIN												// Twisted Rune: Shangalar
 		COPY_EXISTING ~hlshang.cre~ ~override~
-			LPF SANITIZE_CRE RET ok = ok END
-			PATCH_IF ok BEGIN
-				WRITE_ASCII 0x250 ~mage20c~ #8														// New Class Script, keeps same name because of SCS replacement
-				ADD_CRE_ITEM ~dx#twisl~ #0 #0 #0 ~identified~ ~inv~
-			END
+			WRITE_ASCII 0x250 ~mage20c~ #8															// New Class Script, keeps same name because of SCS replacement
+			ADD_CRE_ITEM ~dx#twisl~ #0 #0 #0 ~identified~ ~inv~
 		BUT_ONLY
 	END
 	ACTION_IF FILE_EXISTS_IN_GAME ~tanwiz1.cre~ BEGIN												// Vellin Dahn - Twisted Rune Mage
 		COPY_EXISTING ~tanwiz1.cre~ ~override~
-			LPF SANITIZE_CRE RET ok = ok END
-			PATCH_IF ok BEGIN
-				WRITE_ASCII 0x248 ~dx#tanw~ #8 														// New Override script (combine his 2 vanilla scripts)
-				WRITE_ASCII 0x250 ~mage16b~ #8														// New Race mage Script, SCS-friendly
-				ADD_CRE_ITEM ~staf02~ #0 #0 #0 ~none~ ~weapon~ EQUIP								// Quarterstaff +1
-				ADD_CRE_ITEM ~clck14~ #0 #0 #0 ~none~ ~armor~ 										// Mage Robe
-				ADD_CRE_ITEM ~dx#tanwi~ #0 #0 #0 ~identified~ ~inv~
-				ADD_CRE_ITEM ~MISC45~ #1 #0 #0 ~none~ ~inv~
-			END
+			WRITE_ASCII 0x248 ~dx#tanw~ #8 															// New Override script (combine his 2 vanilla scripts)
+			WRITE_ASCII 0x250 ~mage16b~ #8															// New Race mage Script, SCS-friendly
+			ADD_CRE_ITEM ~staf02~ #0 #0 #0 ~none~ ~weapon~ EQUIP									// Quarterstaff +1
+			ADD_CRE_ITEM ~clck14~ #0 #0 #0 ~none~ ~armor~ 											// Mage Robe
+			ADD_CRE_ITEM ~dx#tanwi~ #0 #0 #0 ~identified~ ~inv~
+			ADD_CRE_ITEM ~MISC45~ #1 #0 #0 ~none~ ~inv~												// Rogue Stone
 		BUT_ONLY
 	END
 
 // Custom CRE files
 
-//	COPY ~cowledmenace/bmp/dx#lich1.bmp~ ~override~ 
 	COPY ~cowledmenace/cre/dx#lich1.cre~ ~override~													// Twisted Rune - Kartak Spellseer
 	SAY NAME1 @1000		SAY NAME2 @1000
 	WRITE_ASCII DIALOG ~dx#lichd~ #8
 	ADD_CRE_ITEM ~rndtre05~ #0 #0 #0 ~none~ ~inv~													// Random Treasure5
 	ADD_CRE_ITEM ~RNDSCR03~ #0 #0 #0 ~none~ ~inv~
 	ADD_CRE_ITEM ~AMUL21~ #0 #0 #0 ~none~ ~amulet~													// Amulet of Power - this mod is a way to obtain a 2nd Amulet of Power in the game
-	// missing bmp vampire 
+
 	COPY ~cowledmenace/cre/dx#dalid.cre~ ~override~													// Twisted Rune - Dalina (Vampire Mage)
 	SAY NAME1 @1002		SAY NAME2 @1002
 	WRITE_ASCII DIALOG ~dx#dalid~ #8
+	ADD_CRE_ITEM ~rndtre04~ #0 #0 #0 ~none~ ~inv~													// Random Treasure4
+	ADD_CRE_ITEM ~rndtre05~ #0 #0 #0 ~none~ ~inv~													// Random Treasure5
 	
 	COPY ~cowledmenace/cre/dx#runew.cre~ ~override~													// Twisted Rune - Rune Mage (Neutral)
 	SAY NAME1 @1004		SAY NAME2 @1004
@@ -174,16 +129,18 @@ ASK_EVERY_COMPONENT                                                             
 	SAY NAME1 @1010		SAY NAME2 @1010
 	ADD_CRE_ITEM ~rndtre05~ #0 #0 #0 ~none~ ~inv~													// Random Treasure5
 	ADD_CRE_ITEM ~RNDSCR03~ #0 #0 #0 ~none~ ~inv~
+	ADD_CRE_ITEM ~RNDWAND~ #10 #10 #0 ~none~ ~qitem~												// Random Wand
 	
 	COPY ~cowledmenace/cre/dx#runea.cre~ ~override~													// Twisted Rune - Rune Assassin (Neutral)
 	COPY ~cowledmenace/cre/dx#runee.cre~ ~override~													// Twisted Rune - Elite Rune Assassin
 	SAY NAME1 @1009 	SAY NAME2 @1009
 	WRITE_ASCII 0x248 ~dx#runo~ #8																	// New override script
 	ADD_CRE_ITEM ~potn10~ #3 #0 #0 ~identified~ ~qitem3~
-	COPY ~cowledmenace/cre/dx#mummy.cre~ ~override~													// Twisted Rune - Mummy Lord
+	COPY ~cowledmenace/cre/dx#mummy.cre~ ~override~													// Twisted Rune - Servant of Kartak
 	SAY NAME1 @1006		SAY NAME2 @1006
 	WRITE_ASCII 0x250 ~dx#mummc~ #8
 	ADD_CRE_ITEM ~dx#tout~ #0 #0 #0 ~identified~ ~inv~
+	ADD_CRE_ITEM ~dx#helmw~ #0 #0 #0 ~none~ ~helmet~												// Helm of Inspiration (Custom)
 
 	COPY ~cowledmenace/cre/dx#lichj.cre~ ~override~													// Twisted Rune - Jymahna
 	SAY NAME1 @1007 	SAY NAME2@1007
@@ -419,7 +376,7 @@ ASK_EVERY_COMPONENT                                                             
 		END
 	BUT_ONLY
 
-// Add stuff in Graveyard crypts.
+// Add triggers in Graveyard crypts.
 
 	COPY_EXISTING ~AR0802.are~ ~override~
 		PATCH_IF SOURCE_SIZE > 0x28f BEGIN
@@ -483,7 +440,7 @@ ASK_EVERY_COMPONENT                                                             
  // Graveyard Scripts stuff
 
 	ACTION_IF FILE_EXISTS_IN_GAME ~ar0800.bcs~ BEGIN
-		EXTEND_TOP ~ar0800.bcs~ ~cowledmenace/baf/removezallanoragraveyard.baf~					// Remove Zallanora in unlikely case she's dead and never spoke to her.
+		EXTEND_TOP ~ar0800.bcs~ ~cowledmenace/baf/removezallanoragraveyard.baf~					// Remove Zallanora if quest has advanced too much
 	END
 
  // Add Twisted Rune Ambush in Bridge District
@@ -551,14 +508,14 @@ ASK_EVERY_COMPONENT                                                             
   	ACTION_IF FILE_EXISTS_IN_GAME ~tanwiz1.dlg~ BEGIN
 		COPY_EXISTING ~tanwiz1.dlg~ ~override~
 			DECOMPILE_AND_PATCH BEGIN
-				REPLACE_TEXTUALLY ~NumTimesTalkedTo(0)~ ~NumTimesTalkedTo(0) Global("MurdersSolved","GLOBAL",0)~
+				REPLACE_TEXTUALLY CASE_INSENSITIVE ~NumTimesTalkedTo(0)~ ~NumTimesTalkedTo(0) Global("MurdersSolved","GLOBAL",0)~
 			END
 		BUT_ONLY   
 	END
 	ACTION_IF FILE_EXISTS_IN_GAME ~inspect.dlg~ BEGIN
 		COPY_EXISTING ~inspect.dlg~ ~override~
 			DECOMPILE_AND_PATCH BEGIN
-				REPLACE_TEXTUALLY ~SetGlobal("MurdersSolved","GLOBAL",1)~ ~SetGlobal("MurdersSolved","GLOBAL",1) SetGlobalTimer("FinishedTanner","GLOBAL",TWO_DAYS)~
+				REPLACE_TEXTUALLY CASE_INSENSITIVE ~SetGlobal("MurdersSolved","GLOBAL",1)~ ~SetGlobal("MurdersSolved","GLOBAL",1) SetGlobalTimer("FinishedTanner","GLOBAL",TWO_DAYS)~
 			END
 		BUT_ONLY   
 	END
@@ -631,8 +588,8 @@ ASK_EVERY_COMPONENT                                                             
     			fj_trap_detect      = 0
     			fj_trap_active      = 1
     			fj_trap_status      = 0 
-	    		fj_name             = dx#trtm			 // script name of the trigger area
-    			fj_reg_script   = dx#trtm 			// this would be the assigned script name
+	    		fj_name             = dx#trlaw			 // script name of the trigger area
+    			fj_reg_script   = dx#trlaw 			// this would be the assigned script name
   			END
   		END
   	BUT_ONLY
@@ -692,8 +649,8 @@ ASK_EVERY_COMPONENT                                                             
     			fj_trap_detect      = 0
     			fj_trap_active      = 1
     			fj_trap_status      = 0 
-	    		fj_name             = dx#am1			 // script name of the trigger area
-    			fj_reg_script   = dx#am1 			// this would be the assigned script name
+	    		fj_name             = dx#am2			 // script name of the trigger area
+    			fj_reg_script   = dx#am2 			// this would be the assigned script name
   			END
   		END
   	BUT_ONLY
@@ -746,14 +703,14 @@ ASK_EVERY_COMPONENT                                                             
 		END
 	BUT_ONLY  	
 
-// Zallanora Editing - Wizard level 30
+// My Zallanora Editing - Wizard level 30 (custom CRE file, not in vanilla game)
 
 	COPY ~cowledmenace/cre/dx#zalla.cre~ ~override~
   		PATCH_IF (SOURCE_SIZE > 0x2d3) BEGIN
   			WRITE_LONG 0x14 51000																	// 6,000 XP --> 51,000 XP  since she is level 36
 			WRITE_BYTE 0x234 0x24																	// Level 30 --> Level 36 (Lore-Accurate level)
-			WRITE_ASCIIT 0x34 ~dx#zport~				  		 									// Assign portrait
-			WRITE_ASCIIT 0x3c ~dx#zport~
+			WRITE_SHORT 0x24 150																	// 150 hp
+			WRITE_SHORT 0x26 150																	// 150 hp
 			WRITE_LONG 0x244 0x10000000																// Change Kit from Conjurer to Necromancer
 			WRITE_ASCII 0x248 ~dx#zallo~ #8															// New override script
 			WRITE_ASCII 0x250 ~mage18z~ #8															// Class Script, keeps same name because of potential SCS replacement
@@ -763,11 +720,15 @@ ASK_EVERY_COMPONENT                                                             
 			WRITE_LONG 0x270 16843136																// Change Zallanora stance to Neutral / enemy = 16908799, neutral = 16843136
 			WRITE_ASCII 0x280 ~dx#zalla~ #8
   		END
-		ADD_CRE_ITEM ~dx#prl9~ #0 #0 #0 ~none~ ~helmet~ 											// ---New Item--- Pearl of Power (9th Level)
-		ADD_CRE_ITEM ~clck17~ #0 #0 #0 ~none~ ~armor~												// Robe of Evil Archmagi
+		ADD_CRE_ITEM ~dx#prl9~ #0 #0 #0 ~none~ ~helmet~ 											// ---New Item--- Pearl of Power (Universal)
+		ADD_CRE_ITEM ~dx#robe1~ #0 #0 #0 ~none~ ~armor~												// ---New Item--- Lost Robes of Alokkair
   		ADD_CRE_ITEM ~MINHP1~ #0 #0 #0 ~undroppable~ ~belt~											// min hp 1 for narrative purposes, removed as part of the quest
   		ADD_CRE_ITEM ~misc45~ #1 #0 #0 ~none~ ~inv~													// Rogue Stone
   		ADD_CRE_ITEM ~dx#wards~ #1 #0 #0 ~none~ ~inv~												// Wardstone for the Crypt
+		ADD_CRE_ITEM ~brac07~ #0 #0 #0 ~none~ ~gloves~												// Bracers of 18 dex | itemrev +2 dex 
+																									// rring already occupied
+		ADD_CRE_ITEM ~boot12~ #0 #0 #0 ~undroppable~ ~boots~										// Boots immune to backstab, undroppable
+		ADD_CRE_ITEM ~amul22~ #0 #0 #0 ~none~ ~amulet~												// Amulet of Poison Immunity
   	BUT_ONLY
 
 // Append Shangalar's script to include reference to Koshi's letter 
@@ -775,18 +736,33 @@ ASK_EVERY_COMPONENT                                                             
 	ACTION_IF FILE_EXISTS_IN_GAME ~HLSHANG.dlg~ BEGIN
 		COPY_EXISTING ~HLSHANG.dlg~ ~override~
 			DECOMPILE_AND_PATCH BEGIN
-				REPLACE_TEXTUALLY ~False()~ ~PartyHasItem("dx#koshi")~
+				REPLACE_TEXTUALLY CASE_INSENSITIVE ~False()~ ~PartyHasItem("dx#koshi")~
 			END
 		BUT_ONLY   
 	END
 
-// Final Cowled Wizard Fight edit
+// Final Cowled Wizard Fight edit so as to add my custom Zallanora (the real one) to the encounter while also not removing the vanilla Zallanora (MAGE18Z) from the scene (for better compatibility)
+// Vanilla Zallanora (MAGE18Z) will thus remain in the game if another mod makes use of her in some way, but as a Simulacrum of the real Zallanora (which is the one I added to the mod that is essential for the questline)
+// This makes the fight harder but it is what it is
 
 	ACTION_IF FILE_EXISTS_IN_GAME ~cowenf2.dlg~ BEGIN
 		COPY_EXISTING ~cowenf2.dlg~ ~override~
 			DECOMPILE_AND_PATCH BEGIN
-				REPLACE_TEXTUALLY ~CreateCreatureObject("MAGE18Z",Myself,0,0,0)~ ~CreateCreatureObjectEffect("dx#zalla","SPROTECT",Myself) ActionOverride("dx#zalla",StartDialogueNoSet(Player1))~
+				REPLACE_TEXTUALLY CASE_INSENSITIVE ~CreateCreatureObject("MAGE18Z",Myself,0,0,0)~ ~CreateCreatureObjectEffect("MAGE18Z","SPROTECT",Myself) CreateCreatureObjectEffect("dx#zalla","SPROTECT",Myself) ActionOverride("dx#zalla",Enemy()) ActionOverride("dx#zalla",StartDialogueNoSet(Player1))~
 			END
+		BUT_ONLY
+	END
+
+	ACTION_IF FILE_EXISTS_IN_GAME ~mage18z.cre~ BEGIN
+		COPY_EXISTING ~mage18z.cre~ ~override~
+			PATCH_IF (SOURCE_SIZE > 0x2d3) BEGIN
+				WRITE_LONG 0x14 22000																// Adjust xp reward to 22,000 since she is level 22 (Simulacrum is 60% of 36)
+				WRITE_LONG 0x244 0x10000000															// Change Kit from Conjurer to Necromancer
+				WRITE_BYTE 0x27b 0x23 																// Lawful Neutral --> Neutral Evil
+			END
+			ADD_CRE_ITEM ~clck17~ #0 #0 #0 ~none~ ~armor~											// Robe of Evil Archmagi 
+			SAY NAME1 @1012																			// Zallanora's Simulacrum
+			SAY NAME2 @1012																			// Zallanora's Simulacrum
 		BUT_ONLY
 	END
 
@@ -796,11 +772,8 @@ ASK_EVERY_COMPONENT                                                             
 	BEGIN
 		ACTION_IF FILE_EXISTS_IN_GAME ~%cre%~ BEGIN
 			COPY_EXISTING ~%cre%~ ~override~
-				LPF SANITIZE_CRE RET ok = ok END
-				PATCH_IF ok BEGIN
-					SAY NAME1 @1004
-					SAY NAME2 @1004
-				END
+				SAY NAME1 @1004
+				SAY NAME2 @1004
 			BUT_ONLY
 		END
 	END
@@ -816,34 +789,28 @@ ASK_EVERY_COMPONENT                                                             
 	BEGIN
 		ACTION_IF FILE_EXISTS_IN_GAME ~%cre%~ BEGIN
 			COPY_EXISTING ~%cre%~ ~override~
-				LPF SANITIZE_CRE RET ok = ok END
-				PATCH_IF ok BEGIN
-					WRITE_LONG 0x14 6000
-				END
+				WRITE_LONG 0x14 6000
 			BUT_ONLY
 		END
 	END
 
 	// Elite Cowled Wizards
 	// XP change | 120 --> 20,000
-
-	COPY_EXISTING ~cowenf2.cre~ ~override~
-		LPF SANITIZE_CRE RET ok = ok END
-		PATCH_IF ok BEGIN
+	ACTION_IF FILE_EXISTS_IN_GAME ~cowenf2.cre~ BEGIN
+		COPY_EXISTING ~cowenf2.cre~ ~override~
 			WRITE_LONG 0x14 20000
-		END
-	BUT_ONLY
+		BUT_ONLY
+	END
 
 // Give Layene 25 more HP and set her XP reward to 20,000, more appropriate for her power level 
 
-	COPY_EXISTING ~hllayen.cre~ ~override~
-		LPF SANITIZE_CRE RET ok = ok END
-		PATCH_IF ok BEGIN
+	ACTION_IF FILE_EXISTS_IN_GAME ~hllayen.cre~ BEGIN
+		COPY_EXISTING ~hllayen.cre~ ~override~
 			WRITE_SHORT 0x24 67
 			WRITE_SHORT 0x26 67
 			WRITE_LONG 0x14 20000
-		END
-	BUT_ONLY
+		BUT_ONLY
+	END
 	
 // Give Layene and Shyressa slightly better AI that won't result in them doing nothing in the corner if they can't see the PCs
 	
@@ -855,7 +822,7 @@ ASK_EVERY_COMPONENT                                                             
 			WRITE_ASCII SCRIPT_OVERRIDE ~dx#layen~ #8												// Give new script if null
 		BUT_ONLY
 	END ELSE BEGIN
-		ACTION_IF FILE_EXISTS_IN_GAME ~%name%.bcs~ BEGIN											// Else, append new script
+		ACTION_IF FILE_EXISTS_IN_GAME ~%name%.bcs~ BEGIN											// Else, append with new script
 			EXTEND_TOP ~%name%.bcs~ ~cowledmenace/baf/dx#layen.baf~									// Twisted Rune: Layene | vanilla: None SCS: DW#RUHLP.bcs
 		END 
 	END
@@ -868,38 +835,75 @@ ASK_EVERY_COMPONENT                                                             
 			WRITE_ASCII SCRIPT_OVERRIDE ~dx#layen~ #8												// Give new script if null
 		BUT_ONLY
 	END ELSE BEGIN
-		ACTION_IF FILE_EXISTS_IN_GAME ~%name%.bcs~ BEGIN											// Else, append new script
+		ACTION_IF FILE_EXISTS_IN_GAME ~%name%.bcs~ BEGIN											// Else, append with new script
 			EXTEND_TOP ~%name%.bcs~ ~cowledmenace/baf/dx#layen.baf~									// Twisted Rune: Shyressa | vanilla: None SCS: ???
 		END 
 	END
 
 ////////////////////////////////////////////////////////////////////////////////////////////
-// Appropriate Items for High-Level Spellcasters
+// Optional difficulty add-on | The mod's antagonist can summon a Dark Planetar (Useless with SCS)
+////////////////////////////////////////////////////////////////////////////////////////////
+
+BEGIN @1 DESIGNATED 1100
+
+	REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~mage18z.cre~ @51 										//Required file missing -- install Baldur's Gate 2
+	
+	COPY_EXISTING ~mage18z.bcs~ ~override~
+		DECOMPILE_AND_PATCH BEGIN																	// Zallanora default combat AI script
+			REPLACE_TEXTUALLY CASE_INSENSITIVE ~WIZARD_ENERGY_DRAIN~ ~WIZARD_SUMMON_PLANATAR_EVIL~								
+		END
+	BUT_ONLY
+
+////////////////////////////////////////////////////////////////////////////////////////////
+// Appropriate Rewards for High-Level Spellcasters (recommended)
 ////////////////////////////////////////////////////////////////////////////////////////////
 
 // Special Thanks to Roxanne on Gibberlings3
 
 BEGIN @2 DESIGNATED 2100
 
-	REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~mage18z.cre~ @50 //Required file missing -- install Baldur's Gate 2 EE
-	REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~blun31.itm~ @50 //Required file missing -- install Baldur's Gate 2 EE
+	REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~mage18z.cre~ @51 //Required file missing -- install Baldur's Gate 2
+	REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~blun31.itm~ @51 //Required file missing -- install Baldur's Gate 2
+
+// Appropriate XP Rewards for Cowled Enforcers (klatu) - Re-Inserting it here since them having more items but giving 120 xp makes no sense. If main component is installed already this is redundant
+
+	// Normal Cowled Wizards (level 14-16)
+	// XP change | 120 --> 6,000
+
+	ACTION_FOR_EACH cre IN ~cowenf02.cre~ ~cucow1.cre~ ~cucow2.cre~ ~cucow3.cre~ 
+		~cuwiz1.cre~ ~cuwiz2.cre~ ~cuwiz3.cre~ ~cuwiz4.cre~ ~cuwiz5.cre~ ~cuwiz6.cre~ ~cuwizc.cre~
+		~cuwizsu.cre~ ~L-MAGE01.cre~ ~L-MAGE02.cre~ ~O#CRENF1.cre~ ~O#CRENF2.cre~
+	BEGIN
+		ACTION_IF FILE_EXISTS_IN_GAME ~%cre%~ BEGIN
+			COPY_EXISTING ~%cre%~ ~override~
+				WRITE_LONG 0x14 6000
+			BUT_ONLY
+		END
+	END
+
+	// Elite Cowled Wizards
+	// XP change | 120 --> 20,000
+
+	COPY_EXISTING ~cowenf2.cre~ ~override~
+		WRITE_LONG 0x14 20000
+	BUT_ONLY
 
 	// Append Loot tables
 
 	ACTION_IF FILE_EXISTS_IN_GAME ~rndtres.2da~ BEGIN                                  				// UPDATE COLUMN COUNT | always (# of items +1), max 20
 		COPY_EXISTING ~rndtres.2da~ ~override~
 
-			// Add a new loot table only for cloaks and rings
-			INSERT_2DA_ROW 2 17 ~RNDGRP01 clck9 clck10 clck11 clck12 clck13 clck13 clck13 clck14 clck14 clck14 ring06 ring06 ring06 ring06 ring06 ring07~
-
-			// Add a new loot table for miscellaneous magical stuff
-			INSERT_2DA_ROW 2 13 ~RNDGRP02 amul14 amul14 amul14 amul19 amul23 brac01 brac01 brac02 brac02 brac03 brac13 clck01~
+			// Add a new scroll table for level 9 spells (very rare)
+			INSERT_2DA_ROW 2 11 ~RNDSCR05 scrl9m scrl9n scrl9p scrl9r scrl9s scrl9t scrl9u scrl9v scrl9w scrl9x~
 
 			// Add a new scroll table for high level spells not dropped by current table
 			INSERT_2DA_ROW 2 12 ~RNDSCR04 scrl9h scrlan scrlam scrl8p scrl8j scrl8n scrl7t scrl7x scrl7y scrl7z scrl7s~
-
-			// Add a new scroll table for level 9 spells (very rare)
-			INSERT_2DA_ROW 2 11 ~RNDSCR05 scrl9m scrl9n scrl9p scrl9r scrl9s scrl9t scrl9u scrl9v scrl9w scrl9x~
+			
+			// Add a new loot table for miscellaneous magical stuff
+			INSERT_2DA_ROW 2 13 ~RNDGRP02 amul14 amul14 amul14 amul19 amul23 brac01 brac01 brac02 brac02 brac03 brac13 clck01~
+			
+			// Add a new loot table only for cloaks and rings
+			INSERT_2DA_ROW 2 17 ~RNDGRP01 clck9 clck10 clck11 clck12 clck13 clck13 clck13 clck14 clck14 clck14 ring06 ring06 ring06 ring06 ring06 ring07~
 
 		BUT_ONLY
 	END
@@ -907,396 +911,241 @@ BEGIN @2 DESIGNATED 2100
 	// Add random stuff to generic spellcasters 
 
 	COPY_EXISTING ~lich01.cre~ ~override~															// Generic Lich from "Spawn Undead" script
-		LPF SANITIZE_CRE RET ok = ok END
-		PATCH_IF ok BEGIN
-			ADD_CRE_ITEM ~rndtre04~ #0 #0 #0 ~none~ ~inv~											// Random Treasure4
-			ADD_CRE_ITEM ~rndtre05~ #0 #0 #0 ~none~ ~inv~											// Random Treasure5
-			ADD_CRE_ITEM ~RNDSCR04~ #1 #0 #0 ~none~ ~inv~ 											// Random Scroll Category 4
-			ADD_CRE_ITEM ~ring07~ #0 #0 #0 ~none~ ~inv~												// Ring of Protection +2 in Inventory (Liches wear 2x special LICH rings)
-			ADD_CRE_ITEM ~RNDWAND~ #10 #10 #0 ~none~ ~qitem~										// Random Wand
-		END
+		ADD_CRE_ITEM ~rndtre04~ #0 #0 #0 ~none~ ~inv~												// Random Treasure4
+		ADD_CRE_ITEM ~rndtre05~ #0 #0 #0 ~none~ ~inv~												// Random Treasure5
+		ADD_CRE_ITEM ~RNDSCR04~ #1 #0 #0 ~none~ ~inv~ 												// Random Scroll Category 4
+		ADD_CRE_ITEM ~ring07~ #0 #0 #0 ~none~ ~inv~													// Ring of Protection +2 in Inventory (Liches wear 2x special LICH rings)
+		ADD_CRE_ITEM ~RNDWAND~ #10 #10 #0 ~none~ ~qitem~											// Random Wand
 	BUT_ONLY
 
 	COPY_EXISTING ~cowenf1.cre~ ~override~															// Male Mid-level Cowled Enforcer
-		LPF SANITIZE_CRE RET ok = ok END
-		PATCH_IF ok BEGIN
-			ADD_CRE_ITEM ~RNDGRP01~ #0 #0 #0 ~none~ ~armor~											// Random Robe or Ring
-			ADD_CRE_ITEM ~staf02~ #0 #0 #0 ~none~ ~weapon~ EQUIP									// Quarterstaff +1
-		END
+		ADD_CRE_ITEM ~RNDGRP01~ #0 #0 #0 ~none~ ~armor~												// Random Robe or Ring
+		ADD_CRE_ITEM ~staf02~ #0 #0 #0 ~none~ ~weapon~ EQUIP										// Quarterstaff +1
 	BUT_ONLY
 
-	COPY_EXISTING ~cowenf2.cre~ ~override~															// High-level Cowled Enforcer 
-		LPF SANITIZE_CRE RET ok = ok END
-		PATCH_IF ok BEGIN
-			ADD_CRE_ITEM ~RNDSCR02~ #1 #0 #0 ~none~ ~inv~ 											// Random Scroll Category 2
-			ADD_CRE_ITEM ~clck14~ #0 #0 #0 ~none~ ~armor~ 											// Mage Robe
-			REPLACE_CRE_ITEM ~staf18~ #0 #0 #0 ~none~ ~weapon1~ EQUIP								// Quarterstaff +2
-		END
+	COPY_EXISTING ~cowenf2.cre~ ~override~															// Male High-level Cowled Enforcer 
+		ADD_CRE_ITEM ~RNDSCR02~ #1 #0 #0 ~none~ ~inv~ 												// Random Scroll Category 2
+		ADD_CRE_ITEM ~clck14~ #0 #0 #0 ~none~ ~armor~ 												// Mage Robe
+		REPLACE_CRE_ITEM ~staf18~ #0 #0 #0 ~none~ ~weapon1~ EQUIP									// Quarterstaff +2
 	BUT_ONLY
 
 	COPY_EXISTING ~cowenf3.cre~ ~override~															// Female Mid-level Cowled Enforcer #3
-		LPF SANITIZE_CRE RET ok = ok END
-		PATCH_IF ok BEGIN
-			ADD_CRE_ITEM ~RNDGRP02~ #0 #0 #0 ~none~ ~amulet~										// Random Amulet or Bracers
-			ADD_CRE_ITEM ~clck14~ #0 #0 #0 ~none~ ~armor~ 											// Mage Robe
-			ADD_CRE_ITEM ~staf02~ #0 #0 #0 ~none~ ~weapon~ EQUIP									// Quarterstaff +1
-		END
+		ADD_CRE_ITEM ~RNDGRP02~ #0 #0 #0 ~none~ ~amulet~											// Random Amulet or Bracers
+		ADD_CRE_ITEM ~clck14~ #0 #0 #0 ~none~ ~armor~ 												// Mage Robe
+		ADD_CRE_ITEM ~staf02~ #0 #0 #0 ~none~ ~weapon~ EQUIP										// Quarterstaff +1
 	BUT_ONLY
 
 	COPY_EXISTING ~cowenf4.cre~ ~override~															// Female Mid-level Cowled Enforcer #4
-		LPF SANITIZE_CRE RET ok = ok END
-		PATCH_IF ok BEGIN
-			ADD_CRE_ITEM ~clck14~ #0 #0 #0 ~none~ ~armor~ 											// Mage Robe
-			ADD_CRE_ITEM ~staf02~ #0 #0 #0 ~none~ ~weapon~ EQUIP									// Quarterstaff +1
-			ADD_CRE_ITEM ~RNDWAND~ #10 #10 #0 ~none~ ~qitem~										// Random Wand
-		END
+		ADD_CRE_ITEM ~clck14~ #0 #0 #0 ~none~ ~armor~ 												// Mage Robe
+		ADD_CRE_ITEM ~staf02~ #0 #0 #0 ~none~ ~weapon~ EQUIP										// Quarterstaff +1
+		ADD_CRE_ITEM ~RNDWAND~ #10 #10 #0 ~none~ ~qitem~											// Random Wand
 	BUT_ONLY
 
 	// Add Worn Items to specific spellcasters in the game (level = vanilla/SCS-SR) | priority #
 	// Before editing this remember that some of those spellcasters already have items equipped
 
-	COPY_EXISTING ~mage18z.cre~ ~override~															// Zallanora (Cowled Wizard Last Wave) Mage 30/30 | 1
-		LPF SANITIZE_CRE RET ok = ok END
-		PATCH_IF ok BEGIN
-			ADD_CRE_ITEM ~amul22~ #0 #0 #0 ~none~ ~amulet~											// Amulet of Poison Immunity
-			ADD_CRE_ITEM ~RNDSCR05~ #1 #0 #0 ~none~ ~inv~ 											// Random level 9 scroll
-			ADD_CRE_ITEM ~brac07~ #0 #0 #0 ~none~ ~gloves~											// Bracers of 18 dex | itemrev +2 dex 
-																									// rring already occupied
-			ADD_CRE_ITEM ~boot12~ #0 #0 #0 ~undroppable~ ~boots~									// Boots immune to backstab, undroppable
-		END
-	BUT_ONLY
 
+	ACTION_IF (MOD_IS_INSTALLED ~cowledmenace/setup-cowledmenace.tp2~ 1000) BEGIN						// Cowled Menace is installed, we give different (worse) items to Zallanora's Simulacrum compared to vanilla Zallanora
+		COPY_EXISTING ~mage18z.cre~ ~override~															
+			ADD_CRE_ITEM ~RNDSCR04~ #1 #0 #0 ~none~ ~inv~ 												// Random Scroll Category 4 - rring already occupied
+		BUT_ONLY
+	END ELSE BEGIN																						// Cowled Menace is NOT installed, we give her different (better) items
+		COPY_EXISTING ~mage18z.cre~ ~override~															
+			WRITE_LONG 0x14 30000																		// Adjust xp reward to 30,000 since she is level 30
+			ADD_CRE_ITEM ~amul22~ #0 #0 #0 ~none~ ~amulet~												// Amulet of Poison Immunity
+			ADD_CRE_ITEM ~RNDSCR05~ #1 #0 #0 ~none~ ~inv~ 												// Random level 9 scroll
+			ADD_CRE_ITEM ~clck17~ #0 #0 #0 ~none~ ~armor~												// Robe of Evil Archmagi 
+			ADD_CRE_ITEM ~brac07~ #0 #0 #0 ~none~ ~gloves~												// Bracers of 18 dex | itemrev +2 dex 
+																										// rring already occupied
+			ADD_CRE_ITEM ~boot12~ #0 #0 #0 ~undroppable~ ~boots~										// Boots immune to backstab, undroppable
+		BUT_ONLY
+	END
+	
+	
 	COPY_EXISTING ~mage18a.cre~ ~override~															// Level 18 Cowled Wizard (Last Wave) | 1
-		LPF SANITIZE_CRE RET ok = ok END
-		PATCH_IF ok BEGIN
-			ADD_CRE_ITEM ~helm24~ #0 #0 #0 ~none~ ~inv~ 											// Obsidian Ioun Stone (+1 Constitution)
-			ADD_CRE_ITEM ~scrl8j~ #1 #0 #0 ~none~ ~qitem~											// Scroll of Mantle | Prismatic Mantle (SR)
-			ADD_CRE_ITEM ~clck11~ #0 #0 #0 ~none~ ~armor~											// Mage Robe of Electric Resistance
-			ADD_CRE_ITEM ~boot05~ #0 #0 #0 ~none~ ~boots~											// Boots of Electric Resistance
-			ADD_CRE_ITEM ~staf18~ #0 #0 #0 ~none~ ~weapon~ EQUIP									// Quarterstaff +2
+		ADD_CRE_ITEM ~helm24~ #0 #0 #0 ~none~ ~inv~ 												// Obsidian Ioun Stone (+1 Constitution)
+		ADD_CRE_ITEM ~scrl8j~ #1 #0 #0 ~none~ ~qitem~												// Scroll of Mantle | Prismatic Mantle (SR)
+		ADD_CRE_ITEM ~clck11~ #0 #0 #0 ~none~ ~armor~												// Mage Robe of Electric Resistance
+		ADD_CRE_ITEM ~boot05~ #0 #0 #0 ~none~ ~boots~												// Boots of Electric Resistance
+		ADD_CRE_ITEM ~staf18~ #0 #0 #0 ~none~ ~weapon~ EQUIP										// Quarterstaff +2
 																									// rring already occupied
-		END
 	BUT_ONLY
 
 	COPY_EXISTING ~mage16c.cre~ ~override~															// Level 16 Cowled Wizard (Last Wave)  | 1
-		LPF SANITIZE_CRE RET ok = ok END
-		PATCH_IF ok BEGIN
-			ADD_CRE_ITEM ~clck10~ #0 #0 #0 ~none~ ~armor~											// Mage Robe of Fire Resistance
-			ADD_CRE_ITEM ~ring02~ #0 #0 #0 ~none~ ~lring~											// Ring of Fire Resistance
-			ADD_CRE_ITEM ~staf02~ #0 #0 #0 ~none~ ~weapon~ EQUIP									// Quarterstaff +1
+		ADD_CRE_ITEM ~clck10~ #0 #0 #0 ~none~ ~armor~												// Mage Robe of Fire Resistance
+		ADD_CRE_ITEM ~ring02~ #0 #0 #0 ~none~ ~lring~												// Ring of Fire Resistance
+		ADD_CRE_ITEM ~staf02~ #0 #0 #0 ~none~ ~weapon~ EQUIP										// Quarterstaff +1
 																									// rring already occupied
-		END
 	BUT_ONLY
 
 	COPY_EXISTING ~HLLAYEN.cre~ ~override~															// Layene (Twisted Rune) 18/25 | 2
-		LPF SANITIZE_CRE RET ok = ok END
-		PATCH_IF ok BEGIN
-			ADD_CRE_ITEM ~RNDSCR04~ #1 #0 #0 ~none~ ~inv~ 											// Random Scroll Category 4
-			ADD_CRE_ITEM ~scrl9n~ #1 #0 #0 ~none~ ~qitem~											// Gate Scroll | Monster Summoning IX in Spell Revisions
-			ADD_CRE_ITEM ~clck17~ #0 #0 #0 ~none~ ~armor~											// Robe of Evil Archmagi
-			ADD_CRE_ITEM ~ring07~ #0 #0 #0 ~none~ ~lring~											// Ring of Protection +2
-//			ADD_CRE_ITEM ~ring46~ #0 #0 #0 ~undroppable~ ~rring~									// Right Ring already occupied
-		END
+		WRITE_SHORT 0x24 67																			// Slightly more hp
+		WRITE_SHORT 0x26 67
+		WRITE_LONG 0x14 20000																		// More XP
+		ADD_CRE_ITEM ~RNDSCR04~ #1 #0 #0 ~none~ ~inv~ 												// Random Scroll Category 4
+		ADD_CRE_ITEM ~scrl9n~ #1 #0 #0 ~none~ ~qitem~												// Gate Scroll | Monster Summoning IX in Spell Revisions
+		ADD_CRE_ITEM ~clck17~ #0 #0 #0 ~none~ ~armor~												// Robe of Evil Archmagi
+		ADD_CRE_ITEM ~ring07~ #0 #0 #0 ~none~ ~lring~												// Ring of Protection +2
+//		ADD_CRE_ITEM ~ring46~ #0 #0 #0 ~undroppable~ ~rring~										// Right Ring already occupied
 	BUT_ONLY
 
 	COPY_EXISTING ~HLSION.cre~ ~override~															// Sion (Guarded Compound 2nd Floor) 14/22 | 4
-		LPF SANITIZE_CRE RET ok = ok END
-		PATCH_IF ok BEGIN
-			ADD_CRE_ITEM ~rndtre05~ #0 #0 #0 ~none~ ~inv~											// Random Treasure5
-			ADD_CRE_ITEM ~RNDSCR04~ #1 #0 #0 ~none~ ~inv~ 											// Random Scroll Category 4
-			ADD_CRE_ITEM ~wand09~ #10 #0 #0 ~none~ ~qitem~											// Wand of Polymorph
-			ADD_CRE_ITEM ~staf02~ #0 #0 #0 ~none~ ~weapon~ EQUIP									// Quarterstaff +1
-		END
+		ADD_CRE_ITEM ~rndtre05~ #0 #0 #0 ~none~ ~inv~												// Random Treasure5
+		ADD_CRE_ITEM ~RNDSCR04~ #1 #0 #0 ~none~ ~inv~ 												// Random Scroll Category 4
+		ADD_CRE_ITEM ~wand09~ #10 #0 #0 ~none~ ~qitem~												// Wand of Polymorph
+		ADD_CRE_ITEM ~staf02~ #0 #0 #0 ~none~ ~weapon~ EQUIP										// Quarterstaff +1
 	BUT_ONLY
 
 	COPY_EXISTING ~FIRMAG01.cre~ ~override~															// Conster (Firkraag Dungeon Level 2) 16/16 | 3
-		LPF SANITIZE_CRE RET ok = ok END
-		PATCH_IF ok BEGIN
-			ADD_CRE_ITEM ~rndtre04~ #0 #0 #0 ~none~ ~inv~											// Random Treasure4
-			ADD_CRE_ITEM ~rndtre04~ #0 #0 #0 ~none~ ~inv~											// Random Treasure4
-			ADD_CRE_ITEM ~staf02~ #0 #0 #0 ~none~ ~weapon~ EQUIP									// Quarterstaff +1
-			ADD_CRE_ITEM ~belt03~ #0 #0 #0 ~none~ ~belt~											// Belt of blunt resistance
-		END
+		ADD_CRE_ITEM ~rndtre04~ #0 #0 #0 ~none~ ~inv~												// Random Treasure4
+		ADD_CRE_ITEM ~rndtre04~ #0 #0 #0 ~none~ ~inv~												// Random Treasure4
+		ADD_CRE_ITEM ~staf02~ #0 #0 #0 ~none~ ~weapon~ EQUIP										// Quarterstaff +1
+		ADD_CRE_ITEM ~belt03~ #0 #0 #0 ~none~ ~belt~												// Belt of blunt resistance
 	BUT_ONLY
 	
 	COPY_EXISTING ~OBSHAL05.cre~ ~override~															// Kayardi (Planar Sphere Entrance Room) 16/16 | 1
-		LPF SANITIZE_CRE RET ok = ok END
-		PATCH_IF ok BEGIN
-			ADD_CRE_ITEM ~rndtre03~ #0 #0 #0 ~none~ ~inv~											// Random Treasure3
-			ADD_CRE_ITEM ~rndtre04~ #0 #0 #0 ~none~ ~inv~											// Random Treasure4
-			ADD_CRE_ITEM ~RNDWAND~ #10 #10 #0 ~none~ ~qitem~										// Random Wand
-			ADD_CRE_ITEM ~RNDSCR04~ #1 #0 #0 ~none~ ~inv~ 											// Random Scroll Category 4
-			ADD_CRE_ITEM ~clck02~ #0 #0 #0 ~none~ ~cloak~											// Cloak of Protection +2
-			ADD_CRE_ITEM ~helm23~ #0 #0 #0 ~none~ ~helmet~ 											// Golden Ioun Stone (+1 intelligence)
-		END
+		ADD_CRE_ITEM ~rndtre03~ #0 #0 #0 ~none~ ~inv~												// Random Treasure3
+		ADD_CRE_ITEM ~rndtre04~ #0 #0 #0 ~none~ ~inv~												// Random Treasure4
+		ADD_CRE_ITEM ~RNDWAND~ #10 #10 #0 ~none~ ~qitem~											// Random Wand
+		ADD_CRE_ITEM ~RNDSCR04~ #1 #0 #0 ~none~ ~inv~ 												// Random Scroll Category 4
+		ADD_CRE_ITEM ~clck02~ #0 #0 #0 ~none~ ~cloak~												// Cloak of Protection +2
+		ADD_CRE_ITEM ~helm23~ #0 #0 #0 ~none~ ~helmet~ 												// Golden Ioun Stone (+1 intelligence)
 	BUT_ONLY
 
 // CLERIC
 	COPY_EXISTING ~OBSHAL07.cre~ ~override~															// Mogadish (Planar Sphere Entrance Room) Cleric 18/18 | 3
-		LPF SANITIZE_CRE RET ok = ok END
-		PATCH_IF ok BEGIN
-			ADD_CRE_ITEM ~rndtre04~ #0 #0 #0 ~none~ ~inv~											// Random Treasure4
-			ADD_CRE_ITEM ~rndtre04~ #0 #0 #0 ~none~ ~inv~											// Random Treasure4
-			ADD_CRE_ITEM ~chan08~ #0 #0 #0 ~none~ ~armor~											// Chain Mail +2
-			ADD_CRE_ITEM ~blun31~ #0 #0 #0 ~none~ ~weapon~ EQUIP									// Club +3
-		END
+		ADD_CRE_ITEM ~rndtre04~ #0 #0 #0 ~none~ ~inv~												// Random Treasure4
+		ADD_CRE_ITEM ~rndtre04~ #0 #0 #0 ~none~ ~inv~												// Random Treasure4
+		ADD_CRE_ITEM ~chan08~ #0 #0 #0 ~none~ ~armor~												// Chain Mail +2
+		ADD_CRE_ITEM ~blun31~ #0 #0 #0 ~none~ ~weapon~ EQUIP										// Club +3
 	BUT_ONLY
 // CLERIC
 
 	COPY_EXISTING ~OBSHAL03.cre~ ~override~															// Necre (Planar Sphere Entrance Room) 15/15 | 3
-		LPF SANITIZE_CRE RET ok = ok END
-		PATCH_IF ok BEGIN
-			ADD_CRE_ITEM ~rndtre04~ #0 #0 #0 ~none~ ~inv~											// Random Treasure4
-			ADD_CRE_ITEM ~RNDSCR01~ #1 #0 #0 ~none~ ~inv~ 											// Random Scroll Category 1
-			ADD_CRE_ITEM ~brac03~ #0 #0 #0 ~none~ ~gloves~											// Bracers of Defense AC 6
-			ADD_CRE_ITEM ~boot04~ #0 #0 #0 ~none~ ~boots~											// Boots of Missile Resistance
-			ADD_CRE_ITEM ~slng04~ #0 #0 #0 ~none~ ~weapon~ EQUIP									// Sling +2
-			ADD_CRE_ITEM ~bull03~ #40 #0 #0 ~none~ ~quiver1~										// Bullets +2
-		END
+		ADD_CRE_ITEM ~rndtre04~ #0 #0 #0 ~none~ ~inv~												// Random Treasure4
+		ADD_CRE_ITEM ~RNDSCR01~ #1 #0 #0 ~none~ ~inv~ 												// Random Scroll Category 1
+		ADD_CRE_ITEM ~brac03~ #0 #0 #0 ~none~ ~gloves~												// Bracers of Defense AC 6
+		ADD_CRE_ITEM ~boot04~ #0 #0 #0 ~none~ ~boots~												// Boots of Missile Resistance
+		ADD_CRE_ITEM ~slng04~ #0 #0 #0 ~none~ ~weapon~ EQUIP										// Sling +2
+		ADD_CRE_ITEM ~bull03~ #40 #0 #0 ~none~ ~quiver1~											// Bullets +2
 	BUT_ONLY
 
 	COPY_EXISTING ~OBSHAL06.cre~ ~override~															// Tabeila (Planar Sphere Entrance Room) 12/12 | 2
-		LPF SANITIZE_CRE RET ok = ok END
-		PATCH_IF ok BEGIN
-			ADD_CRE_ITEM ~rndtre04~ #0 #0 #0 ~none~ ~inv~											// Random Treasure4
-			ADD_CRE_ITEM ~RNDSCR01~ #1 #0 #0 ~none~ ~inv~ 											// Random Scroll Category 1
-			ADD_CRE_ITEM ~brac02~ #0 #0 #0 ~none~ ~gloves~											// Bracers of Defense AC 7
-			ADD_CRE_ITEM ~clck01~ #0 #0 #0 ~none~ ~cloak~											// Cloak of Protection +1
-		END
+		ADD_CRE_ITEM ~rndtre04~ #0 #0 #0 ~none~ ~inv~												// Random Treasure4
+		ADD_CRE_ITEM ~RNDSCR01~ #1 #0 #0 ~none~ ~inv~ 												// Random Scroll Category 1
+		ADD_CRE_ITEM ~brac02~ #0 #0 #0 ~none~ ~gloves~												// Bracers of Defense AC 7
+		ADD_CRE_ITEM ~clck01~ #0 #0 #0 ~none~ ~cloak~												// Cloak of Protection +1
 	BUT_ONLY
 
 	COPY_EXISTING ~TOLMAG02.cre~ ~override~															// Mage (Planar Sphere Ice and Fire Room) 9/9 | 4
-		LPF SANITIZE_CRE RET ok = ok END
-		PATCH_IF ok BEGIN
-			ADD_CRE_ITEM ~rndtre04~ #0 #0 #0 ~none~ ~inv~											// Random Treasure4
-			REPLACE_CRE_ITEM ~staf02~ #0 #0 #0 ~none~ ~weapon~ EQUIP								// Quarterstaff +1
-			ADD_CRE_ITEM ~RNDGRP02~ #0 #0 #0 ~none~ ~amulet~										// Random Amulet or Bracers
-		END
+		ADD_CRE_ITEM ~rndtre04~ #0 #0 #0 ~none~ ~inv~												// Random Treasure4
+		REPLACE_CRE_ITEM ~staf02~ #0 #0 #0 ~none~ ~weapon~ EQUIP									// Quarterstaff +1
+		ADD_CRE_ITEM ~RNDGRP02~ #0 #0 #0 ~none~ ~amulet~											// Random Amulet or Bracers
 	BUT_ONLY
 	
 	COPY_EXISTING ~TOLGER2.cre~ ~override~															// Tolgerias (Planar Sphere Ice and Fire Room) 21/21 | 3
-		LPF SANITIZE_CRE RET ok = ok END
-		PATCH_IF ok BEGIN
-			ADD_CRE_ITEM ~rndtre04~ #0 #0 #0 ~none~ ~inv~											// Random Treasure4
-			ADD_CRE_ITEM ~rndtre04~ #0 #0 #0 ~none~ ~inv~											// Random Treasure4
-			ADD_CRE_ITEM ~rndtre04~ #0 #0 #0 ~none~ ~inv~											// Random Treasure4
-			ADD_CRE_ITEM ~RNDGRP01~ #0 #0 #0 ~none~ ~armor~											// Random Robe or Ring
-			REPLACE_CRE_ITEM ~staf18~ #0 #0 #0 ~none~ ~weapon~ EQUIP								// Quarterstaff +2
-		END
+		ADD_CRE_ITEM ~rndtre04~ #0 #0 #0 ~none~ ~inv~												// Random Treasure4
+		ADD_CRE_ITEM ~rndtre04~ #0 #0 #0 ~none~ ~inv~												// Random Treasure4
+		ADD_CRE_ITEM ~rndtre04~ #0 #0 #0 ~none~ ~inv~												// Random Treasure4
+		ADD_CRE_ITEM ~RNDGRP01~ #0 #0 #0 ~none~ ~armor~												// Random Robe or Ring
+		REPLACE_CRE_ITEM ~staf18~ #0 #0 #0 ~none~ ~weapon~ EQUIP									// Quarterstaff +2
 	BUT_ONLY
 
 	COPY_EXISTING ~PPCOWLED.cre~ ~override~															// Perth the Adept (Brynnlaw) 18/20 | 4
-		LPF SANITIZE_CRE RET ok = ok END
-		PATCH_IF ok BEGIN
-			ADD_CRE_ITEM ~rndtre05~ #0 #0 #0 ~none~ ~inv~											// Random Treasure5
-			ADD_CRE_ITEM ~rndtre05~ #0 #0 #0 ~none~ ~inv~											// Random Treasure5
-			ADD_CRE_ITEM ~clck16~ #0 #0 #0 ~none~ ~armor~											// Robe of Neutral Archmagi
-			ADD_CRE_ITEM ~staf02~ #0 #0 #0 ~none~ ~weapon~ EQUIP									// Quarterstaff +1
-		END
+		ADD_CRE_ITEM ~rndtre05~ #0 #0 #0 ~none~ ~inv~												// Random Treasure5
+		ADD_CRE_ITEM ~rndtre05~ #0 #0 #0 ~none~ ~inv~												// Random Treasure5
+		ADD_CRE_ITEM ~clck16~ #0 #0 #0 ~none~ ~armor~												// Robe of Neutral Archmagi
+		ADD_CRE_ITEM ~staf02~ #0 #0 #0 ~none~ ~weapon~ EQUIP										// Quarterstaff +1
 	BUT_ONLY
 
 	// Liches | Rings will appear in inventory since Liches already wear 2 LICH rings
 
 	COPY_EXISTING ~HLLICH.cre~ ~override~															// Elemental Lich
-		LPF SANITIZE_CRE RET ok = ok END
-		PATCH_IF ok BEGIN
-			ADD_CRE_ITEM ~rndtre04~ #0 #0 #0 ~none~ ~inv~											// Random Treasure4
-			ADD_CRE_ITEM ~rndtre05~ #0 #0 #0 ~none~ ~inv~											// Random Treasure5
-			ADD_CRE_ITEM ~RNDSCR04~ #1 #0 #0 ~none~ ~inv~ 											// Random Scroll Category 3
-			ADD_CRE_ITEM ~RNDSCR05~ #1 #0 #0 ~none~ ~inv~ 											// Random Scroll Category 5
-			ADD_CRE_ITEM ~RNDWAND~ #10 #10 #0 ~none~ ~qitem~										// Random Wand
-		END
+		ADD_CRE_ITEM ~rndtre04~ #0 #0 #0 ~none~ ~inv~												// Random Treasure4
+		ADD_CRE_ITEM ~rndtre05~ #0 #0 #0 ~none~ ~inv~												// Random Treasure5
+		ADD_CRE_ITEM ~RNDSCR04~ #1 #0 #0 ~none~ ~inv~ 												// Random Scroll Category 3
+		ADD_CRE_ITEM ~RNDSCR05~ #1 #0 #0 ~none~ ~inv~ 												// Random Scroll Category 5
+		ADD_CRE_ITEM ~RNDWAND~ #10 #10 #0 ~none~ ~qitem~											// Random Wand
 	BUT_ONLY
 	
 	COPY_EXISTING ~HLSHADE.cre~ ~override~															// Shade Lich
-		LPF SANITIZE_CRE RET ok = ok END
-		PATCH_IF ok BEGIN
-			ADD_CRE_ITEM ~rndtre04~ #0 #0 #0 ~none~ ~inv~											// Random Treasure4
-			ADD_CRE_ITEM ~rndtre05~ #0 #0 #0 ~none~ ~inv~											// Random Treasure5
-			ADD_CRE_ITEM ~RNDSCR04~ #1 #0 #0 ~none~ ~inv~ 											// Random Scroll Category 3
-			ADD_CRE_ITEM ~RNDSCR05~ #1 #0 #0 ~none~ ~inv~ 											// Random Scroll Category 5
-			ADD_CRE_ITEM ~RNDWAND~ #10 #10 #0 ~none~ ~qitem~										// Random Wand
-		END
+		ADD_CRE_ITEM ~rndtre04~ #0 #0 #0 ~none~ ~inv~												// Random Treasure4
+		ADD_CRE_ITEM ~rndtre05~ #0 #0 #0 ~none~ ~inv~												// Random Treasure5
+		ADD_CRE_ITEM ~RNDSCR04~ #1 #0 #0 ~none~ ~inv~ 												// Random Scroll Category 3
+		ADD_CRE_ITEM ~RNDSCR05~ #1 #0 #0 ~none~ ~inv~ 												// Random Scroll Category 5
+		ADD_CRE_ITEM ~RNDWAND~ #10 #10 #0 ~none~ ~qitem~											// Random Wand
 	BUT_ONLY
 
 	COPY_EXISTING ~grvlch01.cre~ ~override~															// Crooked Crane Lich
-		LPF SANITIZE_CRE RET ok = ok END
-		PATCH_IF ok BEGIN
-			ADD_CRE_ITEM ~rndtre04~ #0 #0 #0 ~none~ ~inv~											// Random Treasure4
-			ADD_CRE_ITEM ~RNDSCR04~ #1 #0 #0 ~none~ ~inv~ 											// Random Scroll Category 4
-			ADD_CRE_ITEM ~RNDSCR05~ #1 #0 #0 ~none~ ~inv~ 											// Random Scroll Category 5
-		END
+		ADD_CRE_ITEM ~rndtre04~ #0 #0 #0 ~none~ ~inv~												// Random Treasure4
+		ADD_CRE_ITEM ~RNDSCR04~ #1 #0 #0 ~none~ ~inv~ 												// Random Scroll Category 4
+		ADD_CRE_ITEM ~RNDSCR05~ #1 #0 #0 ~none~ ~inv~ 												// Random Scroll Category 5
 	BUT_ONLY
 
 	COPY_EXISTING ~udtrap04.cre~ ~override~															// Alchra Diagott (Underdark Trap)
-		LPF SANITIZE_CRE RET ok = ok END
-		PATCH_IF ok BEGIN
-			ADD_CRE_ITEM ~rndtre04~ #0 #0 #0 ~none~ ~inv~											// Random Treasure4
-			ADD_CRE_ITEM ~rndtre05~ #0 #0 #0 ~none~ ~inv~											// Random Treasure5
-			ADD_CRE_ITEM ~ring07~ #0 #0 #0 ~none~ ~inv~												// Ring of Protection +2
-			ADD_CRE_ITEM ~RNDWAND~ #10 #10 #0 ~none~ ~qitem~										// Random Wand
-		END
+		ADD_CRE_ITEM ~rndtre04~ #0 #0 #0 ~none~ ~inv~												// Random Treasure4
+		ADD_CRE_ITEM ~rndtre05~ #0 #0 #0 ~none~ ~inv~												// Random Treasure5
+		ADD_CRE_ITEM ~ring07~ #0 #0 #0 ~none~ ~inv~													// Ring of Protection +2
+		ADD_CRE_ITEM ~RNDWAND~ #10 #10 #0 ~none~ ~qitem~											// Random Wand
 	BUT_ONLY
 
 	COPY_EXISTING ~jarlich.cre~ ~override~															// Deirex the Lich
-		LPF SANITIZE_CRE RET ok = ok END
-		PATCH_IF ok BEGIN
-			ADD_CRE_ITEM ~rndtre04~ #0 #0 #0 ~none~ ~inv~											// Random Treasure4
-			ADD_CRE_ITEM ~RNDSCR04~ #1 #0 #0 ~none~ ~inv~ 											// Random Scroll Category 4
-		END
+		ADD_CRE_ITEM ~rndtre04~ #0 #0 #0 ~none~ ~inv~												// Random Treasure4
+		ADD_CRE_ITEM ~RNDSCR04~ #1 #0 #0 ~none~ ~inv~ 												// Random Scroll Category 4
 	BUT_ONLY
 
 	COPY_EXISTING ~HLSHANG.cre~ ~override~															// Shangalar
-		LPF SANITIZE_CRE RET ok = ok END
-		PATCH_IF ok BEGIN
-			ADD_CRE_ITEM ~rndtre04~ #0 #0 #0 ~none~ ~inv~											// Random Treasure4
-			ADD_CRE_ITEM ~rndtre05~ #0 #0 #0 ~none~ ~inv~											// Random Treasure5
-			ADD_CRE_ITEM ~helm25~ #0 #0 #0 ~none~ ~helmet~											// Silver Ioun Stone (+1 Wisdom)
-			ADD_CRE_ITEM ~RNDSCR04~ #1 #0 #0 ~none~ ~inv~ 											// Random Scroll Category 4
-			ADD_CRE_ITEM ~RNDSCR05~ #1 #0 #0 ~none~ ~inv~ 											// Random Scroll Category 5
-			ADD_CRE_ITEM ~wand13~ #10 #10 #0 ~none~ ~qitem~											// Wand of Cloudkill
-		END
+		ADD_CRE_ITEM ~rndtre04~ #0 #0 #0 ~none~ ~inv~												// Random Treasure4
+		ADD_CRE_ITEM ~rndtre05~ #0 #0 #0 ~none~ ~inv~												// Random Treasure5
+		ADD_CRE_ITEM ~helm25~ #0 #0 #0 ~none~ ~helmet~												// Silver Ioun Stone (+1 Wisdom)
+		ADD_CRE_ITEM ~RNDSCR04~ #1 #0 #0 ~none~ ~inv~ 												// Random Scroll Category 4
+		ADD_CRE_ITEM ~RNDSCR05~ #1 #0 #0 ~none~ ~inv~ 												// Random Scroll Category 5
+		ADD_CRE_ITEM ~wand13~ #10 #10 #0 ~none~ ~qitem~												// Wand of Cloudkill
+	BUT_ONLY
+	
+	COPY_EXISTING ~amlich01.cre~ ~override~															// Amkethran Lich (ToB)
+		ADD_CRE_ITEM ~rndtre05~ #0 #0 #0 ~none~ ~inv~												// Random Treasure5
+		ADD_CRE_ITEM ~RNDSCR04~ #1 #0 #0 ~none~ ~inv~ 												// Random Scroll Category 4
+		ADD_CRE_ITEM ~RNDSCR05~ #1 #0 #0 ~none~ ~inv~ 												// Random Scroll Category 5
 	BUT_ONLY
 
 // Spellcasters introduced by the main component of this mod
 
-	COPY_EXISTING ~dx#zalla.cre~ ~override~															// Zallanora Custom (Cowled Wizard Last Wave) Mage 30/30 | 1
-		LPF SANITIZE_CRE RET ok = ok END
-		PATCH_IF ok BEGIN
-			ADD_CRE_ITEM ~amul22~ #0 #0 #0 ~none~ ~amulet~											// Amulet of Poison Immunity
+	ACTION_IF FILE_EXISTS_IN_GAME ~dx#zalla.cre~ BEGIN							// Cowled Menace enemy
+		COPY_EXISTING ~dx#zalla.cre~ ~override~														// Modded Zallanora (Cowled Wizard Last Wave) Mage 36/36 | 1
 			ADD_CRE_ITEM ~RNDSCR05~ #1 #0 #0 ~none~ ~inv~ 											// Random level 9 scroll
-			ADD_CRE_ITEM ~brac07~ #0 #0 #0 ~none~ ~gloves~											// Bracers of 18 dex | itemrev +2 dex 
-																									// rring already occupied
-			ADD_CRE_ITEM ~boot12~ #0 #0 #0 ~undroppable~ ~boots~									// Boots immune to backstab, undroppable
-		END
-	BUT_ONLY
+		BUT_ONLY
+	END
 
-	ACTION_IF FILE_EXISTS_IN_GAME ~dx#runew.cre~ BEGIN
+	ACTION_IF FILE_EXISTS_IN_GAME ~dx#runew.cre~ BEGIN							// Cowled Menace enemy
 		COPY_EXISTING ~dx#runew.cre~ ~override~														// Rune Mage
-			LPF SANITIZE_CRE RET ok = ok END
-			PATCH_IF ok BEGIN
-				ADD_CRE_ITEM ~rndgrp01~ #0 #0 #0 ~none~ ~inv~										// Random Robe or ring
-				ADD_CRE_ITEM ~RNDSCR04~ #0 #0 #0 ~none~ ~inv~ 										// Random scroll 4
-			END
+			ADD_CRE_ITEM ~rndgrp01~ #0 #0 #0 ~none~ ~inv~											// Random Robe or ring
+			ADD_CRE_ITEM ~RNDSCR04~ #0 #0 #0 ~none~ ~inv~ 											// Random scroll 4
 		BUT_ONLY
 	END
 
-	ACTION_IF FILE_EXISTS_IN_GAME ~dx#dalid.cre~ BEGIN
+	ACTION_IF FILE_EXISTS_IN_GAME ~dx#dalid.cre~ BEGIN							// Cowled Menace enemy
 		COPY_EXISTING ~dx#dalid.cre~ ~override~														// Dalina
-			LPF SANITIZE_CRE RET ok = ok END
-			PATCH_IF ok BEGIN
-				ADD_CRE_ITEM ~rndgrp02~ #0 #0 #0 ~none~ ~inv~										// Random trinket
-				ADD_CRE_ITEM ~rndtre04~ #0 #0 #0 ~none~ ~inv~										// Random Treasure4
-				ADD_CRE_ITEM ~rndtre05~ #0 #0 #0 ~none~ ~inv~										// Random Treasure5
-			END
+			ADD_CRE_ITEM ~rndgrp02~ #0 #0 #0 ~none~ ~inv~											// Random trinket
 		BUT_ONLY
 	END
 
-	ACTION_IF FILE_EXISTS_IN_GAME ~dx#lichd.cre~ BEGIN
-		COPY_EXISTING ~dx#lichd.cre~ ~override~														// Kartak Spellseer
-			LPF SANITIZE_CRE RET ok = ok END
-			PATCH_IF ok BEGIN
-				ADD_CRE_ITEM ~rndgrp02~ #0 #0 #0 ~none~ ~inv~										// Random trinket
-				ADD_CRE_ITEM ~rndscr04~ #0 #0 #0 ~none~ ~inv~										// Random scroll 4
-				ADD_CRE_ITEM ~RNDSCR05~ #0 #0 #0 ~none~ ~inv~										// Random scroll level 9
-			END
+	ACTION_IF FILE_EXISTS_IN_GAME ~dx#lich1.cre~ BEGIN							// Cowled Menace enemy
+		COPY_EXISTING ~dx#lich1.cre~ ~override~														// Kartak Spellseer
+			ADD_CRE_ITEM ~rndgrp02~ #0 #0 #0 ~none~ ~inv~											// Random trinket
+			ADD_CRE_ITEM ~rndscr04~ #0 #0 #0 ~none~ ~inv~											// Random scroll 4
+			ADD_CRE_ITEM ~RNDSCR05~ #0 #0 #0 ~none~ ~inv~											// Random scroll level 9
 		BUT_ONLY
 	END
 
-//////////////////////////////////////////////////////////////////////////////////////////////
-// Mages cast Gate far from themselves, so they don't end up fighting their own summoned demon
-//////////////////////////////////////////////////////////////////////////////////////////////
-
-BEGIN @4 DESIGNATED 3000
-
-	REQUIRE_PREDICATE FILE_EXISTS_IN_GAME ~mage18z.cre~ @50 //Required file missing -- install Baldur's Gate 2
-
-	ACTION_IF FILE_EXISTS_IN_GAME ~mage20b.bcs~ BEGIN
-		COPY_EXISTING ~mage20b.bcs~ ~override~
-			DECOMPILE_AND_PATCH BEGIN
-				REPLACE_TEXTUALLY ~Spell(Myself,WIZARD_GATE)~ ~Spell(FarthestEnemyOf(Myself),WIZARD_GATE)~
-			END
-		BUT_ONLY   
-	END
-
-////////////////////////////////////////////////////////////////////////////////////////////
-// Use pre-EE Spell Deflection Globe (EE only)
-////////////////////////////////////////////////////////////////////////////////////////////
-
-
-	// Only for Spell Trap
-
-BEGIN @6 DESIGNATED 3010 SUBCOMPONENT @5
-
-	REQUIRE_PREDICATE (ENGINE_IS ~bg2ee~) @51
-
-	COPY ~cowledmenace/SpellTrap/dx#trap.bam~     ~override~
-	COPY ~cowledmenace/SpellTrap/dx#strap.vvc~     ~override~ 
-	
-	ACTION_IF FILE_EXISTS_IN_GAME ~spwi902.spl~ BEGIN
-		COPY_EXISTING ~spwi902.spl~ ~override~ 			// Spell Trap
-			LPF ADD_SPELL_EFFECT 
-				INT_VAR 
-				opcode = 291				// Disable EE spell effect
-				target = 1
-				timing = 0
-				power = 4
-				resist_dispel = 3
-				duration = 108
-				parameter2 = 1
-				STR_VAR
-				insert_point = 1
-			END
-			LPF ADD_SPELL_EFFECT 
-				INT_VAR 
-				opcode = 215				// Add pre-EE spell effect
-				target = 1
-				timing = 0
-				power = 4
-				resist_dispel = 3
-				duration = 108
-				parameter2 = 1
-				STR_VAR
-				insert_point = 1
-				resource = dx#strap 
-			END
+	ACTION_IF FILE_EXISTS_IN_GAME ~dx#lichj.cre~ BEGIN							// Cowled Menace enemy
+		COPY_EXISTING ~dx#lichj.cre~ ~override~														// Twisted Rune - Jymahna
+			ADD_CRE_ITEM ~RNDSCR05~ #1 #0 #0 ~none~ ~inv~ 											// Random level 9 scroll
 		BUT_ONLY
-	END
+	END 
 	
-	ACTION_IF FILE_EXISTS_IN_GAME ~staf11.spl~ BEGIN
-		COPY_EXISTING ~staf11.spl~ ~override~		// Spell Trap (Staff of the Magi)
-			LPF ADD_SPELL_EFFECT 
-				INT_VAR 
-				opcode = 291				// Disable EE spell effect
-				target = 1
-				timing = 0
-				power = 4
-				resist_dispel = 3
-				duration = 2400
-				parameter2 = 1
-				STR_VAR
-				insert_point = 1
-			END
-			LPF ADD_SPELL_EFFECT 
-				INT_VAR 
-				opcode = 215				// Add pre-EE spell effect
-				target = 1
-				timing = 0
-				power = 4
-				resist_dispel = 3
-				duration = 2400
-				parameter2 = 1
-				STR_VAR
-				insert_point = 1
-				resource = dx#strap 
-			END
+	ACTION_IF FILE_EXISTS_IN_GAME ~dx#licht.cre~ BEGIN							// Cowled Menace enemy (Only on Insane difficulty)
+		COPY_EXISTING ~dx#lichj.cre~ ~override~														// Twisted Rune - Rune Lich
+			ADD_CRE_ITEM ~RNDSCR04~ #1 #0 #0 ~none~ ~inv~ 											// Random scroll 4
 		BUT_ONLY
-	END
-	
-	
-	// For all of them
-	
-BEGIN @7 DESIGNATED 3020 SUBCOMPONENT @5
-
-	COPY ~cowledmenace/SpellTrap/SPMAGGLO.bam~     ~override~    		// Fully replace EE spell effect with pre-EE spell effect for all spells using that effect
-
+	END 

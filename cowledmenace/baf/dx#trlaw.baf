@@ -1,6 +1,6 @@
 IF
 	Entered([PC])
-	Global("RuneEncounterTM","GLOBAL",0)
+	Global("RuneEncounterBL","GLOBAL",0)
 	Global("DxInsaneSpawn","GLOBAL",0)
 	!Global("ZallStoneFound","GLOBAL",1)
 	OR(4)
@@ -11,8 +11,7 @@ IF
 THEN
 	RESPONSE #100
 		IncrementGlobal("RuneEncounter2","GLOBAL",1)
-		SetGlobal("RuneEncounterTM","GLOBAL",1)
-		SetGlobalTimer("RuneEncounter2Wait","GLOBAL",THREE_DAYS)
+		SetGlobal("RuneEncounterBL","GLOBAL",1)
 		CreateVisualEffectObject("SPROTECT",LastTrigger)
 		Wait(1)
 		CreateVisualEffectObject("SPDISPMA",LastTrigger)
